@@ -1,4 +1,4 @@
-# Group5Project (to be named)
+# Group5Project: Mochi
 
 
 Our product is for software developers who want their software on an easily accessible market for purchase and consumers who frequently purchase software whether for professional or recreational use.
