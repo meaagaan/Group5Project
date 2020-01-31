@@ -13,5 +13,8 @@
 | 008 | As a merchant, I should be able to choose the genre my product belongs to so that customers can find it easier. | 5 | 1 | When I click a button, I should be given a list of genre to select from to add to my product. | TO DO |
 | 009 | As a customer, I should be able to purchase a product, so I can own it. | 5 | 1 | When I click a button, I should be prompted to put in my credit card information to purchase the product. | TO DO |
 | 010 | As a customer, I should be able to add products to my wishlist, so I can remember what I like. | 5 | 1 | When I click a button, my wishlist is updated to contain the additional product. | TO DO |
-| 011 | As a customer I should be able to write reviews on the products I purchased, so that I can give feedback to the seller. | 5 | 1 | When I click a button, I am prompted with star ratings and able to write a review. | TO DO |
-| 012 | As a customer I should be able to sort the available products by price, ratings, etc., so that I can find the products that are right for me. | 5 | 1 | When I click a button, the store should be sorted based on price, ratings, etc. | TO DO |
+| 011 | As a customer, I should be able to delete products in my wishlist. | 5 | 1 | When I click a button, the product is removed from my wishlist. | TO DO |
+| 012 | As a customer I should be able to write reviews on the products I purchased, so that I can give feedback to the seller. | 5 | 1 | When I click a button, I am prompted with star ratings and able to write a review. | TO DO |
+| 013 | As a customer I should be able to sort the available products by price, ratings, etc., so that I can find the products that are right for me. | 5 | 1 | When I click a button, the store should be sorted based on price, ratings, etc. | TO DO |
+| 014 | As a merchant, I should be able to see how many people are buying my product. | 5 | 1 | When I click a button, the store should show how many people has purchased the product. | TO DO |
+| 015 | As a merchant, I should be able to see the reviews of my product. | 5 | 1 | When I click a button, the store should show all the reviews by customers. | TO DO |
