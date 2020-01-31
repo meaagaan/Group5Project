@@ -16,4 +16,5 @@ Unlike purchasing directly from the seller’s website, the customer can search 
 # Sprint 1
 - [Product Backlog](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/Product_Backlog.md)
 - [Sprint Backlog](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/Sprint1_Backlog.md)
+- [Requirements](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/Requirements.md)
 - [Trello Board](https://trello.com/b/lvHEsjy0/task-board)
