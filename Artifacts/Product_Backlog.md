@@ -6,8 +6,8 @@
 | 001 | As a customer, I should be able to create an account, so I can purchase products. | 5 | 1 | When I click a button, a page prompting for account creation happens. | WORKING |
 | 002 | As a customer, I should be able to login, so I can access my account. | 5 | 1 | When I click a button, a page prompting for email/username and password. | WORKING |
 | 003 | As a customer, I should be able to have Mochi as a Desktop App, so that I can access Mochi quickly and easily. | 5 | 1 | When I click a button on my desktop, Mochi will launch. | WORKING |
-| 004 | As a customer, I should be able to sort the available products by genre, so that I can find what I’m looking for easily. | 5 | 1 | When I click a button in the genre list, it should sort software based on the genre. | TO DO |
-| 005 | As a merchant, I should be able to create a page for my product, so that customers can purchase it. | 5 | 1 | When I click a button, a page will be prompted asking for the product and price. | TO DO |
+| 004 | As a merchant, I should be able to create a page for my product, so that customers can purchase it. | 5 | 1 | When I click a button, a page will be prompted asking for the product and price. | WORKING |
+| 005 | As a customer, I should be able to sort the available products by genre, so that I can find what I’m looking for easily. | 5 | 1 | When I click a button in the genre list, it should sort software based on the genre. | TO DO |
 | 006 | As a merchant, I should be able to customize my product page, so that I can advertise my product. | 5 | 1 | When I click a button, the page should be editable. | TO DO |
 | 007 | As a merchant, I should be able to choose the genre my product belongs to so that customers can find it easier. | 5 | 1 | When I click a button, I should be given a list of genre to select from to add to my product. | TO DO |
 | 008 | As a customer, I should be able to purchase a product, so I can own it. | 5 | 1 | When I click a button, I should be prompted to put in my credit card information to purchase the product. | TO DO |
