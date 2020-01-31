@@ -18,5 +18,5 @@
 | 013 | As a customer I should be able to sort the available products by price, ratings, etc., so that I can find the products that are right for me. | 5 | 1 | When I click a button, the store should be sorted based on price, ratings, etc. | TO DO |
 | 014 | As a merchant, I should be able to see how many people are buying my product. | 5 | 1 | When I click a button, the store should show how many people has purchased the product. | TO DO |
 | 015 | As a merchant, I should be able to see the reviews of my product. | 5 | 1 | When I click a button, the store should show all the reviews by customers. | TO DO |
-| 016 | As a merchant, I should be able to add as products. | 5 | 1 | When I click a button, I can customize a new product. | TO DO |
+| 016 | As a merchant, I should be able to add as many products. | 5 | 1 | When I click a button, I can customize a new product. | TO DO |
 | 017 | As a customer, I should be able to view other products from the same merchant. | 5 | 1 | When I click a button, all the products of that merchant will appear. | TO DO |
