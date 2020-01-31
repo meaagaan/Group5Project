@@ -12,7 +12,7 @@
 | 007 | As a merchant, I should be able to choose the genre my product belongs to so that customers can find it easier. | 3 | 2 | When I click a button, I should be given a list of genre to select from to add to my product. | TO DO |
 | 008 | As a customer, I should be able to purchase a product, so I can own it. | 21 | 2 | When I click a button, I should be prompted to put in my credit card information to purchase the product. | TO DO |
 | 009 | As a customer, I should be able to add products to my wishlist, so I can remember what I like. | 8 | 5 | When I click a button, my wishlist is updated to contain the additional product. | TO DO |
-| 010 | As a customer, I should be able to delete products in my wishlist. | 8 | 5 | When I click a button, the product is removed from my wishlist. | TO DO |
+| 010 | As a customer, I should be able to delete products in my wishlist so that I can update my wishlist for products I want to purchase. | 8 | 5 | When I click a button, the product is removed from my wishlist. | TO DO |
 | 011 | As a customer I should be able to write reviews on the products I purchased, so that I can give feedback to the seller. | 21 | 3 | When I click a button, I am prompted with star ratings and able to write a review. | TO DO |
 | 012 | As a customer I should be able to sort the available products by price, ratings, etc., so that I can find the products that are right for me. | 21 | 5 | When I click a button, the store should be sorted based on price, ratings, etc. | TO DO |
 | 013 | As a merchant, I should be able to see how many people are buying my product. | 8 | 4 | When I click a button, the store should show how many people has purchased the product. | TO DO |
