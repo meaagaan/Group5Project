@@ -1,4 +1,6 @@
 # Product Backlog
+#### _Effort_ is denoted by fibonacci numbers 1-34 with 1 being the least amount of effort
+#### _Priority_ is denoted by numbers 1-5 with 1 being the highest priority
 
 | ID | User Story | Effort | Priority | Validation Criteria | Status |
 |----|------------|--------|----------|---------------------|--------|
