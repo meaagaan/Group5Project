@@ -14,5 +14,6 @@ Unlike purchasing directly from the seller’s website, the customer can search 
 - Anthony Yu
 
 # Sprint 1
-- [Trello Board](https://trello.com/b/lvHEsjy0/task-board)
 - [Product Backlog](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/Product_Backlog.md)
+- [Sprint Backlog](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/Sprint1_Backlog.md)
+- [Trello Board](https://trello.com/b/lvHEsjy0/task-board)
