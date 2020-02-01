@@ -13,3 +13,8 @@
 |            008 |           002 | There should be a login button. | Not Verified |
 |            009 |           002 | There should be a forgot password button. | Not Verified |
 |            010 |           002 | There should be a button that leads to registration page. | Not Verified |
+|            011 |           004 | There should be a button that leads to product creation page. | Not Verified |
+|            012 |           004 | There should be a text entry for product name. | Not Verified |
+|            013 |           004 | There should be a list to pick the type of genre for the product item. | Not Verified |
+|            014 |           004 | There should be a text entry for product description. | Not Verified |
+|            015 |           004 | There should be a text entry for product price. | Not Verified |
