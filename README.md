@@ -22,14 +22,15 @@ Unlike purchasing directly from the seller’s website, the customer can search 
 - [Velocity Chart](https://docs.google.com/spreadsheets/d/1vw81TkkCwkv9nCx62wmESVZQqzlXwXgARyZDBSSaVi0/edit#gid=0)
 
 # Sprint 2
+## empty links*
 - [Product Backlog](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/Product_Backlog.md)
 - [Sprint Backlog](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/Sprint2_Backlog.md)
 - [Requirements](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/Requirements.md)
 - [Trello Board](https://trello.com/b/lvHEsjy0/task-board)
-- [Burndown Chart]()
+- [Burndown Chart]() *
 - [Velocity Chart](https://docs.google.com/spreadsheets/d/1vw81TkkCwkv9nCx62wmESVZQqzlXwXgARyZDBSSaVi0/edit#gid=0)
 - Design Documents
-  - [System Architecture]()
-  - [Class Diagrams]()
-  - [Sequence Diagrams]()
-- [Product Demonstration]()
+  - [System Architecture]() *
+  - [Class Diagrams]() *
+  - [Sequence Diagrams]() *
+- [Product Demonstration]() *
