@@ -1,7 +1,7 @@
 # Requirements
 
 | Requirement ID | User Story ID | Requirement | Acceptance Criteria | Effort | Priority | Status |
-|----------------|---------------|-------------|--------|
+|----------------|---------------|-------------|---------------------|--------|----------|--------|
 |            000 |           000 | Everyone has the correct libraries downloaded and working on their pc. | Each entry in the backlog has a unique ID | 1 | Necessary | Verified |
 |            001 |           000 | Everyone has a separate working branch on Github and knows how to work with the master branch. | Each entry in the backlog has a unique ID | 1 | Necessary | Verified |
 |            002 |           001 | There should be a registration page. | Each entry in the backlog has a unique ID | 1 | Necessary | Not Verified |
