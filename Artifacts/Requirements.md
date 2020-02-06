@@ -14,7 +14,7 @@
 |            009 |           002 | There should be a forgot password button. | There should be a forgot password button. | 13 | Necessary | Not Verified |
 |            010 |           002 | There should be a button that leads to registration page. | There should be a button on the login scene that changes the scene to the registration scene. | 13 | Necessary | Not Verified |
 |            011 |           004 | There should be a button that leads to product creation page. | There is a button that leads to the product creation scene. | 8 | Necessary | Not Verified |
-|            012 |           004 | There should be a text entry for product name. | There is a text entry to identify the product name. | 1 | Necessary | Not Verified |
+|            012 |           004 | There should be a text entry for product name. | There is a text entry to identify the product name. | 8 | Necessary | Not Verified |
 |            013 |           004 | There should be a list to pick the type of genre for the product item. | There is a check list to select the type of genre to search for. | 8 | Necessary | Not Verified |
 |            014 |           004 | There should be a text entry for product description. | There is a text entry for a description of the product. | 8 | Necessary | Not Verified |
 |            015 |           004 | There should be a text entry for product price. | There is a text entry for the price of the product. | 8 | Necessary | Not Verified |
