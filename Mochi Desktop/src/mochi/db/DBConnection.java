@@ -8,7 +8,7 @@ public class DBConnection {
 
 	public DBConnection() {
 		try {
-			this.database = DriverManager.getConnection("jdbc:mysql://34.73.12.61:3306/mochi-desktop", "root", "NvaleHh1ovGKq1p1");
+			this.database = DriverManager.getConnection("jdbc:mysql://[IP]/mochi-desktop", "[USER]", "[PASSWORD]");
 		}catch (Exception ex) {
 			System.out.println(ex);
 		}
