@@ -19,7 +19,7 @@ import java.sql.Connection;
 public class LoginUI {
 	Scene loginScene;
 
-	public LoginUI(Stage primaryStage) {
+	public LoginUI(Stage primaryStage, Connection database) {
 		GridPane grid = new GridPane();
 
 		Text sceneTitle = new Text("Login");
