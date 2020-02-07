@@ -21,3 +21,4 @@
 | 014 | As a merchant, I should be able to see the reviews of my product to see what customers think of it. | 8 | 3 | When I click a button, the store should show all the reviews by customers. | TO DO |
 | 015 | As a merchant, I should be able to add as many products so customers can view/purchase. | 8 | 2 | When I click a button, I can customize a new product. | TO DO |
 | 016 | As a customer, I should be able to view other products from the same merchant so that I could purchase other products of theirs.| 8 | 3 | When I click a button, all the products of that merchant will appear. | TO DO |
+| 017 | As a team of developers, we should all be able to connect to be the database so that we can work on Mochi efficiently. | 13 | 1 | When I click a button, all the products of that merchant will appear. | DONE |
