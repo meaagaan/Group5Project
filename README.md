@@ -24,7 +24,7 @@ Unlike purchasing directly from the seller’s website, the customer can search 
 # Sprint 2
 ## empty links*
 - [Product Backlog](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/Product_Backlog.md)
-- [Sprint Backlog](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/Sprint2_Backlog.md)
+- [Sprint Backlog](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/Sprint2_backlog.md)
 - [Requirements](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/Requirements.md)
 - [Trello Board](https://trello.com/b/lvHEsjy0/task-board)
 - [Burndown Chart]() *
