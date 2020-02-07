@@ -1,4 +1,4 @@
-# Sprint Backlog (2020-02-2 to 2020-02-7)
+# Sprint Backlog (2020-02-2 to 2020-02-8)
 
 | ID | User Story | Effort | Priority | Validation Criteria | Owner |
 |----|------------|--------|----------|---------------------|-------|
