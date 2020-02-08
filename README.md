@@ -27,7 +27,7 @@ Unlike purchasing directly from the seller’s website, the customer can search 
 - [Sprint Backlog](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/Sprint2_backlog.md)
 - [Requirements](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/Requirements.md)
 - [Trello Board](https://trello.com/b/lvHEsjy0/task-board)
-- [Burndown Chart]() *
+- [Burndown Chart](https://docs.google.com/spreadsheets/d/1DDFRD913ABHZ-No10qLwydV-fwlTVkbWj8Qv4LgXDdg/edit#gid=1043892553)
 - [Velocity Chart](https://docs.google.com/spreadsheets/d/1vw81TkkCwkv9nCx62wmESVZQqzlXwXgARyZDBSSaVi0/edit#gid=0)
 - Design Documents
   - [System Architecture]() *
