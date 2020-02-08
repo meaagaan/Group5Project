@@ -4,17 +4,17 @@
 |----------------|---------------|-------------|---------------------|--------|----------|--------|
 |            000 |           000 | Everyone has the correct libraries downloaded and working on their pc. | Everyone is able to start coding with the correct libraries. | 1 | Necessary | Satisfied |
 |            001 |           000 | Everyone has a separate working branch on Github and knows how to work with the master branch. | Everyone has a separate branch on Github and is able to merge with the master branch. | 1 | Necessary | Satisfied |
-|            002 |           001 | There should be a registration page. | There exist a registration scene where information can be inputted.  | 8 | Necessary | Planned |
-|            003 |           001 | There should be a text entry for user information. | There is a textbox for entry of user information. | 8 | Necessary | Planned |
-|            004 |           001 | There should be an agreement check box. | There is an agreement check box that can be checked. | 8 | Necessary | Planned |
-|            005 |           001 | There should be a confirmation button. | There is a confirmation button that checks the information and stores it in the database. | 8 | Necessary | Planned |
-|            006 |           002 | There should be a login page. | There exist a login scene where information can be inputted. | 13 | Necessary | Planned |
-|            007 |           002 | There should be a text entry for ID/Email and password. | There is a textbox for entry for ID/Email and password. | 13 | Necessary | Planned |
-|            008 |           002 | There should be a login button. | There is a login button that checks the information with the database and logs in accordingly. | 13 | Necessary | Planned |
-|            009 |           002 | There should be a forgot password button. | There should be a forgot password button. | 13 | Necessary | Planned |
-|            010 |           002 | There should be a button that leads to registration page. | There should be a button on the login scene that changes the scene to the registration scene. | 13 | Necessary | Planned |
-|            011 |           004 | There should be a button that leads to product creation page. | There is a button that leads to the product creation scene. | 8 | Necessary | Planned |
-|            012 |           004 | There should be a text entry for product name. | There is a text entry to identify the product name. | 8 | Necessary | Planned |
-|            013 |           004 | There should be a list to pick the type of genre for the product item. | There is a check list to select the type of genre to search for. | 8 | Important | Planned |
-|            014 |           004 | There should be a text entry for product description. | There is a text entry for a description of the product. | 8 | Necessary | Planned |
-|            015 |           004 | There should be a text entry for product price. | There is a text entry for the price of the product. | 8 | Necessary | Planned |
+|            002 |           001 | There should be a registration page. | There exist a registration scene where information can be inputted.  | 8 | Necessary | Working |
+|            003 |           001 | There should be a text entry for user information. | There is a textbox for entry of user information. | 8 | Necessary | Working |
+|            004 |           001 | There should be an agreement check box. | There is an agreement check box that can be checked. | 8 | Necessary | Working |
+|            005 |           001 | There should be a confirmation button. | There is a confirmation button that checks the information and stores it in the database. | 8 | Necessary | Working |
+|            006 |           002 | There should be a login page. | There exist a login scene where information can be inputted. | 13 | Necessary | Working |
+|            007 |           002 | There should be a text entry for ID/Email and password. | There is a textbox for entry for ID/Email and password. | 13 | Necessary | Working |
+|            008 |           002 | There should be a login button. | There is a login button that checks the information with the database and logs in accordingly. | 13 | Necessary | Working |
+|            009 |           002 | There should be a forgot password button. | There should be a forgot password button. | 13 | Necessary | Working |
+|            010 |           002 | There should be a button that leads to registration page. | There should be a button on the login scene that changes the scene to the registration scene. | 13 | Necessary | Working |
+|            011 |           004 | There should be a button that leads to product creation page. | There is a button that leads to the product creation scene. | 8 | Necessary | Working |
+|            012 |           004 | There should be a text entry for product name. | There is a text entry to identify the product name. | 8 | Necessary | Working |
+|            013 |           004 | There should be a list to pick the type of genre for the product item. | There is a check list to select the type of genre to search for. | 8 | Important | Working |
+|            014 |           004 | There should be a text entry for product description. | There is a text entry for a description of the product. | 8 | Necessary | Working |
+|            015 |           004 | There should be a text entry for product price. | There is a text entry for the price of the product. | 8 | Necessary | Working |
