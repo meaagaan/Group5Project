@@ -32,5 +32,5 @@ Unlike purchasing directly from the seller’s website, the customer can search 
 - Design Documents
   - [System Architecture]() *
   - [Class Diagrams](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/class%20diagram.pdf)
-  - [Sequence Diagrams]() *
+  - [Sequence Diagrams](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/SequenceDiagram.pdf)
 - [Product Demonstration]() *
