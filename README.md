@@ -33,4 +33,5 @@ Unlike purchasing directly from the seller’s website, the customer can search 
   - [System Architecture](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/System%20Context%20Diagram.pdf)
   - [Class Diagrams](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/class%20diagram.pdf)
   - [Sequence Diagrams](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/SequenceDiagram.pdf)
+  - [Entity Relationship Diagram](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/ERD.pdf)
 - [Product Demonstration](https://www.youtube.com/watch?v=u-CK8Z19SDI)
