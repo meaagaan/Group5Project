@@ -31,6 +31,6 @@ Unlike purchasing directly from the seller’s website, the customer can search 
 - [Velocity Chart](https://docs.google.com/spreadsheets/d/1vw81TkkCwkv9nCx62wmESVZQqzlXwXgARyZDBSSaVi0/edit#gid=0)
 - Design Documents
   - [System Architecture]() *
-  - [Class Diagrams]() *
+  - [Class Diagrams](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/class%20diagram.pdf)
   - [Sequence Diagrams]() *
 - [Product Demonstration]() *
