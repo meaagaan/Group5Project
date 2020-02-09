@@ -30,7 +30,7 @@ Unlike purchasing directly from the seller’s website, the customer can search 
 - [Velocity Chart](https://docs.google.com/spreadsheets/d/1vw81TkkCwkv9nCx62wmESVZQqzlXwXgARyZDBSSaVi0/edit#gid=0)
 - Design Documents
   - [System Context](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/System%20Context%20Diagram.pdf)
-  - [System Architecture](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/System%20Context%20Diagram.pdf)
+  - [System Architecture](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/Architectural%20Diagram.pdf)
   - [Class Diagrams](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/class%20diagram.pdf)
   - [Sequence Diagrams](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/SequenceDiagram.pdf)
   - [Entity Relationship Diagram](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/ERD.pdf)
