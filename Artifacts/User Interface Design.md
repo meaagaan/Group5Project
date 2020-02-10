@@ -1,2 +1,2 @@
 ## Login Page
-![Login Page](UI_images/Login-Page.png)
+![Login Page](UI_images/Login%20Page.png)
