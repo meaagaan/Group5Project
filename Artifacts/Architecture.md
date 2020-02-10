@@ -10,6 +10,7 @@ Our general idea for the architecture of our program is using the microservices 
 # Business Rules
 The user must put the correct username and password in order to enter the account. If the user forgets their password, they can change their password but the database should be updated to the new password. In order to purchase an item, users must give card information. Sellers must complete a product creation page in order to sell their product to a customer.
 # User Interface Design
+- [User Interface Design (Screenshots)](User%20Interface%20Design.md)
 - [User Interface Diagram](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/User%20Interface%20Diagram.png)
 # Resource Management
 Mochi’s architecture plan for managing scarce resources like database connections is to maintain a constant connection between the user and the backend database. At the time being, this method of resource management will supply our current expected demand. Memory management will be managed by java’s inbuilt garbage collector.
