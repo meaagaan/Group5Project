@@ -14,3 +14,7 @@
 ![User Library Page](UI_images/Mochi_user_profile.jpg)
 ## Checkout Page
 ![Checkout Page](UI_images/Checkout%20Page.png)
+## Developer Page
+![Developer Page](UI_images/Developer%20Page.png)
+## Product Page
+![Developer Page](UI_images/Product%20Page.png)
