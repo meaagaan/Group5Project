@@ -32,6 +32,7 @@ public class LoginUI {
 		TextField passwordField = new TextField();
 
 		Button loginButton = new Button("Login");
+		loginButton.setId("loginButton");
 
 		HBox loginHBox = new HBox(10);
 		loginHBox.setAlignment(Pos.BOTTOM_RIGHT);
@@ -53,6 +54,7 @@ public class LoginUI {
 		grid.add(loginHBox, 1, 4);
 
 		this.loginScene = new Scene(grid, 300, 275);
+		loginScene.getStylesheets().add("MochiStylesheet.css");
 	}
 
 	public Scene getLoginScene() {
