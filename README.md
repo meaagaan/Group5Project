@@ -38,3 +38,23 @@ Unlike purchasing directly from the seller’s website, the customer can search 
     - [Sequence Diagrams](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/SequenceDiagram.pdf)
     - [Entity Relationship Diagram](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/ERD.pdf)
 - [Product Demonstration](https://www.youtube.com/watch?v=u-CK8Z19SDI)
+
+# Sprint 3
+- [Product Backlog](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/Product_Backlog.md)
+- [Sprint Backlog](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/Sprint2_backlog.md)
+- [Requirements](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/Requirements.md)
+- [Trello Board](https://trello.com/b/lvHEsjy0/task-board)
+- [Burndown Chart](https://docs.google.com/spreadsheets/d/1DDFRD913ABHZ-No10qLwydV-fwlTVkbWj8Qv4LgXDdg/edit#gid=1043892553)
+- [Velocity Chart](https://docs.google.com/spreadsheets/d/1vw81TkkCwkv9nCx62wmESVZQqzlXwXgARyZDBSSaVi0/edit#gid=0)
+- Design Documents
+  - [Architecture](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/Architecture.md)
+  
+    _Diagrams within Architecture.md:_
+    - [System Context](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/System%20Context%20Diagram.pdf)
+    - [System Architecture](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/Architectural%20Diagram.pdf)
+    - [Class Diagrams](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/class%20diagram.pdf)
+    - [Sequence Diagrams](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/SequenceDiagram.pdf)
+    - [Entity Relationship Diagram](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/ERD.pdf)
+- [Source Code]()
+- [Automated Tests]()
+- [Product Demonstration](https://www.youtube.com/watch?v=u-CK8Z19SDI)
