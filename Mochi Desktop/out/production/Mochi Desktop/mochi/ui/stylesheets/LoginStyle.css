@@ -1,0 +1,25 @@
+.Button_BG {
+	-fx-border-radius: 2px;
+	-fx-min-width: 340.0px;
+	-fx-pref-height: 48.0px;
+	-fx-pref-width: 340.0px;
+	-fx-pref-height: 48.0px;
+	-fx-background-color: rgb(255, 255, 255);
+
+}
+
+.Username_Field {
+	-fx-background-color: black;
+	-fx-text-fill: white;
+}
+
+.Password_Field {
+	-fx-background-color: black;
+	-fx-text-fill: white;
+}
+
+.Need_Help {
+	-fx-text-fill: white;
+	-fx-font-weight: bold;
+
+}
