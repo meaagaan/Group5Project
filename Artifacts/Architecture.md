@@ -1,8 +1,10 @@
 # Program Organization
 
 Our general idea for the architecture of our program is using the microservices structure utilizing synchronous service calls between the app, database, and email system.
-- [System Context Diagram](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/System%20Context%20Diagram.pdf)
-- [Architecture Diagram](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/Architectural%20Diagram.pdf)
+## System Context Diagram
+![System Context Diagram](SCD.png)
+## Architecture Diagram
+![Architecture Diagram](AD.png)
 
 # Major Classes
 ## Class Diagram
@@ -10,12 +12,12 @@ Our general idea for the architecture of our program is using the microservices 
 
 # Data Design
 ## Entity Relationship Diagram
-![](ERD.png)
+![Entity Relationship Diagram](ERD.png)
 # Business Rules
 The user must put the correct username and password in order to enter the account. If the user forgets their password, they can change their password but the database should be updated to the new password. In order to purchase an item, users must give card information. Sellers must complete a product creation page in order to sell their product to a customer.
 # User Interface Design
 ## Login UI
-![](UI_images/login.png)
+![Login UI](UI_images/login.png)
 - [User Interface Design (Screenshots)](User%20Interface%20Design.md)
 - [User Interface Diagram](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/User%20Interface%20Diagram.png)
 # Resource Management
