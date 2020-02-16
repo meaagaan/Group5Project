@@ -21,6 +21,7 @@ public class Main extends Application {
 
 		primaryStage.setTitle("Mochi Desktop");
 		primaryStage.setScene(loginScene);
+		primaryStage.setResizable(false);
 
 		primaryStage.show();
 	}

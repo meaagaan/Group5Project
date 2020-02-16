@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -17,7 +18,9 @@
             <Image url="@../images/Background.png" />
          </image>
       </ImageView>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" height="354.0" layoutX="442.0" layoutY="223.0" stroke="BLACK" strokeType="INSIDE" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 50, 0, 0, 5);" width="417.0" />
+      <Rectangle fx:id="backgroundBox" arcHeight="5.0" arcWidth="5.0" height="354.0" layoutX="442.0" layoutY="223.0" stroke="BLACK" strokeType="INSIDE" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 50, 0, 0, 5);" width="417.0" />
+      <Label layoutX="392.0" layoutY="103.0" prefHeight="17.0" prefWidth="100.0" styleClass="Login_Label" stylesheets="@../stylesheets/LoginStyle.css" text="Login" />
+      <Label fx:id="signUpLabel" layoutX="794.0" layoutY="105.0" onMouseClicked="#signUpLabelClick" prefHeight="17.0" prefWidth="131.0" styleClass="Signup_Label" stylesheets="@../stylesheets/LoginStyle.css" text="Sign up" />
       <TextField fx:id="usernameField" layoutX="512.0" layoutY="346.0" prefHeight="25.0" prefWidth="290.0" promptText="Username" styleClass="Username_Field" stylesheets="@../stylesheets/LoginStyle.css">
          <font>
             <Font size="14.0" />
@@ -27,7 +30,7 @@
             <Image url="@../images/icon-Username.png" />
          </image>
       </ImageView>
-      <TextField layoutX="512.0" layoutY="400.0" prefHeight="25.0" prefWidth="290.0" promptText="Password" styleClass="Password_Field" stylesheets="@../stylesheets/LoginStyle.css">
+      <TextField fx:id="passwordField" layoutX="512.0" layoutY="400.0" prefHeight="25.0" prefWidth="290.0" promptText="Password" styleClass="Password_Field" stylesheets="@../stylesheets/LoginStyle.css">
          <font>
             <Font size="14.0" />
          </font></TextField>
@@ -38,7 +41,7 @@
       </ImageView>
       <Line endX="217.0" fill="WHITE" layoutX="603.0" layoutY="389.0" startX="-122.0" stroke="WHITE" strokeLineCap="BUTT" />
       <Line endX="217.0" layoutX="603.0" layoutY="440.0" startX="-122.0" stroke="WHITE" strokeLineCap="BUTT" />
-      <Button fx:id="loginButton" layoutX="481.0" layoutY="503.0" mnemonicParsing="false" styleClass="Button_BG" stylesheets="@../stylesheets/LoginStyle.css" text="Login">
+      <Button fx:id="loginButton" layoutX="481.0" layoutY="503.0" mnemonicParsing="false" onAction="#loginButtonClick" styleClass="Button_BG" stylesheets="@../stylesheets/LoginStyle.css" text="Login">
          <font>
             <Font size="14.0" />
          </font>
@@ -48,6 +51,8 @@
             <Font size="48.0" />
          </font>
       </Text>
+      <Line endX="35.0" layoutX="450.0" layoutY="158.0" startX="-51.0" />
+      <Label fx:id="warningLabel" layoutX="465.0" layoutY="466.0" prefHeight="17.0" prefWidth="372.0" styleClass="Warning_Label_Normal" stylesheets="@../stylesheets/LoginStyle.css" />
       <ImageView layoutX="1107.0" layoutY="730.0">
          <image>
             <Image url="@../images/icon-Help.png" />
@@ -58,16 +63,5 @@
             <Font size="14.0" />
          </font>
       </Text>
-      <Text layoutX="392.0" layoutY="144.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Login" textAlignment="CENTER" wrappingWidth="99.7109375">
-         <font>
-            <Font size="36.0" />
-         </font>
-      </Text>
-      <Text fx:id="signUpText" layoutX="794.0" layoutY="144.0" opacity="0.1" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Sign up" textAlignment="CENTER" wrappingWidth="130.7109375" onMouseClicked="#signUpTextClick">
-         <font>
-            <Font size="36.0" />
-         </font>
-      </Text>
-      <Line endX="35.0" layoutX="450.0" layoutY="158.0" startX="-51.0" />
    </children>
 </Pane>

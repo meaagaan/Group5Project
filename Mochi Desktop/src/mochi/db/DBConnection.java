@@ -4,17 +4,17 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class DBConnection {
-	private Connection database;
+	private static Connection database;
 
 	public DBConnection() {
 		try {
-			this.database = DriverManager.getConnection("jdbc:mysql://[IP]/mochi-desktop", "[USER]", "[PASSWORD]");
+			this.database = DriverManager.getConnection("jdbc:mysql://34.73.12.61/mochi-desktop", "root", "NvaleHh1ovGKq1p1");
 		}catch (Exception ex) {
 			System.out.println(ex);
 		}
 	}
 
-	public Connection getDatabase() {
-		return this.database;
+	public static Connection getDatabase() {
+		return database;
 	}
 }
