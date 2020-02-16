@@ -10,6 +10,8 @@ Our general idea for the architecture of our program is using the microservices 
 # Business Rules
 The user must put the correct username and password in order to enter the account. If the user forgets their password, they can change their password but the database should be updated to the new password. In order to purchase an item, users must give card information. Sellers must complete a product creation page in order to sell their product to a customer.
 # User Interface Design
+## Login UI
+![Login UI](Artifacts/UI_images/login.png)
 - [User Interface Design (Screenshots)](User%20Interface%20Design.md)
 - [User Interface Diagram](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/User%20Interface%20Diagram.png)
 # Resource Management
