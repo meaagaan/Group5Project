@@ -30,7 +30,6 @@ Unlike purchasing directly from the seller’s website, the customer can search 
 - [Velocity Chart](https://docs.google.com/spreadsheets/d/1vw81TkkCwkv9nCx62wmESVZQqzlXwXgARyZDBSSaVi0/edit#gid=0)
 - Design Documents
     - [Architecture](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/Architecture.md)
-
     _Diagrams within Architecture.md:_
     - [System Context](Artifacts/SCD.png)
     - [System Architecture](Artifacts/AD.png)
@@ -48,7 +47,6 @@ Unlike purchasing directly from the seller’s website, the customer can search 
 - [Velocity Chart](https://docs.google.com/spreadsheets/d/1vw81TkkCwkv9nCx62wmESVZQqzlXwXgARyZDBSSaVi0/edit#gid=0)
 - Design Documents
     - [Architecture](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/Architecture.md)
-
     _Diagrams within Architecture.md:_
     - [System Context](Artifacts/SCD.png)
     - [System Architecture](Artifacts/AD.png)
