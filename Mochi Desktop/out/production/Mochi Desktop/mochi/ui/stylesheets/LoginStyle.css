@@ -5,7 +5,29 @@
 	-fx-pref-width: 340.0px;
 	-fx-pref-height: 48.0px;
 	-fx-background-color: rgb(255, 255, 255);
+}
 
+.Login_Label {
+	-fx-font-size: 36px;
+	-fx-font-weight: bold;
+	-fx-text-fill: black;
+	-fx-alignment: center;
+}
+
+.Login_Label:hover {
+	-fx-effect: dropshadow(one-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 0);
+}
+
+.Signup_Label {
+	-fx-font-size: 36px;
+	-fx-opacity: 0.1;
+	-fx-font-weight: bold;
+	-fx-text-fill: black;
+	-fx-alignment: center;
+}
+
+.Signup_Label:hover {
+	-fx-effect: dropshadow(one-pass-box, rgba(0,0,0,100), 10, 0, 0, 0);
 }
 
 .Username_Field {
@@ -19,7 +41,23 @@
 }
 
 .Need_Help {
-	-fx-text-fill: white;
 	-fx-font-weight: bold;
+	-fx-text-fill: white;
+}
 
+.Warning_Label_Normal {
+	-fx-alignment: center;
+	-fx-opacity: 0;
+}
+
+.Warning_Label_Error {
+	-fx-opacity: 1;
+	-fx-text-fill: red;
+	-fx-alignment: center;
+}
+
+.Warning_Label_Success {
+	-fx-opacity: 1;
+	-fx-text-fill: green;
+	-fx-alignment: center;
 }
