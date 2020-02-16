@@ -1,5 +1,4 @@
 # Program Organization
-
 Our general idea for the architecture of our program is using the microservices structure utilizing synchronous service calls between the app, database, and email system.
 ## System Context Diagram
 ![System Context Diagram](SCD.png)
@@ -13,6 +12,7 @@ Our general idea for the architecture of our program is using the microservices 
 # Data Design
 ## Entity Relationship Diagram
 ![Entity Relationship Diagram](ERD.png)
+
 # Business Rules
 The user must put the correct username and password in order to enter the account. If the user forgets their password, they can change their password but the database should be updated to the new password. In order to purchase an item, users must give card information. Sellers must complete a product creation page in order to sell their product to a customer.
 # User Interface Design
