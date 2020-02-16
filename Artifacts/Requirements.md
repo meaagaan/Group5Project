@@ -20,4 +20,4 @@
 |            015 |           004 | There should be a text entry for product name, product description, and product price. | There is a text entry to identify the product name, product description, and product price. | 8 | Necessary | Working |
 |            016 |           004 | There should be a list to pick the type of genre for the product item. | There is a check list to select the type of genre to search for. | 8 | Important | Working |
 |            017 |           004 | When the file upload button is clicked, the user can upload files from their computer. | The system can upload files and store them. | 8 | Important | Working |
-|            018 |           004 | When the confirmation button is clicked, the system checks that all fields are valid and filled out. | The system can store all the given information into the database. | 8 | Important | Working |
+|            018 |           004 | When the confirmation button is clicked, the system checks that all fields are valid and filled out. | The system can store all the given information into the database or provide error messages where there are invalid information. | 8 | Important | Working |
