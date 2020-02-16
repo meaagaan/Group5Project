@@ -1,5 +1,5 @@
 ## Login Page
-![Login Page](UI_images/Login%20Page.png)
+![Login Page](UI_images/login.png)
 ## Registration Page
 ![Registration Page](UI_images/Registration%20Page.png)
 ## Forget Password Page
