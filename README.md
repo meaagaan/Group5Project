@@ -29,14 +29,7 @@ Unlike purchasing directly from the seller’s website, the customer can search 
 - [Burndown Chart](https://docs.google.com/spreadsheets/d/1DDFRD913ABHZ-No10qLwydV-fwlTVkbWj8Qv4LgXDdg/edit#gid=1043892553)
 - [Velocity Chart](https://docs.google.com/spreadsheets/d/1vw81TkkCwkv9nCx62wmESVZQqzlXwXgARyZDBSSaVi0/edit#gid=0)
 - Design Documents
-  - [Architecture](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/Architecture.md)
-  
-    _Diagrams within Architecture.md:_
-    - [System Context](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/System%20Context%20Diagram.pdf)
-    - [System Architecture](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/Architectural%20Diagram.pdf)
-    - [Class Diagrams](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/class%20diagram.pdf)
-    - [Sequence Diagrams](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/SequenceDiagram.pdf)
-    - [Entity Relationship Diagram](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/ERD.pdf)
+- [Architecture](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/Architecture.md)
 - [Product Demonstration](https://www.youtube.com/watch?v=u-CK8Z19SDI)
 
 # Sprint 3
