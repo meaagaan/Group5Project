@@ -55,6 +55,6 @@ Unlike purchasing directly from the seller’s website, the customer can search 
     - [Class Diagrams](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/class%20diagram.pdf)
     - [Sequence Diagrams](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/SequenceDiagram.pdf)
     - [Entity Relationship Diagram](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/ERD.pdf)
-- [Source Code](Mochi%20Desktop/src)
+- [Source Code](Mochi%20Desktop/src/mochi)
 - [Automated Tests]()
 - [Product Demonstration](https://www.youtube.com/watch?v=u-CK8Z19SDI)
