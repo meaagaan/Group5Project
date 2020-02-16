@@ -30,14 +30,12 @@ Unlike purchasing directly from the seller’s website, the customer can search 
 - [Velocity Chart](https://docs.google.com/spreadsheets/d/1vw81TkkCwkv9nCx62wmESVZQqzlXwXgARyZDBSSaVi0/edit#gid=0)
 - Design Documents
 - [Architecture](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/Architecture.md)
-
     _Diagrams within Architecture.md:_
     - [System Context](Artifacts/SCD.png)
     - [System Architecture](Artifacts/AD.png)
     - [Class Diagrams](Artifacts/class_diagram.png)
     - [Sequence Diagrams](Artifacts/SD.png)
     - [Entity Relationship Diagram](Artifacts/ERD.png)
-    
 - [Product Demonstration](https://www.youtube.com/watch?v=u-CK8Z19SDI)
 
 # Sprint 3
@@ -49,14 +47,12 @@ Unlike purchasing directly from the seller’s website, the customer can search 
 - [Velocity Chart](https://docs.google.com/spreadsheets/d/1vw81TkkCwkv9nCx62wmESVZQqzlXwXgARyZDBSSaVi0/edit#gid=0)
 - Design Documents
 - [Architecture](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/Architecture.md)
-  
     _Diagrams within Architecture.md:_
     - [System Context](Artifacts/SCD.png)
     - [System Architecture](Artifacts/AD.png)
     - [Class Diagrams](Artifacts/class_diagram.png)
     - [Sequence Diagrams](Artifacts/SD.png)
     - [Entity Relationship Diagram](Artifacts/ERD.png)
-   
 - [Source Code](Mochi%20Desktop/src/mochi)
 - [Automated Tests]()
 - [Product Demonstration](https://www.youtube.com/watch?v=u-CK8Z19SDI)
