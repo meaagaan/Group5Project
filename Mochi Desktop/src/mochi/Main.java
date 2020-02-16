@@ -14,9 +14,8 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		DBConnection connection = new DBConnection();
-		Connection database = connection.getDatabase();
 
-		LoginUI loginUI = new LoginUI(primaryStage, database);
+		LoginUI loginUI = new LoginUI();
 		Scene loginScene = loginUI.getLoginScene();
 
 		primaryStage.setTitle("Mochi Desktop");
