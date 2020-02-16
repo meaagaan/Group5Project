@@ -52,5 +52,5 @@ Unlike purchasing directly from the seller’s website, the customer can search 
     - [Sequence Diagrams](Artifacts/SD.png)
     - [Entity Relationship Diagram](Artifacts/ERD.png)
 - [Source Code](Mochi%20Desktop/src/mochi)
-- [Automated Tests]()
+- [Automated Tests](Mochi%20Desktop/src/mochi/tests)
 - [Product Demonstration](https://www.youtube.com/watch?v=u-CK8Z19SDI)
