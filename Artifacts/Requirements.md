@@ -12,7 +12,7 @@
 |            007 |           002 | There should be a text entry for ID/Email and password. | There is a textbox for entry for ID/Email and password. | 13 | Necessary | Done |
 |            008 |           002 | There should be a login button. | There is a login button that checks the information with the database and logs in accordingly. | 13 | Necessary | Done |
 |            009 |           002 | There should be a forgot password button. | There should be a forgot password button. | 13 | Necessary | Working |
-|            010 |           002 | There should be a button that leads to registration page. | There should be a button on the login scene that changes the scene to the registration scene. | 13 | Necessary | Working |
+|            010 |           002 | There should be a button that leads to registration page. | There should be a button on the login scene that changes the scene to the registration scene. | 13 | Necessary | Done |
 |            011 |           004 | There should be a button that leads to product creation page. | There is a button that leads to the product creation scene. | 8 | Necessary | Working |
 |            012 |           004 | There should be a text entry for product name. | There is a text entry to identify the product name. | 8 | Necessary | Working |
 |            013 |           004 | There should be a list to pick the type of genre for the product item. | There is a check list to select the type of genre to search for. | 8 | Important | Working |
