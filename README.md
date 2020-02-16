@@ -35,7 +35,7 @@ Unlike purchasing directly from the seller’s website, the customer can search 
     - [System Context](Artifacts/SCD.png)
     - [System Architecture](Artifacts/AD.png)
     - [Class Diagrams](Artifacts/class_diagram.png)
-    - [Sequence Diagrams]((Artifacts/SD.png)
+    - [Sequence Diagrams](Artifacts/SD.png)
     - [Entity Relationship Diagram](Artifacts/ERD.png)
     
 - [Product Demonstration](https://www.youtube.com/watch?v=u-CK8Z19SDI)
@@ -54,7 +54,7 @@ Unlike purchasing directly from the seller’s website, the customer can search 
     - [System Context](Artifacts/SCD.png)
     - [System Architecture](Artifacts/AD.png)
     - [Class Diagrams](Artifacts/class_diagram.png)
-    - [Sequence Diagrams]((Artifacts/SD.png)
+    - [Sequence Diagrams](Artifacts/SD.png)
     - [Entity Relationship Diagram](Artifacts/ERD.png)
    
 - [Source Code](Mochi%20Desktop/src/mochi)
