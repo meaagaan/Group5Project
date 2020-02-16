@@ -1,10 +1,9 @@
 package mochi;
 
-import static org.testfx.api.FxAssert.verifyThat;
-
 import mochi.db.DBConnection;
 import org.testfx.framework.junit.ApplicationTest;
 import static org.testfx.matcher.control.LabeledMatchers.hasText;
+import static org.testfx.api.FxAssert.verifyThat;
 
 import mochi.ui.LoginUI;
 import javafx.scene.Scene;
