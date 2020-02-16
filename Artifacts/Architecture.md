@@ -3,8 +3,11 @@
 Our general idea for the architecture of our program is using the microservices structure utilizing synchronous service calls between the app, database, and email system.
 - [System Context Diagram](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/System%20Context%20Diagram.pdf)
 - [Architecture Diagram](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/Architectural%20Diagram.pdf)
+
 # Major Classes
-- [Class Diagram](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/class%20diagram.pdf)
+## Class Diagram
+![Class Diagram](class_diagram.png)
+
 # Data Design
 ## Entity Relationship Diagram
 ![](ERD.png)
