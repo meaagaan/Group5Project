@@ -19,7 +19,7 @@
          </image>
       </ImageView>
       <Rectangle fx:id="backgroundBox" arcHeight="5.0" arcWidth="5.0" height="354.0" layoutX="442.0" layoutY="223.0" stroke="BLACK" strokeType="INSIDE" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 50, 0, 0, 5);" width="417.0" />
-      <Label layoutX="392.0" layoutY="103.0" prefHeight="17.0" prefWidth="100.0" styleClass="Login_Label" stylesheets="@../stylesheets/LoginStyle.css" text="Login" />
+      <Label fx:id="loginLabel" layoutX="392.0" layoutY="103.0" prefHeight="17.0" prefWidth="100.0" styleClass="Login_Label" stylesheets="@../stylesheets/LoginStyle.css" text="Login" />
       <Label fx:id="signUpLabel" layoutX="794.0" layoutY="105.0" onMouseClicked="#signUpLabelClick" prefHeight="17.0" prefWidth="131.0" styleClass="Signup_Label" stylesheets="@../stylesheets/LoginStyle.css" text="Sign up" />
       <TextField fx:id="usernameField" layoutX="512.0" layoutY="346.0" prefHeight="25.0" prefWidth="290.0" promptText="Username" styleClass="Username_Field" stylesheets="@../stylesheets/LoginStyle.css">
          <font>
