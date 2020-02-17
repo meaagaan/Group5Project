@@ -29,10 +29,22 @@
 | Fill out the last name, email, and password with appropriate information. | All the text fields are filled out except first name. |
 | Click on the Confirm Button | Message saying first name is missing. |
 
+# Test when last name field is missing.
+| Actions Taken | Expected Results |
+|---------------|------------------|
+| Fill out the first name, email, and password with appropriate information. | All the text fields are filled out except last name. |
+| Click on the Confirm Button | Message saying last name is missing. |
 
+# Test when email field is missing.
+| Actions Taken | Expected Results |
+|---------------|------------------|
+| Fill out the first name, last name, and password with appropriate information. | All the text fields are filled out except email. |
+| Click on the Confirm Button | Message saying email is missing. |
 
-
-
-
+# Test when password field is missing.
+| Actions Taken | Expected Results |
+|---------------|------------------|
+| Fill out the first name, last name, and email with appropriate information. | All the text fields are filled out except password. |
+| Click on the Confirm Button | Message saying password is missing. |
 
 
