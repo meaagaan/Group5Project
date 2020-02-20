@@ -2,7 +2,8 @@
 
 | Name | Responsibility |
 |----|------------|
-| Anthony | |
+| Anthony |new profile email authentication
+send email with link to user's email and clicking the link will mark account as "active" and give user full access to mochi |
 | Alisa |  |
 | Meaghan |  |
 | Phong |  |
