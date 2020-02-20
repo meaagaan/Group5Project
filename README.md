@@ -54,3 +54,21 @@ Unlike purchasing directly from the seller’s website, the customer can search 
 - [Source Code](Mochi%20Desktop/src/mochi)
 - [Automated Tests](Mochi%20Desktop/src/mochi/tests)
 - [Product Demonstration](https://youtu.be/aB5KdaeKaqI)
+
+# Sprint 4
+
+- [Responsibility] ()
+- [Requirements](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/Requirements.md)
+- [Trello Board](https://trello.com/b/lvHEsjy0/task-board)
+- [Burndown Chart](https://docs.google.com/spreadsheets/d/1DDFRD913ABHZ-No10qLwydV-fwlTVkbWj8Qv4LgXDdg/edit#gid=175125862)
+- [Velocity Chart](https://docs.google.com/spreadsheets/d/1vw81TkkCwkv9nCx62wmESVZQqzlXwXgARyZDBSSaVi0/edit#gid=0)
+- Design Documents
+    - [Architecture](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/Architecture.md)
+    - [System Context](Artifacts/SCD.png)
+    - [System Architecture](Artifacts/AD.png)
+    - [Class Diagrams](Artifacts/class_diagram.png)
+    - [Sequence Diagrams](Artifacts/SD.png)
+    - [Entity Relationship Diagram](Artifacts/ERD.png)
+- [Source Code](Mochi%20Desktop/src/mochi)
+- [Automated Tests](Mochi%20Desktop/src/mochi/tests)
+- [Product Demonstration]()
