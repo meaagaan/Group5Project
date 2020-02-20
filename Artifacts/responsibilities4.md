@@ -4,5 +4,5 @@
 |----|------------|
 | Anthony |  |
 | Alisa |  |
-| Meaghan | New profile email authentication <br> Send email with link to user's email and clicking the link will mark account as "active" and give user full access to mochi |
+| Meaghan | <ul><li>New profile email authentication</li><li>Send email with link to user's email and clicking the link will mark account as "active" and give user full access to mochi</li></ul> |
 | Phong |  |
