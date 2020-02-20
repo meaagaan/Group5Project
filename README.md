@@ -57,7 +57,7 @@ Unlike purchasing directly from the seller’s website, the customer can search 
 
 # Sprint 4
 
-- [Responsibilities](Artifacts/responsibilities.md)
+- [Responsibilities](Artifacts/responsibilities4.md)
 - [Requirements](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/Requirements.md)
 - [Trello Board](https://trello.com/b/lvHEsjy0/task-board)
 - [Burndown Chart](https://docs.google.com/spreadsheets/d/1DDFRD913ABHZ-No10qLwydV-fwlTVkbWj8Qv4LgXDdg/edit#gid=175125862)
