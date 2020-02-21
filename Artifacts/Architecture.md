@@ -2,6 +2,7 @@
 Our general idea for the architecture of our program is using the microservices structure utilizing synchronous service calls between the app, database, and email system.
 ## System Context Diagram
 ![System Context Diagram](SCD.png)
+The user only has permission to access the Mochi Desktop App. Starting with launching the app with a click of a button, user story 3 is addressed. Afterwards, depending on what they do within the app determines what other systems are communicated. For example, Registration, user story 1, will need to have a valid e-mail address and sending a confirmation email to the user. While user story 2, login, will need to access the Mochi Database to see if the inputted information is correct.
 ## Architecture Diagram
 ![Architecture Diagram](AD.png)
 
