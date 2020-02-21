@@ -18,6 +18,7 @@ The user in the class diagram should hold information that is specific to the us
 # Data Design
 ## Entity Relationship Diagram
 ![Entity Relationship Diagram](ERD.png)
+The customer should be able to access the wishlist to put things into their wishlist, comments to see how other comsumers view the product, and product to be able to buy the product. The comments should be linked the product so that each comment is associated with only one product. The product should be able to be checked out so that the customer has the ability to buy the product.
 
 # Business Rules
 The user must put the correct username and password in order to enter the account. If the user forgets their password, they can change their password but the database should be updated to the new password. In order to purchase an item, users must give card information. Sellers must complete a product creation page in order to sell their product to a customer.
