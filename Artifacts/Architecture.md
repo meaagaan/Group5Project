@@ -3,14 +3,17 @@ Our general idea for the architecture of our program is using the microservices 
 ## System Context Diagram
 ![System Context Diagram](SCD.png)
 The user only has permission to access the Mochi Desktop App. Starting with launching the app with a click of a button, user story 3 is addressed. Afterwards, depending on what they do within the app determines what other systems are communicated. For example, Registration, user story 1, will need to have a valid e-mail address and sending a confirmation email to the user. While user story 2, login, will need to access the Mochi Database to see if the inputted information is correct.
+
 ## Architecture Diagram
 ![Architecture Diagram](AD.png)
 The user can broken up into two categories, Buyer and Seller. Both will need to access the registration and login page. The registration needs both access to the e-mail system to send out confirmation emails, while checking the database to make sure the email is not in the system already. The login page needs database access to check if the information provided is linked to an existing account. To access both the database and e-mail system, we need to make API calls to JSON/HTTPS to then write to the database via JDBC or to the email system through SMTP.
 The important thing for the Buyer is the ability to look through all available products in the database and the ability to buy. A few possible ways to sort available products is based on genre, user story 5, and price and rating, user story 12.
 The important thing for the Seller is to put their product into the database to be sold, user story 6. Another critical page for the Seller is the ability to see statistics on the product, user story 6, 7, 13, 14 and 15.
+
 # Major Classes
 ## Class Diagram
 ![Class Diagram](class_diagram.png)
+The user in the class diagram should hold information that is specific to the user such as name, email and password. Within the user class should be the ability to update this information when the account is created in the registration page, plays with user story 1 and 2. Users can be separated into two distinct users, customers and sellers. The wishlist should be a list of productID with the ability to add and remove products the list as needed, this addresses user story 9 and 10. The product class should contain information specific to a product such as genre, productID, description, and price. This addresses user story 4, 5, 6, 7, 12, 15 and 16. The comment class should be available to the users with a rating and description, while being linked to a product. This addresses user story 11 and 14.
 
 # Data Design
 ## Entity Relationship Diagram
