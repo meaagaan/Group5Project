@@ -13,7 +13,6 @@ public class LoginUI {
 
 	public LoginUI() throws IOException {
 		Parent root = FXMLLoader.load(getClass().getResource("fxmls/LoginUI.fxml"));
-
 		this.loginScene = new Scene(root);
 	}
 

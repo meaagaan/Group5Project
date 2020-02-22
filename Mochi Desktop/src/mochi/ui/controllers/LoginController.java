@@ -1,18 +1,17 @@
 package mochi.ui.controllers;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import mochi.db.DBConnection;
 import mochi.ui.ForgotUI;
 import mochi.ui.RegistrationUI;
 
-import java.awt.event.ActionEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -41,19 +40,25 @@ public class LoginController implements Initializable {
         Stage primaryStage = (Stage) pane.getScene().getWindow();
         RegistrationUI registrationUI = new RegistrationUI();
 
-        primaryStage.setScene(registrationUI.getScene());
-        return true;
+        if (registrationUI != null) {
+            primaryStage.setScene(registrationUI.getScene());
+            return true;
+        }
+        return false;
     }
 
     public boolean needHelpLabelClick() throws IOException {
         Stage primaryStage = (Stage) pane.getScene().getWindow();
         ForgotUI forgotUI = new ForgotUI();
 
-        primaryStage.setScene(forgotUI.getForgotScene());
-        return true;
+        if (forgotUI != null) {
+            primaryStage.setScene(forgotUI.getForgotScene());
+            return true;
+        }
+        return false;
     }
 
-    public void loginButtonClick() {
+    public boolean loginButtonClick() {
         ResultSet resultSet = null;
         Statement statement = null;
 
@@ -69,14 +74,18 @@ public class LoginController implements Initializable {
                         resultSet.getString(2).equals(password)) {
                     warningLabel.getStyleClass().add("Warning_Label_Success");
                     warningLabel.setText("Welcome.");
+                    return true;
                 }
                 else {
                     warningLabel.getStyleClass().add("Warning_Label_Error");
                     warningLabel.setText("You've enter a wrong username or password.");
+                    return false;
                 }
             }
         } catch (SQLException e) {
             e.printStackTrace();
+            return false;
         }
+        return false;
     }
 }

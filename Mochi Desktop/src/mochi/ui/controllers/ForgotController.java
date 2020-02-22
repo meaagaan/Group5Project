@@ -68,13 +68,14 @@ public class ForgotController {
                     warningLabel.getStyleClass().add("Warning_Label_Success");
                     warningLabel.setText("Please check your email.");
 
-                    // Send email
+                    // Send email here
+                    return true;
                 }
                 else {
                     warningLabel.getStyleClass().add("Warning_Label_Error");
                     warningLabel.setText("This email does not associated with any account.");
+                    return false;
                 }
-                return true;
             }
         } catch (SQLException e) {
             e.printStackTrace();
