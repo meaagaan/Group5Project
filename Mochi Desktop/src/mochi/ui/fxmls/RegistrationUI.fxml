@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="800.0" fitWidth="1300.0" layoutX="-8.0" layoutY="15.0">
+         <image>
+            <Image url="@../images/Background.png" />
+         </image>
+      </ImageView>
+      <Rectangle fx:id="backgroundBox" arcHeight="5.0" arcWidth="5.0" height="400.0" layoutX="442.0" layoutY="223.0" stroke="BLACK" strokeType="INSIDE" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 50, 0, 0, 5);" width="417.0" />
+      <Label fx:id="loginLabel" layoutX="392.0" layoutY="103.0" prefHeight="17.0" prefWidth="100.0" styleClass="Login_Label" stylesheets="@../stylesheets/RegistrationStyle.css" text="Login" />
+      <Label fx:id="signUpLabel" layoutX="794.0" layoutY="105.0" prefHeight="53.0" prefWidth="191.0" styleClass="Signup_Label" stylesheets="@../stylesheets/RegistrationStyle.css" text="Sign Up" />
+      <TextField fx:id="firstNameField" layoutX="512.0" layoutY="346.0" prefHeight="25.0" prefWidth="290.0" promptText="First Name" styleClass="FirstName_Field" stylesheets="@../stylesheets/RegistrationStyle.css">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <ImageView layoutX="485.0" layoutY="459.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/icon-Username.png" />
+         </image>
+      </ImageView>
+      <PasswordField fx:id="passwordField" layoutX="512.0" layoutY="508.0" prefHeight="25.0" prefWidth="290.0" promptText="Password" styleClass="Password_Field" stylesheets="@../stylesheets/RegistrationStyle.css">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </PasswordField>
+      <ImageView layoutX="486.0" layoutY="518.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/icon-Password.png" />
+         </image>
+      </ImageView>
+      <Line endX="217.0" layoutX="602.0" layoutY="387.0" startX="-122.0" stroke="WHITE" />
+      <Line endX="217.0" layoutX="602.0" layoutY="442.0" startX="-122.0" stroke="WHITE" />
+      <Button fx:id="confirmButton" layoutX="481.0" layoutY="568.0" mnemonicParsing="false" styleClass="Button_BG" stylesheets="@../stylesheets/RegistrationStyle.css" text="Confirm">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Text fill="WHITE" layoutX="562.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Sign Up">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Text>
+      <Line endX="173.0" layoutX="800.0" layoutY="158.0" startX="14.0" />
+      <TextField fx:id="emailField" layoutX="512.0" layoutY="454.0" prefHeight="25.0" prefWidth="290.0" promptText="Username/Email" styleClass="Username_Field" stylesheets="@../stylesheets/RegistrationStyle.css">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="lastNameField" layoutX="512.0" layoutY="400.0" prefHeight="25.0" prefWidth="290.0" promptText="Last Name" styleClass="LastName_Field" stylesheets="@../stylesheets/RegistrationStyle.css">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Line endX="217.0" layoutX="602.0" layoutY="494.0" startX="-122.0" stroke="WHITE" />
+      <Line endX="217.0" layoutX="603.0" layoutY="548.0" startX="-122.0" stroke="WHITE" />
+   </children>
+</Pane>
