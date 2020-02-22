@@ -1,18 +1,14 @@
 package mochi.ui.controllers;
 
-import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import mochi.db.DBConnection;
-import mochi.ui.ForgotUI;
+import mochi.ui.LoginUI;
 import mochi.ui.RegistrationUI;
 
-import java.awt.event.ActionEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -21,18 +17,16 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ResourceBundle;
 
-public class LoginController implements Initializable {
+public class ForgotController {
     public Pane pane;
+    public Label loginLabel;
     public Label signUpLabel;
     public Label warningLabel;
-    public Label needHelpLabel;
-    public Button loginButton;
-    public TextField usernameField;
-    public PasswordField passwordField;
+    public TextField emailField;
+    public Button sendButton;
 
     private Connection database;
 
-    @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         this.database = DBConnection.getDatabase();
     }
@@ -41,42 +35,51 @@ public class LoginController implements Initializable {
         Stage primaryStage = (Stage) pane.getScene().getWindow();
         RegistrationUI registrationUI = new RegistrationUI();
 
-        primaryStage.setScene(registrationUI.getScene());
-        return true;
+        if (registrationUI != null) {
+            primaryStage.setScene(registrationUI.getScene());
+            return true;
+        }
+        return false;
     }
 
-    public boolean needHelpLabelClick() throws IOException {
+    public boolean loginLabelClick() throws IOException {
         Stage primaryStage = (Stage) pane.getScene().getWindow();
-        ForgotUI forgotUI = new ForgotUI();
+        LoginUI loginUI = new LoginUI();
 
-        primaryStage.setScene(forgotUI.getForgotScene());
-        return true;
+        if (loginUI != null) {
+            primaryStage.setScene(loginUI.getLoginScene());
+            return true;
+        }
+        return false;
     }
 
-    public void loginButtonClick() {
+    public boolean sendButtonClick() {
         ResultSet resultSet = null;
         Statement statement = null;
 
-        String username = usernameField.getText();
-        String password = passwordField.getText();
+        String email = emailField.getText();
 
         try {
             statement = (Statement) database.createStatement();
             resultSet = statement.executeQuery("SELECT * FROM `mochi-desktop`.user");
 
             while(resultSet.next()) {
-                if (resultSet.getString(1).equals(username) &&
-                        resultSet.getString(2).equals(password)) {
+                if (resultSet.getString(3).equals(email)) {
                     warningLabel.getStyleClass().add("Warning_Label_Success");
-                    warningLabel.setText("Welcome.");
+                    warningLabel.setText("Please check your email.");
+
+                    // Send email
                 }
                 else {
                     warningLabel.getStyleClass().add("Warning_Label_Error");
-                    warningLabel.setText("You've enter a wrong username or password.");
+                    warningLabel.setText("This email does not associated with any account.");
                 }
+                return true;
             }
         } catch (SQLException e) {
             e.printStackTrace();
+            return false;
         }
+        return false;
     }
 }
