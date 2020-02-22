@@ -14,20 +14,12 @@
 	-fx-alignment: center;
 }
 
-.Login_Label:hover {
-	-fx-effect: dropshadow(one-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 0);
-}
-
 .Signup_Label {
 	-fx-font-size: 36px;
 	-fx-opacity: 0.1;
 	-fx-font-weight: bold;
 	-fx-text-fill: black;
 	-fx-alignment: center;
-}
-
-.Signup_Label:hover {
-	-fx-effect: dropshadow(one-pass-box, rgba(0,0,0,100), 10, 0, 0, 0);
 }
 
 .Username_Field {

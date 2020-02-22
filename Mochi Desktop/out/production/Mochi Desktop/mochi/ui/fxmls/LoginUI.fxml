@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -30,10 +31,11 @@
             <Image url="@../images/icon-Username.png" />
          </image>
       </ImageView>
-      <TextField fx:id="passwordField" layoutX="512.0" layoutY="400.0" prefHeight="25.0" prefWidth="290.0" promptText="Password" styleClass="Password_Field" stylesheets="@../stylesheets/LoginStyle.css">
+      <PasswordField fx:id="passwordField" layoutX="512.0" layoutY="400.0" prefHeight="25.0" prefWidth="290.0" promptText="Password" styleClass="Password_Field" stylesheets="@../stylesheets/LoginStyle.css">
          <font>
             <Font size="14.0" />
-         </font></TextField>
+         </font>
+      </PasswordField>
       <ImageView layoutX="485.0" layoutY="415.0">
          <image>
             <Image url="@../images/icon-Password.png" />
@@ -58,10 +60,10 @@
             <Image url="@../images/icon-Help.png" />
          </image>
       </ImageView>
-      <Text fill="WHITE" layoutX="1138.0" layoutY="745.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Need Help?">
+      <Label fx:id="needHelpLabel" layoutX="1138.0" layoutY="730.0" onMouseClicked="#needHelpLabelClick" text="Need Help?" textFill="WHITE">
          <font>
-            <Font size="14.0" />
+            <Font name="System Bold" size="14.0" />
          </font>
-      </Text>
+      </Label>
    </children>
 </Pane>
