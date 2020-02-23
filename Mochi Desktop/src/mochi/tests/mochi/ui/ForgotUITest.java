@@ -13,8 +13,8 @@ import static org.testfx.util.NodeQueryUtils.hasText;
 public class ForgotUITest extends ApplicationTest {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		ForgotUI loginUI = new ForgotUI();
-		Scene forgotScene = loginUI.getForgotScene();
+		ForgotUI forgotUI = new ForgotUI();
+		Scene forgotScene = forgotUI.getForgotScene();
 
 		primaryStage.setTitle("Mochi Desktop");
 		primaryStage.setScene(forgotScene);
