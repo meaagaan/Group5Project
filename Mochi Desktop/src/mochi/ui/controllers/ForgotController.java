@@ -32,12 +32,12 @@ public class ForgotController implements Initializable {
         this.database = DBConnection.getDatabase();
     }
 
-    public boolean signUpLabelClick() {
+    public boolean signUpLabelClick() throws IOException {
         Stage primaryStage = (Stage) pane.getScene().getWindow();
         RegistrationUI registrationUI = new RegistrationUI();
 
         if (registrationUI != null) {
-            primaryStage.setScene(registrationUI.getScene());
+            primaryStage.setScene(registrationUI.getRegistrationScene());
             return true;
         }
         return false;
