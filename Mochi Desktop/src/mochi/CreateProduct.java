@@ -25,7 +25,10 @@ public class CreateProduct extends Application {
         window = primaryStage;
         window.setTitle("Product Registration");
         Label product_name = new Label("Product name");
+
         TextField pn = new TextField();
+        Label product_price = new Label("Product price");
+        TextField price = new TextField();
         Label product_description = new Label("Description");
         TextField pd = new TextField();
         ChoiceBox<String> genre = new ChoiceBox<>();
@@ -37,6 +40,8 @@ public class CreateProduct extends Application {
         layout.setPadding(new Insets(20, 20, 20, 20));
         layout.getChildren().addAll(product_name);
         layout.getChildren().addAll(pn);
+        layout.getChildren().addAll(product_price);
+        layout.getChildren().addAll(price);
         layout.getChildren().addAll(product_description);
         layout.getChildren().addAll(pd);
         layout.getChildren().addAll(genre);
