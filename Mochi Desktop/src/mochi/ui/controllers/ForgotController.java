@@ -1,5 +1,6 @@
 package mochi.ui.controllers;
 
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -17,7 +18,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ResourceBundle;
 
-public class ForgotController {
+public class ForgotController implements Initializable {
     public Pane pane;
     public Label loginLabel;
     public Label signUpLabel;

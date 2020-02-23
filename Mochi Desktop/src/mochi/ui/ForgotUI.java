@@ -4,20 +4,28 @@ package mochi.ui;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import mochi.ui.controllers.ForgotController;
 
 import java.io.IOException;
 
 
 public class ForgotUI {
-    Scene forgotScene;
+    private Scene forgotScene;
+    private ForgotController forgotController;
 
     public ForgotUI() throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("fxmls/ForgotUI.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("fxmls/ForgotUI.fxml"));
+        Parent root = loader.load();
 
+        this.forgotController = loader.getController();
         this.forgotScene = new Scene(root);
     }
 
     public Scene getForgotScene() {
-        return forgotScene;
+        return this.forgotScene;
+    }
+
+    public ForgotController getForgotController() {
+        return this.forgotController;
     }
 }
