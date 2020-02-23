@@ -26,4 +26,4 @@
 |            021 |           018 | There should be a text field for email on Forgot page | This is the text field that allow user to input their email. | 1 | Important | Satisfied |
 |            022 |           018 | There should be a "Send" button on Forgot page | The "Send" button will tell the system to check the data within the text field. | 3 | Important | Satisfied |
 |            023 |           018 | When "Send" button is clicked, the system will check if the email exist in the database. | System takes the inputted email and checks the information with the database. | 4 | Important | Satisfied |
-|            023 |           018 | When "Send" button is clicked and the email exist within the database, send an email with a username and password to the inputted email. | System sends an email with username and password to a valid email address. | 5 | Important | Working |
+|            024 |           018 | When "Send" button is clicked and the email exist within the database, send an email with a username and password to the inputted email. | System sends an email with username and password to a valid email address. | 5 | Important | Working |
