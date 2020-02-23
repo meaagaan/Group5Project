@@ -25,6 +25,8 @@ The user must put the correct username and password in order to enter the accoun
 # User Interface Design
 ## Login UI
 ![Login UI](UI_images/login.png)
+## Forgot UI
+![Forgot UI](UI_images/forgot.png)
 - [User Interface Design (Screenshots)](User%20Interface%20Design.md)
 - [User Interface Diagram](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/User%20Interface%20Diagram.png)
 # Resource Management
