@@ -21,34 +21,34 @@ public class CreateProduct extends Application {
     Button button;
 
     @Override
-    public void start(Stage primaryStage) throws Exception{
-        window= primaryStage;
+    public void start(Stage primaryStage) throws Exception {
+        window = primaryStage;
         window.setTitle("Product Registration");
-        Label product_name= new Label("Product name");
+        Label product_name = new Label("Product name");
         TextField pn = new TextField();
-        Label product_description= new Label("Description");
+        Label product_description = new Label("Description");
         TextField pd = new TextField();
-        ChoiceBox <String> genre= new ChoiceBox<>();
-        genre.getItems().addAll("education","business", "personal");
+        ChoiceBox<String> genre = new ChoiceBox<>();
+        genre.getItems().addAll("education", "business", "personal");
 
         button = new Button("Product Registration");
         button.setText("Register Product");
-        VBox layout =new VBox(10);
-        layout.setPadding(new Insets(20,20,20,20));
+        VBox layout = new VBox(10);
+        layout.setPadding(new Insets(20, 20, 20, 20));
         layout.getChildren().addAll(product_name);
         layout.getChildren().addAll(pn);
         layout.getChildren().addAll(product_description);
         layout.getChildren().addAll(pd);
         layout.getChildren().addAll(genre);
 
-        layout. getChildren(). addAll(button);
+        layout.getChildren().addAll(button);
 
 
-
-        Scene scene = new Scene(layout,500, 500);
+        Scene scene = new Scene(layout, 500, 500);
         window.setScene(scene);
         window.show();
         primaryStage.setScene(scene);
         primaryStage.show();
 
     }
+}
