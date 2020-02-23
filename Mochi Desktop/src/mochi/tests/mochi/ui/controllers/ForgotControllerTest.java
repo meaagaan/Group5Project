@@ -49,7 +49,11 @@ public class ForgotControllerTest extends ApplicationTest {
 	// Switching scene to registration ui
 	public void switchToRegistrationUI() {
 		Platform.runLater(() -> {
-			assertEquals(forgotController.signUpLabelClick(), true);
+			try {
+				assertEquals(forgotController.signUpLabelClick(), true);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		});
 	}
 

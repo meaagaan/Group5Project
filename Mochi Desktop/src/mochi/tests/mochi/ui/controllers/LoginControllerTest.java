@@ -37,8 +37,12 @@ public class LoginControllerTest extends ApplicationTest {
     // Switching scene to registration ui
     public void switchToRegistrationUI() {
         Platform.runLater(() -> {
-            assertEquals(loginController.signUpLabelClick(), true);
-        });
+			try {
+				assertEquals(loginController.signUpLabelClick(), true);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		});
     }
 
     @Test
