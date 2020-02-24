@@ -1,7 +1,7 @@
 ## Login Page
 ![Login Page](UI_images/login.png)
 ## Registration Page
-![Registration Page](UI_images/Registration%20Page.png)
+![Registration Page](UI_images/Registration.png)
 ## Forget Password Page
 ![Forget Password Page](UI_images/forgot.png)
 ## Customer Support Page
