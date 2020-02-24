@@ -1,0 +1,55 @@
+.Button_BG {
+	-fx-border-radius: 2px;
+	-fx-min-width: 340.0px;
+	-fx-pref-height: 48.0px;
+	-fx-pref-width: 340.0px;
+	-fx-pref-height: 48.0px;
+	-fx-background-color: rgb(255, 255, 255);
+}
+
+.Login_Label {
+	-fx-font-size: 36px;
+	-fx-font-weight: bold;
+	-fx-text-fill: black;
+	-fx-alignment: center;
+}
+
+.Signup_Label {
+	-fx-font-size: 36px;
+	-fx-opacity: 0.1;
+	-fx-font-weight: bold;
+	-fx-text-fill: black;
+	-fx-alignment: center;
+}
+
+.Username_Field {
+	-fx-background-color: black;
+	-fx-text-fill: white;
+}
+
+.Password_Field {
+	-fx-background-color: black;
+	-fx-text-fill: white;
+}
+
+.Need_Help {
+	-fx-font-weight: bold;
+	-fx-text-fill: white;
+}
+
+.Warning_Label_Normal {
+	-fx-alignment: center;
+	-fx-opacity: 0;
+}
+
+.Warning_Label_Error {
+	-fx-opacity: 1;
+	-fx-text-fill: red;
+	-fx-alignment: center;
+}
+
+.Warning_Label_Success {
+	-fx-opacity: 1;
+	-fx-text-fill: green;
+	-fx-alignment: center;
+}

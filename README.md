@@ -18,3 +18,51 @@ Unlike purchasing directly from the seller’s website, the customer can search 
 - [Sprint Backlog](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/Sprint1_Backlog.md)
 - [Requirements](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/Requirements.md)
 - [Trello Board](https://trello.com/b/lvHEsjy0/task-board)
+- [Burndown Chart](https://docs.google.com/spreadsheets/d/1DDFRD913ABHZ-No10qLwydV-fwlTVkbWj8Qv4LgXDdg/edit#gid=0)
+- [Velocity Chart](https://docs.google.com/spreadsheets/d/1vw81TkkCwkv9nCx62wmESVZQqzlXwXgARyZDBSSaVi0/edit#gid=0)
+
+# Sprint 2
+- [Product Backlog](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/Product_Backlog.md)
+- [Sprint Backlog](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/Sprint2_backlog.md)
+- [Requirements](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/Requirements.md)
+- [Trello Board](https://trello.com/b/lvHEsjy0/task-board)
+- [Burndown Chart](https://docs.google.com/spreadsheets/d/1DDFRD913ABHZ-No10qLwydV-fwlTVkbWj8Qv4LgXDdg/edit#gid=1043892553)
+- [Velocity Chart](https://docs.google.com/spreadsheets/d/1vw81TkkCwkv9nCx62wmESVZQqzlXwXgARyZDBSSaVi0/edit#gid=0)
+- Design Documents
+    - [Architecture](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/Architecture.md)
+    - [System Context](Artifacts/SCD.png)
+    - [System Architecture](Artifacts/AD.png)
+    - [Class Diagrams](Artifacts/class_diagram.png)
+    - [Sequence Diagrams](Artifacts/SD.png)
+    - [Entity Relationship Diagram](Artifacts/ERD.png)
+- [Product Demonstration](https://www.youtube.com/watch?v=u-CK8Z19SDI)
+
+# Sprint 3
+- [Product Backlog](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/Product_Backlog.md)
+- [Sprint Backlog](Artifacts/Sprint3_backlog.md)
+- [Requirements](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/Requirements.md)
+- [Trello Board](https://trello.com/b/lvHEsjy0/task-board)
+- [Burndown Chart](https://docs.google.com/spreadsheets/d/1DDFRD913ABHZ-No10qLwydV-fwlTVkbWj8Qv4LgXDdg/edit#gid=175125862)
+- [Velocity Chart](https://docs.google.com/spreadsheets/d/1vw81TkkCwkv9nCx62wmESVZQqzlXwXgARyZDBSSaVi0/edit#gid=0)
+- Design Documents
+    - [Architecture](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/Architecture.md)
+    - [System Context](Artifacts/SCD.png)
+    - [System Architecture](Artifacts/AD.png)
+    - [Class Diagrams](Artifacts/class_diagram.png)
+    - [Sequence Diagrams](Artifacts/SD.png)
+    - [Entity Relationship Diagram](Artifacts/ERD.png)
+- [Source Code](Mochi%20Desktop/src/mochi)
+- [Automated Tests](Mochi%20Desktop/src/mochi/tests)
+- [Product Demonstration](https://youtu.be/aB5KdaeKaqI)
+
+# Sprint 4
+
+- [Responsibilities](Artifacts/responsibilities4.md)
+- [Requirements](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/Requirements.md)
+- [Trello Board](https://trello.com/b/lvHEsjy0/task-board)
+- [Burndown Chart](https://docs.google.com/spreadsheets/d/1DDFRD913ABHZ-No10qLwydV-fwlTVkbWj8Qv4LgXDdg/edit#gid=313624890)
+- [Velocity Chart](https://docs.google.com/spreadsheets/d/1vw81TkkCwkv9nCx62wmESVZQqzlXwXgARyZDBSSaVi0/edit#gid=0)
+- [Design Documents](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/Architecture.md)
+- [Source Code](Mochi%20Desktop/src/mochi)
+- [Automated Tests](Mochi%20Desktop/src/mochi/tests)
+- [Product Demonstration](https://youtu.be/XnO7uO8Ck-0)

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane fx:id="pane" maxHeight="800.0" maxWidth="1300.0" minHeight="800.0" minWidth="1300.0" prefHeight="800.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mochi.ui.controllers.LoginController">
+   <children>
+      <ImageView fitHeight="800.0" fitWidth="1300.0" pickOnBounds="true">
+         <image>
+            <Image url="@../images/Background.png" />
+         </image>
+      </ImageView>
+      <Rectangle fx:id="backgroundBox" arcHeight="5.0" arcWidth="5.0" height="354.0" layoutX="442.0" layoutY="223.0" stroke="BLACK" strokeType="INSIDE" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 50, 0, 0, 5);" width="417.0" />
+      <Label fx:id="loginLabel" layoutX="392.0" layoutY="103.0" prefHeight="17.0" prefWidth="100.0" styleClass="Login_Label" stylesheets="@../stylesheets/LoginStyle.css" text="Login" />
+      <Label fx:id="signUpLabel" layoutX="794.0" layoutY="105.0" onMouseClicked="#signUpLabelClick" prefHeight="17.0" prefWidth="131.0" styleClass="Signup_Label" stylesheets="@../stylesheets/LoginStyle.css" text="Sign up" />
+      <TextField fx:id="usernameField" layoutX="512.0" layoutY="346.0" prefHeight="25.0" prefWidth="290.0" promptText="Username" styleClass="Username_Field" stylesheets="@../stylesheets/LoginStyle.css">
+         <font>
+            <Font size="14.0" />
+         </font></TextField>
+      <ImageView layoutX="484.0" layoutY="351.0">
+         <image>
+            <Image url="@../images/icon-Username.png" />
+         </image>
+      </ImageView>
+      <PasswordField fx:id="passwordField" layoutX="512.0" layoutY="400.0" prefHeight="25.0" prefWidth="290.0" promptText="Password" styleClass="Password_Field" stylesheets="@../stylesheets/LoginStyle.css">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </PasswordField>
+      <ImageView layoutX="485.0" layoutY="415.0">
+         <image>
+            <Image url="@../images/icon-Password.png" />
+         </image>
+      </ImageView>
+      <Line endX="217.0" fill="WHITE" layoutX="603.0" layoutY="389.0" startX="-122.0" stroke="WHITE" strokeLineCap="BUTT" />
+      <Line endX="217.0" layoutX="603.0" layoutY="440.0" startX="-122.0" stroke="WHITE" strokeLineCap="BUTT" />
+      <Button fx:id="loginButton" layoutX="481.0" layoutY="503.0" mnemonicParsing="false" onAction="#loginButtonClick" styleClass="Button_BG" stylesheets="@../stylesheets/LoginStyle.css" text="Login">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Text fill="WHITE" layoutX="580.0" layoutY="306.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Mochi" textAlignment="CENTER">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Text>
+      <Line endX="35.0" layoutX="450.0" layoutY="158.0" startX="-51.0" />
+      <Label fx:id="warningLabel" layoutX="465.0" layoutY="466.0" prefHeight="17.0" prefWidth="372.0" styleClass="Warning_Label_Normal" stylesheets="@../stylesheets/LoginStyle.css" />
+      <ImageView layoutX="1107.0" layoutY="730.0">
+         <image>
+            <Image url="@../images/icon-Help.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="needHelpLabel" layoutX="1138.0" layoutY="730.0" onMouseClicked="#needHelpLabelClick" text="Need Help?" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>
