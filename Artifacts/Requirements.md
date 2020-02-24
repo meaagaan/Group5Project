@@ -18,7 +18,7 @@
 |            013 |           002 | There should be a button that leads to registration page. | There should be a button on the login scene that changes the scene to the registration scene. | 13 | Necessary | Satisfied |
 |            014 |           004 | There should be a button that leads to product creation page. | There is a button that leads to the product creation scene. | 8 | Necessary | Working |
 |            015 |           004 | There should be a text entry for product name, product description, and product price. | There is a text entry to identify the product name, product description, and product price. | 8 | Necessary | Satisfied |
-|            016 |           004 | There should be a list to pick the type of genre for the product item. | There is a check list to select the type of genre to search for. | 8 | Important | Working |
+|            016 |           004 | There should be a list to pick the type of genre for the product item. | There is a check list to select the type of genre to search for. | 8 | Important | Satisfied |
 |            017 |           004 | When the file upload button is clicked, the user can upload files from their computer. | The system can upload files and store them. | 8 | Important | Working |
 |            018 |           004 | When the confirmation button is clicked, the system checks that all fields are valid and filled out. | The system can store all the given information into the database or provide error messages where there are invalid information. | 8 | Important | Working |
 |            019 |           018 | There should be a Login and Sign up label on Forgot page | The "Login" and "Sign up" label will be use to go back to login and registration page. | 1 | Important | Satisfied |
