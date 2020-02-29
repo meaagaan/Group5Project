@@ -21,71 +21,71 @@ import java.sql.Statement;
 import java.util.ResourceBundle;
 
 public class LoginController implements Initializable {
-    public Pane pane;
-    public Label signUpLabel;
-    public Label warningLabel;
-    public Label needHelpLabel;
-    public Button loginButton;
-    public TextField usernameField;
-    public PasswordField passwordField;
+	public Pane pane;
+	public Label signUpLabel;
+	public Label warningLabel;
+	public Label needHelpLabel;
+	public Button loginButton;
+	public TextField usernameField;
+	public PasswordField passwordField;
 
-    private Connection database;
+	private Connection database;
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        this.database = DBConnection.getDatabase();
-    }
+	@Override
+	public void initialize(URL url, ResourceBundle resourceBundle) {
+		this.database = DBConnection.getDatabase();
+	}
 
-    public boolean signUpLabelClick() throws IOException {
-        Stage primaryStage = (Stage) pane.getScene().getWindow();
-        RegistrationUI registrationUI = new RegistrationUI();
+	public boolean signUpLabelClick() throws IOException {
+		Stage primaryStage = (Stage) pane.getScene().getWindow();
+		RegistrationUI registrationUI = new RegistrationUI();
 
-        if (registrationUI != null) {
-            primaryStage.setScene(registrationUI.getRegistrationScene());
-            return true;
-        }
-        return false;
-    }
+		if (registrationUI != null) {
+			primaryStage.setScene(registrationUI.getRegistrationScene());
+			return true;
+		}
+		return false;
+	}
 
-    public boolean needHelpLabelClick() throws IOException {
-        Stage primaryStage = (Stage) pane.getScene().getWindow();
-        ForgotUI forgotUI = new ForgotUI();
+	public boolean needHelpLabelClick() throws IOException {
+		Stage primaryStage = (Stage) pane.getScene().getWindow();
+		ForgotUI forgotUI = new ForgotUI();
 
-        if (forgotUI != null) {
-            primaryStage.setScene(forgotUI.getForgotScene());
-            return true;
-        }
-        return false;
-    }
+		if (forgotUI != null) {
+			primaryStage.setScene(forgotUI.getForgotScene());
+			return true;
+		}
+		return false;
+	}
 
-    public boolean loginButtonClick() {
-        ResultSet resultSet = null;
-        Statement statement = null;
+	public boolean loginButtonClick() {
+		ResultSet resultSet = null;
+		Statement statement = null;
 
-        String username = usernameField.getText();
-        String password = passwordField.getText();
+		String username = usernameField.getText();
+		String password = passwordField.getText();
 
-        try {
-            statement = (Statement) database.createStatement();
-            resultSet = statement.executeQuery("SELECT * FROM `mochi-desktop`.user");
+		try {
+			statement = (Statement) database.createStatement();
+			resultSet = statement.executeQuery("SELECT * FROM `mochi-desktop`.Login");
 
-            while(resultSet.next()) {
-                if (resultSet.getString(1).equals(username) &&
-                        resultSet.getString(2).equals(password)) {
-                    warningLabel.getStyleClass().add("Warning_Label_Success");
-                    warningLabel.setText("Welcome.");
-                    return true;
-                }
-                else {
-                    warningLabel.getStyleClass().add("Warning_Label_Error");
-                    warningLabel.setText("You've enter a wrong username or password.");
-                    return false;
-                }
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return false;
-        }
-        return false;
-    }
+			while(resultSet.next()) {
+				if (resultSet.getString(1).equals(username) &&
+						resultSet.getString(2).equals(password)) {
+					warningLabel.getStyleClass().add("Warning_Label_Success");
+					warningLabel.setText("Welcome.");
+					return true;
+				}
+				else {
+					warningLabel.getStyleClass().add("Warning_Label_Error");
+					warningLabel.setText("You've enter a wrong username or password.");
+					return false;
+				}
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+		}
+		return false;
+	}
 }
