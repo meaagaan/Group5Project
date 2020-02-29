@@ -1,0 +1,28 @@
+.Side_Bar {
+    -fx-background-color: black;
+}
+
+.Picture_Pane {
+    -fx-background-color: transparent;
+}
+
+.Title_Label {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: black;
+    -fx-alignment: center;
+}
+
+.SideBar_Label {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: gray;
+    -fx-alignment: center;
+}
+
+.Information_Text {
+    -fx-font-size: 18px;
+    -fx-text-fill: gray;
+    -fx-alignment: center;
+    -fx-background-color: white;
+}
