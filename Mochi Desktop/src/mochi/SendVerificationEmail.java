@@ -6,10 +6,11 @@ import java.sql.Connection;
 import java.util.Properties;
 
 // adjusts the value under "verified" in user table. default is 'new' -> 'verified' when user clicks email link
-public class VerifyEmail
+public class SendVerificationEmail
 {
-    public static void sendVerificationEmail(String id, String email, String hash)
+    public static void sendEmail(String id, String email, String hash)
     {
         Properties properties = new Properties();
+        properties.put("mail.smtp.auth", "true");
     }
 }
