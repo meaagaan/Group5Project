@@ -51,7 +51,7 @@ public class RegistrationController implements Initializable {
         return false;
     }
 
-    public boolean confirmButtonClick() {
+    public boolean confirmButtonClick() throws SQLException {
         ResultSet resultSet = null;
         Statement statement = null;
 
@@ -104,20 +104,18 @@ public class RegistrationController implements Initializable {
                 }
 
                 // do a check to see if it meets password requirements
-
-                // putting the information into the database.
-                query = "insert into User values ('" + username + "', '" + firstName + "', '" + lastName + "', '" + email + "');";
-                // don't want to put information into the database yet.
-                // statement.executeQuery(query);
-
-
-
-            }
+                            }
 
         } catch (SQLException e) {
             e.printStackTrace();
             return false;
         }
+        // putting the information into the database.
+        query = "insert into User values ('" + username + "', '" + firstName + "', '" + lastName + "', '" + email + "');";
+        statement.executeUpdate(query);
+        query = "insert into Login values ('" + username + "', '" + password + "', " + "0);";
+        statement.executeUpdate(query);
+
         return false;
     }
 }
