@@ -10,7 +10,7 @@ The user can broken up into two categories, Buyer and Seller. Both will need to 
 The important thing for the Buyer is the ability to look through all available products in the database and the ability to buy. A few possible ways to sort available products is based on genre, user story 5, and price and rating, user story 12.
 The important thing for the Seller is to put their product into the database to be sold, user story 6. Another critical page for the Seller is the ability to see statistics on the product, user story 6, 7, 13, 14 and 15.
 
-## System Container Diagram
+## System Component Diagram
 ![Component Diagram](System%20Components%20Diagram.png)
 Mochi Desktop is an application that allows users the ability to browse, buy, and sell software. From Mochi Desktop, the application makes API calls to both the Login Controller and the Forget Controller, which are both made from JavaFX. These correspond to user stories 002 and 018 respectively. From the Login Controller, it accesses the database to be able to see stored user information. This information is stored via the registration controller, user story 001. Forget Password Controller allows for users to reset their passwords. This is done by using the E-mail component to send e-mail to the user's email using the E-mail System, user story 019.
 
@@ -32,6 +32,7 @@ The user must put the correct username and password in order to enter the accoun
 This is associated with user story 002. From this page, it is possible to go to the registration page, user story 001, through the "Sign up" button and to the forgot page, user story 018, through the "Need Help?" button. The main function of this page is to input information in the database into the username and password fields and clicking the login page to be taken to the profile page.
 ## Forgot UI
 ![Forgot UI](UI_images/forgot.png)
+This is associated with user story 018. From this page, it is possible to the login page and registration page, user story 002 and 001 respectively. The main function is to input an email that is already into the database 
 ## Registration UI
 ![Registration UI](UI_images/Registration.png)
 ## Profile UI
