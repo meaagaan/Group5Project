@@ -11,7 +11,7 @@
 ## User Library Page
 ![User Library Page](UI_images/Mochi_user_library.jpg)
 ## User Profile Page
-![User Library Page](UI_images/Mochi_user_profile.jpg)
+![User Library Page](UI_images/profile.png)
 ## Checkout Page
 ![Checkout Page](UI_images/Checkout%20Page.png)
 ## Developer Page
