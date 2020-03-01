@@ -33,7 +33,7 @@ This is associated with user story 002. From this page, it is possible to go to 
 ![Forgot UI](UI_images/forgot.png)
 ## Registration UI
 ![Registration UI](UI_images/Registration.png)
-## Login UI
+## Profile UI
 ![Profile UI](UI_images/profile.png)
 - [User Interface Design (Screenshots)](User%20Interface%20Design.md)
 - [User Interface Diagram](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/User%20Interface%20Diagram.png)
