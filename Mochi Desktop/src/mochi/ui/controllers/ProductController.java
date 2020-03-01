@@ -16,13 +16,12 @@ import java.util.ResourceBundle;
 
 public class ProductController implements Initializable {
     public Pane pane;
-    public Label productLabel; //public Label loginLabel;
+    public Label productLabel;
     public Button confirmButton;
-    public TextField productName; //public TextField firstNameField;
-    public TextField genre;  //public TextField lastNameField;
-    public TextField description; //public TextField emailField;
-    public TextField price; //public TextField usernameField;
-
+    public TextField productName;
+    public TextField genre;
+    public TextField description;
+    public TextField price;
 
     public Label ProductError;
 
@@ -45,7 +44,6 @@ public class ProductController implements Initializable {
         }
         */
         return false;
-
 
     }
 
