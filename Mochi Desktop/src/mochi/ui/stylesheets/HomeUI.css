@@ -1,0 +1,44 @@
+.Mochi_Label
+{
+	-fx-font-size: 85px;
+	-fx-font-weight: bold;
+	-fx-text-fill: #CCB8FC;
+	-fx-alignment: center;
+}
+
+.Profile_Button
+{
+	-fx-background-color: transparent;
+	-fx-font-size: 20px;
+	-fx-text-fill: #CCB8FC;
+	-fx-alignment: center;
+}
+
+.Scrollbar
+{
+	-fx-background-color: #7b7f6d;
+}
+
+.FilterByChoiceBox
+{
+	-fx-background-color: #CCB8FC;
+}
+
+.FilterLabel
+{
+	-fx-font-size: 15px;
+	-fx-text-fill: #000000;
+	-fx-alignment: center;
+}
+
+.SearchField
+{
+	-fx-background-color: #CCB8FC;
+}
+
+.SearchLabel
+{
+	-fx-font-size: 15px;
+	-fx-text-fill: #000000;
+	-fx-alignment: center;
+}
