@@ -43,7 +43,7 @@ public class SendVerificationEmailUtil
             message.setSubject("User Email Verification");
             message.setText("Hello, \n " +
                             "Thank you for making an account with Mochi. Please follow the link to verify your" +
-                            " account registration: (add link here) \n" +
+                            " account registration: (ADD LINK HERE) \n" +
                             "Thanks! \n" +
                             "(please do not respond to this email)");
             return message;
