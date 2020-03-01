@@ -10,43 +10,32 @@ public class UserTest {
 
 	@Test
 	// Test if the username is modified correctly.
-	public void setUsername() {
+	public void checkUsername() {
 		User.setUsername("username");
+		assertEquals("username", User.getUsername());
 	}
 
 	@Test
-	public void setFirstname() {
+	public void checkFirstname() {
+		User.setFirstname("firstname");
+		assertEquals("firstname", User.getFirstname());
 	}
 
 	@Test
-	public void setLastname() {
+	public void checkLastname() {
+		User.setLastname("lastname");
+		assertEquals("lastname", User.getLastname());
 	}
 
 	@Test
-	public void setEmail() {
+	public void checkEmail() {
+		User.setEmail("email");
+		assertEquals("email", User.getEmail());
 	}
 
 	@Test
-	public void setVerified() {
-	}
-
-	@Test
-	public void getUsername() {
-	}
-
-	@Test
-	public void getFirstname() {
-	}
-
-	@Test
-	public void getLastname() {
-	}
-
-	@Test
-	public void getEmail() {
-	}
-
-	@Test
-	public void getVerified() {
+	public void checkVerified() {
+		User.setVerified(1);
+		assertEquals(1, (int)User.getVerified());
 	}
 }
