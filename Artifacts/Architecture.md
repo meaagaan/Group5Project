@@ -29,7 +29,7 @@ The user must put the correct username and password in order to enter the accoun
 # User Interface Design
 ## Login UI
 ![Login UI](UI_images/login.png)
-This is associated with user story 002. From this page, it is possible to go to the registration page through the "Sign up" button and to forgot page through the "Need Help?" button.
+This is associated with user story 002. From this page, it is possible to go to the registration page, user story 001, through the "Sign up" button and to the forgot page, user story 018, through the "Need Help?" button. The main function of this page is to input information in the database into the username and password fields and clicking the login page to be taken to the profile page.
 ## Forgot UI
 ![Forgot UI](UI_images/forgot.png)
 ## Registration UI
