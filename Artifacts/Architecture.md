@@ -33,11 +33,13 @@ The user must put the correct username and password in order to enter the accoun
 This is associated with user story 002. From this page, it is possible to go to the registration page, user story 001, through the "Sign up" button and to the forgot page, user story 018, through the "Need Help?" button. The main function of this page is to input information in the database into the username and password fields and clicking the login page to be taken to the profile page.
 ## Forgot UI
 ![Forgot UI](UI_images/forgot.png)
-This is associated with user story 018. From this page, it is possible to the login page and registration page, user story 002 and 001 respectively. The main function is to input an email that is already into the database 
+This is associated with user story 018. From this page, it is possible to the login page and registration page, user story 002 and 001 respectively. The main function is to input an email that is already into the database so that you can change the password.
 ## Registration UI
 ![Registration UI](UI_images/Registration.png)
+This is associated with user story 001. From this page you can go to the login page, user story 002. The main function is to be able to input first name, last name, email, username, and password into the database.
 ## Profile UI
 ![Profile UI](UI_images/profile.png)
+This is associated with user story 020. From this page you should be able to access the store and library. The main function is to be able to view the information associated with an account and to be able to change any of the information. This is done with the edit button and the submit button.
 - [User Interface Design (Screenshots)](User%20Interface%20Design.md)
 - [User Interface Diagram](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/User%20Interface%20Diagram.png)
 # Resource Management
