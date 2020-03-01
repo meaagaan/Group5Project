@@ -4,7 +4,7 @@ Our general idea for the architecture of our program is using the microservices 
 ![System Context Diagram](SCD.png)
 The user only has permission to access the Mochi Desktop App. Starting with launching the app with a click of a button, user story 3 is addressed. Afterwards, depending on what they do within the app determines what other systems are communicated. For example, Registration, user story 1, will need to have a valid e-mail address and sending a confirmation email to the user. While user story 2, login, will need to access the Mochi Database to see if the inputted information is correct.
 
-## Architecture Diagram
+## System Container Diagram
 ![Architecture Diagram](AD.png)
 The user can broken up into two categories, Buyer and Seller. Both will need to access the registration and login page. The registration needs both access to the e-mail system to send out confirmation emails, while checking the database to make sure the email is not in the system already. The login page needs database access to check if the information provided is linked to an existing account. To access both the database and e-mail system, we need to make API calls to JSON/HTTPS to then write to the database via JDBC or to the email system through SMTP.
 The important thing for the Buyer is the ability to look through all available products in the database and the ability to buy. A few possible ways to sort available products is based on genre, user story 5, and price and rating, user story 12.
