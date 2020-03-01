@@ -1,10 +1,12 @@
 package mochi.ui;
 
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import mochi.db.DBConnection;
 import org.junit.Test;
 import org.testfx.framework.junit.ApplicationTest;
+import org.testfx.util.NodeQueryUtils;
 
 import static org.testfx.api.FxAssert.verifyThat;
 import static org.testfx.matcher.control.LabeledMatchers.hasText;
@@ -24,12 +26,27 @@ public class RegistrationTest extends ApplicationTest {
     }
 
     @Test
-    public void containLoginLabel() {
-        verifyThat("#loginLabel", hasText("Login"));
+    // Check if the login label display correctly.
+    public void loginLabelExist() {
+        verifyThat("#loginLabel", Node::isVisible);
+        verifyThat("#loginLabel", NodeQueryUtils.hasText("Login"));
     }
 
     @Test
-    public void containSignupLabel() {
-        verifyThat("#signUpLabel", hasText("Sign Up"));
+    // Check if the sign up label display correctly.
+    public void signUpLabelExist() {
+        verifyThat("#signUpLabel", Node::isVisible);
+        verifyThat("#signUpLabel", NodeQueryUtils.hasText("Sign up"));
     }
+
+    @Test
+    // Check if the username field display correctly.
+    public void usernameFieldExist() {
+        verifyThat("#usernameField", Node::isVisible);
+        verifyThat("#usernameField", NodeQueryUtils.hasText(""));
+    }
+
+
+
+
 }
