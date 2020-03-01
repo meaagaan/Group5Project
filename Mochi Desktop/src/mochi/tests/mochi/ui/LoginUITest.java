@@ -76,6 +76,7 @@ public class LoginUITest extends ApplicationTest {
 		clickOn("#passwordField").write("6543516815");
 		verifyThat("#passwordField", hasText("6543516815"));
 	}
+
 	@Test
 	// Check if the login button display correctly.
 	public void loginButtonExist() {

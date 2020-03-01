@@ -19,32 +19,31 @@
             <Image url="@../images/Background.png" />
          </image>
       </ImageView>
-      <Rectangle fx:id="backgroundBox" arcHeight="5.0" arcWidth="5.0" height="400.0" layoutX="442.0" layoutY="223.0" stroke="BLACK" strokeType="INSIDE" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 50, 0, 0, 5);" width="417.0" />
+      <Rectangle fx:id="backgroundBox" arcHeight="5.0" arcWidth="5.0" height="380.0" layoutX="442.0" layoutY="223.0" stroke="BLACK" strokeType="INSIDE" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 50, 0, 0, 5);" width="417.0" />
       <Label fx:id="loginLabel" layoutX="392.0" layoutY="103.0" onMouseClicked="#loginLabelClick" prefHeight="17.0" prefWidth="100.0" styleClass="Login_Label" stylesheets="@../stylesheets/RegistrationStyle.css" text="Login" />
-      <Label fx:id="signUpLabel" layoutX="794.0" layoutY="105.0" prefHeight="53.0" prefWidth="191.0" styleClass="Signup_Label" stylesheets="@../stylesheets/RegistrationStyle.css" text="Sign Up" />
-      <TextField fx:id="firstNameField" layoutX="512.0" layoutY="346.0" prefHeight="25.0" prefWidth="290.0" promptText="First Name" styleClass="FirstName_Field" stylesheets="@../stylesheets/RegistrationStyle.css">
+      <Label fx:id="signUpLabel" layoutX="794.0" layoutY="105.0" prefHeight="53.0" prefWidth="191.0" styleClass="Signup_Label" stylesheets="@../stylesheets/RegistrationStyle.css" text="Sign up" />
+      <TextField fx:id="firstNameField" layoutX="512.0" layoutY="315.0" prefHeight="25.0" prefWidth="290.0" promptText="First Name" styleClass="FirstName_Field" stylesheets="@../stylesheets/RegistrationStyle.css">
          <font>
             <Font size="14.0" />
          </font>
       </TextField>
-      <ImageView layoutX="485.0" layoutY="459.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView layoutX="485.0" layoutY="435.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/icon-Username.png" />
          </image>
       </ImageView>
-      <PasswordField fx:id="passwordField" layoutX="512.0" layoutY="508.0" prefHeight="25.0" prefWidth="290.0" promptText="Password" styleClass="Password_Field" stylesheets="@../stylesheets/RegistrationStyle.css">
+      <PasswordField fx:id="passwordField" layoutX="512.0" layoutY="475.0" prefHeight="25.0" prefWidth="290.0" promptText="Password" styleClass="Password_Field" stylesheets="@../stylesheets/RegistrationStyle.css">
          <font>
             <Font size="14.0" />
          </font>
       </PasswordField>
-      <ImageView layoutX="486.0" layoutY="518.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView layoutX="486.0" layoutY="485.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/icon-Password.png" />
          </image>
       </ImageView>
-      <Line endX="217.0" layoutX="602.0" layoutY="387.0" startX="-122.0" stroke="WHITE" />
-      <Line endX="217.0" layoutX="602.0" layoutY="442.0" startX="-122.0" stroke="WHITE" />
-      <Button fx:id="confirmButton" layoutX="481.0" layoutY="568.0" mnemonicParsing="false" onMouseClicked="#confirmButtonClick" styleClass="Button_BG" stylesheets="@../stylesheets/RegistrationStyle.css" text="Confirm">
+      <Line endX="217.0" layoutX="603.0" layoutY="345.0" startX="-122.0" stroke="WHITE" />
+      <Button fx:id="confirmButton" layoutX="480.0" layoutY="530.0" mnemonicParsing="false" onMouseClicked="#confirmButtonClick" styleClass="Button_BG" stylesheets="@../stylesheets/RegistrationStyle.css" text="Confirm">
          <font>
             <Font size="14.0" />
          </font>
@@ -55,17 +54,28 @@
          </font>
       </Text>
       <Line endX="173.0" layoutX="800.0" layoutY="158.0" startX="14.0" />
-      <TextField fx:id="emailField" layoutX="512.0" layoutY="454.0" prefHeight="25.0" prefWidth="290.0" promptText="Username/Email" styleClass="Username_Field" stylesheets="@../stylesheets/RegistrationStyle.css">
+      <TextField fx:id="usernameField" layoutX="512.0" layoutY="435.0" prefHeight="25.0" prefWidth="290.0" promptText="Username" styleClass="Username_Field" stylesheets="@../stylesheets/RegistrationStyle.css">
          <font>
             <Font size="14.0" />
          </font>
       </TextField>
-      <TextField fx:id="lastNameField" layoutX="512.0" layoutY="400.0" prefHeight="25.0" prefWidth="290.0" promptText="Last Name" styleClass="LastName_Field" stylesheets="@../stylesheets/RegistrationStyle.css">
+      <TextField fx:id="lastNameField" layoutX="512.0" layoutY="355.0" prefHeight="25.0" prefWidth="290.0" promptText="Last Name" styleClass="LastName_Field" stylesheets="@../stylesheets/RegistrationStyle.css">
          <font>
             <Font size="14.0" />
          </font>
       </TextField>
-      <Line endX="217.0" layoutX="602.0" layoutY="494.0" startX="-122.0" stroke="WHITE" />
-      <Line endX="217.0" layoutX="603.0" layoutY="548.0" startX="-122.0" stroke="WHITE" />
+      <Line endX="217.0" layoutX="602.0" layoutY="465.0" startX="-122.0" stroke="WHITE" />
+      <Line endX="217.0" layoutX="603.0" layoutY="505.0" startX="-122.0" stroke="WHITE" />
+      <TextField fx:id="emailField" layoutX="512.0" layoutY="395.0" prefHeight="25.0" prefWidth="290.0" promptText="Email" styleClass="Username_Field" stylesheets="@../stylesheets/RegistrationStyle.css">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Line endX="217.0" layoutX="602.0" layoutY="385.0" startX="-122.0" stroke="WHITE" />
+      <Line endX="217.0" layoutX="602.0" layoutY="425.0" startX="-122.0" stroke="WHITE" />
+      <Label fx:id="confirmError" layoutX="481.0" layoutY="506.0" prefHeight="20.0" prefWidth="340.0" styleClass="Warning_Label_Error" stylesheets="@../stylesheets/RegistrationStyle.css" />
+      <Label fx:id="usernameError" layoutX="714.0" layoutY="426.0" prefHeight="39.0" prefWidth="145.0" styleClass="Warning_Label_Error" stylesheets="@../stylesheets/RegistrationStyle.css" />
+      <Label fx:id="emailError" layoutX="714.0" layoutY="385.0" prefHeight="39.0" prefWidth="145.0" styleClass="Warning_Label_Error" stylesheets="@../stylesheets/RegistrationStyle.css" />
+      <Label fx:id="passwordError" layoutX="714.0" layoutY="466.0" prefHeight="39.0" prefWidth="145.0" styleClass="Warning_Label_Error" stylesheets="@../stylesheets/RegistrationStyle.css" />
    </children>
 </Pane>
