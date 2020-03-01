@@ -12,6 +12,7 @@ The important thing for the Seller is to put their product into the database to 
 
 ## System Container Diagram
 ![Component Diagram](System%20Components%20Diagram.png)
+Mochi Desktop is an application that allows users the ability to browse, buy, and sell software. From Mochi Desktop, the application makes API calls to both the Login Controller and the Forget Controller, which are both made from JavaFX. These correspond to user stories 002 and 018 respectively. From the Login Controller, it accesses the database to be able to see stored user information. This information is stored via the registration controller, user story 001. Forget Password Controller allows for users to reset their passwords. This is done by using the E-mail component to send e-mail to the user's email using the E-mail System, user story 019.
 
 # Major Classes
 ## Class Diagram
