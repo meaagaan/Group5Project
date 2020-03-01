@@ -1,4 +1,4 @@
-package mochi;
+package mochi.ui;
 
 import javafx.application.Application;
 import javafx.scene.Scene;

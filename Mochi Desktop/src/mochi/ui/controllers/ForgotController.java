@@ -62,10 +62,10 @@ public class ForgotController implements Initializable {
 
         try {
             statement = (Statement) database.createStatement();
-            resultSet = statement.executeQuery("SELECT * FROM `mochi-desktop`.user");
+            resultSet = statement.executeQuery("SELECT * FROM `mochi-desktop`.User");
 
             while(resultSet.next()) {
-                if (resultSet.getString(3).equals(email)) {
+                if (resultSet.getString(4).equals(email)) {
                     warningLabel.getStyleClass().add("Warning_Label_Success");
                     warningLabel.setText("Please check your email.");
 

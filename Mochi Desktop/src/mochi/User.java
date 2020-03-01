@@ -8,31 +8,65 @@ import java.sql.Statement;
 
 public class User
 {
-    String username;
-    String password;
-    String email;
-    String verified;
-    String dateOfBirth;
+    private static String username = null;
+    private static String firstname = null;
+    private static String lastname = null;
+    private static String email = null;
+    private static Integer verified = null;
+    private static String dateOfBirth = null;
 
-    private Connection database;
+    public static boolean setUsername(String userUsername) {
+        username = userUsername;
+        if (username == null)
+            return false;
+        return true;
+    }
 
+    public static boolean setFirstname(String userFirstname) {
+        firstname = userFirstname;
+        if (firstname == null)
+            return false;
+        return true;
+    }
 
-    public User(String username, String password, String email)
-    {
-        this.database = DBConnection.getDatabase();
+    public static boolean setLastname(String userLastname) {
+        lastname = userLastname;
+        if (lastname == null)
+            return false;
+        return true;
+    }
 
+    public static boolean setEmail(String userEmail) {
+        email = userEmail;
+        if (email == null)
+            return false;
+        return true;
+    }
 
-        try
-        {
-            Statement statement = database.createStatement();
-            String sql = "INSERT INTO user " + " (username, password, email)" + " VALUES (username, password, email)";
-            statement.executeUpdate(sql);
-        }
-        catch (SQLException e)
-        {
-            e.printStackTrace();
-            return;
-        }
+    public static boolean setVerified(int userStatus) {
+        verified = userStatus;
+        if (verified == null)
+            return false;
+        return true;
+    }
 
+    public static String getUsername() {
+        return username;
+    }
+
+    public static String getFirstname() {
+        return firstname;
+    }
+
+    public static String getLastname() {
+        return lastname;
+    }
+
+    public static String getEmail() {
+        return email;
+    }
+
+    public static Integer getVerified() {
+        return verified;
     }
 }
