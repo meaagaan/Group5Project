@@ -28,6 +28,10 @@ public class RegistrationController implements Initializable {
     public TextField emailField;
     public TextField usernameField;
     public PasswordField passwordField;
+    public Label emailError;
+    public Label usernameError;
+    public Label passwordError;
+    public Label confirmError;
 
     private Connection database;
 
@@ -56,22 +60,22 @@ public class RegistrationController implements Initializable {
         String email = emailField.getText();
         String username = usernameField.getText();
         String password = passwordField.getText();
-    //
+
         try {
-            statement = (Statement)  database.createStatement();
-            resultSet = statement.executeQuery("SELECT * FROM `mochi-desktop`.user");
+            statement = (Statement) database.createStatement();
+            resultSet = statement.executeQuery("SELECT * FROM `mochi-desktop`.User;");
 
             while(resultSet.next()) {
-                if (resultSet.getString(1).equals(username) &&
-                        resultSet.getString(2).equals(password)) {
+                if (resultSet.getString(1).equals(username) ||
+                        resultSet.getString(4).equals(email)) {
                     //warningLabel.getStyleClass().add("Warning_Label_Success");
                     //warningLabel.setText("Welcome.");
-                    return true;
+                    return false;
                 }
                 else {
                     //warningLabel.getStyleClass().add("Warning_Label_Error");
                     //warningLabel.setText("You've enter a wrong username or password.");
-                    return false;
+                    return true;
                 }
             }
 

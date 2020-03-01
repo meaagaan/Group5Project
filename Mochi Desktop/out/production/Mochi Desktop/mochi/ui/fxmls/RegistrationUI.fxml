@@ -73,5 +73,9 @@
       </TextField>
       <Line endX="217.0" layoutX="602.0" layoutY="385.0" startX="-122.0" stroke="WHITE" />
       <Line endX="217.0" layoutX="602.0" layoutY="425.0" startX="-122.0" stroke="WHITE" />
+      <Label fx:id="confirmError" layoutX="481.0" layoutY="506.0" prefHeight="20.0" prefWidth="340.0" styleClass="Warning_Label_Error" stylesheets="@../stylesheets/RegistrationStyle.css" />
+      <Label fx:id="usernameError" layoutX="714.0" layoutY="426.0" prefHeight="39.0" prefWidth="145.0" styleClass="Warning_Label_Error" stylesheets="@../stylesheets/RegistrationStyle.css" />
+      <Label fx:id="emailError" layoutX="714.0" layoutY="385.0" prefHeight="39.0" prefWidth="145.0" styleClass="Warning_Label_Error" stylesheets="@../stylesheets/RegistrationStyle.css" />
+      <Label fx:id="passwordError" layoutX="714.0" layoutY="466.0" prefHeight="39.0" prefWidth="145.0" styleClass="Warning_Label_Error" stylesheets="@../stylesheets/RegistrationStyle.css" />
    </children>
 </Pane>

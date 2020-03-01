@@ -84,7 +84,7 @@ public class RegistrationTest extends ApplicationTest {
     // Check if the username field contain correct information.
     public void emailFieldContain() {
         clickOn("#emailField").write("email");
-        verifyThat("#emailField", NodeQueryUtils.hasText("email"));
+        verifyThat("#emailField", NodeQueryUtils.hasText("email@email.com"));
     }
 
 
