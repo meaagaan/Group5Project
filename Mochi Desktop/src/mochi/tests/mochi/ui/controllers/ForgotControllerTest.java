@@ -38,7 +38,7 @@ public class ForgotControllerTest extends ApplicationTest {
 	public void switchToLoginUI() {
 		Platform.runLater(() -> {
 			try {
-				assertEquals(forgotController.loginLabelClick(), true);
+				assertEquals(true, forgotController.loginLabelClick());
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -50,7 +50,7 @@ public class ForgotControllerTest extends ApplicationTest {
 	public void switchToRegistrationUI() {
 		Platform.runLater(() -> {
 			try {
-				assertEquals(forgotController.signUpLabelClick(), true);
+				assertEquals(true, forgotController.signUpLabelClick());
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -62,7 +62,7 @@ public class ForgotControllerTest extends ApplicationTest {
 	public void sendSuccess() {
 		clickOn("#emailField").write("admin@email.com");
 		Platform.runLater(() -> {
-			assertEquals(forgotController.sendButtonClick(), true);
+			assertEquals(true, forgotController.sendButtonClick());
 			verifyThat("#warningLabel", hasText("Please check your email."));
 		});
 	}
@@ -72,7 +72,7 @@ public class ForgotControllerTest extends ApplicationTest {
 	public void sendFail() {
 		clickOn("#emailField").write("admin1@mail.com");
 		Platform.runLater(() -> {
-			assertEquals(forgotController.sendButtonClick(), false);
+			assertEquals(false, forgotController.sendButtonClick());
 			verifyThat("#warningLabel", hasText("This email does not associated with any account."));
 		});
 	}

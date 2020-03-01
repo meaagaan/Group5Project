@@ -23,7 +23,7 @@ public class ProfileUI {
 		return this.profileScene;
 	}
 
-	public ProfileController getForgotController() {
+	public ProfileController getProfileController() {
 		return this.profileController;
 	}
 }

@@ -34,9 +34,9 @@
             </ImageView>
             <Pane layoutX="253.0" layoutY="300.0" prefHeight="500.0" prefWidth="1047.0" scaleShape="false" style="-fx-background-color: white;">
                <children>
-                  <Label layoutX="450.0" layoutY="15.0" prefHeight="35.0" prefWidth="147.0" styleClass="Title_Label" stylesheets="@../stylesheets/ProfileUI.css" text="Username" />
-                  <Label layoutX="450.0" layoutY="150.0" prefHeight="35.0" prefWidth="147.0" styleClass="Title_Label" stylesheets="@../stylesheets/ProfileUI.css" text="Name" />
-                  <Label layoutX="450.0" layoutY="285.0" prefHeight="35.0" prefWidth="147.0" styleClass="Title_Label" stylesheets="@../stylesheets/ProfileUI.css" text="Email" />
+                  <Label fx:id="usernameLabel" layoutX="450.0" layoutY="15.0" prefHeight="35.0" prefWidth="147.0" styleClass="Title_Label" stylesheets="@../stylesheets/ProfileUI.css" text="Username" />
+                  <Label fx:id="nameLabel" layoutX="450.0" layoutY="150.0" prefHeight="35.0" prefWidth="147.0" styleClass="Title_Label" stylesheets="@../stylesheets/ProfileUI.css" text="Name" />
+                  <Label fx:id="emailLabel" layoutX="450.0" layoutY="285.0" prefHeight="35.0" prefWidth="147.0" styleClass="Title_Label" stylesheets="@../stylesheets/ProfileUI.css" text="Email" />
                   <TextField fx:id="usernameField" editable="false" layoutX="182.0" layoutY="50.0" prefHeight="39.0" prefWidth="683.0" styleClass="Information_Text" stylesheets="@../stylesheets/ProfileUI.css" />
                   <TextField fx:id="firstNameField" editable="false" layoutX="153.0" layoutY="185.0" prefHeight="39.0" prefWidth="371.0" styleClass="Information_Text" stylesheets="@../stylesheets/ProfileUI.css" />
                   <TextField fx:id="lastNameField" editable="false" layoutX="523.0" layoutY="185.0" prefHeight="39.0" prefWidth="371.0" styleClass="Information_Text" stylesheets="@../stylesheets/ProfileUI.css" />
@@ -63,8 +63,8 @@
                 <RowConstraints maxHeight="574.0" minHeight="10.0" prefHeight="541.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label styleClass="SideBar_Label" stylesheets="@../stylesheets/ProfileUI.css" text="Store" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <Label styleClass="SideBar_Label" stylesheets="@../stylesheets/ProfileUI.css" text="Library" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label fx:id="storeLabel" styleClass="SideBar_Label" stylesheets="@../stylesheets/ProfileUI.css" text="Store" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label fx:id="libraryLabel" styleClass="SideBar_Label" stylesheets="@../stylesheets/ProfileUI.css" text="Library" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                </children>
             </GridPane>
             <ImageView fx:id="editButton" fitHeight="82.0" fitWidth="77.0" layoutX="1127.0" layoutY="158.0" onMouseClicked="#editButtonClicked" pickOnBounds="true" preserveRatio="true">

@@ -61,7 +61,7 @@ public class ProfileController implements Initializable {
 
 		submitButton.setMouseTransparent(false);
 
-		if (usernameField.isEditable() && firstNameField.isEditable() && lastNameField.isEditable() && emailField.isEditable())
+		if (firstNameField.isEditable() && lastNameField.isEditable() && emailField.isEditable())
 			return true;
 		return false;
 	}
@@ -98,8 +98,6 @@ public class ProfileController implements Initializable {
 		emailField.setEditable(false);
 
 		submitButton.setMouseTransparent(true);
-
-		System.out.println("OK");
 
 		return updateInformation();
 	}
