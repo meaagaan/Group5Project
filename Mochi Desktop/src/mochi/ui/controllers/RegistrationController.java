@@ -60,23 +60,58 @@ public class RegistrationController implements Initializable {
         String email = emailField.getText();
         String username = usernameField.getText();
         String password = passwordField.getText();
+        String query;
+        boolean ErrorFlag = false;
 
         try {
             statement = (Statement) database.createStatement();
             resultSet = statement.executeQuery("SELECT * FROM `mochi-desktop`.User;");
 
             while(resultSet.next()) {
-                if (resultSet.getString(1).equals(username) ||
-                        resultSet.getString(4).equals(email)) {
-                    //warningLabel.getStyleClass().add("Warning_Label_Success");
-                    //warningLabel.setText("Welcome.");
+                // check to see if username is taken
+                if (resultSet.getString(1).equals(username)) {
+                    usernameError.getStyleClass().add("Warning_Label_Error");
+                    usernameError.setText("Taken");
+                    ErrorFlag = true;
+                }
+
+                // check if it is a valid email, then checks if it is taken
+                if (email.contains("@") && email.contains(".com")) {
+                    if (resultSet.getString(4).equals(email)) {
+                        emailError.getStyleClass().add("Warning_Label_Error");
+                        emailError.setText("Taken");
+                        ErrorFlag = true;
+                    }
+                }
+                else
+                {
+                    emailError.getStyleClass().add("Warning_Label_Error");
+                    emailError.setText("Invalid");
+                    ErrorFlag = true;
+                }
+
+                // check if any of the fields are empty.
+                if (firstName.equals("") || lastName.equals("") || email.equals("") ||
+                        username.equals("") || password.equals("")) {
+                    confirmError.getStyleClass().add("Warning_Label_Error");
+                    confirmError.setText("One or more empty fields");
+                    ErrorFlag = true;
+                }
+
+                // if ErrorFlag is changed once, an error occurred somewhere.
+                if (ErrorFlag){
                     return false;
                 }
-                else {
-                    //warningLabel.getStyleClass().add("Warning_Label_Error");
-                    //warningLabel.setText("You've enter a wrong username or password.");
-                    return true;
-                }
+
+                // do a check to see if it meets password requirements
+
+                // putting the information into the database.
+                query = "insert into User values ('" + username + "', '" + firstName + "', '" + lastName + "', '" + email + "');";
+                // don't want to put information into the database yet.
+                // statement.executeQuery(query);
+
+
+
             }
 
         } catch (SQLException e) {
