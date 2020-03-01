@@ -8,8 +8,10 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import mochi.User;
 import mochi.db.DBConnection;
 import mochi.ui.ForgotUI;
+import mochi.ui.ProfileUI;
 import mochi.ui.RegistrationUI;
 
 import java.io.IOException;
@@ -58,7 +60,47 @@ public class LoginController implements Initializable {
 		return false;
 	}
 
+	private boolean setMainScene () throws IOException {
+		Stage primaryStage = (Stage) pane.getScene().getWindow();
+		ProfileUI profileUI = new ProfileUI();
+
+		if (profileUI != null) {
+			primaryStage.setScene(profileUI.getProfileScene());
+			return true;
+		}
+		return false;
+	}
+
+	private boolean retreiveUserInformation(String username) {
+		ResultSet resultSet = null;
+		Statement statement = null;
+
+		try {
+			statement = (Statement) database.createStatement();
+			resultSet = statement.executeQuery("SELECT * FROM `mochi-desktop`.User");
+
+			while(resultSet.next()) {
+				if (resultSet.getString(1).equals(username)) {
+					User.setUsername(resultSet.getString(1));
+					User.setFirstname(resultSet.getString(2));
+					User.setLastname(resultSet.getString(3));
+					User.setEmail(resultSet.getString(4));
+					return true;
+				}
+				else {
+					return false;
+				}
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+
 	public boolean loginButtonClick() {
+		User currentUser = new User();
+
 		ResultSet resultSet = null;
 		Statement statement = null;
 
@@ -72,9 +114,8 @@ public class LoginController implements Initializable {
 			while(resultSet.next()) {
 				if (resultSet.getString(1).equals(username) &&
 						resultSet.getString(2).equals(password)) {
-					warningLabel.getStyleClass().add("Warning_Label_Success");
-					warningLabel.setText("Welcome.");
-					return true;
+					return (retreiveUserInformation(username) == true && setMainScene() == true
+							&& User.setVerified(resultSet.getInt(3)) == true) ? true : false;
 				}
 				else {
 					warningLabel.getStyleClass().add("Warning_Label_Error");
@@ -82,7 +123,7 @@ public class LoginController implements Initializable {
 					return false;
 				}
 			}
-		} catch (SQLException e) {
+		} catch (SQLException | IOException e) {
 			e.printStackTrace();
 			return false;
 		}
