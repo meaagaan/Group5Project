@@ -24,9 +24,7 @@ public class ProductController implements Initializable {
     public TextField price;
 
     public Label ProductError;
-
     public Label confirmError;
-
     private Connection database;
 
     @Override
@@ -35,14 +33,14 @@ public class ProductController implements Initializable {
     }
 
     public boolean productLabelClick() throws IOException {
-        /*Stage primaryStage = (Stage) pane.getScene().getWindow();
+        Stage primaryStage = (Stage) pane.getScene().getWindow();
         ProductUI productUI = new ProductUI();
 
         if (productUI != null) {
-            primaryStage.setScene(ProductUI.getproductScene());
+            primaryStage.setScene(productUI.getProductScene());
             return true;
         }
-        */
+
         return false;
 
     }
@@ -57,7 +55,7 @@ public class ProductController implements Initializable {
         String priceOfProduct = price.getText();
         String query;
         boolean ErrorFlag = false;
-/*
+
         try {
             statement = (Statement) database.createStatement();
             resultSet = statement.executeQuery("SELECT * FROM `mochi-desktop`.Product;");
@@ -67,7 +65,7 @@ public class ProductController implements Initializable {
                 if (resultSet.getString(1).equals(productName)) {
                     ProductError.getStyleClass().add("Warning_Label_Error");
                     ProductError.setText("Taken");
-                    ErrorFlag = true;
+                    return false;
                 }
 
 
@@ -76,13 +74,9 @@ public class ProductController implements Initializable {
                         priceOfProduct.equals("")) {
                     confirmError.getStyleClass().add("Warning_Label_Error");
                     confirmError.setText("One or more empty fields");
-                    ErrorFlag = true;
-                }
-
-                // if ErrorFlag is changed once, an error occurred somewhere.
-                if (ErrorFlag){
                     return false;
                 }
+
             }
 
         } catch (SQLException e) {
@@ -90,12 +84,12 @@ public class ProductController implements Initializable {
             return false;
         }
 
- */
-        /*
-        // putting the information into the database.
+
+
+        // putting the product information into the database.
         query = "insert into Product values ('" + productN + "', '" + genreName + "', '" + descriptionOfProduct + "', '" + priceOfProduct + "');";
         statement.executeUpdate(query);
-        */
+
 
         return false;
     }

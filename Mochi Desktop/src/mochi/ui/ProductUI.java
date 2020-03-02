@@ -20,7 +20,7 @@ public class ProductUI {
         this.productScene = new Scene(root);
     }
 
-    public Scene getLoginScene() {
+    public Scene getProductScene() {
         return this.productScene;
     }
 
