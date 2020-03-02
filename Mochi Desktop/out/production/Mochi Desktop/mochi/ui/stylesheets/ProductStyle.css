@@ -1,0 +1,40 @@
+.Button_BG {
+	-fx-border-radius: 2px;
+	-fx-min-width: 340.0px;
+	-fx-pref-height: 48.0px;
+	-fx-pref-width: 340.0px;
+	-fx-pref-height: 48.0px;
+	-fx-background-color: rgb(255, 255, 255);
+}
+
+.Product_Field {
+	-fx-background-color: black;
+	-fx-text-fill: white;
+}
+
+.Genre_Field {
+	-fx-background-color: black;
+	-fx-text-fill: white;
+}
+
+.Description {
+	-fx-background-color: black;
+	-fx-text-fill: white;
+}
+
+.Price {
+	-fx-background-color: black;
+	-fx-text-fill: white;
+}
+
+.Warning_Label_Error {
+	-fx-opacity: 1;
+	-fx-text-fill: red;
+	-fx-alignment: center;
+}
+
+.Warning_Label_Success {
+	-fx-opacity: 1;
+	-fx-text-fill: green;
+	-fx-alignment: center;
+}
