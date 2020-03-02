@@ -16,10 +16,7 @@ import mochi.ui.RegistrationUI;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ResourceBundle;
 
 public class LoginController implements Initializable {
@@ -72,26 +69,24 @@ public class LoginController implements Initializable {
 	}
 
 	private boolean retreiveUserInformation(String username) {
+		PreparedStatement statement = null;
 		ResultSet resultSet = null;
-		Statement statement = null;
 
 		try {
-			statement = (Statement) database.createStatement();
-			resultSet = statement.executeQuery("SELECT * FROM `mochi-desktop`.User");
+			statement = database.prepareStatement("SELECT firstname, lastname, email FROM User WHERE username = ?");
+			statement.setString(1, username);
+			resultSet = statement.executeQuery();
 
-			while(resultSet.next()) {
-				if (resultSet.getString(1).equals(username)) {
-					User.setUsername(resultSet.getString(1));
-					User.setFirstname(resultSet.getString(2));
-					User.setLastname(resultSet.getString(3));
-					User.setEmail(resultSet.getString(4));
-					return true;
-				}
-				else {
-					return false;
-				}
+			if (resultSet.next()) {
+				User.setUsername(username);
+				User.setFirstname(resultSet.getString("firstname"));
+				User.setLastname(resultSet.getString("lastname"));
+				User.setEmail(resultSet.getString("email"));
+				return true;
 			}
-
+			else {
+				return false;
+			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -101,32 +96,30 @@ public class LoginController implements Initializable {
 	public boolean loginButtonClick() {
 		User currentUser = new User();
 
+		PreparedStatement statement = null;
 		ResultSet resultSet = null;
-		Statement statement = null;
 
 		String username = usernameField.getText();
 		String password = passwordField.getText();
 
 		try {
-			statement = (Statement) database.createStatement();
-			resultSet = statement.executeQuery("SELECT * FROM `mochi-desktop`.Login");
+			statement = database.prepareStatement("SELECT password, verified FROM Login WHERE username = ?");
+			statement.setString(1, username);
+			resultSet = statement.executeQuery();
 
-			while(resultSet.next()) {
-				if (resultSet.getString(1).equals(username) &&
-						resultSet.getString(2).equals(password)) {
-					return (retreiveUserInformation(username) == true && setMainScene() == true
-							&& User.setVerified(resultSet.getInt(3)) == true) ? true : false;
-				}
-				else {
-					warningLabel.getStyleClass().add("Warning_Label_Error");
-					warningLabel.setText("You've enter a wrong username or password.");
-					return false;
-				}
+			if (resultSet.next() && password.equals(resultSet.getString("password"))) {
+				return (retreiveUserInformation(username) == true && setMainScene() == true
+						&& User.setVerified(resultSet.getInt("verified")) == true) ? true : false;
 			}
+			else {
+				warningLabel.getStyleClass().add("Warning_Label_Error");
+				warningLabel.setText("You've enter a wrong username or password.");
+				return false;
+			}
+
 		} catch (SQLException | IOException e) {
 			e.printStackTrace();
 			return false;
 		}
-		return false;
 	}
 }
