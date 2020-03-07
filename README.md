@@ -81,7 +81,7 @@ Unlike purchasing directly from the seller’s website, the customer can search 
 
 # Sprint 6
 
-- [Responsibilities]()
+- [Responsibilities](Artifacts/responsibilities6.md)
 - [Requirements]()
 - [Trello Board](https://trello.com/b/lvHEsjy0/task-board)
 - [Burndown Chart]()
