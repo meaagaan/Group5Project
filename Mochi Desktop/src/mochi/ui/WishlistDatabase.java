@@ -26,8 +26,10 @@ public class WishlistDatabase {
 
         ArrayList<String> wishlist = new ArrayList<String>();
 
-        if (resultSet.next()) {
-            File file = new File("wishlist.txt");
+        System.out.println(resultSet);
+
+        if (resultSet.next() && (resultSet.getObject(1) != null)) {
+            File file = new File("db_wishlist.txt");
             FileOutputStream output = new FileOutputStream(file);
 
             Reader input = resultSet.getCharacterStream("wishlist");
@@ -62,7 +64,7 @@ public class WishlistDatabase {
         statement = connection.prepareStatement("UPDATE User SET wishlist = ? WHERE username = ?");
         statement.setString(2, username);
 
-        File file = new File("sample_wishlist.txt");
+        File file = new File("wishlist.txt");
         FileReader input = new FileReader(file);
 
         if (input != null) {
