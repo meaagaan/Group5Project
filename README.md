@@ -82,10 +82,10 @@ Unlike purchasing directly from the seller’s website, the customer can search 
 # Sprint 6
 
 - [Responsibilities](Artifacts/responsibilities6.md)
-- [Requirements]()
+- [Requirements](Artifacts/requirements6.md)
 - [Trello Board](https://trello.com/b/lvHEsjy0/task-board)
-- [Burndown Chart]()
-- [Velocity Chart]()
+- [Burndown Chart](https://docs.google.com/spreadsheets/d/1DDFRD913ABHZ-No10qLwydV-fwlTVkbWj8Qv4LgXDdg/edit#gid=517183099)
+- [Velocity Chart](https://docs.google.com/spreadsheets/d/1vw81TkkCwkv9nCx62wmESVZQqzlXwXgARyZDBSSaVi0/edit#gid=0)
 - [Design Documents](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/Architecture.md)
 - [Source Code](Mochi%20Desktop/src/mochi)
 - [Automated Tests](Mochi%20Desktop/src/mochi/tests)
