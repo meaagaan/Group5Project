@@ -5,6 +5,7 @@ import mochi.db.DBConnection;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 public class User
 {
@@ -13,7 +14,7 @@ public class User
     private static String lastname = null;
     private static String email = null;
     private static Integer verified = null;
-    private static String dateOfBirth = null;
+    private static ArrayList<String> wishlist = null;
 
     public static boolean setUsername(String userUsername) {
         username = userUsername;
@@ -50,6 +51,13 @@ public class User
         return true;
     }
 
+    public static boolean setWishlist(ArrayList userWishlist) {
+        wishlist = userWishlist;
+        if (wishlist == null)
+            return false;
+        return true;
+    }
+
     public static String getUsername() {
         return username;
     }
@@ -68,5 +76,9 @@ public class User
 
     public static Integer getVerified() {
         return verified;
+    }
+
+    public static ArrayList<String> getWishlist() {
+        return wishlist;
     }
 }
