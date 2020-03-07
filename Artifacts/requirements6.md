@@ -31,4 +31,4 @@
 |            026 |           020 | The side bar should have a link to different pages such as store and library. | User can move to differnet pages using the side bar within the profile page  | 1 | Important | Satisfied |
 |            027 |           020 | When the "submit" button is clicked, the data within the database will be updated. | The new data get updated to database | 9 | Important | Satisfied |
 |            028 |           009 | User's wish list is update and store locally as a text file everytime user login. | User's wish list is automatically update everytime they login to the program. | 5 | Necessary | Satisfied |
-|            029 |           009 | User's wish list is stored and ready to use inside of the user class | This helps with updating user wish list ui. | 7 | Necessary | Satisfied |
+|            029 |           009 | User's wish list is stored and ready to use inside of the user class | This will help with updating user wish list ui in the future. | 7 | Necessary | Satisfied |
