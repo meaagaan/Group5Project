@@ -31,21 +31,34 @@ public class HomeController implements Initializable
     {
         this.database = DBConnection.getDatabase();
 
-        ObservableList<String> filterOptions = FXCollections.observableArrayList("Price", "Reviews", "Genre");
+        ObservableList<String> filterOptions = FXCollections.observableArrayList("Price", "Ratings", "Genre");
         filterChoice.setItems(filterOptions);
 
         ObservableList<String> sortOptions = FXCollections.observableArrayList("Price", "Ratings", "Popularity");
         sortChoice.setItems(sortOptions);
 
-        ObservableList<String> profileOptions = FXCollections.observableArrayList("User Profile", "Settings", "Help", "Wishlist");
+        ObservableList<String> profileOptions = FXCollections.observableArrayList("User Profile", "Settings", "Wishlist");
         profileChoice.setItems(profileOptions);
     }
 
-    public boolean profileDropDownClick() throws IOException
+    public boolean userProfileOptionClicked() throws IOException
     {
-
         return false;
     }
 
+    public boolean settingsOptionClicked() throws IOException
+    {
+        return false;
+    }
+
+    public Boolean wishlistOptionClicked()
+    {
+        return false;
+    }
+
+    public boolean helpButtonClicked() throws IOException
+    {
+        return false;
+    }
 
 }
