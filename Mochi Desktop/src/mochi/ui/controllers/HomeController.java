@@ -19,7 +19,10 @@ public class HomeController implements Initializable
     public ChoiceBox sortChoice;
     public Label sortLabel;
     public TextField searchField;
-    
+    public Label searchLabel;
+    public ChoiceBox profileChoice;
+    public Label profileLabel;
+
 
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
