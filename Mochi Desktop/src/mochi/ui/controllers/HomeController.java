@@ -1,5 +1,7 @@
 package mochi.ui.controllers;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
@@ -27,5 +29,8 @@ public class HomeController implements Initializable
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
         this.database = DBConnection.getDatabase();
+        ObservableList<String> filterOptions = FXCollections.observableArrayList("Price", "Reviews", "Genre");
+        filterChoice.setItems(filterOptions);
+
     }
 }
