@@ -13,7 +13,7 @@
 |            008 |           002 | There should be a login page. | There exist a login scene where information can be inputted. | 13 | Necessary | Satisfied |
 |            009 |           002 | There should be a text entry for ID/Email and password. | There is a textbox for entry for ID/Email and password. | 13 | Necessary | Satisfied |
 |            010 |           002 | When the login button is clicked, the system checks that the email and password exist in the database. | System takes the inputted information and checks the information with the database and logs in accordingly. | 13 | Necessary | Satisfied |
-|            011 |           002 | When the forgot password button is clicked, changes the scene to the forgot password scene. | The scene is changed to the forgot password scene. | 13 | Necessary | Working |
+|            011 |           002 | When the forgot password button is clicked, changes the scene to the forgot password scene. | The scene is changed to the forgot password scene. | 13 | Necessary | Satisfied |
 |            012 |           002 | There should be a button that leads to registration page. | There should be a button on the login scene that changes the scene to the registration scene. | 13 | Necessary | Satisfied |
 |            013 |           004 | There should be a button that leads to product creation page. | There is a button that leads to the product creation scene. | 8 | Necessary | Working |
 |            014 |           004 | There should be a text entry for product name, product description, and product price. | There is a text entry to identify the product name, product description, and product price. | 8 | Necessary | Satisfied |
