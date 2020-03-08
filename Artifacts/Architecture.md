@@ -40,6 +40,8 @@ This is associated with user story 001. From this page you can go to the login p
 ## Profile UI
 ![Profile UI](UI_images/profile.png)
 This is associated with user story 020. From this page you should be able to access the store and library. The main function is to be able to view the information associated with an account and to be able to change any of the information. This is done with the edit button and the submit button.
+## Review UI
+![Profile UI](UI_images/ReviewUI.png)
 - [User Interface Design (Screenshots)](User%20Interface%20Design.md)
 - [User Interface Diagram](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/User%20Interface%20Diagram.png)
 # Resource Management
