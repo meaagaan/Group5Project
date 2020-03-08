@@ -36,3 +36,12 @@
 |            031 |           021 | User can access help page from main page | clicking the "?" button links the user to the customer support page | 3 | Necessary | working |
 |            032 |           012 | User can filter the available products by price | clicking "filters..." and "price" and selecting price maximum will tell the system to only list products within the given price range and it correctly shows on the UI | 8 | Necessary | working |
 |            033 |           012 | User can sort the available products by price | clicking the "sort by..." and "price" will tell the system to sort the product list by price lowest->highest | 8 | Necessary | Important |
+|            034 |           011 | User can see the list of all reviews made by other users | Clicking on the next page will continue to display all reviews made to the product. | 21 | Important | Working |
+|            035 |           011 | User can make a review for a product. | Clicking on a button will prompt the making of a new review. | 21 | Important | Working |
+|            036 |           011 | User can make a star rating on the product | Clicking one of the star will allow the user to pick a star rating for the product. | 21 | Important | Working |
+|            037 |           011 | User can write a review on the product | There is a text field that allows the user to type their review. | 21 | Important | Working |
+|            038 |           011 | The review is stored into the database after the confirm button is clicked | The database contains the review with the star rating. | 21 | Important | Working |
+
+
+
+
