@@ -6,9 +6,13 @@
 	-fx-alignment: center;
 }
 
-.Profile_Button
+.ProfileChoiceBox
 {
 	-fx-background-color: transparent;
+}
+
+.ProfileLabel
+{
 	-fx-font-size: 20px;
 	-fx-text-fill: #CCB8FC;
 	-fx-alignment: center;
@@ -37,6 +41,18 @@
 }
 
 .SearchLabel
+{
+	-fx-font-size: 15px;
+	-fx-text-fill: #000000;
+	-fx-alignment: center;
+}
+
+.SortByChoiceBox
+{
+	-fx-background-color: #CCB8FC;
+}
+
+.SortByLabel
 {
 	-fx-font-size: 15px;
 	-fx-text-fill: #000000;

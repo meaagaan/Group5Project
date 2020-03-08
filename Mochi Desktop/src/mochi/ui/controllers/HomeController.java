@@ -29,8 +29,12 @@ public class HomeController implements Initializable
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
         this.database = DBConnection.getDatabase();
+
         ObservableList<String> filterOptions = FXCollections.observableArrayList("Price", "Reviews", "Genre");
         filterChoice.setItems(filterOptions);
+
+        ObservableList<String> sortOptions = FXCollections.observableArrayList("Price", "Ratings", "Popularity");
+        sortChoice.setItems(sortOptions);
 
     }
 }
