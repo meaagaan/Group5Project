@@ -11,50 +11,54 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mochi.ui.controllers.ProductController">
-    <children>
-        <ImageView fitHeight="800.0" fitWidth="1300.0" layoutX="1.0">
-            <image>
-                <Image url="@../images/Background.png" />
-            </image>
-        </ImageView>
-        <Rectangle fx:id="backgroundBox" arcHeight="5.0" arcWidth="5.0" height="380.0" layoutX="442.0" layoutY="223.0" stroke="BLACK" strokeType="INSIDE" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 50, 0, 0, 5);" width="417.0" />
-        <TextField fx:id="productName" layoutX="512.0" layoutY="315.0" prefHeight="25.0" prefWidth="290.0" promptText="Product Name" styleClass="Product_Field" stylesheets="@../stylesheets/ProductStyle.css">
-            <font>
-                <Font size="14.0" />
-            </font>
-        </TextField>
-        <Line endX="217.0" layoutX="603.0" layoutY="345.0" startX="-122.0" stroke="WHITE" />
-        <Button fx:id="confirmButton" layoutX="480.0" layoutY="530.0" mnemonicParsing="false" onMouseClicked="#confirmButtonClick" styleClass="Button_BG" stylesheets="@../stylesheets/ProductStyle.css" text="Confirm">
-            <font>
-                <Font size="14.0" />
-            </font>
-        </Button>
-        <Text fill="WHITE" layoutX="562.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Product Registration">
-            <font>
-                <Font size="48.0" />
-            </font>
-        </Text>
-        <Line endX="173.0" layoutX="800.0" layoutY="158.0" startX="14.0" />
-        <TextField fx:id="genre" layoutX="512.0" layoutY="435.0" prefHeight="25.0" prefWidth="290.0" promptText="Genre" styleClass="Genre_Field" stylesheets="@../stylesheets/ProductStyle.css">
-            <font>
-                <Font size="14.0" />
-            </font>
-        </TextField>
-        <TextField fx:id="description" layoutX="512.0" layoutY="355.0" prefHeight="25.0" prefWidth="290.0" promptText="Last Name" styleClass="Description_Field" stylesheets="@../stylesheets/ProductStyle.css">
-            <font>
-                <Font size="14.0" />
-            </font>
-        </TextField>
-        <Line endX="217.0" layoutX="602.0" layoutY="465.0" startX="-122.0" stroke="WHITE" />
-        <Line endX="217.0" layoutX="603.0" layoutY="505.0" startX="-122.0" stroke="WHITE" />
-        <TextField fx:id="price" layoutX="512.0" layoutY="395.0" prefHeight="25.0" prefWidth="290.0" promptText="Price" styleClass="Price_Field" stylesheets="@../stylesheets/ProductStyle.css">
-            <font>
-                <Font size="14.0" />
-            </font>
-        </TextField>
-        <Line endX="217.0" layoutX="602.0" layoutY="385.0" startX="-122.0" stroke="WHITE" />
-        <Line endX="217.0" layoutX="602.0" layoutY="425.0" startX="-122.0" stroke="WHITE" />
-        <Label fx:id="confirmError" layoutX="481.0" layoutY="506.0" prefHeight="20.0" prefWidth="340.0" styleClass="Warning_Label_Error" stylesheets="@../stylesheets/ProductStyle.css" />
-        <Label fx:id="ProductError" layoutX="714.0" layoutY="426.0" prefHeight="39.0" prefWidth="145.0" styleClass="Warning_Label_Error" stylesheets="@../stylesheets/ProductStyle.css" />
-</Pane>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<SplitPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    fx:controller ="mochi.ui.controllers.ProductController">
+    <items>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="399.0" prefWidth="549.0">
+            <children>
+                <ImageView fitHeight="434.0" fitWidth="637.0" layoutX="-6.0" layoutY="-18.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../images/Background.png" />
+                    </image>
+                </ImageView>
+                <Label layoutX="182.0" layoutY="14.0" prefHeight="34.0" prefWidth="234.0" text="Product Registration">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                </Label>
+                <Label fx:id="productLabel" layoutX="121.0" layoutY="58.0" prefHeight="40.0" prefWidth="122.0" styleClass="Product_Field" stylesheets="@../stylesheets/ProductStyle.css" text="Product Name">
+                    <font>
+                        <Font size="17.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="productName" layoutX="267.0" layoutY="65.0" />
+                <Label layoutX="121.0" layoutY="99.0" prefHeight="40.0" prefWidth="122.0" text="Genre">
+                    <font>
+                        <Font size="17.0" />
+                    </font>
+                </Label>
+                <ChoiceBox fx:id="genre" layoutX="267.0" layoutY="105.0" prefHeight="27.0" prefWidth="161.0" />
+                <Label layoutX="121.0" layoutY="199.0" prefHeight="40.0" prefWidth="122.0" text="Description">
+                    <font>
+                        <Font size="17.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="description" layoutX="267.0" layoutY="211.0" prefHeight="94.0" prefWidth="161.0" />
+                <TextField fx:id="price" layoutX="267.0" layoutY="155.0" />
+                <Label layoutX="121.0" layoutY="149.0" prefHeight="40.0" prefWidth="122.0" text="Price">
+                    <font>
+                        <Font size="17.0" />
+                    </font>
+                </Label>
+            </children></AnchorPane>
+    </items>
+</SplitPane>

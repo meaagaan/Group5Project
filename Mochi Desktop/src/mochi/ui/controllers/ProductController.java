@@ -1,4 +1,5 @@
 package mochi.ui.controllers;
+import javafx.collections.FXCollections;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
@@ -13,16 +14,17 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ResourceBundle;
+import javafx.beans.value.ObservableValue;
+import javafx.beans.value.ChangeListener;
 
 public class ProductController implements Initializable {
     public Pane pane;
     public Label productLabel;
     public Button confirmButton;
     public TextField productName;
-    public TextField genre;
+    public Label genre;
     public TextField description;
     public TextField price;
-
     public Label ProductError;
     public Label confirmError;
     private Connection database;
@@ -49,8 +51,14 @@ public class ProductController implements Initializable {
         ResultSet resultSet = null;
         Statement statement = null;
 
+        String choices[]={"education", "business","personal" };
+        ChoiceBox ch = new ChoiceBox(FXCollections.observableArrayList(choices));
         String productN = productName.getText();
-        String genreName = genre.getText();
+        ch.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>(){
+            public void changed(ObservableValue ov, Number v, Number val) {
+                genre.setText(choices[val.intValue()]);
+            }
+        });
         String descriptionOfProduct = description.getText();
         String priceOfProduct = price.getText();
         String query;
@@ -70,7 +78,7 @@ public class ProductController implements Initializable {
 
 
                 // check if any of the fields are empty.
-                if (productN.equals("") || genreName.equals("") || descriptionOfProduct.equals("") ||
+                if (productN.equals("") || genre.equals("") || descriptionOfProduct.equals("") ||
                         priceOfProduct.equals("")) {
                     confirmError.getStyleClass().add("Warning_Label_Error");
                     confirmError.setText("One or more empty fields");
@@ -87,7 +95,7 @@ public class ProductController implements Initializable {
 
 
         // putting the product information into the database.
-        query = "insert into Product values ('" + productN + "', '" + genreName + "', '" + descriptionOfProduct + "', '" + priceOfProduct + "');";
+        query = "insert into Product values ('" + productN + "', '" + genre + "', '" + descriptionOfProduct + "', '" + priceOfProduct + "');";
         statement.executeUpdate(query);
 
 
