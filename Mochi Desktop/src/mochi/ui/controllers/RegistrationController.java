@@ -108,11 +108,10 @@ public class RegistrationController implements Initializable {
                     passwordError.setText("Invalid, Needs 5 characters");
                     ErrorFlag = true;
                 }
-
-                // if ErrorFlag is changed once, an error occurred somewhere.
-                if (ErrorFlag) {
-                    return false;
-                }
+            }
+            // if ErrorFlag is changed once, an error occurred somewhere.
+            if (ErrorFlag) {
+                return false;
             }
 
         } catch (SQLException e) {
@@ -135,6 +134,6 @@ public class RegistrationController implements Initializable {
         query = "insert into Login values ('" + username + "', '" + password + "', " + "0);";
         statement.executeUpdate(query);
 
-        return setMainSceneLogin();
+        return true;
     }
 }
