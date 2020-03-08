@@ -9,8 +9,6 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import mochi.db.DBConnection;
 import mochi.ui.LoginUI;
-import mochi.ui.ProfileUI;
-import mochi.ui.RegistrationUI;
 
 import java.io.IOException;
 import java.net.URL;
