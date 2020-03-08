@@ -9,6 +9,7 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import mochi.db.DBConnection;
 import mochi.ui.LoginUI;
+import mochi.ui.ProfileUI;
 import mochi.ui.RegistrationUI;
 
 import java.io.IOException;
@@ -40,7 +41,7 @@ public class RegistrationController implements Initializable {
         this.database = DBConnection.getDatabase();
     }
 
-    public boolean loginLabelClick() throws IOException {
+    private boolean setMainSceneLogin() throws IOException {
         Stage primaryStage = (Stage) pane.getScene().getWindow();
         LoginUI loginUI = new LoginUI();
 
@@ -51,7 +52,11 @@ public class RegistrationController implements Initializable {
         return false;
     }
 
-    public boolean confirmButtonClick() throws SQLException {
+    public boolean loginLabelClick() throws IOException {
+        return setMainSceneLogin();
+    }
+
+    public boolean confirmButtonClick() throws SQLException, IOException {
         ResultSet resultSet = null;
         Statement statement = null;
 
@@ -98,24 +103,38 @@ public class RegistrationController implements Initializable {
                     ErrorFlag = true;
                 }
 
-                // if ErrorFlag is changed once, an error occurred somewhere.
-                if (ErrorFlag){
-                    return false;
+                if (password.length() < 5) {
+                    passwordError.getStyleClass().add("Warning_Label_Error");
+                    passwordError.setText("Invalid, Needs 5 characters");
+                    ErrorFlag = true;
                 }
 
-                // do a check to see if it meets password requirements
-                            }
+                // if ErrorFlag is changed once, an error occurred somewhere.
+                if (ErrorFlag) {
+                    return false;
+                }
+            }
 
         } catch (SQLException e) {
             e.printStackTrace();
             return false;
         }
+        // If we get here, that means we pass all minimum requirements. Get rid of any error.
+        usernameError.getStyleClass().add("Warning_Label_Normal");
+        usernameError.setText("");
+        emailError.getStyleClass().add("Warning_Label_Normal");
+        emailError.setText("");
+        confirmError.getStyleClass().add("Warning_Label_Success");
+        confirmError.setText("Success");
+        passwordError.getStyleClass().add("Warning_Label_Normal");
+        passwordError.setText("");
+
         // putting the information into the database.
-        query = "insert into User values ('" + username + "', '" + firstName + "', '" + lastName + "', '" + email + "');";
+        query = "insert into User values ('" + username + "', '" + firstName + "', '" + lastName + "', '" + email + "', '" + "null" +"');";
         statement.executeUpdate(query);
         query = "insert into Login values ('" + username + "', '" + password + "', " + "0);";
         statement.executeUpdate(query);
 
-        return false;
+        return setMainSceneLogin();
     }
 }
