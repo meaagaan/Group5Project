@@ -36,5 +36,9 @@ public class HomeController implements Initializable
         ObservableList<String> sortOptions = FXCollections.observableArrayList("Price", "Ratings", "Popularity");
         sortChoice.setItems(sortOptions);
 
+        ObservableList<String> profileOptions = FXCollections.observableArrayList("User Profile", "Settings", "Help", "Wishlist");
+        profileChoice.setItems(profileOptions);
     }
+
+
 }
