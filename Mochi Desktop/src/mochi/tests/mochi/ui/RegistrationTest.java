@@ -8,16 +8,23 @@ import org.junit.Test;
 import org.testfx.framework.junit.ApplicationTest;
 import org.testfx.util.NodeQueryUtils;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
 import static org.testfx.api.FxAssert.verifyThat;
 import static org.testfx.util.NodeQueryUtils.hasText;
 
 public class RegistrationTest extends ApplicationTest {
 
     private Stage currentStage;
+    private Connection database;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
         DBConnection connection = new DBConnection();
+        this.database = connection.getDatabase();
 
         RegistrationUI registrationUI = new RegistrationUI();
         Scene registrationScene = registrationUI.getRegistrationScene();
@@ -96,14 +103,14 @@ public class RegistrationTest extends ApplicationTest {
 
     @Test
     public void ErrorWhenTakenUsername() {
-        clickOn("#usernameField").write("admin");
+        clickOn("#usernameField").write("Admin");
         clickOn("#confirmButton");
         verifyThat("#usernameError", hasText("Taken"));
     }
 
     @Test
     public void ErrorWhenTakenEmail() {
-        clickOn("#emailField").write("admin@email.com");
+        clickOn("#emailField").write("Admin@mail.com");
         clickOn("#confirmButton");
         verifyThat("#emailError", hasText("Taken"));
     }
@@ -129,8 +136,49 @@ public class RegistrationTest extends ApplicationTest {
         verifyThat("#emailError", hasText(""));
     }
 
+    @Test
+    public void ValidPassword() {
+        clickOn("#passwordField").write("12345");
+        clickOn("#confirmButton");
+        verifyThat("#passwordError", hasText(""));
+    }
 
-    // valid password
-    // invalid password
+    @Test
+    public void InvalidPassword() {
+        clickOn("#passwordField").write("1234");
+        clickOn("#confirmButton");
+        verifyThat("#passwordError", hasText("Invalid, Needs 5 characters"));
+    }
+
+    @Test
+    public void SuccessfulRegistration() throws SQLException {
+
+        ResultSet resultSet = null;
+        Statement statement = null;
+
+        try {
+            statement = (Statement) database.createStatement();
+            resultSet = statement.executeQuery("SELECT * FROM `mochi-desktop`.User;");
+
+            while(resultSet.next()) {
+                if (resultSet.getString(1).equals("123")) {
+                    statement.executeUpdate("DELETE FROM `mochi-desktop`.`User` WHERE (`username` = '123');");
+                    statement.executeUpdate("DELETE FROM `mochi-desktop`.`Login` WHERE (`username` = '123');");
+                    break;
+                }
+            }
+
+            clickOn("#firstNameField").write("123");
+            clickOn("#lastNameField").write("123");
+            clickOn("#emailField").write("123@gmail.com");
+            clickOn("#usernameField").write("123");
+            clickOn("#passwordField").write("123123");
+            clickOn("#confirmButton");
+            verifyThat("#confirmError", hasText("Success"));
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
 }

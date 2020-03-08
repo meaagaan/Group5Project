@@ -13,6 +13,7 @@ import mochi.db.DBConnection;
 import mochi.ui.ForgotUI;
 import mochi.ui.ProfileUI;
 import mochi.ui.RegistrationUI;
+import mochi.ui.WishlistDatabase;
 
 import java.io.IOException;
 import java.net.URL;
@@ -69,6 +70,8 @@ public class LoginController implements Initializable {
 	}
 
 	private boolean retreiveUserInformation(String username) {
+		WishlistDatabase wishlistDatabase = new WishlistDatabase(database);
+
 		PreparedStatement statement = null;
 		ResultSet resultSet = null;
 
@@ -82,12 +85,12 @@ public class LoginController implements Initializable {
 				User.setFirstname(resultSet.getString("firstname"));
 				User.setLastname(resultSet.getString("lastname"));
 				User.setEmail(resultSet.getString("email"));
-				return true;
+				return (true && wishlistDatabase.readFile(username));
 			}
 			else {
 				return false;
 			}
-		} catch (SQLException e) {
+		} catch (SQLException | IOException e) {
 			e.printStackTrace();
 		}
 		return false;

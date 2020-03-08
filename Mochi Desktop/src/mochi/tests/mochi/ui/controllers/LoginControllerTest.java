@@ -60,8 +60,8 @@ public class LoginControllerTest extends ApplicationTest {
     @Test
 	// Check if everything is working when login successfully.
     public void loginSuccess() {
-        clickOn("#usernameField").write("admin");
-        clickOn("#passwordField").write("admin");
+        clickOn("#usernameField").write("Admin");
+        clickOn("#passwordField").write("123456789");
         Platform.runLater(() -> {
             assertEquals(true, loginController.loginButtonClick());
         });
