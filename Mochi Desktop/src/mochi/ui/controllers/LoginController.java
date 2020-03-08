@@ -14,6 +14,7 @@ import mochi.ui.ForgotUI;
 import mochi.ui.ProfileUI;
 import mochi.ui.RegistrationUI;
 import mochi.ui.WishlistDatabase;
+import mochi.ui.HomeUI;
 
 import java.io.IOException;
 import java.net.URL;
@@ -60,10 +61,10 @@ public class LoginController implements Initializable {
 
 	private boolean setMainScene () throws IOException {
 		Stage primaryStage = (Stage) pane.getScene().getWindow();
-		ProfileUI profileUI = new ProfileUI();
+		HomeUI homeUI = new HomeUI();
 
-		if (profileUI != null) {
-			primaryStage.setScene(profileUI.getProfileScene());
+		if (homeUI != null) {
+			primaryStage.setScene(homeUI.getHomeScene());
 			return true;
 		}
 		return false;
