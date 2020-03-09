@@ -18,3 +18,5 @@
 ![Developer Page](UI_images/Developer%20Page.png)
 ## Product Page
 ![Developer Page](UI_images/Product%20Page.png)
+## Review Page
+![Review UI](UI_images/ReviewUI.png)

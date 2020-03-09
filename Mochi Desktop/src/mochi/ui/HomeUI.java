@@ -3,7 +3,6 @@ package mochi.ui;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import mochi.ui.controllers.LoginController;
 import mochi.ui.controllers.HomeController;
 
 import java.io.IOException;
@@ -15,7 +14,7 @@ public class HomeUI
 
     public HomeUI() throws IOException
     {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("fxmls/HomeUI"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("fxmls/HomeUI.fxml"));
         Parent root = loader.load();
 
         this.homeController = loader.getController();

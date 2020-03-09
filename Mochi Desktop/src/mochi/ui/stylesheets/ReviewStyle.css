@@ -1,0 +1,44 @@
+.Mochi_Label {
+	-fx-font-size: 85px;
+	-fx-font-weight: bold;
+	-fx-text-fill: #CCB8FC;
+	-fx-alignment: center;
+}
+
+.Profile_Label {
+	-fx-background-color: transparent;
+	-fx-font-size: 20px;
+	-fx-text-fill: #CCB8FC;
+}
+
+.Product_Label {
+	-fx-font-size: 40px;
+	-fx-font-weight: bold;
+	-fx-alignment: center;
+}
+
+.StarReview_Label {
+	-fx-font-size: 30px;
+	-fx-font-weight: bold;
+	-fx-font-style: italic;
+	-fx-alignment: center_right;
+}
+
+.Review_Label {
+	-fx-font-size: 30px;
+	-fx-font-style: italic;
+	-fx-alignment: center;
+}
+
+.Profile_Choicebox {
+    -fx-background-color: transparent;
+}
+
+.SubmitReview_Button {
+	-fx-min-width: 300.0px;
+	-fx-pref-height: 50.0px;
+	-fx-pref-width: 300.0px;
+	-fx-pref-height: 50.0px;
+	-fx-background-color: rgb(255, 255, 255);
+	-fx-alignment: center;
+}
