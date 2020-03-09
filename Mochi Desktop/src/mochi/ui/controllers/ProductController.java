@@ -16,17 +16,20 @@ import java.sql.Statement;
 import java.util.ResourceBundle;
 import javafx.beans.value.ObservableValue;
 import javafx.beans.value.ChangeListener;
+import javafx.fxml.FXML;
 
 public class ProductController implements Initializable {
     public Pane pane;
     public Label productLabel;
     public Button confirmButton;
     public TextField productName;
+    public TextField genres;
     public Label genre;
     public TextField description;
     public TextField price;
     public Label ProductError;
     public Label confirmError;
+    public String choices[]={"education", "business","personal" };
     private Connection database;
 
     @Override
@@ -51,17 +54,13 @@ public class ProductController implements Initializable {
         ResultSet resultSet = null;
         Statement statement = null;
 
-        String choices[]={"education", "business","personal" };
         ChoiceBox ch = new ChoiceBox(FXCollections.observableArrayList(choices));
         String productN = productName.getText();
-        ch.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>(){
-            public void changed(ObservableValue ov, Number v, Number val) {
-                genre.setText(choices[val.intValue()]);
-            }
-        });
+
         String descriptionOfProduct = description.getText();
         String priceOfProduct = price.getText();
         String query;
+
         boolean ErrorFlag = false;
 
         try {
