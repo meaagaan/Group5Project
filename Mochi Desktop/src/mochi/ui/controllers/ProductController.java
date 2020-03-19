@@ -1,10 +1,13 @@
 package mochi.ui.controllers;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import mochi.db.DBConnection;
+import mochi.ui.HomeUI;
 import mochi.ui.ProductUI;
 
 import java.io.IOException;
@@ -14,54 +17,51 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ResourceBundle;
-import javafx.beans.value.ObservableValue;
-import javafx.beans.value.ChangeListener;
-import javafx.fxml.FXML;
+
 
 public class ProductController implements Initializable {
     public Pane pane;
     public Label productLabel;
     public Button confirmButton;
     public TextField productName;
-    public TextField genres;
-    public Label genre;
+
     public TextField description;
     public TextField price;
     public Label ProductError;
     public Label confirmError;
-    public String choices[]={"education", "business","personal" };
+    ObservableList <String>choice = FXCollections.observableArrayList("education", "business","personal");
     private Connection database;
-
+    public ChoiceBox options;
+    public Button returnHome;
+    String s="educational";
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         this.database = DBConnection.getDatabase();
-    }
+        options.setItems(choice);
 
-    public boolean productLabelClick() throws IOException {
-        Stage primaryStage = (Stage) pane.getScene().getWindow();
-        ProductUI productUI = new ProductUI();
-
-        if (productUI != null) {
-            primaryStage.setScene(productUI.getProductScene());
-            return true;
+        if(options.getSelectionModel().getSelectedItem()=="educational"){
+            s="educational";
+        }
+        else if(options.getSelectionModel().getSelectedItem()=="business"){
+            s="business";
+        }
+        else{
+            s="personal";
         }
 
-        return false;
-
     }
 
-    public boolean confirmButtonClick() throws SQLException {
+    public boolean confirmButtonClick() throws SQLException, IOException {
+
         ResultSet resultSet = null;
         Statement statement = null;
 
-        ChoiceBox ch = new ChoiceBox(FXCollections.observableArrayList(choices));
-        String productN = productName.getText();
 
+        String productN = productName.getText();
+        String genreName= s;
         String descriptionOfProduct = description.getText();
         String priceOfProduct = price.getText();
         String query;
-
-        boolean ErrorFlag = false;
 
         try {
             statement = (Statement) database.createStatement();
@@ -77,7 +77,8 @@ public class ProductController implements Initializable {
 
 
                 // check if any of the fields are empty.
-                if (productN.equals("") || genre.equals("") || descriptionOfProduct.equals("") ||
+                if (productN.equals("") ||
+                        genreName.equals("") || descriptionOfProduct.equals("") ||
                         priceOfProduct.equals("")) {
                     confirmError.getStyleClass().add("Warning_Label_Error");
                     confirmError.setText("One or more empty fields");
@@ -91,13 +92,25 @@ public class ProductController implements Initializable {
             return false;
         }
 
-
-
         // putting the product information into the database.
-        query = "insert into Product values ('" + productN + "', '" + genre + "', '" + descriptionOfProduct + "', '" + priceOfProduct + "');";
+        query = "insert into Product values ('" + productN + "', '" + genreName + "', '" + descriptionOfProduct + "', '" + priceOfProduct + "');";
         statement.executeUpdate(query);
 
 
         return false;
+    }
+    public boolean setHomeScene() throws IOException{
+        Stage primaryStage = (Stage) returnHome.getScene().getWindow();
+        HomeUI homeUI = new HomeUI();
+
+        if (homeUI != null) {
+            primaryStage.setScene(homeUI.getHomeScene());
+            return true;
+        }
+        return false;
+    }
+    public boolean returnHomeClick() throws IOException{
+        return setHomeScene();
+
     }
 }
