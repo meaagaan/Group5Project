@@ -11,7 +11,10 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import mochi.db.DBConnection;
 import mochi.ui.ForgotUI;
+import mochi.ui.HomeUI;
 import mochi.ui.ProductUI;
+import mochi.ui.ProfileUI;
+import mochi.ui.stylesheets.LibraryUI;
 
 import java.io.IOException;
 import java.net.URL;
@@ -57,7 +60,7 @@ public class HomeController implements Initializable
         return false;
     }
 
-    public Boolean wishlistOptionClicked()
+    public boolean wishlistOptionClicked()
     {
         return false;
     }
@@ -66,6 +69,22 @@ public class HomeController implements Initializable
     {
         return false;
     }
+
+    private boolean setProfileScene () throws IOException {
+        Stage primaryStage = (Stage) pane.getScene().getWindow();
+        ProfileUI profileUI = new ProfileUI();
+
+        if (profileUI != null) {
+            primaryStage.setScene(profileUI.getProfileScene());
+            return true;
+        }
+        return false;
+    }
+
+    public boolean tempProfileLabelClicked() throws IOException {
+        return setProfileScene();
+    }
+
     public boolean setProductScene() throws IOException{
         Stage primaryStage = (Stage) createProduct.getScene().getWindow();
         ProductUI productUI = new ProductUI();
@@ -78,7 +97,6 @@ public class HomeController implements Initializable
     }
     public boolean createProductClick() throws IOException{
         return setProductScene();
-
     }
 
 }

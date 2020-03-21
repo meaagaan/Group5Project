@@ -1,6 +1,5 @@
 package mochi.ui.controllers;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -11,9 +10,8 @@ import javafx.stage.Stage;
 import mochi.User;
 import mochi.db.DBConnection;
 import mochi.ui.ForgotUI;
-import mochi.ui.ProfileUI;
 import mochi.ui.RegistrationUI;
-import mochi.ui.WishlistDatabase;
+import mochi.WishlistDatabase;
 import mochi.ui.HomeUI;
 
 import java.io.IOException;
@@ -112,7 +110,7 @@ public class LoginController implements Initializable {
 			resultSet = statement.executeQuery();
 
 			if (resultSet.next() && password.equals(resultSet.getString("password"))) {
-				return (retreiveUserInformation(username) == true && setMainScene() == true
+				return (retreiveUserInformation(username) == true || setMainScene() == true
 						&& User.setVerified(resultSet.getInt("verified")) == true) ? true : false;
 			}
 			else {

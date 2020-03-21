@@ -14,7 +14,8 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.shape.Rectangle?>
 
-<Pane maxHeight="800.0" maxWidth="1300.0" minHeight="800.0" minWidth="1300.0" prefHeight="800.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mochi.ui.controllers.HomeController">
+<?import javafx.scene.control.Button?>
+<Pane fx:id="pane" maxHeight="800.0" maxWidth="1300.0" minHeight="800.0" minWidth="1300.0" prefHeight="800.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mochi.ui.controllers.HomeController">
    <children>
       <AnchorPane layoutX="1.0" layoutY="2.0" prefHeight="783.0" prefWidth="1306.0">
          <children>
@@ -54,8 +55,9 @@
             <Label fx:id="sortLabel" layoutX="52.0" layoutY="432.0" styleClass="SortByLabel" stylesheets="@../stylesheets/HomeUI.css" text="Sort by..." />
             <TextField fx:id="searchField" layoutX="7.0" layoutY="327.0" styleClass="SearchField" stylesheets="@../stylesheets/HomeUI.css" />
             <Label fx:id="searchLabel" layoutX="58.0" layoutY="329.0" styleClass="SearchLabel" stylesheets="@../stylesheets/HomeUI.css" text="Search" />
+            <Button fx:id= "createProduct" layoutX="9.0" layoutY="500.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="108.0" onMouseClicked="#createProductClick" text="Create" />
             <ChoiceBox fx:id="profileChoice" layoutX="1149.0" layoutY="46.0" prefHeight="25.0" prefWidth="150.0" styleClass="ProfileChoiceBox" stylesheets="@../stylesheets/HomeUI.css" />
-            <Label fx:id="profileLabel" layoutX="1164.0" layoutY="44.0" styleClass="ProfileLabel" stylesheets="@../stylesheets/HomeUI.css" text="UserProfile" />
+            <Label fx:id="profileLabel" layoutX="1164.0" layoutY="44.0" styleClass="ProfileLabel" stylesheets="@../stylesheets/HomeUI.css" text="UserProfile" onMouseClicked="#tempProfileLabelClicked"/>
          </children>
       </AnchorPane>
    </children>

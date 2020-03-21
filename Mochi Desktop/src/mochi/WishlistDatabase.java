@@ -1,4 +1,4 @@
-package mochi.ui;
+package mochi;
 
 import mochi.User;
 

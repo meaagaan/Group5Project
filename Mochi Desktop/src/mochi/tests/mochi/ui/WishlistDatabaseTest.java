@@ -1,6 +1,7 @@
 package mochi.ui;
 
 import mochi.User;
+import mochi.WishlistDatabase;
 import mochi.db.DBConnection;
 import org.junit.Test;
 
