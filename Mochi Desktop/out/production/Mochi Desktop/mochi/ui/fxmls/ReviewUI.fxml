@@ -29,8 +29,8 @@
                   <Image url="@../images/default-Profile.png" />
                </image>
             </ImageView>
-            <Label layoutX="1155.0" layoutY="43.0" styleClass="Profile_Label" stylesheets="@../stylesheets/ReviewStyle.css" text="User Profile" />
-            <Label layoutX="528.0" layoutY="-4.0" prefHeight="124.0" prefWidth="250.0" styleClass="Mochi_Label" stylesheets="@../stylesheets/ReviewStyle.css" text="Mochi" />
+            <Label fx:id="userProfileLabel" layoutX="1155.0" layoutY="43.0" styleClass="Profile_Label" stylesheets="@../stylesheets/ReviewStyle.css" text="User Profile" />
+            <Label fx:id="mochiLabel" layoutX="528.0" layoutY="-4.0" prefHeight="124.0" prefWidth="250.0" styleClass="Mochi_Label" stylesheets="@../stylesheets/ReviewStyle.css" text="Mochi" />
             <Line endX="1300.0" endY="115.0" startY="115.0" stroke="#7b7f6d" strokeWidth="10.0" />
             <ChoiceBox fx:id="userProfileChoiceBox" layoutX="1101.0" layoutY="34.0" onMouseClicked="#userProfileClick" prefHeight="48.0" prefWidth="180.0" styleClass="Profile_Choicebox" stylesheets="@../stylesheets/ReviewStyle.css" />
             <Label fx:id="programLabel" layoutY="120.0" prefHeight="60.0" prefWidth="1306.0" styleClass="Product_Label" stylesheets="@../stylesheets/ReviewStyle.css" text="Hello World" />

@@ -1,13 +1,12 @@
 package mochi.ui.controllers;
 
+import javafx.collections.FXCollections;
 import javafx.fxml.Initializable;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
 import mochi.db.DBConnection;
 
-import java.awt.*;
+
 import java.net.URL;
 import java.sql.Connection;
 import java.util.ResourceBundle;
@@ -30,6 +29,10 @@ public class ReviewController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         this.database = DBConnection.getDatabase();
+
+        userProfileChoiceBox.setItems(FXCollections.observableArrayList("User Profile", "Settings", "Wishlist"));
+
+        starChoiceBox.setItems(FXCollections.observableArrayList("1 star", "2 star", "3 star", "4 star", "5 star"));
     }
 
     // Submits the starReview and whats in the text area
