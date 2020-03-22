@@ -43,13 +43,15 @@ This is associated with user story 020. From this page you should be able to acc
 ## Review UI
 ![Review UI](UI_images/ReviewUI.png)
 This is assoicated with user story 011. From this page you are able to write your own review, which includes a star rating with the choice box. At the top, you are able to see the name of the product you are viewing. At the bottom right, you can see the ratings and reviews that other users have given for this product. This can also be assoicated with user story 014 because the merchant is able to see what their customer thinks of their product. At the top right, there is a choice box next to User Profile. From there you can go to your profile(user story 020), wishlist(user story 021), and home page(user story 012).
-
 ## Home UI
 ![Review UI](UI_images/HomeUI.png)
+This is associated with the user story ID 012. This page will display available product names in the center of the screen and will allow the user to search, filter by, and sort by products, when looking for something specific. From this page you can go to the user profile (user story 020). This is done by clicking on the top right hand button User Profile. 
 ## Library UI
 ![Library UI](UI_images/LibraryUI.png)
+This is associated with the user story ID 022. This page will display all the products that the user currently owns in a list. From this page you can go to the user profile page (user story 020) with the top right hand button. At the same time, the user is able to go to the home page (user story 012) by clicking on the store button.
 ## Product UI
 ![Product UI](UI_images/ProductUI.png)
+This is associated with the suer story ID 004. This page will allow merchants to create their product to sell to other users. This will include the name of the product, genre of the product, price, and any descriptions for the product. The user can also go back to the home page (user story 012) through the button on the top left hand corner.
 - [User Interface Design (Screenshots)](User%20Interface%20Design.md)
 - [User Interface Diagram](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/User%20Interface%20Diagram.png)
 # Resource Management
