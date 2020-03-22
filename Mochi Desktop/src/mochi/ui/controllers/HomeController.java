@@ -35,7 +35,7 @@ public class HomeController implements Initializable
     public Label profileLabel;
 
     public Button createProduct;
-    
+
     public Pane pane;
 
     public void initialize(URL url, ResourceBundle resourceBundle)
