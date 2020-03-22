@@ -20,16 +20,13 @@ public class HomeController implements Initializable
     private Connection database;
 
     public ComboBox filterCombo;
-    public Label filterLabel;
 
     public ComboBox sortCombo;
-    public Label sortLabel;
 
     public TextField searchField;
     public Label searchLabel;
 
     public ComboBox profileCombo;
-    public Label profileLabel;
 
     public Button createProduct;
 
