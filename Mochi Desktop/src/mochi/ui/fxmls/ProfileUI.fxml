@@ -13,7 +13,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<Pane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mochi.ui.controllers.ProfileController">
+<Pane fx:id="pane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mochi.ui.controllers.ProfileController">
    <children>
       <AnchorPane maxHeight="800.0" maxWidth="1300.0" minHeight="800.0" minWidth="1300.0" prefHeight="800.0" prefWidth="1300.0" style="-fx-background-color: white;">
          <children>
@@ -51,27 +51,27 @@
                   </Button>
                </children>
             </Pane>
-            <GridPane hgap="20.0" prefHeight="800.0" prefWidth="253.0" styleClass="Side_Bar" stylesheets="@../stylesheets/ProfileUI.css" vgap="20.0">
-              <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="122.0" minWidth="10.0" prefWidth="57.0" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="198.0" minWidth="10.0" prefWidth="196.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints maxHeight="262.0" minHeight="0.0" prefHeight="186.0" vgrow="SOMETIMES" />
-                <RowConstraints fillHeight="false" maxHeight="692.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="574.0" minHeight="7.0" prefHeight="40.0" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="574.0" minHeight="10.0" prefHeight="541.0" vgrow="SOMETIMES" />
-              </rowConstraints>
-               <children>
-                  <Label fx:id="storeLabel" styleClass="SideBar_Label" stylesheets="@../stylesheets/ProfileUI.css" text="Store" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <Label fx:id="libraryLabel" styleClass="SideBar_Label" stylesheets="@../stylesheets/ProfileUI.css" text="Library" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-               </children>
-            </GridPane>
             <ImageView fx:id="editButton" fitHeight="82.0" fitWidth="77.0" layoutX="1127.0" layoutY="158.0" onMouseClicked="#editButtonClicked" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/button-Edit.png" />
                </image>
             </ImageView>
+            <GridPane hgap="20.0" prefHeight="800.0" prefWidth="253.0" styleClass="Side_Bar" stylesheets="@../stylesheets/LibraryStyle.css" vgap="20.0">
+               <columnConstraints>
+                  <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" maxWidth="122.0" minWidth="10.0" prefWidth="57.0" />
+                  <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" maxWidth="198.0" minWidth="10.0" prefWidth="196.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints fillHeight="false" maxHeight="186.0" minHeight="186.0" prefHeight="186.0" vgrow="NEVER" />
+                  <RowConstraints fillHeight="false" maxHeight="30.0" minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="NEVER" />
+                  <RowConstraints fillHeight="false" maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="NEVER" />
+                  <RowConstraints fillHeight="false" maxHeight="30.0" minHeight="7.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Label fx:id="storeLabel" onMouseClicked="#storeLabelClicked" styleClass="SideBar_Label" stylesheets="@../stylesheets/ProfileUI.css" text="Store" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label fx:id="libraryLabel" styleClass="SideBar_Label" stylesheets="@../stylesheets/ProfileUI.css" text="Library" GridPane.columnIndex="1" GridPane.rowIndex="2" onMouseClicked="#libraryLabelClicked"/>
+               </children>
+            </GridPane>
          </children>
       </AnchorPane>
    </children>

@@ -7,11 +7,8 @@ import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import mochi.db.DBConnection;
-import mochi.ui.ForgotUI;
-import mochi.ui.HomeUI;
 import mochi.ui.ProductUI;
 import mochi.ui.ProfileUI;
-import mochi.ui.stylesheets.LibraryUI;
 
 import java.io.IOException;
 import java.net.URL;

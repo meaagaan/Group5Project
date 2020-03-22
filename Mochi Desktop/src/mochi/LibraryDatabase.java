@@ -7,10 +7,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class UserProductDatabase {
+public class LibraryDatabase {
 	Connection connection;
 
-	public UserProductDatabase(Connection connection) {
+	public LibraryDatabase(Connection connection) {
 		this.connection = connection;
 	}
 
@@ -38,12 +38,7 @@ public class UserProductDatabase {
 			while ((character = input.read()) > 0) {
 				output.write(character);
 
-				if (firstLine) {
-					firstLine = false;
-					continue;
-				}
-
-				if (!(character == 42 || character == 10)) {
+				if (!(character == 42 || character == 10 || character == 11 || character == 12 || character == 13)) {
 					stringBuilder.append((char)character);
 				}
 				else {
@@ -51,7 +46,7 @@ public class UserProductDatabase {
 					stringBuilder = new StringBuilder();
 				}
 			}
-			return (true && User.setWishlist(product));
+			return (true && User.setLibraryList(product));
 		}
 		return false;
 	}

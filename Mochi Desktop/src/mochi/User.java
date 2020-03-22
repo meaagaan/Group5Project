@@ -15,6 +15,7 @@ public class User
     private static String email = null;
     private static Integer verified = null;
     private static ArrayList<String> wishlist = null;
+    private static ArrayList<String> librarytList = null;
 
     public static boolean setUsername(String userUsername) {
         username = userUsername;
@@ -58,6 +59,13 @@ public class User
         return true;
     }
 
+    public static boolean setLibraryList(ArrayList userLibraryList) {
+        librarytList = userLibraryList;
+        if (librarytList == null)
+            return false;
+        return true;
+    }
+
     public static String getUsername() {
         return username;
     }
@@ -80,5 +88,9 @@ public class User
 
     public static ArrayList<String> getWishlist() {
         return wishlist;
+    }
+
+    public static ArrayList<String> getLibrarytList() {
+        return librarytList;
     }
 }

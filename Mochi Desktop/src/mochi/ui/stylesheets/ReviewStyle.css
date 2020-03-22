@@ -42,3 +42,35 @@
 	-fx-background-color: rgb(255, 255, 255);
 	-fx-alignment: center;
 }
+
+.Warning_Label_Normal {
+    -fx-opacity: 0;
+    -fx-text-fill: white;
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+    -fx-alignment: center;
+}
+
+.Warning_Label_Error {
+	-fx-opacity: 1;
+	-fx-text-fill: red;
+	-fx-font-size: 30px;
+	-fx-font-weight: bold;
+	-fx-alignment: center;
+}
+
+.Warning_Label_Error_Both {
+	-fx-opacity: 1;
+	-fx-text-fill: red;
+	-fx-font-size: 15px;
+	-fx-font-weight: bold;
+	-fx-alignment: center;
+}
+
+.Warning_Label_Success {
+	-fx-opacity: 1;
+	-fx-text-fill: green;
+	-fx-font-size: 30px;
+	-fx-font-weight: bold;
+	-fx-alignment: center;
+}

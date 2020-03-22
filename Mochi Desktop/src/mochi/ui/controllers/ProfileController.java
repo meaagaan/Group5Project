@@ -5,9 +5,14 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 import mochi.User;
 import mochi.db.DBConnection;
+import mochi.ui.HomeUI;
+import mochi.ui.LibraryUI;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
 import java.util.ResourceBundle;
@@ -19,6 +24,7 @@ public class ProfileController implements Initializable {
 	public TextField lastNameField;
 	public TextField emailField;
 	public Button submitButton;
+	public Pane pane;
 
 	private Connection database;
 
@@ -102,4 +108,33 @@ public class ProfileController implements Initializable {
 		return updateInformation();
 	}
 
+	private boolean setHomeScene () throws IOException {
+		Stage primaryStage = (Stage) pane.getScene().getWindow();
+		HomeUI homeUI = new HomeUI();
+
+		if (homeUI != null) {
+			primaryStage.setScene(homeUI.getHomeScene());
+			return true;
+		}
+		return false;
+	}
+
+	public boolean storeLabelClicked() throws IOException {
+		return setHomeScene();
+	}
+
+	private boolean setLibraryScene () throws IOException {
+		Stage primaryStage = (Stage) pane.getScene().getWindow();
+		LibraryUI libraryUI = new LibraryUI();
+
+		if (libraryUI != null) {
+			primaryStage.setScene(libraryUI.getLibraryScene());
+			return true;
+		}
+		return false;
+	}
+
+	public boolean libraryLabelClicked() throws IOException {
+		return setLibraryScene();
+	}
 }
