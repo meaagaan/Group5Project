@@ -22,12 +22,8 @@ public class HomeController implements Initializable
 {
     private Connection database;
 
-    public ChoiceBox filterChoice;
-
     public ComboBox filterCombo;
     public Label filterLabel;
-
-    public ChoiceBox sortChoice;
 
     public ComboBox sortCombo;
     public Label sortLabel;
@@ -35,11 +31,11 @@ public class HomeController implements Initializable
     public TextField searchField;
     public Label searchLabel;
 
-    public ChoiceBox profileChoice;
-
     public ComboBox profileCombo;
     public Label profileLabel;
+
     public Button createProduct;
+    
     public Pane pane;
 
     public void initialize(URL url, ResourceBundle resourceBundle)
