@@ -31,9 +31,9 @@
 |            026 |           020 | When the "submit" button is clicked, the data within the database will be updated. | The new data get updated to database | 9 | Important | Satisfied |
 |            027 |           009 | User's wish list is update and store locally as a text file everytime user login. | User's wish list is automatically update everytime they login to the program. | 5 | Necessary | Satisfied |
 |            028 |           009 | User's wish list is stored and ready to use inside of the user class | This will help with updating user wish list ui in the future. | 7 | Necessary | Satisfied |
-|            029 |           021 | User's profile can be access from main page | user can click on the profile button on the main page and arrive at the profile page | 3 | Necessary | Working |
+|            029 |           021 | User's profile can be access from main page | user can click on the profile button on the main page and arrive at the profile page | 3 | Necessary | Satisfied |
 |            030 |           021 | User can access their wishlist from the pain page | user can click on the profile drop down and click on "wishlist" button and view wishlist page | 3 | Important | working |
-|            031 |           021 | User can access help page from main page | clicking the "?" button links the user to the customer support page | 3 | Necessary | working |
+|            031 |           021 | User can access help page from main page | clicking the "?" button links the user to the customer support page | 3 | Necessary | Satisfied |
 |            032 |           012 | User can filter the available products by price | clicking "filters..." and "price" and selecting price maximum will tell the system to only list products within the given price range and it correctly shows on the UI | 8 | Necessary | working |
 |            033 |           012 | User can sort the available products by price | clicking the "sort by..." and "price" will tell the system to sort the product list by price lowest->highest | 8 | Necessary | Important |
 |            034 |           011 | User can see the list of all reviews made by other users | A chart of all reviews for the product is visible. | 21 | Important | Satisfied |
