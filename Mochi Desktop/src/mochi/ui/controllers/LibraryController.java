@@ -34,7 +34,7 @@ public class LibraryController implements Initializable {
 	}
 
 	private boolean libraryListFill() {
-		if (!(User.getLibrarytList() == null) && (User.getLibrarytList().isEmpty())) {
+		if (!(User.getLibrarytList() == null) && !(User.getLibrarytList().isEmpty())) {
 			for (String s : User.getLibrarytList())
 				libraryList.getItems().add(s);
 			return true;
