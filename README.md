@@ -96,7 +96,7 @@ Unlike purchasing directly from the seller’s website, the customer can search 
 - [Responsibilities](Artifacts/responsibilities7.md)
 - [Requirements](Artifacts/requirements7.md)
 - [Trello Board](https://trello.com/b/lvHEsjy0/task-board)
-- [Burndown Chart](https://docs.google.com/spreadsheets/d/1DDFRD913ABHZ-No10qLwydV-fwlTVkbWj8Qv4LgXDdg/edit#gid=517183099)
+- [Burndown Chart](https://docs.google.com/spreadsheets/d/1DDFRD913ABHZ-No10qLwydV-fwlTVkbWj8Qv4LgXDdg/edit#gid=2039018988)
 - [Velocity Chart](https://docs.google.com/spreadsheets/d/1vw81TkkCwkv9nCx62wmESVZQqzlXwXgARyZDBSSaVi0/edit#gid=0)
 - [Design Documents](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/Architecture.md)
 - [Source Code](Mochi%20Desktop/src/mochi)

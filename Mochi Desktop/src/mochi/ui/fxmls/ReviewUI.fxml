@@ -32,7 +32,7 @@
             <Label fx:id="userProfileLabel" layoutX="1155.0" layoutY="43.0" styleClass="Profile_Label" stylesheets="@../stylesheets/ReviewStyle.css" text="User Profile" />
             <Label fx:id="mochiLabel" layoutX="528.0" layoutY="-4.0" prefHeight="124.0" prefWidth="250.0" styleClass="Mochi_Label" stylesheets="@../stylesheets/ReviewStyle.css" text="Mochi" />
             <Line endX="1300.0" endY="115.0" startY="115.0" stroke="#7b7f6d" strokeWidth="10.0" />
-            <ChoiceBox fx:id="userProfileChoiceBox" layoutX="1101.0" layoutY="34.0" onMouseClicked="#userProfileClick" prefHeight="48.0" prefWidth="180.0" styleClass="Profile_Choicebox" stylesheets="@../stylesheets/ReviewStyle.css" />
+            <ChoiceBox fx:id="userProfileChoiceBox" layoutX="1101.0" layoutY="34.0" prefHeight="48.0" prefWidth="180.0" styleClass="Profile_Choicebox" stylesheets="@../stylesheets/ReviewStyle.css" />
             <Label fx:id="programLabel" layoutY="120.0" prefHeight="60.0" prefWidth="1306.0" styleClass="Product_Label" stylesheets="@../stylesheets/ReviewStyle.css" text="Hello World" />
             <Label fx:id="averageRatingLabel" alignment="CENTER_RIGHT" layoutX="985.0" layoutY="126.0" prefHeight="48.0" prefWidth="309.0" styleClass="StarReview_Label" stylesheets="@../stylesheets/ReviewStyle.css" text="Average Rating: 5.0" textAlignment="CENTER">
                <font>
@@ -47,8 +47,17 @@
             </TableView>
             <TextArea fx:id="textAreaReview" layoutY="434.0" prefHeight="259.0" prefWidth="509.0" />
             <Label layoutY="362.0" prefHeight="76.0" prefWidth="285.0" styleClass="Review_Label" stylesheets="@../stylesheets/ReviewStyle.css" text="Leave Your Review" />
-            <ChoiceBox fx:id="starChoiceBox" layoutX="330.0" layoutY="388.0" onMouseClicked="#starReviewClick" prefWidth="150.0" />
+            <ChoiceBox fx:id="starChoiceBox" layoutX="330.0" layoutY="388.0" prefWidth="150.0" />
             <Button fx:id="submitReviewButton" layoutX="105.0" layoutY="721.0" mnemonicParsing="false" onMouseClicked="#submitReviewButtonClick" prefHeight="60.0" prefWidth="186.0" styleClass="SubmitReview_Button" stylesheets="@../stylesheets/ReviewStyle.css" text="Submit Review" />
+            <Label fx:id="errorLabel" layoutX="426.0" layoutY="726.0" prefHeight="40.0" prefWidth="235.0" styleClass="Warning_Label_Normal" stylesheets="@../stylesheets/ReviewStyle.css">
+               <font>
+                  <Font size="30.0" />
+               </font></Label>
+            <Label fx:id="successLabel" layoutX="426.0" layoutY="726.0" prefHeight="40.0" prefWidth="235.0" styleClass="Warning_Label_Normal" stylesheets="@../stylesheets/ReviewStyle.css">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </children>

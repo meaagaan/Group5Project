@@ -41,6 +41,7 @@
 |            036 |           011 | User can make a star rating on the product | Clicking one of the star will allow the user to pick a star rating for the product. | 21 | Important | Working |
 |            037 |           011 | User can write a review on the product | There is a text field that allows the user to type their review. | 21 | Important | Working |
 |            038 |           011 | The review is stored into the database after the confirm button is clicked | The database contains the review with the star rating. | 21 | Important | Working |
+|            039 |           022 | There should be a table that shows every product user own. | User should be able to see the list of all of the products they own. | 9 | Important | Satisfied |
 
 
 
