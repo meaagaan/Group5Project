@@ -42,3 +42,12 @@
 	-fx-text-fill: #000000;
 	-fx-alignment: CENTER;
 }
+
+.HelpButton
+{
+	-fx-background-color: transparent;
+	-fx-font-size: 50px;
+	-fx-font-weight: bold;
+	-fx-text-fill: #CCB8FC;
+	-fx-alignment: CENTER;
+}

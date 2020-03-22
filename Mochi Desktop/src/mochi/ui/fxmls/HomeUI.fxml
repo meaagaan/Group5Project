@@ -56,6 +56,7 @@
             <Button fx:id="createProduct" layoutX="9.0" layoutY="500.0" mnemonicParsing="false" onMouseClicked="#createProductClick" prefHeight="40.0" prefWidth="108.0" text="Create" />
             <Label layoutX="1162.0" layoutY="48.0" prefHeight="21.0" prefWidth="108.0" styleClass="ProfileLabel" stylesheets="@../stylesheets/HomeUI.css" text="User Profile" />
             <ComboBox fx:id="profileCombo" layoutX="1150.0" layoutY="50.0" prefHeight="25.0" prefWidth="133.0" styleClass="ProfileComboBox" stylesheets="@../stylesheets/HomeUI.css" />
+            <Button fx:id="helpButton" layoutX="35.0" layoutY="4.0" mnemonicParsing="false" styleClass="HelpButton" stylesheets="@../stylesheets/HomeUI.css" text="?" />
          </children>
       </AnchorPane>
    </children>
