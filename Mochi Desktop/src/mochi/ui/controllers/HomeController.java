@@ -20,18 +20,17 @@ public class HomeController implements Initializable
     private Connection database;
 
     public ComboBox filterCombo;
-    public Label filterLabel;
 
     public ComboBox sortCombo;
-    public Label sortLabel;
 
     public TextField searchField;
     public Label searchLabel;
 
     public ComboBox profileCombo;
-    public Label profileLabel;
 
     public Button createProduct;
+
+    public Button helpButton;
 
     public Pane pane;
 
@@ -49,24 +48,21 @@ public class HomeController implements Initializable
         profileCombo.setItems(profileOptions);
     }
 
+    public boolean userProfileChoice() throws IOException {
+
+        if (profileCombo.getValue().equals("User Profile"))
+           return  userProfileOptionClicked();
+        if (profileCombo.getValue().equals("Settings"))
+            return settingsOptionClicked();
+        if (profileCombo.getValue().equals("Wishlist"))
+            return wishlistOptionClicked();
+        else
+            return false;
+    }
+
     public boolean userProfileOptionClicked() throws IOException
     {
-        return false;
-    }
-
-    public boolean settingsOptionClicked() throws IOException
-    {
-        return false;
-    }
-
-    public boolean wishlistOptionClicked()
-    {
-        return false;
-    }
-
-    public boolean helpButtonClicked() throws IOException
-    {
-        return false;
+        return setProfileScene();
     }
 
     private boolean setProfileScene () throws IOException {
@@ -80,9 +76,29 @@ public class HomeController implements Initializable
         return false;
     }
 
+    public boolean settingsOptionClicked() throws IOException {
+        return false;
+    }
+
+    public boolean wishlistOptionClicked() throws IOException {
+        return setWishlistScene();
+    }
+
+    private boolean setWishlistScene () throws IOException {
+
+        return false;
+    }
+
+    public boolean helpButtonClicked() throws IOException
+    {
+        return false;
+    }
+
+    /*
     public boolean tempProfileLabelClicked() throws IOException {
         return setProfileScene();
     }
+    */
 
     public boolean setProductScene() throws IOException{
         Stage primaryStage = (Stage) createProduct.getScene().getWindow();
