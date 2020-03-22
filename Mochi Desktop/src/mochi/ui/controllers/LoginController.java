@@ -113,8 +113,11 @@ public class LoginController implements Initializable {
 			resultSet = statement.executeQuery();
 
 			if (resultSet.next() && password.equals(resultSet.getString("password"))) {
-				return (retreiveUserInformation(username) == true && setMainScene() == true
-						&& User.setVerified(resultSet.getInt("verified")) == true) ? true : false;
+				boolean retreiveBoolean = (retreiveUserInformation(username) == true);
+				boolean setMainBoolean = (setMainScene() == true);
+				boolean setVerifiedBoolean = (User.setVerified(resultSet.getInt("verified")) == true);
+
+				return retreiveBoolean && setMainBoolean && setVerifiedBoolean;
 			}
 			else {
 				warningLabel.getStyleClass().add("Warning_Label_Error");
