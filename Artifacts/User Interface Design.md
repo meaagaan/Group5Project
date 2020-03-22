@@ -7,9 +7,9 @@
 ## Customer Support Page
 ![Customer Support Page](UI_images/Customer%20Support.png)
 ## Main Page
-![Main Page](UI_images/HomeUI.jpg)
+![Main Page](UI_images/HomeUI.png)
 ## User Library Page
-![User Library Page](UI_images/LibraryUI.jpg)
+![User Library Page](UI_images/LibraryUI.png)
 ## User Profile Page
 ![User Library Page](UI_images/profile.png)
 ## Checkout Page
