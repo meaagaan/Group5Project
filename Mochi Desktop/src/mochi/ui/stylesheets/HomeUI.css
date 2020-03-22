@@ -9,13 +9,14 @@
 .ProfileComboBox
 {
 	-fx-background-color: transparent;
+	-fx-font-size: 15px;
+	-fx-text-fill: #CCB8FC;
 }
 
 .ProfileLabel
 {
 	-fx-font-size: 20px;
 	-fx-text-fill: #CCB8FC;
-	-fx-alignment: center;
 }
 
 .Scrollbar
@@ -28,56 +29,16 @@
 	-fx-background-color: white;
 }
 
-.SearchOptionBoxes
-{
-	-fx-background-color: #CCB8FC;
-}
-
-.SearchOptionLabels
-{
-	-fx-font-size: 15px;
-	-fx-text-fill: #000000;
-	-fx-alignment: center;
-}
-/*
-.FilterByComboBox
-{
-	-fx-background-color: #CCB8FC;
-}
-
-
-.FilterLabel
-{
-	-fx-font-size: 15px;
-	-fx-text-fill: #000000;
-	-fx-alignment: center;
-}
-
-
-.SearchField
-{
-	-fx-background-color: #CCB8FC;
-}
-
-
 .SearchLabel
 {
 	-fx-font-size: 15px;
-	-fx-text-fill: #000000;
-	-fx-alignment: center;
+	-fx-text-fill: black;
 }
 
-
-.SortByComboBox
+.OptionBoxes
 {
 	-fx-background-color: #CCB8FC;
-}
-
-
-.SortByLabel
-{
 	-fx-font-size: 15px;
 	-fx-text-fill: #000000;
-	-fx-alignment: center;
+	-fx-alignment: CENTER;
 }
-*/

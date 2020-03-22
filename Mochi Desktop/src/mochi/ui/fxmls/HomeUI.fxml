@@ -30,7 +30,7 @@
                </image>
             </ImageView>
             <Rectangle arcHeight="5.0" arcWidth="5.0" height="115.0" stroke="BLACK" strokeType="INSIDE" width="1306.0" />
-            <ImageView fitHeight="58.0" fitWidth="61.0" layoutX="1094.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="58.0" fitWidth="61.0" layoutX="1101.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/default-Profile.png" />
                </image>
@@ -49,12 +49,13 @@
             <ListView layoutX="156.0" layoutY="309.0" prefHeight="467.0" prefWidth="1124.0" />
             <ScrollBar layoutX="1282.0" layoutY="309.0" orientation="VERTICAL" prefHeight="467.0" prefWidth="25.0" styleClass="Scrollbar" stylesheets="@../stylesheets/HomeUI.css" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" height="467.0" layoutY="309.0" stroke="BLACK" strokeType="INSIDE" width="160.0" />
-            <ComboBox fx:id="filterCombo" layoutX="7.0" layoutY="379.0" prefWidth="150.0" promptText="Filter" />
-            <ComboBox fx:id="sortCombo" layoutX="7.0" layoutY="425.0" prefWidth="150.0" promptText="Sort by" />
+            <ComboBox fx:id="filterCombo" layoutX="7.0" layoutY="379.0" prefWidth="150.0" promptText="Filter" styleClass="OptionBoxes" stylesheets="@../stylesheets/HomeUI.css" />
+            <ComboBox fx:id="sortCombo" layoutX="7.0" layoutY="425.0" prefWidth="150.0" promptText="Sort by" styleClass="OptionBoxes" stylesheets="@../stylesheets/HomeUI.css" />
             <TextField fx:id="searchField" layoutX="7.0" layoutY="327.0" styleClass="SearchField" stylesheets="@../stylesheets/HomeUI.css" />
-            <Label fx:id="searchLabel" layoutX="58.0" layoutY="329.0" styleClass="SearchLabel" stylesheets="@../stylesheets/HomeUI.css" text="Search" />
+            <Label fx:id="searchLabel" layoutX="14.0" layoutY="329.0" styleClass="SearchLabel" stylesheets="@../stylesheets/HomeUI.css" text="Search" />
             <Button fx:id="createProduct" layoutX="9.0" layoutY="500.0" mnemonicParsing="false" onMouseClicked="#createProductClick" prefHeight="40.0" prefWidth="108.0" text="Create" />
-            <ComboBox fx:id="profileCombo" layoutX="1155.0" layoutY="46.0" prefHeight="25.0" prefWidth="133.0" promptText="User Profile" />
+            <Label layoutX="1162.0" layoutY="48.0" prefHeight="21.0" prefWidth="108.0" styleClass="ProfileLabel" stylesheets="@../stylesheets/HomeUI.css" text="User Profile" />
+            <ComboBox fx:id="profileCombo" layoutX="1150.0" layoutY="50.0" prefHeight="25.0" prefWidth="133.0" styleClass="ProfileComboBox" stylesheets="@../stylesheets/HomeUI.css" />
          </children>
       </AnchorPane>
    </children>
