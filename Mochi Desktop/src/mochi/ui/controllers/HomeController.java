@@ -7,6 +7,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import mochi.db.DBConnection;
+import mochi.ui.ForgotUI;
 import mochi.ui.ProductUI;
 import mochi.ui.ProfileUI;
 
@@ -91,14 +92,19 @@ public class HomeController implements Initializable
 
     public boolean helpButtonClicked() throws IOException
     {
-        return false;
+        return setHelpScene();
     }
 
-    /*
-    public boolean tempProfileLabelClicked() throws IOException {
-        return setProfileScene();
+    private boolean setHelpScene() throws IOException {
+        Stage primaryStage = (Stage) pane.getScene().getWindow();
+        ForgotUI forgotUI = new ForgotUI();
+
+        if (forgotUI != null) {
+            primaryStage.setScene(forgotUI.getForgotScene());
+            return true;
+        }
+        return false;
     }
-    */
 
     public boolean setProductScene() throws IOException{
         Stage primaryStage = (Stage) createProduct.getScene().getWindow();
@@ -113,6 +119,12 @@ public class HomeController implements Initializable
     public boolean createProductClick() throws IOException{
         return setProductScene();
     }
+
+    /*
+    public boolean tempProfileLabelClicked() throws IOException {
+        return setProfileScene();
+    }
+    */
 
 }
 
