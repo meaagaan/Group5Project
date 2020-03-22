@@ -1,6 +1,5 @@
 package mochi.ui.controllers;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -8,12 +7,13 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import mochi.LibraryDatabase;
 import mochi.User;
 import mochi.db.DBConnection;
 import mochi.ui.ForgotUI;
-import mochi.ui.ProfileUI;
+import mochi.ui.LibraryUI;
 import mochi.ui.RegistrationUI;
-import mochi.ui.WishlistDatabase;
+import mochi.WishlistDatabase;
 import mochi.ui.HomeUI;
 
 import java.io.IOException;
@@ -72,6 +72,7 @@ public class LoginController implements Initializable {
 
 	private boolean retreiveUserInformation(String username) {
 		WishlistDatabase wishlistDatabase = new WishlistDatabase(database);
+		LibraryDatabase libraryDatabase = new LibraryDatabase(database);
 
 		PreparedStatement statement = null;
 		ResultSet resultSet = null;
@@ -86,7 +87,7 @@ public class LoginController implements Initializable {
 				User.setFirstname(resultSet.getString("firstname"));
 				User.setLastname(resultSet.getString("lastname"));
 				User.setEmail(resultSet.getString("email"));
-				return (true && wishlistDatabase.readFile(username));
+				return (true && (wishlistDatabase.readFile(username) || libraryDatabase.readFile(username)));
 			}
 			else {
 				return false;
@@ -112,8 +113,11 @@ public class LoginController implements Initializable {
 			resultSet = statement.executeQuery();
 
 			if (resultSet.next() && password.equals(resultSet.getString("password"))) {
-				return (retreiveUserInformation(username) == true && setMainScene() == true
-						&& User.setVerified(resultSet.getInt("verified")) == true) ? true : false;
+				boolean retreiveBoolean = (retreiveUserInformation(username) == true);
+				boolean setMainBoolean = (setMainScene() == true);
+				boolean setVerifiedBoolean = (User.setVerified(resultSet.getInt("verified")) == true);
+
+				return retreiveBoolean && setMainBoolean && setVerifiedBoolean;
 			}
 			else {
 				warningLabel.getStyleClass().add("Warning_Label_Error");

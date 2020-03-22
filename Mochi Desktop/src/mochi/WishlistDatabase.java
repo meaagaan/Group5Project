@@ -1,4 +1,4 @@
-package mochi.ui;
+package mochi;
 
 import mochi.User;
 
@@ -45,7 +45,7 @@ public class WishlistDatabase {
                     continue;
                 }
 
-                if (!(character == 42 || character == 10)) {
+                if (!(character == 42 || character == 10 || character == 11 || character == 12 || character == 13)) {
                     stringBuilder.append((char)character);
                 }
                 else {

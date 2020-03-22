@@ -6,7 +6,6 @@ import javafx.scene.Scene;
 
 import java.io.IOException;
 
-
 public class RegistrationUI {
     Scene RegistrationScene;
 

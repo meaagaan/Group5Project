@@ -3,15 +3,12 @@ package mochi.ui.controllers;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import mochi.db.DBConnection;
-import mochi.ui.ForgotUI;
 import mochi.ui.ProductUI;
+import mochi.ui.ProfileUI;
 
 import java.io.IOException;
 import java.net.URL;
@@ -22,15 +19,20 @@ public class HomeController implements Initializable
 {
     private Connection database;
 
-    public ChoiceBox filterChoice;
+    public ComboBox filterCombo;
     public Label filterLabel;
-    public ChoiceBox sortChoice;
+
+    public ComboBox sortCombo;
     public Label sortLabel;
+
     public TextField searchField;
     public Label searchLabel;
-    public ChoiceBox profileChoice;
+
+    public ComboBox profileCombo;
     public Label profileLabel;
+
     public Button createProduct;
+
     public Pane pane;
 
     public void initialize(URL url, ResourceBundle resourceBundle)
@@ -38,13 +40,13 @@ public class HomeController implements Initializable
         this.database = DBConnection.getDatabase();
 
         ObservableList<String> filterOptions = FXCollections.observableArrayList("Price", "Ratings", "Genre");
-        filterChoice.setItems(filterOptions);
+        filterCombo.setItems(filterOptions);
 
         ObservableList<String> sortOptions = FXCollections.observableArrayList("Price", "Ratings", "Popularity");
-        sortChoice.setItems(sortOptions);
+        sortCombo.setItems(sortOptions);
 
         ObservableList<String> profileOptions = FXCollections.observableArrayList("User Profile", "Settings", "Wishlist");
-        profileChoice.setItems(profileOptions);
+        profileCombo.setItems(profileOptions);
     }
 
     public boolean userProfileOptionClicked() throws IOException
@@ -57,7 +59,7 @@ public class HomeController implements Initializable
         return false;
     }
 
-    public Boolean wishlistOptionClicked()
+    public boolean wishlistOptionClicked()
     {
         return false;
     }
@@ -66,6 +68,22 @@ public class HomeController implements Initializable
     {
         return false;
     }
+
+    private boolean setProfileScene () throws IOException {
+        Stage primaryStage = (Stage) pane.getScene().getWindow();
+        ProfileUI profileUI = new ProfileUI();
+
+        if (profileUI != null) {
+            primaryStage.setScene(profileUI.getProfileScene());
+            return true;
+        }
+        return false;
+    }
+
+    public boolean tempProfileLabelClicked() throws IOException {
+        return setProfileScene();
+    }
+
     public boolean setProductScene() throws IOException{
         Stage primaryStage = (Stage) createProduct.getScene().getWindow();
         ProductUI productUI = new ProductUI();
@@ -78,7 +96,6 @@ public class HomeController implements Initializable
     }
     public boolean createProductClick() throws IOException{
         return setProductScene();
-
     }
 
 }

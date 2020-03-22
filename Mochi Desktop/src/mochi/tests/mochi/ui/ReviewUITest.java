@@ -1,12 +1,17 @@
 package mochi.ui;
 
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import mochi.db.DBConnection;
 import org.junit.Test;
 import org.testfx.framework.junit.ApplicationTest;
+import org.testfx.util.NodeQueryUtils;
 
 import java.sql.Connection;
+
+import static org.testfx.api.FxAssert.verifyThat;
+import static org.testfx.util.NodeQueryUtils.hasText;
 
 public class ReviewUITest extends ApplicationTest {
 
@@ -29,19 +34,65 @@ public class ReviewUITest extends ApplicationTest {
         primaryStage.show();
     }
 
-    // test if mochi label exist
-    // test if programLabel exist
-    // test if averageRatingLabel exist
-    // test if User Profile exist
-    // test if user profile choice box exist
-    // test if starReview choice box exist
-    // test if textAreaReview exist
-    // test if textAreaReview returns what is typed inside of it.
-    // test if submit review button exist
-    // test if reviewTableView exist
-    // test for tableColumn of Rating, User, Review
-    // test for error when only star review is empty
-    // test for error when only review textArea is empty
-    // test for error when both star review and review textArea are empty
-    // test when successful.
+    @Test
+    public void MochiLabelExist() {
+        verifyThat("#mochiLabel", Node::isVisible);
+        verifyThat("#mochiLabel", NodeQueryUtils.hasText("Mochi"));
+    }
+
+    @Test
+    public void programLabelExist() {
+        verifyThat("#programLabel", Node::isVisible);
+        verifyThat("#programLabel", NodeQueryUtils.hasText("Hello World"));
+    }
+
+    @Test
+    public void averageRatingLabelExist() {
+        verifyThat("#averageRatingLabel", Node::isVisible);
+        verifyThat("#averageRatingLabel", NodeQueryUtils.hasText("Average Rating: 5.0"));
+    }
+
+    @Test
+    public void userProfileLabelExist() {
+        verifyThat("#userProfileLabel", Node::isVisible);
+        verifyThat("#userProfileLabel", NodeQueryUtils.hasText("User Profile"));
+    }
+
+    @Test
+    public void textAreaReviewExist() {
+        verifyThat("#textAreaReview", Node::isVisible);
+        verifyThat("#textAreaReview", NodeQueryUtils.hasText(""));
+    }
+
+    @Test
+    public void submitReviewButtonExist() {
+        verifyThat("#submitReviewButton", Node::isVisible);
+        verifyThat("#submitReviewButton", NodeQueryUtils.hasText("Submit Review"));
+    }
+
+    @Test
+    public void ratingTableColumnExist() {
+        verifyThat("#ratingTableColumn", Node::isVisible);
+    }
+
+    @Test
+    public void userTableColumnExist() {
+        verifyThat("#userTableColumn", Node::isVisible);
+    }
+
+    @Test
+    public void reviewTableColumnExist() {
+        verifyThat("#reviewTableColumn", Node::isVisible);
+    }
+
+    @Test
+    public void textAreaReviewContain() {
+        clickOn("#textAreaReview").write("123");
+        verifyThat("#textAreaReview", hasText("123"));
+    }
+
+    @Test
+    public void errorLabelExist() {
+            verifyThat("#errorLabel", hasText(""));
+    }
 }

@@ -6,7 +6,7 @@
 	-fx-alignment: center;
 }
 
-.ProfileChoiceBox
+.ProfileComboBox
 {
 	-fx-background-color: transparent;
 }
@@ -23,10 +23,28 @@
 	-fx-background-color: #7b7f6d;
 }
 
-.FilterByChoiceBox
+.SearchField
+{
+	-fx-background-color: white;
+}
+
+.SearchOptionBoxes
 {
 	-fx-background-color: #CCB8FC;
 }
+
+.SearchOptionLabels
+{
+	-fx-font-size: 15px;
+	-fx-text-fill: #000000;
+	-fx-alignment: center;
+}
+/*
+.FilterByComboBox
+{
+	-fx-background-color: #CCB8FC;
+}
+
 
 .FilterLabel
 {
@@ -35,10 +53,12 @@
 	-fx-alignment: center;
 }
 
+
 .SearchField
 {
 	-fx-background-color: #CCB8FC;
 }
+
 
 .SearchLabel
 {
@@ -47,10 +67,12 @@
 	-fx-alignment: center;
 }
 
-.SortByChoiceBox
+
+.SortByComboBox
 {
 	-fx-background-color: #CCB8FC;
 }
+
 
 .SortByLabel
 {
@@ -58,3 +80,4 @@
 	-fx-text-fill: #000000;
 	-fx-alignment: center;
 }
+*/
