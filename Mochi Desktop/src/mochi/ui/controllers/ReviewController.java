@@ -4,20 +4,31 @@ import javafx.collections.FXCollections;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
+import javafx.stage.Stage;
 import mochi.db.DBConnection;
+import mochi.ui.LibraryUI;
+import mochi.ui.LoginUI;
+import mochi.ui.ProductUI;
+import mochi.ui.ProfileUI;
 
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ResourceBundle;
 
 public class ReviewController implements Initializable {
     public Pane pane;
     public Label averageRatingLabel;
     public Label programLabel;
+    public Label errorLabel;
+    public Label successLabel;
     public TextArea textAreaReview;
-    public ChoiceBox userProfileChoiceBox;
-    public ChoiceBox starChoiceBox;
+    public ChoiceBox<String> userProfileChoiceBox;
+    public ChoiceBox<String> starChoiceBox;
     public Button submitReviewButton;
     public TableView reviewTableView;
     public TableColumn ratingTableColumn;
@@ -30,24 +41,115 @@ public class ReviewController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         this.database = DBConnection.getDatabase();
 
-        userProfileChoiceBox.setItems(FXCollections.observableArrayList("User Profile", "Settings", "Wishlist"));
+        // choice box to see My profile, library, and wishlist.
+        userProfileChoiceBox.setItems(FXCollections.observableArrayList("My Profile", "Library", "Wishlist"));
 
+        // choice box to see all the possible ratings.
         starChoiceBox.setItems(FXCollections.observableArrayList("1 star", "2 star", "3 star", "4 star", "5 star"));
+
+        // My profile choice box where clicking will lead to the new scene.
+        userProfileChoiceBox.getSelectionModel().selectedItemProperty().addListener((v, oldValue, newValue) -> {
+            if (userProfileChoiceBox.getValue().equals("My Profile")) {
+                try {
+                    setUserProfileScene();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            else if (userProfileChoiceBox.getValue().equals("Library")) {
+                try {
+                    setLibraryScene();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        } );
+    }
+
+    private boolean setUserProfileScene() throws IOException {
+        Stage primaryStage = (Stage) pane.getScene().getWindow();
+        ProfileUI profileUI = new ProfileUI();
+
+        if (profileUI != null) {
+            primaryStage.setScene(profileUI.getProfileScene());
+            return true;
+        }
+        return false;
+    }
+
+    private boolean setLibraryScene() throws IOException {
+        Stage primaryStage = (Stage) pane.getScene().getWindow();
+        LibraryUI libraryUI = new LibraryUI();
+
+        if (libraryUI != null) {
+            primaryStage.setScene(libraryUI.getLibraryScene());
+            return true;
+        }
+        return false;
     }
 
     // Submits the starReview and whats in the text area
     public boolean submitReviewButtonClick() {
-        return false;
-    }
+        int errorStar = 0;
+        int errorReview = 0;
+        ResultSet resultSet = null;
+        Statement statement = null;
 
-    // choice box to see 1, 2, 3, 4, 5 stars
-    public boolean starReviewClick() {
-        return false;
-    }
+        String review = textAreaReview.getText();
+        String star = starChoiceBox.getValue();
 
-    // choice box to see home, profile, and others
-    public boolean userProfileClick() {
-        return false;
-    }
+        errorLabel.getStyleClass().add("Warning_Label_Normal");
+        successLabel.getStyleClass().add("Warning_Label_Normal");
+        errorLabel.setText("");
+        successLabel.setText("");
 
+        // error checking
+        if (star == null) {
+            errorStar = 1;
+        }
+
+        if (review.equals("")) {
+            errorReview = 1;
+        }
+
+        // No star rating, but there is a review.
+        if (errorStar == 1 && errorReview == 0) {
+            errorLabel.setText("No star rating");
+            errorLabel.getStyleClass().add("Warning_Label_Error");
+            return false;
+        }
+        // No review, but there is a star rating.
+        else if (errorStar == 0 && errorReview == 1) {
+            errorLabel.setText("No Review");
+            errorLabel.setTextFill(Color.RED);
+            errorLabel.getStyleClass().add("Warning_Label_Error");
+            return false;
+        }
+        // Missing both.
+        else if (errorStar == 1 && errorReview == 1) {
+            errorLabel.setText("No Star Rating and Review");
+            errorLabel.getStyleClass().add("Warning_Label_Error_Both");
+            return false;
+        }
+        // Both are valid
+        else if (errorStar == 0 && errorReview == 0) {
+            successLabel.setText("Success");
+            successLabel.getStyleClass().add("Warning_Label_Success");
+        }
+
+        // putting the information into the database.
+        // query = "insert into Login values ('" + username + "', '" + password + "', " + "0);";
+        // statement.executeUpdate(query);
+
+    // making table for review
+//        create table ReviewOfProduct(
+//                ProductID integer NOT NULL,
+//                rating integer NOT NULL,
+//                user varchar(20) NOT NULL,
+//                review text NOT NULL,
+//                PRIMARY KEY ( tutorial_id )
+//        );
+        return true;
+    }
 }

@@ -91,16 +91,8 @@ public class ReviewUITest extends ApplicationTest {
         verifyThat("#textAreaReview", hasText("123"));
     }
 
-
-    // test if user profile choice box exist
-    // test if starReview choice box exist
-    // test for error when only star review is empty
-    // test for error when only review textArea is empty
-    // test for error when both star review and review textArea are empty
-    // test when successful.
-//    @Test
-//    public void userProfileChoiceBoxExist() {
-//        clickOn("#userProfileChoiceBox").clickOn("Profile");
-//        verifyThat("#userProfileChoiceBox", node -> this.userInformationMap.get(2).equals(((ChoiceBox)node).getValue()));
-//    }
+    @Test
+    public void errorLabelExist() {
+            verifyThat("#errorLabel", hasText(""));
+    }
 }
