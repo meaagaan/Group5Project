@@ -13,7 +13,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<Pane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mochi.ui.controllers.ProfileController">
+<Pane fx:id="pane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mochi.ui.controllers.ProfileController">
    <children>
       <AnchorPane maxHeight="800.0" maxWidth="1300.0" minHeight="800.0" minWidth="1300.0" prefHeight="800.0" prefWidth="1300.0" style="-fx-background-color: white;">
          <children>
@@ -63,8 +63,8 @@
                 <RowConstraints maxHeight="574.0" minHeight="10.0" prefHeight="541.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label fx:id="storeLabel" styleClass="SideBar_Label" stylesheets="@../stylesheets/ProfileUI.css" text="Store" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <Label fx:id="libraryLabel" styleClass="SideBar_Label" stylesheets="@../stylesheets/ProfileUI.css" text="Library" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label fx:id="storeLabel" styleClass="SideBar_Label" stylesheets="@../stylesheets/ProfileUI.css" text="Store" GridPane.columnIndex="1" GridPane.rowIndex="1" onMouseClicked="#storeLabelClicked"/>
+                  <Label fx:id="libraryLabel" styleClass="SideBar_Label" stylesheets="@../stylesheets/ProfileUI.css" text="Library" GridPane.columnIndex="1" GridPane.rowIndex="2" onMouseClicked="#libraryLabelClicked"/>
                </children>
             </GridPane>
             <ImageView fx:id="editButton" fitHeight="82.0" fitWidth="77.0" layoutX="1127.0" layoutY="158.0" onMouseClicked="#editButtonClicked" pickOnBounds="true" preserveRatio="true">
