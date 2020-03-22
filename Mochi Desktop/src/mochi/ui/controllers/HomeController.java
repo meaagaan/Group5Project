@@ -47,13 +47,13 @@ public class HomeController implements Initializable
         this.database = DBConnection.getDatabase();
 
         ObservableList<String> filterOptions = FXCollections.observableArrayList("Price", "Ratings", "Genre");
-        filterChoice.setItems(filterOptions);
+        filterCombo.setItems(filterOptions);
 
         ObservableList<String> sortOptions = FXCollections.observableArrayList("Price", "Ratings", "Popularity");
-        sortChoice.setItems(sortOptions);
+        sortCombo.setItems(sortOptions);
 
         ObservableList<String> profileOptions = FXCollections.observableArrayList("User Profile", "Settings", "Wishlist");
-        profileChoice.setItems(profileOptions);
+        profileCombo.setItems(profileOptions);
     }
 
     public boolean userProfileOptionClicked() throws IOException
