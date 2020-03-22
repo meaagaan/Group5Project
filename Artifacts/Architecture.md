@@ -43,6 +43,13 @@ This is associated with user story 020. From this page you should be able to acc
 ## Review UI
 ![Review UI](UI_images/ReviewUI.png)
 This is assoicated with user story 011. From this page you are able to write your own review, which includes a star rating with the choice box. At the top, you are able to see the name of the product you are viewing. At the bottom right, you can see the ratings and reviews that other users have given for this product. This can also be assoicated with user story 014 because the merchant is able to see what their customer thinks of their product. At the top right, there is a choice box next to User Profile. From there you can go to your profile(user story 020), wishlist(user story 021), and home page(user story 012).
+
+## Home UI
+![Review UI](UI_images/HomeUI.png)
+## Library UI
+![Library UI](UI_images/LibraryUI.png)
+## Product UI
+![Product UI](UI_images/ProductUI.png)
 - [User Interface Design (Screenshots)](User%20Interface%20Design.md)
 - [User Interface Diagram](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/User%20Interface%20Diagram.png)
 # Resource Management
