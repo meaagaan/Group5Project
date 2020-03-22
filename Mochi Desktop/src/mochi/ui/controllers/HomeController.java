@@ -62,22 +62,7 @@ public class HomeController implements Initializable
 
     public boolean userProfileOptionClicked() throws IOException
     {
-        return false;
-    }
-
-    public boolean settingsOptionClicked() throws IOException
-    {
-        return false;
-    }
-
-    public boolean wishlistOptionClicked()
-    {
-        return false;
-    }
-
-    public boolean helpButtonClicked() throws IOException
-    {
-        return false;
+        return setProfileScene();
     }
 
     private boolean setProfileScene () throws IOException {
@@ -91,9 +76,29 @@ public class HomeController implements Initializable
         return false;
     }
 
+    public boolean settingsOptionClicked() throws IOException {
+        return false;
+    }
+
+    public boolean wishlistOptionClicked() throws IOException {
+        return setWishlistScene();
+    }
+
+    private boolean setWishlistScene () throws IOException {
+
+        return false;
+    }
+
+    public boolean helpButtonClicked() throws IOException
+    {
+        return false;
+    }
+
+    /*
     public boolean tempProfileLabelClicked() throws IOException {
         return setProfileScene();
     }
+    */
 
     public boolean setProductScene() throws IOException{
         Stage primaryStage = (Stage) createProduct.getScene().getWindow();
