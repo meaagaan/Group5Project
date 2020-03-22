@@ -3,10 +3,7 @@ package mochi.ui.controllers;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import mochi.db.DBConnection;
@@ -26,12 +23,21 @@ public class HomeController implements Initializable
     private Connection database;
 
     public ChoiceBox filterChoice;
+
+    public ComboBox filterCombo;
     public Label filterLabel;
+
     public ChoiceBox sortChoice;
+
+    public ComboBox sortCombo;
     public Label sortLabel;
+
     public TextField searchField;
     public Label searchLabel;
+
     public ChoiceBox profileChoice;
+
+    public ComboBox profileCombo;
     public Label profileLabel;
     public Button createProduct;
     public Pane pane;
