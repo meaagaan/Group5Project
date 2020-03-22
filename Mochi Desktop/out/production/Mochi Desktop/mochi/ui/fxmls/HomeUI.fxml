@@ -3,8 +3,9 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.ScrollBar?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -30,7 +31,7 @@
                </image>
             </ImageView>
             <Rectangle arcHeight="5.0" arcWidth="5.0" height="115.0" stroke="BLACK" strokeType="INSIDE" width="1306.0" />
-            <ImageView fitHeight="58.0" fitWidth="61.0" layoutX="1094.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="58.0" fitWidth="61.0" layoutX="1101.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/default-Profile.png" />
                </image>
@@ -46,18 +47,22 @@
                </textFill>
             </Label>
             <Line endX="1057.0" endY="-73.0" layoutX="247.0" layoutY="190.0" startX="-247.0" startY="-73.0" stroke="#7b7f6d" strokeWidth="10.0" />
-            <ListView layoutX="156.0" layoutY="309.0" prefHeight="467.0" prefWidth="1124.0" />
             <ScrollBar layoutX="1282.0" layoutY="309.0" orientation="VERTICAL" prefHeight="467.0" prefWidth="25.0" styleClass="Scrollbar" stylesheets="@../stylesheets/HomeUI.css" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" height="467.0" layoutY="309.0" stroke="BLACK" strokeType="INSIDE" width="160.0" />
-            <ComboBox fx:id="filterCombo" layoutX="7.0" layoutY="382.0" prefWidth="150.0" styleClass="SearchOptionBoxes" stylesheets="@../stylesheets/HomeUI.css" />
-            <Label fx:id="filterLabel" layoutX="60.0" layoutY="384.0" styleClass="SearchOptionLabels" stylesheets="@../stylesheets/HomeUI.css" text="Filter..." />
-            <ComboBox fx:id="sortCombo" layoutX="7.0" layoutY="428.0" prefWidth="150.0" styleClass="SearchOptionBoxes" stylesheets="@../stylesheets/HomeUI.css" />
-            <Label fx:id="sortLabel" layoutX="52.0" layoutY="432.0" styleClass="SearchOptionLabels" stylesheets="@../stylesheets/HomeUI.css" text="Sort by..." />
+            <ComboBox fx:id="filterCombo" layoutX="7.0" layoutY="379.0" prefWidth="150.0" promptText="Filter" styleClass="OptionBoxes" stylesheets="@../stylesheets/HomeUI.css" />
+            <ComboBox fx:id="sortCombo" layoutX="7.0" layoutY="425.0" prefWidth="150.0" promptText="Sort by" styleClass="OptionBoxes" stylesheets="@../stylesheets/HomeUI.css" />
             <TextField fx:id="searchField" layoutX="7.0" layoutY="327.0" styleClass="SearchField" stylesheets="@../stylesheets/HomeUI.css" />
-            <Label fx:id="searchLabel" layoutX="58.0" layoutY="329.0" styleClass="SearchOptionLabels" stylesheets="@../stylesheets/HomeUI.css" text="Search" />
+            <Label fx:id="searchLabel" layoutX="14.0" layoutY="329.0" styleClass="SearchLabel" stylesheets="@../stylesheets/HomeUI.css" text="Search" />
             <Button fx:id="createProduct" layoutX="9.0" layoutY="500.0" mnemonicParsing="false" onMouseClicked="#createProductClick" prefHeight="40.0" prefWidth="108.0" text="Create" />
-            <ComboBox fx:id="profileCombo" layoutX="1159.0" layoutY="46.0" prefHeight="25.0" prefWidth="128.0" styleClass="ProfileComboBox" stylesheets="@../stylesheets/HomeUI.css" />
-            <Label fx:id="profileLabel" layoutX="1164.0" layoutY="44.0" onMouseClicked="#tempProfileLabelClicked" styleClass="ProfileLabel" stylesheets="@../stylesheets/HomeUI.css" text="UserProfile" />
+            <Label layoutX="1162.0" layoutY="48.0" prefHeight="21.0" prefWidth="108.0" styleClass="ProfileLabel" stylesheets="@../stylesheets/HomeUI.css" text="User Profile" />
+            <ComboBox fx:id="profileCombo" layoutX="1150.0" layoutY="50.0" prefHeight="25.0" prefWidth="133.0" styleClass="ProfileComboBox" stylesheets="@../stylesheets/HomeUI.css" />
+            <Button fx:id="helpButton" layoutX="35.0" layoutY="4.0" mnemonicParsing="false" onMouseClicked="#helpButtonClicked" styleClass="HelpButton" stylesheets="@../stylesheets/HomeUI.css" text="?" />
+            <TableView layoutX="160.0" layoutY="309.0" prefHeight="467.0" prefWidth="1121.0">
+              <columns>
+                <TableColumn prefWidth="75.0" text="Product Name" />
+                <TableColumn prefWidth="75.0" text="Seller" />
+              </columns>
+            </TableView>
          </children>
       </AnchorPane>
    </children>
