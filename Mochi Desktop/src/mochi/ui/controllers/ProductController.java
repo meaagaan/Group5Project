@@ -6,10 +6,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import mochi.User;
 import mochi.db.DBConnection;
 import mochi.ui.HomeUI;
 import mochi.ui.ProductUI;
-
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -21,34 +21,45 @@ import java.util.ResourceBundle;
 
 public class ProductController implements Initializable {
     public Pane pane;
-    public Label productLabel;
-    public Button confirmButton;
-    public TextField productName;
 
+    public Label productLabel;
+    public Label registration;
+    public Label genreLabel;
+    public Label priceLabel;
+    public Label descriptionLabel;
+
+    public Button confirmButton;
+    public Button returnHome;
+
+    public TextField productName;
     public TextField description;
     public TextField price;
+
     public Label ProductError;
     public Label confirmError;
+    public Label confirmation;
+
     ObservableList <String>choice = FXCollections.observableArrayList("education", "business","personal");
-    private Connection database;
     public ChoiceBox options;
-    public Button returnHome;
-    String s="educational";
+    private Connection database;
+    public String user;
+    String type="educational";
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         this.database = DBConnection.getDatabase();
         options.setItems(choice);
 
         if(options.getSelectionModel().getSelectedItem()=="educational"){
-            s="educational";
+            type="educational";
         }
         else if(options.getSelectionModel().getSelectedItem()=="business"){
-            s="business";
+            type="business";
         }
         else{
-            s="personal";
+            type="personal";
         }
-
+        user= User.getUsername();
     }
 
     public boolean confirmButtonClick() throws SQLException, IOException {
@@ -58,10 +69,12 @@ public class ProductController implements Initializable {
 
 
         String productN = productName.getText();
-        String genreName= s;
+        String genreName= type;
         String descriptionOfProduct = description.getText();
         String priceOfProduct = price.getText();
         String query;
+        String userName= user;
+
 
         try {
             statement = (Statement) database.createStatement();
@@ -70,7 +83,7 @@ public class ProductController implements Initializable {
             while(resultSet.next()) {
                 // check to see if product is taken
                 if (resultSet.getString(1).equals(productName)) {
-                    ProductError.getStyleClass().add("Warning_Label_Error");
+                    ProductError.getStyleClass().add("Product_Error");
                     ProductError.setText("Taken");
                     return false;
                 }
@@ -80,9 +93,13 @@ public class ProductController implements Initializable {
                 if (productN.equals("") ||
                         genreName.equals("") || descriptionOfProduct.equals("") ||
                         priceOfProduct.equals("")) {
-                    confirmError.getStyleClass().add("Warning_Label_Error");
+                    confirmError.getStyleClass().add("Empty_Error");
                     confirmError.setText("One or more empty fields");
                     return false;
+                }
+                else{
+                    confirmation.getStyleClass().add("Confirmation");
+                    confirmation.setText("Your product has been created");
                 }
 
             }
@@ -93,9 +110,8 @@ public class ProductController implements Initializable {
         }
 
         // putting the product information into the database.
-        query = "insert into Product values ('" + productN + "', '" + genreName + "', '" + descriptionOfProduct + "', '" + priceOfProduct + "');";
+        query = "insert into Product values ('" + productN + "', '" + genreName + "', '" + descriptionOfProduct + "', '" + priceOfProduct +  "', '" + userName + "');";
         statement.executeUpdate(query);
-
 
         return false;
     }

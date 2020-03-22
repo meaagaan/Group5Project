@@ -31,23 +31,23 @@
                         <ChoiceBox fx:id="options" layoutX="217.0" layoutY="124.0" prefHeight="27.0" prefWidth="258.0" />
                         <TextField fx:id="price" layoutX="217.0" layoutY="164.0" prefHeight="27.0" prefWidth="258.0" />
                         <TextField fx:id="description" layoutX="217.0" layoutY="202.0" prefHeight="130.0" prefWidth="258.0" />
-                        <Label layoutX="44.0" layoutY="110.0" prefHeight="40.0" prefWidth="122.0" text="Genre">
+                        <Label fx:id="genreLabel" layoutX="44.0" layoutY="110.0" prefHeight="40.0" prefWidth="122.0" text="Genre">
                             <font>
                                 <Font size="17.0" />
                             </font>
                         </Label>
-                        <Label layoutX="44.0" layoutY="158.0" prefHeight="40.0" prefWidth="122.0" text="Price">
+                        <Label fx:id="priceLabel" layoutX="44.0" layoutY="158.0" prefHeight="40.0" prefWidth="122.0" text="Price">
                             <font>
                                 <Font size="17.0" />
                             </font>
                         </Label>
-                        <Label layoutX="44.0" layoutY="198.0" prefHeight="40.0" prefWidth="122.0" text="Description">
+                        <Label fx:id="descriptionLabel" layoutX="44.0" layoutY="198.0" prefHeight="40.0" prefWidth="122.0" text="Description">
                             <font>
                                 <Font size="17.0" />
                             </font>
                         </Label>
                         <Button fx:id="confirmButton" layoutX="292.0" layoutY="356.0" mnemonicParsing="false" onMouseClicked="#confirmButtonClick" prefHeight="40.0" prefWidth="108.0" text="Create" />
-                        <Label layoutX="159.0" layoutY="14.0" prefHeight="34.0" prefWidth="218.0" text="Product Registration">
+                        <Label fx:id= "registration" layoutX="159.0" layoutY="14.0" prefHeight="34.0" prefWidth="218.0" text="Product Registration">
                             <font>
                                 <Font size="24.0" />
                             </font>
@@ -55,6 +55,9 @@
                     </children>
                 </Pane>
                 <Button fx:id="returnHome" layoutX="-6.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="152.0" onMouseClicked="#returnHomeClick" text="HomePage" />
+                <Label fx:id="ProductError" layoutX="480.0" layoutY="450.0" prefHeight="17.0" prefWidth="372.0" styleClass="Product_Error" stylesheets="@../stylesheets/ProductStyle.css" />
+                <Label fx:id="confirmError" layoutX="480.0" layoutY="450.0" prefHeight="17.0" prefWidth="372.0" styleClass="Empty_Error" stylesheets="@../stylesheets/ProductStyle.css" />
+                <Label fx:id="confirmation" layoutX="480.0" layoutY="600.0" prefHeight="17.0" prefWidth="372.0" styleClass="Confirmation" stylesheets="@../stylesheets/ProductStyle.css" />
             </children></AnchorPane>
     </items>
 </SplitPane>
