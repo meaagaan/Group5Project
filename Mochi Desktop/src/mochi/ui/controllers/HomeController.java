@@ -35,6 +35,8 @@ public class HomeController implements Initializable
 
     public Pane pane;
 
+    public Button tempProfileButton;
+
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
         this.database = DBConnection.getDatabase();
@@ -52,7 +54,7 @@ public class HomeController implements Initializable
     public boolean userProfileChoice() throws IOException {
 
         if (profileCombo.getValue().equals("User Profile"))
-           return  userProfileOptionClicked();
+            return userProfileOptionClicked();
         if (profileCombo.getValue().equals("Settings"))
             return settingsOptionClicked();
         if (profileCombo.getValue().equals("Wishlist"))
@@ -66,7 +68,7 @@ public class HomeController implements Initializable
         return setProfileScene();
     }
 
-    private boolean setProfileScene () throws IOException {
+    private boolean setProfileScene() throws IOException {
         Stage primaryStage = (Stage) pane.getScene().getWindow();
         ProfileUI profileUI = new ProfileUI();
 

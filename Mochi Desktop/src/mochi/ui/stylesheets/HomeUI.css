@@ -10,7 +10,7 @@
 {
 	-fx-background-color: transparent;
 	-fx-font-size: 15px;
-	-fx-text-fill: #CCB8FC;
+	-fx-text-fill: transparent;
 }
 
 .ProfileLabel
