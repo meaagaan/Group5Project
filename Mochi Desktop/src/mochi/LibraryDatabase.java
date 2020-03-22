@@ -7,10 +7,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class UserProductDatabase {
+public class LibraryDatabase {
 	Connection connection;
 
-	public UserProductDatabase(Connection connection) {
+	public LibraryDatabase(Connection connection) {
 		this.connection = connection;
 	}
 
@@ -51,7 +51,7 @@ public class UserProductDatabase {
 					stringBuilder = new StringBuilder();
 				}
 			}
-			return (true && User.setWishlist(product));
+			return (true && User.setLibraryList(product));
 		}
 		return false;
 	}
