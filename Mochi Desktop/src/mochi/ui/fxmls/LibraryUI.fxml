@@ -47,7 +47,7 @@
                   <Image url="@../images/default-Profile.png" />
                </image>
             </ImageView>
-            <Label fx:id="profileLabel" layoutX="1067.0" layoutY="140.0" styleClass="Title_Label" stylesheets="@../stylesheets/LibraryStyle.css" text="PlaceHolder" onMouseClicked="#profileLabelClicked"/>
+            <Label fx:id="profileLabel" layoutX="1067.0" layoutY="140.0" onMouseClicked="#profileLabelClicked" styleClass="Title_Label" stylesheets="@../stylesheets/LibraryStyle.css" text="PlaceHolder" />
          </children>
       </AnchorPane>
    </children>

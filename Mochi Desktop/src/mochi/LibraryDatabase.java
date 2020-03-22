@@ -38,12 +38,7 @@ public class LibraryDatabase {
 			while ((character = input.read()) > 0) {
 				output.write(character);
 
-				if (firstLine) {
-					firstLine = false;
-					continue;
-				}
-
-				if (!(character == 42 || character == 10)) {
+				if (!(character == 42 || character == 10 || character == 11 || character == 12 || character == 13)) {
 					stringBuilder.append((char)character);
 				}
 				else {

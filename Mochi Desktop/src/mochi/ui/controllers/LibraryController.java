@@ -26,11 +26,22 @@ public class LibraryController implements Initializable {
 	@Override
 	public void initialize(URL url, ResourceBundle resourceBundle) {
 		this.database = DBConnection.getDatabase();
+		if (!(User.getFirstname() == null)) {
+			titleLabel.setText(User.getFirstname() + "'s Library");
+			profileLabel.setText(User.getFirstname());
+		}
+		libraryListFill();
+	}
 
-		titleLabel.setText(User.getFirstname() + "'s Library");
-		profileLabel.setText(User.getFirstname());
-
-		libraryList.getItems().add("Program 1");
+	private boolean libraryListFill() {
+		if (!(User.getLibrarytList() == null) && (User.getLibrarytList().isEmpty())) {
+			for (String s : User.getLibrarytList())
+				libraryList.getItems().add(s);
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 
 	private boolean setHomeScene () throws IOException {
