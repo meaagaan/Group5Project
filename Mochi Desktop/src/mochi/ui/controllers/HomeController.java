@@ -30,6 +30,8 @@ public class HomeController implements Initializable
 
     public Button createProduct;
 
+    public Button helpButton;
+
     public Pane pane;
 
     public void initialize(URL url, ResourceBundle resourceBundle)
@@ -44,6 +46,18 @@ public class HomeController implements Initializable
 
         ObservableList<String> profileOptions = FXCollections.observableArrayList("User Profile", "Settings", "Wishlist");
         profileCombo.setItems(profileOptions);
+    }
+
+    public boolean userProfileChoice() throws IOException {
+
+        if (profileCombo.getValue().equals("User Profile"))
+           return  userProfileOptionClicked();
+        if (profileCombo.getValue().equals("Settings"))
+            return settingsOptionClicked();
+        if (profileCombo.getValue().equals("Wishlist"))
+            return wishlistOptionClicked();
+        else
+            return false;
     }
 
     public boolean userProfileOptionClicked() throws IOException
