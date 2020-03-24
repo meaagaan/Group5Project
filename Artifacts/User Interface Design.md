@@ -7,9 +7,9 @@
 ## Customer Support Page
 ![Customer Support Page](UI_images/Customer%20Support.png)
 ## Main Page
-![Main Page](UI_images/Mochi_main_page.jpg)
+![Main Page](UI_images/HomeUI.png)
 ## User Library Page
-![User Library Page](UI_images/Mochi_user_library.jpg)
+![User Library Page](UI_images/LibraryUI.png)
 ## User Profile Page
 ![User Library Page](UI_images/profile.png)
 ## Checkout Page
@@ -17,6 +17,6 @@
 ## Developer Page
 ![Developer Page](UI_images/Developer%20Page.png)
 ## Product Page
-![Developer Page](UI_images/Product%20Page.png)
+![Developer Page](UI_images/ProductUI.png)
 ## Review Page
 ![Review UI](UI_images/ReviewUI.png)

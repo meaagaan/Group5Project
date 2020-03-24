@@ -15,11 +15,11 @@
 |            010 |           002 | When the login button is clicked, the system checks that the email and password exist in the database. | System takes the inputted information and checks the information with the database and logs in accordingly. | 13 | Necessary | Satisfied |
 |            011 |           002 | When the forgot password button is clicked, changes the scene to the forgot password scene. | The scene is changed to the forgot password scene. | 13 | Necessary | Satisfied |
 |            012 |           002 | There should be a button that leads to registration page. | There should be a button on the login scene that changes the scene to the registration scene. | 13 | Necessary | Satisfied |
-|            013 |           004 | There should be a button that leads to product creation page. | There is a button that leads to the product creation scene. | 8 | Necessary | Working |
+|            013 |           004 | There should be a button that leads to product creation page. | There is a button that leads to the product creation scene. | 8 | Necessary | Satisfied |
 |            014 |           004 | There should be a text entry for product name, product description, and product price. | There is a text entry to identify the product name, product description, and product price. | 8 | Necessary | Satisfied |
 |            015 |           004 | There should be a list to pick the type of genre for the product item. | There is a check list to select the type of genre to search for. | 8 | Important | Satisfied |
 |            016 |           004 | When the file upload button is clicked, the user can upload files from their computer. | The system can upload files and store them. | 8 | Important | Working |
-|            017 |           004 | When the confirmation button is clicked, the system checks that all fields are valid and filled out. | The system can store all the given information into the database or provide error messages where there are invalid information. | 8 | Important | Working |
+|            017 |           004 | When the confirmation button is clicked, the system checks that all fields are valid and filled out. | The system can store all the given information into the database or provide error messages where there are invalid information. | 8 | Important | Satisfied |
 |            018 |           018 | There should be a Login and Sign up label on Forgot page | The "Login" and "Sign up" label will be use to go back to login and registration page. | 1 | Important | Satisfied |
 |            019 |           018 | When "Login" or "Sign up" label is clicked, change the scene to login scene or registration scene respectively. | The "Login" and "Sign up" label will lead to login or registration page respectively. | 2 | Important | Satisfied |
 |            020 |           018 | There should be a text field for email on Forgot page | This is the text field that allow user to input their email. | 1 | Important | Satisfied |
@@ -31,9 +31,9 @@
 |            026 |           020 | When the "submit" button is clicked, the data within the database will be updated. | The new data get updated to database | 9 | Important | Satisfied |
 |            027 |           009 | User's wish list is update and store locally as a text file everytime user login. | User's wish list is automatically update everytime they login to the program. | 5 | Necessary | Satisfied |
 |            028 |           009 | User's wish list is stored and ready to use inside of the user class | This will help with updating user wish list ui in the future. | 7 | Necessary | Satisfied |
-|            029 |           021 | User's profile can be access from main page | user can click on the profile button on the main page and arrive at the profile page | 3 | Necessary | Working |
+|            029 |           021 | User's profile can be access from main page | user can click on the profile button on the main page and arrive at the profile page | 3 | Necessary | Satisfied |
 |            030 |           021 | User can access their wishlist from the pain page | user can click on the profile drop down and click on "wishlist" button and view wishlist page | 3 | Important | working |
-|            031 |           021 | User can access help page from main page | clicking the "?" button links the user to the customer support page | 3 | Necessary | working |
+|            031 |           021 | User can access help page from main page | clicking the "?" button links the user to the customer support page | 3 | Necessary | Satisfied |
 |            032 |           012 | User can filter the available products by price | clicking "filters..." and "price" and selecting price maximum will tell the system to only list products within the given price range and it correctly shows on the UI | 8 | Necessary | working |
 |            033 |           012 | User can sort the available products by price | clicking the "sort by..." and "price" will tell the system to sort the product list by price lowest->highest | 8 | Necessary | Important |
 |            034 |           011 | User can see the list of all reviews made by other users | A chart of all reviews for the product is visible. | 21 | Important | Satisfied |
@@ -42,6 +42,7 @@
 |            037 |           011 | User can write a review on the product | There is a text field that allows the user to type their review. | 21 | Important | Satisfied |
 |            038 |           011 | The review is stored into the database after the confirm button is clicked | The database contains the review with the star rating. | 21 | Important | Working |
 |            039 |           022 | There should be a table that shows every product user own. | User should be able to see the list of all of the products they own. | 9 | Important | Satisfied |
+|            040 |           022 | There should be links to home page and profile page from library page. | User should be able to navigate to other pages via library page. | 4 | Important | Satisfied |
 
 
 
