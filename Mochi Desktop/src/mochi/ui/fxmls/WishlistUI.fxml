@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<Pane fx:id="pane" maxHeight="800.0" maxWidth="1300.0" minHeight="800.0" minWidth="1300.0" prefHeight="800.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mochi.ui.controllers.WishlistController">
+   <children>
+      <AnchorPane maxHeight="800.0" maxWidth="1300.0" minHeight="800.0" minWidth="1300.0" prefHeight="800.0" prefWidth="1300.0" style="-fx-background-color: white;">
+         <children>
+            <ImageView fitHeight="188.0" fitWidth="526.0" layoutX="253.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/header-Background.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="188.0" fitWidth="526.0" layoutX="774.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/header-Background.png" />
+               </image>
+            </ImageView>
+            <GridPane hgap="20.0" prefHeight="800.0" prefWidth="253.0" styleClass="Side_Bar" stylesheets="@../stylesheets/WishlistStyle.css" vgap="20.0">
+               <columnConstraints>
+                  <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" maxWidth="122.0" minWidth="10.0" prefWidth="57.0" />
+                  <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" maxWidth="198.0" minWidth="10.0" prefWidth="196.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints fillHeight="false" maxHeight="186.0" minHeight="186.0" prefHeight="186.0" vgrow="NEVER" />
+                  <RowConstraints fillHeight="false" maxHeight="30.0" minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="NEVER" />
+                  <RowConstraints fillHeight="false" maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="NEVER" />
+                  <RowConstraints fillHeight="false" maxHeight="30.0" minHeight="7.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Label fx:id="storeLabel" onMouseClicked="#storeLabelClicked" styleClass="SideBar_Label" stylesheets="@../stylesheets/WishlistStyle.css" text="Store" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label fx:id="libraryLabel" styleClass="SideBar_Label" stylesheets="@../stylesheets/WishlistStyle.css" text="Library" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label fx:id="wishlistLabel" stylesheets="@../stylesheets/WishlistStyle.css" text="Wishlist" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <styleClass>
+                        <String fx:value="Side_Bar" />
+                        <String fx:value="SideBar_Label" />
+                     </styleClass>
+                  </Label>
+               </children>
+            </GridPane>
+            <ListView fx:id="wishList" layoutX="253.0" layoutY="253.0" prefHeight="547.0" prefWidth="1047.0" />
+            <Label fx:id="titleLabel" layoutX="259.0" layoutY="200.0" styleClass="Title_Label" stylesheets="@../stylesheets/WishlistStyle.css" text="PlaceHolder" textAlignment="CENTER" />
+            <ImageView fitHeight="55.0" fitWidth="60.0" layoutX="1007.0" layoutY="134.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/default-Profile.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="profileLabel" layoutX="1067.0" layoutY="140.0" onMouseClicked="#profileLabelClicked" styleClass="Title_Label" stylesheets="@../stylesheets/WishlistStyle.css" text="PlaceHolder" />
+         </children>
+      </AnchorPane>
+   </children>
+</Pane>
