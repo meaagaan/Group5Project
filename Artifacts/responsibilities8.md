@@ -5,4 +5,4 @@
 | Anthony | <ul><li></li><li></li></ul> |
 | Alisa | <ul><li></li><li></li></ul> |
 | Meaghan | <ul><li></li><li></li></ul> |
-| Phong | <ul><li></li><li></li><li></li><li></li><li></li><li></li></ul> |
+| Phong | <ul><li>Create a wishlist page</li><li>Modify main page</li><li>Create test cases for wishlist page</li><li></li><li></li><li></li></ul> |
