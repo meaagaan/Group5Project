@@ -1,4 +1,4 @@
-# Responsibilities (2020-03-15 to 2020-03-22)
+# Responsibilities (2020-03-22 to 2020-03-29)
 
 | Name | Responsibility |
 |----|------------|
