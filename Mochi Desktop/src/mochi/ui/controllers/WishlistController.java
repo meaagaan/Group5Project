@@ -34,6 +34,18 @@ public class WishlistController implements Initializable {
 		wishListFill();
 	}
 
+	public boolean deleteButtonClicked() {
+		Integer index = wishList.getSelectionModel().getSelectedIndex();
+
+		if (index != null) {
+			wishList.getItems().remove(index);
+			wishList.getItems().toArray();
+		}
+		else {
+			return false;
+		}
+	}
+
 	private boolean wishListFill() {
 		if (!(User.getWishlist() == null) && !(User.getWishlist().isEmpty())) {
 			for (String s : User.getWishlist())
