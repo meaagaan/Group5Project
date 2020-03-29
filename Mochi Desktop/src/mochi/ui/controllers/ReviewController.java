@@ -1,11 +1,14 @@
 package mochi.ui.controllers;
 
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import mochi.ReviewUserDetail;
 import mochi.db.DBConnection;
 import mochi.ui.LibraryUI;
 import mochi.ui.LoginUI;
@@ -17,6 +20,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ResourceBundle;
 
@@ -30,10 +34,11 @@ public class ReviewController implements Initializable {
     public ChoiceBox<String> userProfileChoiceBox;
     public ChoiceBox<String> starChoiceBox;
     public Button submitReviewButton;
-    public TableView reviewTableView;
-    public TableColumn ratingTableColumn;
-    public TableColumn userTableColumn;
-    public TableColumn reviewTableColumn;
+    public TableView<ReviewUserDetail> reviewTableView;
+    public TableColumn<ReviewUserDetail, String> ratingTableColumn;
+    public TableColumn<ReviewUserDetail, String> userTableColumn;
+    public TableColumn<ReviewUserDetail, String> reviewTableColumn;
+    public ObservableList<ReviewUserDetail> data;
 
     private Connection database;
 
@@ -65,6 +70,30 @@ public class ReviewController implements Initializable {
                 }
             }
         } );
+
+        try {
+            data = FXCollections.observableArrayList();
+            ResultSet resultSet = null;
+            Statement statement = null;
+
+            statement = (Statement) database.createStatement();
+            resultSet = statement.executeQuery("SELECT * FROM `mochi-desktop`.Review;");
+
+            while (resultSet.next()) {
+                data.add(new ReviewUserDetail(resultSet.getString(3), resultSet.getString(4),
+                        resultSet.getString(5)));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        // Set cell value factory to tableview.
+        ratingTableColumn.setCellValueFactory(new PropertyValueFactory<>("rating"));
+        userTableColumn.setCellValueFactory(new PropertyValueFactory<>("user"));
+        reviewTableColumn.setCellValueFactory(new PropertyValueFactory<>("review"));
+
+        reviewTableView.setItems(null);
+        reviewTableView.setItems(data);
     }
 
     private boolean setUserProfileScene() throws IOException {
@@ -90,14 +119,15 @@ public class ReviewController implements Initializable {
     }
 
     // Submits the starReview and whats in the text area
-    public boolean submitReviewButtonClick() {
+    public boolean submitReviewButtonClick() throws SQLException {
         int errorStar = 0;
         int errorReview = 0;
         ResultSet resultSet = null;
         Statement statement = null;
+        String query;
 
-        String review = textAreaReview.getText();
-        String star = starChoiceBox.getValue();
+        String Review = textAreaReview.getText();
+        String Rating = starChoiceBox.getValue();
 
         errorLabel.getStyleClass().add("Warning_Label_Normal");
         successLabel.getStyleClass().add("Warning_Label_Normal");
@@ -105,11 +135,11 @@ public class ReviewController implements Initializable {
         successLabel.setText("");
 
         // error checking
-        if (star == null) {
+        if (Rating == null) {
             errorStar = 1;
         }
 
-        if (review.equals("")) {
+        if (Review.equals("")) {
             errorReview = 1;
         }
 
@@ -138,18 +168,14 @@ public class ReviewController implements Initializable {
             successLabel.getStyleClass().add("Warning_Label_Success");
         }
 
-        // putting the information into the database.
-        // query = "insert into Login values ('" + username + "', '" + password + "', " + "0);";
-        // statement.executeUpdate(query);
+        int ProductID = 1;
+        String ProductName = "Hello World";
+        String User = "test User";
+        statement = (Statement) database.createStatement();
 
-    // making table for review
-//        create table ReviewOfProduct(
-//                ProductID integer NOT NULL,
-//                rating integer NOT NULL,
-//                user varchar(20) NOT NULL,
-//                review text NOT NULL,
-//                PRIMARY KEY ( tutorial_id )
-//        );
+        // putting the information into the database.
+        query = "insert into Review values ('" + ProductID + "', '" + ProductName + "', '" + Rating + "', '" + User + "', '" + Review + "');";
+        statement.executeUpdate(query);
         return true;
     }
 }
