@@ -31,7 +31,6 @@ public class HomeController implements Initializable
     public ComboBox sortCombo;
 
     public TextField searchField;
-    public Label searchLabel;
 
     public ComboBox profileCombo;
 

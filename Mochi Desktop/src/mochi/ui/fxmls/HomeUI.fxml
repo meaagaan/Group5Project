@@ -49,8 +49,7 @@
             <Rectangle arcHeight="5.0" arcWidth="5.0" height="467.0" layoutY="309.0" stroke="BLACK" strokeType="INSIDE" width="331.0" />
             <ComboBox fx:id="filterCombo" layoutX="41.0" layoutY="376.0" prefHeight="31.0" prefWidth="250.0" promptText="Filter" styleClass="OptionBoxes" stylesheets="@../stylesheets/HomeStyle.css" />
             <ComboBox fx:id="sortCombo" disable="true" layoutX="41.0" layoutY="424.0" prefHeight="31.0" prefWidth="250.0" promptText="Sort by" styleClass="OptionBoxes" stylesheets="@../stylesheets/HomeStyle.css" />
-            <TextField fx:id="searchField" layoutX="41.0" layoutY="327.0" prefHeight="25.0" prefWidth="250.0" styleClass="SearchField" stylesheets="@../stylesheets/HomeStyle.css" />
-            <Label fx:id="searchLabel" layoutX="50.0" layoutY="329.0" styleClass="SearchLabel" stylesheets="@../stylesheets/HomeStyle.css" text="Search" />
+            <TextField fx:id="searchField" layoutX="41.0" layoutY="327.0" prefHeight="25.0" prefWidth="250.0" styleClass="SearchField" stylesheets="@../stylesheets/HomeStyle.css" text="Search" />
 
             <Button fx:id="createProduct" layoutX="37.0" layoutY="523.0" mnemonicParsing="false" onMouseClicked="#createProductClick" prefHeight="40.0" prefWidth="108.0" text="Create" />
             <Label layoutX="1162.0" layoutY="43.0" prefHeight="21.0" prefWidth="108.0" styleClass="ProfileLabel" stylesheets="@../stylesheets/HomeStyle.css" text="User Profile" />

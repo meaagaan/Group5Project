@@ -27,10 +27,6 @@
 .SearchField
 {
 	-fx-background-color: #7b7f6d;
-}
-
-.SearchLabel
-{
 	-fx-font-size: 15px;
 	-fx-text-fill: black;
 }
