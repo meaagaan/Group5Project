@@ -87,7 +87,7 @@ public class LoginController implements Initializable {
 				User.setFirstname(resultSet.getString("firstname"));
 				User.setLastname(resultSet.getString("lastname"));
 				User.setEmail(resultSet.getString("email"));
-				return (true && (wishlistDatabase.readFile(username) || libraryDatabase.readFile(username)));
+				return (true && (wishlistDatabase.readFile(username) && libraryDatabase.readFile(username)));
 			}
 			else {
 				return false;

@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.image.Image?>
@@ -10,7 +12,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<Pane fx:id="pane" maxHeight="800.0" maxWidth="1300.0" minHeight="800.0" minWidth="1300.0" prefHeight="800.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mochi.ui.controllers.LibraryController">
+<Pane fx:id="pane" maxHeight="800.0" maxWidth="1300.0" minHeight="800.0" minWidth="1300.0" prefHeight="800.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mochi.ui.controllers.WishlistController">
    <children>
       <AnchorPane maxHeight="800.0" maxWidth="1300.0" minHeight="800.0" minWidth="1300.0" prefHeight="800.0" prefWidth="1300.0" style="-fx-background-color: white;">
          <children>
@@ -24,7 +26,7 @@
                   <Image url="@../images/header-Background.png" />
                </image>
             </ImageView>
-            <GridPane hgap="20.0" prefHeight="800.0" prefWidth="253.0" styleClass="Side_Bar" stylesheets="@../stylesheets/LibraryStyle.css" vgap="20.0">
+            <GridPane hgap="20.0" prefHeight="800.0" prefWidth="253.0" styleClass="Side_Bar" stylesheets="@../stylesheets/WishlistStyle.css" vgap="20.0">
                <columnConstraints>
                   <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" maxWidth="122.0" minWidth="10.0" prefWidth="57.0" />
                   <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" maxWidth="198.0" minWidth="10.0" prefWidth="196.0" />
@@ -36,19 +38,25 @@
                   <RowConstraints fillHeight="false" maxHeight="30.0" minHeight="7.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <Label fx:id="storeLabel" onMouseClicked="#storeLabelClicked" styleClass="SideBar_Label" stylesheets="@../stylesheets/LibraryStyle.css" text="Store" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <Label fx:id="libraryLabel" styleClass="SideBar_Label" stylesheets="@../stylesheets/LibraryStyle.css" text="Library" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <Label fx:id="wishlistLabel" styleClass="SideBar_Label" stylesheets="@../stylesheets/LibraryStyle.css" text="Wishlist" GridPane.columnIndex="1" GridPane.rowIndex="3" onMouseClicked="#wishlistLabelClicked"/>
+                  <Label fx:id="storeLabel" onMouseClicked="#storeLabelClicked" styleClass="SideBar_Label" stylesheets="@../stylesheets/WishlistStyle.css" text="Store" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label fx:id="libraryLabel" onMouseClicked="#libraryLabelClicked" styleClass="SideBar_Label" stylesheets="@../stylesheets/WishlistStyle.css" text="Library" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label fx:id="wishlistLabel" stylesheets="@../stylesheets/WishlistStyle.css" text="Wishlist" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <styleClass>
+                        <String fx:value="Side_Bar" />
+                        <String fx:value="SideBar_Label" />
+                     </styleClass>
+                  </Label>
                </children>
             </GridPane>
-            <ListView fx:id="libraryList" layoutX="253.0" layoutY="253.0" prefHeight="547.0" prefWidth="1047.0" />
-            <Label fx:id="titleLabel" layoutX="259.0" layoutY="200.0" styleClass="Title_Label" stylesheets="@../stylesheets/LibraryStyle.css" text="PlaceHolder" textAlignment="CENTER" />
+            <ListView fx:id="wishList" layoutX="253.0" layoutY="253.0" prefHeight="547.0" prefWidth="1047.0" />
+            <Label fx:id="titleLabel" layoutX="259.0" layoutY="200.0" styleClass="Title_Label" stylesheets="@../stylesheets/WishlistStyle.css" text="PlaceHolder" textAlignment="CENTER" />
             <ImageView fitHeight="55.0" fitWidth="60.0" layoutX="1007.0" layoutY="134.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/default-Profile.png" />
                </image>
             </ImageView>
-            <Label fx:id="profileLabel" layoutX="1067.0" layoutY="140.0" onMouseClicked="#profileLabelClicked" styleClass="Title_Label" stylesheets="@../stylesheets/LibraryStyle.css" text="PlaceHolder" />
+            <Label fx:id="profileLabel" layoutX="1067.0" layoutY="140.0" onMouseClicked="#profileLabelClicked" styleClass="Title_Label" stylesheets="@../stylesheets/WishlistStyle.css" text="PlaceHolder" />
+            <Button fx:id="deleteButton" onMouseClicked="#deleteButtonClicked" layoutX="1180.0" layoutY="194.0" mnemonicParsing="false" styleClass="Button_BG" stylesheets="@../stylesheets/WishlistStyle.css" text="Delete" />
          </children>
       </AnchorPane>
    </children>

@@ -90,7 +90,7 @@ public class User
         return wishlist;
     }
 
-    public static ArrayList<String> getLibrarytList() {
+    public static ArrayList<String> getLibraryList() {
         return librarytList;
     }
 }

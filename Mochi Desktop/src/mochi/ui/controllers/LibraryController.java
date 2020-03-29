@@ -9,6 +9,7 @@ import mochi.User;
 import mochi.db.DBConnection;
 import mochi.ui.HomeUI;
 import mochi.ui.ProfileUI;
+import mochi.ui.WishlistUI;
 
 import java.io.IOException;
 import java.net.URL;
@@ -34,8 +35,8 @@ public class LibraryController implements Initializable {
 	}
 
 	private boolean libraryListFill() {
-		if (!(User.getLibrarytList() == null) && !(User.getLibrarytList().isEmpty())) {
-			for (String s : User.getLibrarytList())
+		if (!(User.getLibraryList() == null) && !(User.getLibraryList().isEmpty())) {
+			for (String s : User.getLibraryList())
 				libraryList.getItems().add(s);
 			return true;
 		}
@@ -44,7 +45,7 @@ public class LibraryController implements Initializable {
 		}
 	}
 
-	private boolean setHomeScene () throws IOException {
+	private boolean setHomeScene() throws IOException {
 		Stage primaryStage = (Stage) pane.getScene().getWindow();
 		HomeUI homeUI = new HomeUI();
 
@@ -57,6 +58,21 @@ public class LibraryController implements Initializable {
 
 	public boolean storeLabelClicked() throws IOException {
 		return setHomeScene();
+	}
+
+	private boolean setWishlistScene() throws IOException {
+		Stage primaryStage = (Stage) pane.getScene().getWindow();
+		WishlistUI wishlistUI = new WishlistUI();
+
+		if (wishlistUI != null) {
+			primaryStage.setScene(wishlistUI.getWishlistScene());
+			return true;
+		}
+		return false;
+	}
+
+	public boolean wishlistLabelClicked() throws IOException {
+		return setWishlistScene();
 	}
 
 	private boolean setProfileScene() throws IOException {

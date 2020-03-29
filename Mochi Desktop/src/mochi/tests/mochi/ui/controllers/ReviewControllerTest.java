@@ -12,6 +12,9 @@ import org.testfx.util.NodeQueryUtils;
 
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
@@ -69,10 +72,44 @@ public class ReviewControllerTest extends ApplicationTest {
 
     @Test
     public void ErrorWhenBothAreEmpty() {
+        clickOn("#submitReviewButton");
+        verifyThat("#errorLabel", NodeQueryUtils.hasText("No Star Rating and Review"));
+    }
+
+
+    @Test
+    public void ErrorWhenBothAreFilled() {
         clickOn("#starChoiceBox");
         clickOn("1 star");
         clickOn("#textAreaReview").write("asd");
         clickOn("#submitReviewButton");
         verifyThat("#successLabel", NodeQueryUtils.hasText("Success"));
+    }
+
+    @Test
+    public void SuccessfulReview() {
+        ResultSet resultSet = null;
+        Statement statement = null;
+
+        try {
+            statement = (Statement) database.createStatement();
+            resultSet = statement.executeQuery("SELECT * FROM `mochi-desktop`.Review;");
+
+            while(resultSet.next()) {
+                if (resultSet.getInt(1) == 1) {
+                    statement.executeUpdate("DELETE FROM `mochi-desktop`.`Review` WHERE (`ProductID` = '1');");
+                    break;
+                }
+            }
+
+            clickOn("#textAreaReview").write("test review");
+            clickOn("#starChoiceBox");
+            clickOn("4 star");
+            clickOn("#submitReviewButton");
+            verifyThat("#successLabel", NodeQueryUtils.hasText("Success"));
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }

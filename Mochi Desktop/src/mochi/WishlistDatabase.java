@@ -40,11 +40,6 @@ public class WishlistDatabase {
             while ((character = input.read()) > 0) {
                 output.write(character);
 
-                if (firstLine) {
-                    firstLine = false;
-                    continue;
-                }
-
                 if (!(character == 42 || character == 10 || character == 11 || character == 12 || character == 13)) {
                     stringBuilder.append((char)character);
                 }
@@ -73,5 +68,26 @@ public class WishlistDatabase {
             return true;
         }
         return false;
+    }
+
+    public boolean writeText(ArrayList<String> wishlist) {
+        try {
+            FileWriter myWriter = new FileWriter("wishlist.txt");
+            if (wishlist == null) {
+                return false;
+            }
+            else {
+                for (String s : wishlist) {
+                    myWriter.write(s);
+                    myWriter.write('*');
+                }
+                myWriter.close();
+                return true;
+            }
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+            return false;
+        }
     }
 }
