@@ -3,7 +3,6 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollBar?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
@@ -47,10 +46,9 @@
                </textFill>
             </Label>
             <Line endX="1057.0" endY="-73.0" layoutX="247.0" layoutY="190.0" startX="-247.0" startY="-73.0" stroke="#7b7f6d" strokeWidth="10.0" />
-            <ScrollBar layoutX="1282.0" layoutY="309.0" orientation="VERTICAL" prefHeight="467.0" prefWidth="25.0" styleClass="Scrollbar" stylesheets="@../stylesheets/HomeStyle.css" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" height="467.0" layoutY="309.0" stroke="BLACK" strokeType="INSIDE" width="331.0" />
             <ComboBox fx:id="filterCombo" layoutX="41.0" layoutY="376.0" prefHeight="31.0" prefWidth="250.0" promptText="Filter" styleClass="OptionBoxes" stylesheets="@../stylesheets/HomeStyle.css" />
-            <ComboBox fx:id="sortCombo" layoutX="41.0" layoutY="424.0" prefHeight="31.0" prefWidth="250.0" promptText="Sort by" styleClass="OptionBoxes" stylesheets="@../stylesheets/HomeStyle.css" />
+            <ComboBox fx:id="sortCombo" disable="true" layoutX="41.0" layoutY="424.0" prefHeight="31.0" prefWidth="250.0" promptText="Sort by" styleClass="OptionBoxes" stylesheets="@../stylesheets/HomeStyle.css" />
             <TextField fx:id="searchField" layoutX="41.0" layoutY="327.0" prefHeight="25.0" prefWidth="250.0" styleClass="SearchField" stylesheets="@../stylesheets/HomeStyle.css" />
             <Label fx:id="searchLabel" layoutX="50.0" layoutY="329.0" styleClass="SearchLabel" stylesheets="@../stylesheets/HomeStyle.css" text="Search" />
 
@@ -58,12 +56,12 @@
             <Label layoutX="1162.0" layoutY="43.0" prefHeight="21.0" prefWidth="108.0" styleClass="ProfileLabel" stylesheets="@../stylesheets/HomeStyle.css" text="User Profile" />
             <Button fx:id="tempProfileButton" layoutX="1157.0" layoutY="43.0" mnemonicParsing="false" onMouseClicked="#userProfileOptionClicked" prefHeight="25.0" prefWidth="118.0" styleClass="ProfileComboBox" stylesheets="@../stylesheets/HomeStyle.css" />
             <Button layoutX="41.0" layoutY="473.0" mnemonicParsing="false" styleClass="WishlistButton" stylesheets="@../stylesheets/HomeStyle.css" text="Wishlist" />
-            <TableView fx:id="table" layoutX="330.0" layoutY="309.0" prefHeight="467.0" prefWidth="951.0">
+            <TableView fx:id="table" layoutX="330.0" layoutY="309.0" prefHeight="467.0" prefWidth="977.0">
                <columns>
-                  <TableColumn fx:id="cname" prefWidth="300.0" text="Product Name" />
+                  <TableColumn fx:id="cname" prefWidth="315.0" text="Product Name" />
                   <TableColumn fx:id="cgenre" minWidth="175.0" prefWidth="150.0" text="Genre" />
                   <TableColumn fx:id="cprice" prefWidth="175.0" text="Price" />
-                  <TableColumn fx:id="cuser" minWidth="3.0" prefWidth="300.0" text="Seller" />
+                  <TableColumn fx:id="cuser" minWidth="3.0" prefWidth="315.0" text="Seller" />
                </columns>
             </TableView>
             <Button fx:id="view" layoutX="37.0" layoutY="650.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="108.0" text="View Product" />
