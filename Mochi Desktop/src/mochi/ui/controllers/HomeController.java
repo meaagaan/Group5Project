@@ -4,6 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import mochi.db.DBConnection;
@@ -11,11 +12,15 @@ import mochi.ui.ForgotUI;
 import mochi.ui.ProductUI;
 import mochi.ui.ProfileUI;
 import mochi.ui.WishlistUI;
+import mochi.ui.*;
 
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
+import mochi.Product;
 
 public class HomeController implements Initializable
 {
@@ -39,6 +44,18 @@ public class HomeController implements Initializable
     public Button tempProfileButton;
 
     public Button wishlistButton;
+    public TableView<ProductInformation> table;
+
+    public TableColumn<ProductInformation, String> cname;
+    public TableColumn<ProductInformation, String> cuser;
+    public TableColumn<ProductInformation, String> cprice;
+    public TableColumn<ProductInformation, String> cgenre;
+    public Button view;
+
+    public String p;
+    HomeController product;
+
+    ObservableList<ProductInformation> lst= FXCollections.observableArrayList();
 
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
@@ -49,6 +66,31 @@ public class HomeController implements Initializable
 
         ObservableList<String> sortOptions = FXCollections.observableArrayList("Price", "Ratings", "Popularity");
         sortCombo.setItems(sortOptions);
+
+        ObservableList<String> profileOptions = FXCollections.observableArrayList("User Profile", "Settings", "Wishlist");
+        profileCombo.setItems(profileOptions);
+
+
+
+        try {
+            ResultSet s= database.createStatement().executeQuery("SELECT * FROM `mochi-desktop`.Product;");
+            while(s.next()){
+
+                lst.add(new ProductInformation(s.getString("productN"), s.getString("genreName"),  s.getString("priceOfProduct"), s.getString("userName")));
+
+            }
+        } catch (SQLException e) {
+
+            e.printStackTrace();
+        }
+        cname.setCellValueFactory(new PropertyValueFactory<>("name"));
+        cgenre.setCellValueFactory(new PropertyValueFactory<>("genre"));
+        cprice.setCellValueFactory(new PropertyValueFactory<>("price"));
+        cuser.setCellValueFactory(new PropertyValueFactory<>("user"));
+        table.setItems(lst);
+        //if(table.getSelectionModel().getSelectedItem().getName()!=null){
+        //    product=cname.setText(product.getName());
+        //}
 
     }
 
@@ -70,6 +112,7 @@ public class HomeController implements Initializable
     }
 
     private boolean setProfileScene() throws IOException {
+
         Stage primaryStage = (Stage) pane.getScene().getWindow();
         ProfileUI profileUI = new ProfileUI();
 
@@ -128,6 +171,25 @@ public class HomeController implements Initializable
     public boolean createProductClick() throws IOException{
         return setProductScene();
     }
+    /*
+    private boolean setProductPage() throws IOException {
+
+       Stage primaryStage = (Stage) view.getScene().getWindow();
+        ProductPageUI productpageUI = new ProductPageUI();
+
+        if (productpageUI != null) {
+            primaryStage.setScene(productpageUI.getProductPageScene());
+            return true;
+        }
+
+       return false;
+    }
+
+    public boolean viewClick() throws IOException{
+        return setProductPage();
+    }
+
+/*
 
     /*
     public boolean tempProfileLabelClicked() throws IOException {
@@ -136,4 +198,3 @@ public class HomeController implements Initializable
     */
 
 }
-
