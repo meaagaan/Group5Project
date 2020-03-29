@@ -40,7 +40,7 @@
 |            035 |           011 | User can make a review for a product. | User is able to type a review for the product, provide a star rating, and submit their review. | 21 | Important | Satisfied |
 |            036 |           011 | User can make a star rating on the product | Clicking on the choice box will allow for the user to choose a rating of their choice. | 21 | Important | Satisfied |
 |            037 |           011 | User can write a review on the product | There is a text field that allows the user to type their review. | 21 | Important | Satisfied |
-|            038 |           011 | The review is stored into the database after the confirm button is clicked | The database contains the review with the star rating. | 21 | Important | Working |
+|            038 |           011 | The review is stored into the database after the confirm button is clicked | The database contains the review with the star rating. | 21 | Important | Satisfied |
 |            039 |           022 | There should be a table that shows every product user own. | User should be able to see the list of all of the products they own. | 9 | Important | Satisfied |
 |            040 |           022 | There should be links to home page and profile page from library page. | User should be able to navigate to other pages via library page. | 4 | Important | Satisfied |
 |            041 |           023 | There should be a table that shows user's interested products. | User should be able to see the list of all of the products they interested in. | 4 | Important | Satisfied |
