@@ -48,5 +48,5 @@
 |            043 |           010 | There should be a button that delete the selected item within wish list. | User should be able to delete an item within their wish list. | 13 | Important | Satisfied |
 |            044 |           014 | The user should be able to go to the store, library, wishlist, and user profile page from the merchant page. | User is able to go to the other pages at the click of a button from the merchant page. | 8 | Important | Working |
 |            045 |           014 | There should be a table that shows all the merchant's available products for sale. | The user is able to see all the products that they have put onto Mochi. | 8 | Important | Working |
-|            046 |           014 | There should be a button to select a specific product. | The user is able to see the product page and be able to add the product to the wishlist. | 8 | Important | Working |
+|            046 |           014 | There should be a button to select a specific product. | The user is able to see that specific product page and be able to add the product to the wishlist. | 8 | Important | Working |
 
