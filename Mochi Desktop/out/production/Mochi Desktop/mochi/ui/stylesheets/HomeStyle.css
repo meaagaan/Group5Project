@@ -27,10 +27,6 @@
 .SearchField
 {
 	-fx-background-color: #7b7f6d;
-}
-
-.SearchLabel
-{
 	-fx-font-size: 15px;
 	-fx-text-fill: black;
 }
@@ -57,4 +53,31 @@
 	-fx-background-color: #CCB8FC;
 	-fx-font-size: 15px;
 	-fx-text-fill: black;
+}
+
+.Tableview 
+{
+    -fx-base: black;
+    -fx-control-inner-background: #1d1d1d;
+    -fx-background-color: #1d1d1d;
+    -fx-table-cell-border-color: #7b7f6d;
+    -fx-table-header-border-color: #7b7f6d;
+    -fx-padding: 5;
+}
+
+.Tableview.column-header-background 
+{
+    -fx-background-color: black;
+}
+
+.table-row-cell{
+    -fx-background-color: #1d1d1d;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em; 
+}
+
+.table-row-cell:odd{
+    -fx-background-color: #424242;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em;
 }

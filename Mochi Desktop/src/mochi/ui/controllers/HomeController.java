@@ -89,8 +89,11 @@ public class HomeController implements Initializable
         //    product=cname.setText(product.getName());
         //}
 
+        searchField.setPromptText("Search");
+
     }
 
+    /*
     public boolean userProfileChoice() throws IOException {
 
         if (profileCombo.getValue().equals("User Profile"))
@@ -102,6 +105,7 @@ public class HomeController implements Initializable
         else
             return false;
     }
+     */
 
     public boolean userProfileOptionClicked() throws IOException
     {
