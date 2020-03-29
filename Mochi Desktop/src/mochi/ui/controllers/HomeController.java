@@ -8,6 +8,10 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import mochi.db.DBConnection;
+import mochi.ui.ForgotUI;
+import mochi.ui.ProductUI;
+import mochi.ui.ProfileUI;
+import mochi.ui.WishlistUI;
 import mochi.ui.*;
 
 import java.io.IOException;
@@ -27,7 +31,6 @@ public class HomeController implements Initializable
     public ComboBox sortCombo;
 
     public TextField searchField;
-    public Label searchLabel;
 
     public ComboBox profileCombo;
 
@@ -38,6 +41,8 @@ public class HomeController implements Initializable
     public Pane pane;
 
     public Button tempProfileButton;
+
+    public Button wishlistButton;
 
     public TableView<ProductInformation> table;
 
@@ -59,13 +64,10 @@ public class HomeController implements Initializable
         ObservableList<String> filterOptions = FXCollections.observableArrayList("Price", "Ratings", "Genre");
         filterCombo.setItems(filterOptions);
 
+        /* UNCOMMENT IF WE DECIDE TO INCLUDE DROP DOWN FOR SORTING
         ObservableList<String> sortOptions = FXCollections.observableArrayList("Price", "Ratings", "Popularity");
         sortCombo.setItems(sortOptions);
-
-        ObservableList<String> profileOptions = FXCollections.observableArrayList("User Profile", "Settings", "Wishlist");
-        profileCombo.setItems(profileOptions);
-
-
+        */
 
         try {
             ResultSet s= database.createStatement().executeQuery("SELECT * FROM `mochi-desktop`.Product;");
@@ -87,8 +89,11 @@ public class HomeController implements Initializable
         //    product=cname.setText(product.getName());
         //}
 
+        searchField.setPromptText("Search");
+
     }
 
+    /*
     public boolean userProfileChoice() throws IOException {
 
         if (profileCombo.getValue().equals("User Profile"))
@@ -100,6 +105,7 @@ public class HomeController implements Initializable
         else
             return false;
     }
+     */
 
     public boolean userProfileOptionClicked() throws IOException
     {
@@ -127,7 +133,13 @@ public class HomeController implements Initializable
     }
 
     private boolean setWishlistScene () throws IOException {
+        Stage primaryStage = (Stage) pane.getScene().getWindow();
+        WishlistUI wishlistUI = new WishlistUI();
 
+        if (wishlistUI != null){
+            primaryStage.setScene(wishlistUI.getWishlistScene());
+            return true;
+        }
         return false;
     }
 
