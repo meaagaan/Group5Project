@@ -44,6 +44,7 @@ public class HomeController implements Initializable
     public Button tempProfileButton;
 
     public Button wishlistButton;
+
     public TableView<ProductInformation> table;
 
     public TableColumn<ProductInformation, String> cname;

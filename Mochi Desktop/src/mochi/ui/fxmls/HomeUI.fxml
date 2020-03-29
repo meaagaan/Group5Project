@@ -55,7 +55,7 @@
             <Button fx:id="createProduct" layoutX="37.0" layoutY="523.0" mnemonicParsing="false" onMouseClicked="#createProductClick" prefHeight="40.0" prefWidth="108.0" text="Create" />
             <Label layoutX="1162.0" layoutY="43.0" prefHeight="21.0" prefWidth="108.0" styleClass="ProfileLabel" stylesheets="@../stylesheets/HomeStyle.css" text="User Profile" />
             <Button fx:id="tempProfileButton" layoutX="1157.0" layoutY="43.0" mnemonicParsing="false" onMouseClicked="#userProfileOptionClicked" prefHeight="25.0" prefWidth="118.0" styleClass="ProfileComboBox" stylesheets="@../stylesheets/HomeStyle.css" />
-            <Button layoutX="41.0" layoutY="473.0" mnemonicParsing="false" styleClass="WishlistButton" stylesheets="@../stylesheets/HomeStyle.css" text="Wishlist" />
+            <Button fx:id="wishlistButton" layoutX="41.0" layoutY="473.0" mnemonicParsing="false" onMouseClicked="#wishlistOptionClicked" styleClass="WishlistButton" stylesheets="@../stylesheets/HomeStyle.css" text="Wishlist" />
             <TableView fx:id="table" layoutX="330.0" layoutY="309.0" prefHeight="467.0" prefWidth="977.0">
                <columns>
                   <TableColumn fx:id="cname" prefWidth="315.0" text="Product Name" />
