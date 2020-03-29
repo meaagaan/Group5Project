@@ -55,8 +55,6 @@
             <Label fx:id="searchLabel" layoutX="14.0" layoutY="329.0" styleClass="SearchLabel" stylesheets="@../stylesheets/HomeStyle.css" text="Search" />
             <Button fx:id="createProduct" layoutX="9.0" layoutY="500.0" mnemonicParsing="false" onMouseClicked="#createProductClick" prefHeight="40.0" prefWidth="108.0" text="Create" />
             <Label layoutX="1162.0" layoutY="48.0" prefHeight="21.0" prefWidth="108.0" styleClass="ProfileLabel" stylesheets="@../stylesheets/HomeStyle.css" text="User Profile" />
-            <ComboBox fx:id="profileCombo" layoutX="149.0" layoutY="78.0" prefHeight="25.0" prefWidth="133.0" styleClass="ProfileComboBox" stylesheets="@../stylesheets/HomeStyle.css" />
-            <Button fx:id="helpButton" layoutX="35.0" layoutY="4.0" mnemonicParsing="false" onMouseClicked="#helpButtonClicked" styleClass="HelpButton" stylesheets="@../stylesheets/HomeStyle.css" text="?" />
             <TableView layoutX="160.0" layoutY="309.0" prefHeight="467.0" prefWidth="1121.0">
               <columns>
                 <TableColumn prefWidth="147.0" text="Product Name" />
