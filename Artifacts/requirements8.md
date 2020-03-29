@@ -43,6 +43,10 @@
 |            038 |           011 | The review is stored into the database after the confirm button is clicked | The database contains the review with the star rating. | 21 | Important | Working |
 |            039 |           022 | There should be a table that shows every product user own. | User should be able to see the list of all of the products they own. | 9 | Important | Satisfied |
 |            040 |           022 | There should be links to home page and profile page from library page. | User should be able to navigate to other pages via library page. | 4 | Important | Satisfied |
+|            041 |           023 | There should be a table that shows user's interested products. | User should be able to see the list of all of the products they interested in. | 4 | Important | Satisfied |
+|            042 |           023 | There should be links to home page, profile page, and library page from wish list page. | User should be able to navigate to other pages via wish list page. | 2 | Important | Satisfied |
+|            043 |           010 | There should be a button that delete the selected item within wish list. | User should be able to delete an item within their wish list. | 13 | Important | Satisfied |
+
 
 
 

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.String?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.image.Image?>
@@ -38,7 +39,7 @@
                </rowConstraints>
                <children>
                   <Label fx:id="storeLabel" onMouseClicked="#storeLabelClicked" styleClass="SideBar_Label" stylesheets="@../stylesheets/WishlistStyle.css" text="Store" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <Label fx:id="libraryLabel" styleClass="SideBar_Label" stylesheets="@../stylesheets/WishlistStyle.css" text="Library" GridPane.columnIndex="1" GridPane.rowIndex="2" onMouseClicked="#libraryLabelClicked"/>
+                  <Label fx:id="libraryLabel" onMouseClicked="#libraryLabelClicked" styleClass="SideBar_Label" stylesheets="@../stylesheets/WishlistStyle.css" text="Library" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                   <Label fx:id="wishlistLabel" stylesheets="@../stylesheets/WishlistStyle.css" text="Wishlist" GridPane.columnIndex="1" GridPane.rowIndex="3">
                      <styleClass>
                         <String fx:value="Side_Bar" />
@@ -55,6 +56,7 @@
                </image>
             </ImageView>
             <Label fx:id="profileLabel" layoutX="1067.0" layoutY="140.0" onMouseClicked="#profileLabelClicked" styleClass="Title_Label" stylesheets="@../stylesheets/WishlistStyle.css" text="PlaceHolder" />
+            <Button fx:id="deleteButton" onMouseClicked="#deleteButtonClicked" layoutX="1180.0" layoutY="194.0" mnemonicParsing="false" styleClass="Button_BG" stylesheets="@../stylesheets/WishlistStyle.css" text="Delete" />
          </children>
       </AnchorPane>
    </children>
