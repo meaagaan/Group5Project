@@ -11,6 +11,7 @@ import mochi.User;
 import mochi.db.DBConnection;
 import mochi.ui.HomeUI;
 import mochi.ui.LibraryUI;
+import mochi.ui.WishlistUI;
 
 import java.io.IOException;
 import java.net.URL;
@@ -136,5 +137,20 @@ public class ProfileController implements Initializable {
 
 	public boolean libraryLabelClicked() throws IOException {
 		return setLibraryScene();
+	}
+
+	private boolean setWishlistScene() throws IOException {
+		Stage primaryStage = (Stage) pane.getScene().getWindow();
+		WishlistUI wishlistUI = new WishlistUI();
+
+		if (wishlistUI != null) {
+			primaryStage.setScene(wishlistUI.getWishlistScene());
+			return true;
+		}
+		return false;
+	}
+
+	public boolean wishlistLabelClicked() throws IOException {
+		return setWishlistScene();
 	}
 }

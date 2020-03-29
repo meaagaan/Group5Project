@@ -4,7 +4,7 @@ import javafx.application.Platform;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import mochi.db.DBConnection;
-import mochi.ui.LibraryUI;
+import mochi.ui.WishlistUI;
 import org.junit.Test;
 import org.testfx.framework.junit.ApplicationTest;
 
@@ -12,19 +12,19 @@ import java.io.IOException;
 
 import static org.junit.Assert.*;
 
-public class LibraryControllerTest extends ApplicationTest {
-	LibraryController libraryController;
+public class WishlistControllerTest extends ApplicationTest {
+	WishlistController wishlistController;
 
 	public void start(Stage primaryStage) throws Exception {
 		DBConnection connection = new DBConnection();
 
-		LibraryUI libraryUI = new LibraryUI();
-		Scene libraryScene = libraryUI.getLibraryScene();
+		WishlistUI wishlistUI = new WishlistUI();
+		Scene wishlistScene = wishlistUI.getWishlistScene();
 
-		this.libraryController = libraryUI.getLibraryController();
+		this.wishlistController = wishlistUI.getWishlistController();
 
 		primaryStage.setTitle("Mochi Desktop");
-		primaryStage.setScene(libraryScene);
+		primaryStage.setScene(wishlistScene);
 		primaryStage.setResizable(false);
 
 		primaryStage.show();
@@ -35,7 +35,7 @@ public class LibraryControllerTest extends ApplicationTest {
 	public void storeLabelClicked() {
 		Platform.runLater(() -> {
 			try {
-				assertEquals(true, libraryController.storeLabelClicked());
+				assertEquals(true, wishlistController.storeLabelClicked());
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -43,11 +43,11 @@ public class LibraryControllerTest extends ApplicationTest {
 	}
 
 	@Test
-	// Check if the wishlist is clicked.
-	public void wishlistLabelClicked() {
+	// Check if the library is clicked.
+	public void libraryLabelClicked() {
 		Platform.runLater(() -> {
 			try {
-				assertEquals(true, libraryController.wishlistLabelClicked());
+				assertEquals(true, wishlistController.libraryLabelClicked());
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -59,7 +59,7 @@ public class LibraryControllerTest extends ApplicationTest {
 	public void profileLabelClicked() {
 		Platform.runLater(() -> {
 			try {
-				assertEquals(true, libraryController.profileLabelClicked());
+				assertEquals(true, wishlistController.profileLabelClicked());
 			} catch (IOException e) {
 				e.printStackTrace();
 			}

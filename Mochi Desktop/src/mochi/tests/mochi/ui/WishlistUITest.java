@@ -7,19 +7,20 @@ import mochi.db.DBConnection;
 import org.junit.Test;
 import org.testfx.framework.junit.ApplicationTest;
 
+import static org.junit.Assert.*;
 import static org.testfx.api.FxAssert.verifyThat;
 import static org.testfx.util.NodeQueryUtils.hasText;
 
-public class LibraryUITest extends ApplicationTest {
+public class WishlistUITest extends ApplicationTest {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		DBConnection connection = new DBConnection();
 
-		LibraryUI libraryUI = new LibraryUI();
-		Scene libraryScene = libraryUI.getLibraryScene();
+		WishlistUI wishlistUI = new WishlistUI();
+		Scene wishlistScene = wishlistUI.getWishlistScene();
 
 		primaryStage.setTitle("Mochi Desktop");
-		primaryStage.setScene(libraryScene);
+		primaryStage.setScene(wishlistScene);
 		primaryStage.setResizable(false);
 
 		primaryStage.show();
@@ -58,5 +59,11 @@ public class LibraryUITest extends ApplicationTest {
 	public void wishlistLabelExist() {
 		verifyThat("#wishlistLabel", Node::isVisible);
 		verifyThat("#wishlistLabel", hasText("Wishlist"));
+	}
+
+	@Test
+	// Check if the wishlist list display correctly.
+	public void wishlistTableExist() {
+		verifyThat("#wishList", Node::isVisible);
 	}
 }

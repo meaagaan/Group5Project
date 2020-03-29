@@ -69,7 +69,8 @@
                </rowConstraints>
                <children>
                   <Label fx:id="storeLabel" onMouseClicked="#storeLabelClicked" styleClass="SideBar_Label" stylesheets="@../stylesheets/ProfileStyle.css" text="Store" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <Label fx:id="libraryLabel" styleClass="SideBar_Label" stylesheets="@../stylesheets/ProfileStyle.css" text="Library" GridPane.columnIndex="1" GridPane.rowIndex="2" onMouseClicked="#libraryLabelClicked"/>
+                  <Label fx:id="libraryLabel" onMouseClicked="#libraryLabelClicked" styleClass="SideBar_Label" stylesheets="@../stylesheets/ProfileStyle.css" text="Library" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label fx:id="wishlistLabel" onMouseClicked="#wishlistLabelClicked" styleClass="SideBar_Label" stylesheets="@../stylesheets/ProfileStyle.css" text="Wishlist" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                </children>
             </GridPane>
          </children>

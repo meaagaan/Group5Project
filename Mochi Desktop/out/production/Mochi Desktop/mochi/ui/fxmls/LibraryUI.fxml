@@ -38,6 +38,7 @@
                <children>
                   <Label fx:id="storeLabel" onMouseClicked="#storeLabelClicked" styleClass="SideBar_Label" stylesheets="@../stylesheets/LibraryStyle.css" text="Store" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                   <Label fx:id="libraryLabel" styleClass="SideBar_Label" stylesheets="@../stylesheets/LibraryStyle.css" text="Library" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label fx:id="wishlistLabel" styleClass="SideBar_Label" stylesheets="@../stylesheets/LibraryStyle.css" text="Wishlist" GridPane.columnIndex="1" GridPane.rowIndex="3" onMouseClicked="#wishlistLabelClicked"/>
                </children>
             </GridPane>
             <ListView fx:id="libraryList" layoutX="253.0" layoutY="253.0" prefHeight="547.0" prefWidth="1047.0" />
