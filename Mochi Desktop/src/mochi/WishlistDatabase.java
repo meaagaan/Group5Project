@@ -69,4 +69,25 @@ public class WishlistDatabase {
         }
         return false;
     }
+
+    public boolean writeText(ArrayList<String> wishlist) {
+        try {
+            FileWriter myWriter = new FileWriter("wishlist.txt");
+            if (wishlist == null) {
+                return false;
+            }
+            else {
+                for (String s : wishlist) {
+                    myWriter.write(s);
+                    myWriter.write('*');
+                }
+                myWriter.close();
+                return true;
+            }
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+            return false;
+        }
+    }
 }
