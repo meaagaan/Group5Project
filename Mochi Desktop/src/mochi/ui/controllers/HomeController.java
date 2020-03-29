@@ -10,6 +10,7 @@ import mochi.db.DBConnection;
 import mochi.ui.ForgotUI;
 import mochi.ui.ProductUI;
 import mochi.ui.ProfileUI;
+import mochi.ui.WishlistUI;
 
 import java.io.IOException;
 import java.net.URL;
@@ -37,6 +38,8 @@ public class HomeController implements Initializable
 
     public Button tempProfileButton;
 
+    public Button wishlistButton;
+
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
         this.database = DBConnection.getDatabase();
@@ -47,8 +50,6 @@ public class HomeController implements Initializable
         ObservableList<String> sortOptions = FXCollections.observableArrayList("Price", "Ratings", "Popularity");
         sortCombo.setItems(sortOptions);
 
-        ObservableList<String> profileOptions = FXCollections.observableArrayList("User Profile", "Settings", "Wishlist");
-        profileCombo.setItems(profileOptions);
     }
 
     public boolean userProfileChoice() throws IOException {
@@ -88,7 +89,13 @@ public class HomeController implements Initializable
     }
 
     private boolean setWishlistScene () throws IOException {
+        Stage primaryStage = (Stage) pane.getScene().getWindow();
+        WishlistUI wishlistUI = new WishlistUI();
 
+        if (wishlistUI != null){
+            primaryStage.setScene(wishlistUI.getWishlistScene());
+            return true;
+        }
         return false;
     }
 
