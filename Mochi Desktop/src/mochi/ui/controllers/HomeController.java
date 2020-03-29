@@ -64,13 +64,10 @@ public class HomeController implements Initializable
         ObservableList<String> filterOptions = FXCollections.observableArrayList("Price", "Ratings", "Genre");
         filterCombo.setItems(filterOptions);
 
+        /* UNCOMMENT IF WE DECIDE TO INCLUDE DROP DOWN FOR SORTING
         ObservableList<String> sortOptions = FXCollections.observableArrayList("Price", "Ratings", "Popularity");
         sortCombo.setItems(sortOptions);
-
-        ObservableList<String> profileOptions = FXCollections.observableArrayList("User Profile", "Settings", "Wishlist");
-        profileCombo.setItems(profileOptions);
-
-
+        */
 
         try {
             ResultSet s= database.createStatement().executeQuery("SELECT * FROM `mochi-desktop`.Product;");

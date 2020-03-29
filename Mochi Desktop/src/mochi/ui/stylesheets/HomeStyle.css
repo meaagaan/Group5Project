@@ -54,7 +54,7 @@
 
 .WishlistButton
 {
-	-fx-background-color: transparent;
-	-fx-font-size: 17px;
-	-fx-text-fill: #CCB8FC;
+	-fx-background-color: #CCB8FC;
+	-fx-font-size: 15px;
+	-fx-text-fill: black;
 }
