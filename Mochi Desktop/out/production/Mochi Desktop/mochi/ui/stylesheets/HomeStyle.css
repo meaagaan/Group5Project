@@ -26,7 +26,7 @@
 
 .SearchField
 {
-	-fx-background-color: white;
+	-fx-background-color: #7b7f6d;
 }
 
 .SearchLabel
@@ -55,6 +55,6 @@
 .WishlistButton
 {
 	-fx-background-color: transparent;
-	-fx-font-size: 15px;
+	-fx-font-size: 17px;
 	-fx-text-fill: #CCB8FC;
 }
