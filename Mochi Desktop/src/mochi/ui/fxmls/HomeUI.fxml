@@ -57,13 +57,16 @@
             <Label layoutX="1162.0" layoutY="48.0" prefHeight="21.0" prefWidth="108.0" styleClass="ProfileLabel" stylesheets="@../stylesheets/HomeStyle.css" text="User Profile" />
             <ComboBox fx:id="profileCombo" layoutX="149.0" layoutY="78.0" prefHeight="25.0" prefWidth="133.0" styleClass="ProfileComboBox" stylesheets="@../stylesheets/HomeStyle.css" />
             <Button fx:id="helpButton" layoutX="35.0" layoutY="4.0" mnemonicParsing="false" onMouseClicked="#helpButtonClicked" styleClass="HelpButton" stylesheets="@../stylesheets/HomeStyle.css" text="?" />
-            <TableView layoutX="160.0" layoutY="309.0" prefHeight="467.0" prefWidth="1121.0">
-              <columns>
-                <TableColumn prefWidth="147.0" text="Product Name" />
-                <TableColumn minWidth="3.0" prefWidth="100.0" text="Seller" />
-              </columns>
+            <TableView fx:id="table" layoutX="160.0" layoutY="309.0" prefHeight="467.0" prefWidth="1121.0">
+               <columns>
+                  <TableColumn fx:id="cname" prefWidth="147.0" text="Product Name" />
+                  <TableColumn fx:id="cgenre" minWidth="3.0" prefWidth="100.0" text="Genre" />
+                  <TableColumn fx:id="cprice" prefWidth="147.0" text="Price" />
+                  <TableColumn fx:id="cuser" minWidth="3.0" prefWidth="100.0" text="Seller" />
+               </columns>
             </TableView>
-            <Button fx:id="tempProfileButton" layoutX="1162.0" layoutY="53.0" mnemonicParsing="false" onMouseClicked="#userProfileOptionClicked" prefHeight="25.0" prefWidth="118.0" styleClass="ProfileComboBox" stylesheets="@../stylesheets/HomeStyle.css" />
+            <Button fx:id="tempProfileButton" layoutX="1162.0" layoutY="53.0" mnemonicParsing="false" onMouseClicked="#userProfileOptionClicked" prefHeight="25.0" prefWidth="118.0" styleClass="ProfileComboBox" stylesheets="@../stylesheets/HomeUI.css" />
+            <Button fx:id="view" layoutX="9.0" layoutY="650.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="108.0" text="View Product" />
          </children>
       </AnchorPane>
    </children>
