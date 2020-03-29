@@ -14,8 +14,8 @@ public class Main extends Application {
 	public void start(Stage primaryStage) throws Exception {
 		DBConnection connection = new DBConnection();
 
-		ReviewUI loginUI = new ReviewUI();
-		Scene loginScene = loginUI.getReviewScene();
+		LoginUI loginUI = new LoginUI();
+		Scene loginScene = loginUI.getLoginScene();
 
 		primaryStage.setTitle("Mochi Desktop");
 		primaryStage.setScene(loginScene);
