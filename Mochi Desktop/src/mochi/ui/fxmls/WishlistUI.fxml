@@ -48,7 +48,7 @@
                   </Label>
                </children>
             </GridPane>
-            <ListView fx:id="wishList" layoutX="253.0" layoutY="253.0" onMouseClicked="#wishlistItemClicked" prefHeight="547.0" prefWidth="1047.0" />
+            <ListView fx:id="wishList" layoutX="253.0" layoutY="253.0" prefHeight="547.0" prefWidth="1047.0" />
             <Label fx:id="titleLabel" layoutX="259.0" layoutY="200.0" styleClass="Title_Label" stylesheets="@../stylesheets/WishlistStyle.css" text="PlaceHolder" textAlignment="CENTER" />
             <ImageView fitHeight="55.0" fitWidth="60.0" layoutX="1007.0" layoutY="134.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -56,7 +56,7 @@
                </image>
             </ImageView>
             <Label fx:id="profileLabel" layoutX="1067.0" layoutY="140.0" onMouseClicked="#profileLabelClicked" styleClass="Title_Label" stylesheets="@../stylesheets/WishlistStyle.css" text="PlaceHolder" />
-            <Button fx:id="deleteButton" layoutX="1180.0" layoutY="194.0" mnemonicParsing="false" styleClass="Button_BG" stylesheets="@../stylesheets/WishlistStyle.css" text="Delete" />
+            <Button fx:id="deleteButton" onMouseClicked="#deleteButtonClicked" layoutX="1180.0" layoutY="194.0" mnemonicParsing="false" styleClass="Button_BG" stylesheets="@../stylesheets/WishlistStyle.css" text="Delete" />
          </children>
       </AnchorPane>
    </children>
