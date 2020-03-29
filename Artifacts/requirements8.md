@@ -46,8 +46,7 @@
 |            041 |           023 | There should be a table that shows user's interested products. | User should be able to see the list of all of the products they interested in. | 4 | Important | Satisfied |
 |            042 |           023 | There should be links to home page, profile page, and library page from wish list page. | User should be able to navigate to other pages via wish list page. | 2 | Important | Satisfied |
 |            043 |           010 | There should be a button that delete the selected item within wish list. | User should be able to delete an item within their wish list. | 13 | Important | Satisfied |
-
-
-
+|            044 |           014 | The user should be able to go to the store, library, wishlist, and user profile page from the merchant page. | User is able to go to the other pages at the click of a button from the merchant page. | 8 | Important | Working |
+|            045 |           014 | There should be a table that shows all the merchant's available products for sale. | The user is able to see all the products that they have put onto Mochi. | 8 | Important | Working |
 
 
