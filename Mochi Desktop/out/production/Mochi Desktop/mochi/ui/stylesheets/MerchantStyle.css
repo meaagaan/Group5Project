@@ -1,0 +1,24 @@
+.Side_Bar {
+    -fx-background-color: black;
+}
+
+.SideBar_Label {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: gray;
+    -fx-alignment: center;
+}
+
+.Title_Label {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: black;
+    -fx-alignment: center;
+}
+
+.Merchant_Label {
+    -fx-font-size: 50px;
+    -fx-font-weight: bold;
+    -fx-text-fill: black;
+    -fx-alignment: center;
+}
