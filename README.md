@@ -113,5 +113,5 @@ Unlike purchasing directly from the seller’s website, the customer can search 
 - [Design Documents](https://github.com/meaagaan/Group5Project/blob/master/Artifacts/Architecture.md)
 - [Source Code](Mochi%20Desktop/src/mochi)
 - [Automated Tests](Mochi%20Desktop/src/mochi/tests)
-- [Product Demonstration]()
+- [Product Demonstration](https://youtu.be/tMiDeTJKns4)
 
