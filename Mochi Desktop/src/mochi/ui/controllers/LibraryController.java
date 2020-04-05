@@ -5,6 +5,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import mochi.Product;
 import mochi.User;
 import mochi.db.DBConnection;
 import mochi.ui.HomeUI;
@@ -36,8 +37,8 @@ public class LibraryController implements Initializable {
 
 	private boolean libraryListFill() {
 		if (!(User.getLibraryList() == null) && !(User.getLibraryList().isEmpty())) {
-			for (String s : User.getLibraryList())
-				libraryList.getItems().add(s);
+			for (Product p : User.getLibraryList())
+				libraryList.getItems().add(p);
 			return true;
 		}
 		else {

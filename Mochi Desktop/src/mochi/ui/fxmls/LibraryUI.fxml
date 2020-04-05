@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -38,10 +41,21 @@
                <children>
                   <Label fx:id="storeLabel" onMouseClicked="#storeLabelClicked" styleClass="SideBar_Label" stylesheets="@../stylesheets/LibraryStyle.css" text="Store" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                   <Label fx:id="libraryLabel" styleClass="SideBar_Label" stylesheets="@../stylesheets/LibraryStyle.css" text="Library" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <Label fx:id="wishlistLabel" styleClass="SideBar_Label" stylesheets="@../stylesheets/LibraryStyle.css" text="Wishlist" GridPane.columnIndex="1" GridPane.rowIndex="3" onMouseClicked="#wishlistLabelClicked"/>
+                  <Label fx:id="wishlistLabel" onMouseClicked="#wishlistLabelClicked" styleClass="SideBar_Label" stylesheets="@../stylesheets/LibraryStyle.css" text="Wishlist" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                </children>
             </GridPane>
-            <ListView fx:id="libraryList" layoutX="253.0" layoutY="253.0" prefHeight="547.0" prefWidth="1047.0" />
+            <TableView fx:id="table" layoutX="253.0" layoutY="253.0" prefHeight="547.0" prefWidth="1047.0">
+               <columns>
+                  <TableColumn fx:id="cname" prefWidth="315.0" text="Product Name" />
+                  <TableColumn fx:id="cgenre" minWidth="175.0" prefWidth="150.0" text="Genre" />
+                  <TableColumn fx:id="cprice" prefWidth="175.0" text="Price" />
+                  <TableColumn fx:id="cuser" minWidth="3.0" prefWidth="308.0" text="Seller" />
+               </columns>
+               <styleClass>
+                  <String fx:value="Tableview" />
+                  <String fx:value="table-row-cell" />
+               </styleClass>
+            </TableView>
             <Label fx:id="titleLabel" layoutX="259.0" layoutY="200.0" styleClass="Title_Label" stylesheets="@../stylesheets/LibraryStyle.css" text="PlaceHolder" textAlignment="CENTER" />
             <ImageView fitHeight="55.0" fitWidth="60.0" layoutX="1007.0" layoutY="134.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -49,6 +63,7 @@
                </image>
             </ImageView>
             <Label fx:id="profileLabel" layoutX="1067.0" layoutY="140.0" onMouseClicked="#profileLabelClicked" styleClass="Title_Label" stylesheets="@../stylesheets/LibraryStyle.css" text="PlaceHolder" />
+            <Button fx:id="viewButton" layoutX="1067.0" layoutY="194.0" mnemonicParsing="false" onMouseClicked="#deleteButtonClicked" styleClass="Button_BG" stylesheets="@../stylesheets/LibraryStyle.css" text="View" />
          </children>
       </AnchorPane>
    </children>

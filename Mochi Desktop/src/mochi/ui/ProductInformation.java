@@ -10,8 +10,8 @@ public class ProductInformation {
     public ProductInformation(String name, String genre, String price, String user) {
         this.name = name;
         this.user= user;
-        this.genre=genre;
-        this.price=price;
+        this.genre = genre;
+        this.price = price;
 
     }
 

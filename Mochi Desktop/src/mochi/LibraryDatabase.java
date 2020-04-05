@@ -51,6 +51,37 @@ public class LibraryDatabase {
 		return false;
 	}
 
+	private boolean findProduct(String productNumber, ArrayList<Product> productList) {
+		PreparedStatement statement;
+		ResultSet resultSet;
+		Product product;
+
+		try {
+			statement = connection.prepareStatement("SELECT productN, genreName, descriptionOfProduct, priceOfProduct FROM Product WHERE productID = ?");
+			statement.setString(1, productNumber);
+			resultSet = statement.executeQuery();
+
+			while (resultSet.next()) {
+				product = new Product();
+
+				product.setPname(resultSet.getString("productN"));
+				product.setPgenre(resultSet.getString("genreName"));
+				product.setPdescription(resultSet.getString("descriptionOfProduct"));
+				product.setPprice(resultSet.getString("priceOfProduct"));
+
+				productList.add(product);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+		}
+		if (!productList.isEmpty()) {
+			User.setLibraryList(productList);
+			return true;
+		}
+		return false;
+	}
+
 	public boolean writeFile(String username) throws SQLException, FileNotFoundException {
 		PreparedStatement statement;
 

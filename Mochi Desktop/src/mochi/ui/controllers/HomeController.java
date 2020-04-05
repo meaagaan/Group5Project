@@ -94,7 +94,6 @@ public class HomeController implements Initializable
         //}
 
         searchField.setPromptText("Search");
-
     }
 
     /*
@@ -181,7 +180,7 @@ public class HomeController implements Initializable
         String name= "1";
 
         name=table.getSelectionModel().getSelectedItem().getName();
-        Product object =new Product();
+        Product object = new Product();
         object.setPname(name);
         PreparedStatement statement = null;
         ResultSet resultSet = null;
@@ -210,9 +209,6 @@ public class HomeController implements Initializable
             primaryStage.setScene(productpageUI.getProductPageScene());
             return true;
         }
-
-
-
         return false;
     }
 

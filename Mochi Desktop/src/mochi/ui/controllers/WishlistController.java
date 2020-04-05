@@ -1,6 +1,7 @@
 package mochi.ui.controllers;
 
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.Pane;
@@ -26,8 +27,10 @@ public class WishlistController implements Initializable {
 	public Label titleLabel;
 	public Label profileLabel;
 	public ListView wishList;
+	public Button viewButton;
 	private Connection database;
 	private WishlistDatabase wishlistDatabase;
+
 	@Override
 	public void initialize(URL url, ResourceBundle resourceBundle) {
 		this.database = DBConnection.getDatabase();

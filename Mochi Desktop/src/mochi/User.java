@@ -14,8 +14,8 @@ public class User
     private static String lastname = null;
     private static String email = null;
     private static Integer verified = null;
-    private static ArrayList<String> wishlist = null;
-    private static ArrayList<String> librarytList = null;
+    private static ArrayList<Product> wishlist = null;
+    private static ArrayList<Product> librarytList = null;
 
     public static boolean setUsername(String userUsername) {
         username = userUsername;
@@ -86,11 +86,11 @@ public class User
         return verified;
     }
 
-    public static ArrayList<String> getWishlist() {
+    public static ArrayList<Product> getWishlist() {
         return wishlist;
     }
 
-    public static ArrayList<String> getLibraryList() {
+    public static ArrayList<Product> getLibraryList() {
         return librarytList;
     }
 }
