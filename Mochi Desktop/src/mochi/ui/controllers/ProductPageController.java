@@ -9,8 +9,10 @@ import javafx.stage.Stage;
 import mochi.Product;
 import mochi.User;
 import mochi.ui.HomeUI;
+import mochi.ui.LibraryUI;
 import mochi.ui.ProductInformation;
 import mochi.db.DBConnection;
+import mochi.ui.WishlistUI;
 
 import java.io.IOException;
 import java.net.URL;
@@ -30,6 +32,7 @@ public class ProductPageController implements Initializable {
     public Label description;
     public Button returnHome;
     public Button wishlist;
+    public Button library;
     public Pane pane;
 
     private Connection database;
@@ -69,4 +72,35 @@ public class ProductPageController implements Initializable {
         return setHomeScene();
 
     }
+
+    public boolean setWishListScene() throws IOException {
+        Stage primaryStage = (Stage) wishlist.getScene().getWindow();
+        WishlistUI wishlistUI = new WishlistUI();
+
+        if (wishlistUI != null) {
+            primaryStage.setScene(wishlistUI.getWishlistScene());
+            return true;
+        }
+        return false;
+    }
+    public boolean wishlistClick() throws IOException{
+        return setWishListScene();
+
+    }
+
+    public boolean setLibraryScene() throws IOException {
+        Stage primaryStage = (Stage) library.getScene().getWindow();
+        LibraryUI libraryUI = new LibraryUI();
+
+        if (libraryUI != null) {
+            primaryStage.setScene(libraryUI.getLibraryScene());
+            return true;
+        }
+        return false;
+    }
+    public boolean LibraryClick() throws IOException{
+        return setLibraryScene();
+
+    }
+
 }

@@ -17,16 +17,16 @@
     <items>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="399.0" prefWidth="549.0">
             <children>
-                <ImageView fitHeight="1500.0" fitWidth="2000.0" layoutX="-6.0" layoutY="-18.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fitHeight="1500.0" fitWidth="2000.0" layoutX="-37.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../images/Background.png" />
                     </image>
                 </ImageView>
                 <Button fx:id="returnHome" mnemonicParsing="false" onMouseClicked="#returnHomeClick" prefHeight="49.0" prefWidth="101.0" text="HomePage" />
                 <ImageView fitHeight="309.0" fitWidth="339.0" layoutX="106.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true" />
-                <Button layoutX="1048.0" layoutY="320.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="122.0" text="Add to WishList" textAlignment="CENTER">
+                <Button fx:id="wishlist" layoutX="1048.0" layoutY="320.0" mnemonicParsing="false" onMouseClicked="#wishlistClick" prefHeight="49.0" prefWidth="122.0" text=" WishList" textAlignment="CENTER">
                     <font>
-                        <Font size="14.0" />
+                        <Font size="17.0" />
                     </font>
                     <effect>
                         <Lighting>
@@ -87,6 +87,12 @@
                         </Lighting>
                     </effect>
                 </Button>
+                <Button fx:id="library" onMouseClicked="#LibraryClick" layoutX="1048.0" layoutY="399.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="122.0" text="Library">
+                    <font>
+                        <Font size="17.0" />
+                    </font>
+                </Button>
             </children></AnchorPane>
     </items>
 </SplitPane>
+
