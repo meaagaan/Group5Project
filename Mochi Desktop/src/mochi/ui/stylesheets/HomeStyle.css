@@ -55,7 +55,21 @@
 	-fx-text-fill: black;
 }
 
-.Tableview 
+.CreateButton
+{
+	-fx-background-color: #CCB8FC;
+	-fx-font-size: 15px;
+	-fx-text-fill: black;
+}
+
+.ViewButton
+{
+	-fx-background-color: #CCB8FC;
+	-fx-font-size: 15px;
+	-fx-text-fill: black;
+}
+
+.Tableview
 {
     -fx-base: black;
     -fx-control-inner-background: #1d1d1d;

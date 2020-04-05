@@ -4,18 +4,21 @@ import javafx.collections.ObservableList;
 
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import mochi.User;
 import mochi.db.DBConnection;
 import mochi.ui.HomeUI;
 import mochi.ui.ProductUI;
+
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ResourceBundle;
 
 
@@ -39,15 +42,22 @@ public class ProductController implements Initializable {
     public Label confirmError;
     public Label confirmation;
 
-    ObservableList <String>choice = FXCollections.observableArrayList("education", "business","personal");
+    public Button loading;
+    public Button open;
+
+
+    ObservableList <String>choice = FXCollections.observableArrayList("educational", "business","personal");
     public ChoiceBox options;
     private Connection database;
     public String user;
     String type="educational";
-
+    public PreparedStatement store;
+    public FileInputStream fileInputStream;
+    public File file;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         this.database = DBConnection.getDatabase();
+
         options.setItems(choice);
 
         if(options.getSelectionModel().getSelectedItem()=="educational"){
@@ -60,20 +70,57 @@ public class ProductController implements Initializable {
             type="personal";
         }
         user= User.getUsername();
+
+
     }
+
+    public void fileUpload() {
+
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg"));
+        File file = fileChooser.showOpenDialog(open.getScene().getWindow());
+        try{
+            FileInputStream fileInputStream= new FileInputStream(file);
+            if(file== null){
+                System.out.println("no file chocse");
+            }
+            store=database.prepareStatement("INSERT INTO Product (image) VALUES (?)");
+            store.setBinaryStream(1,fileInputStream, file.length());
+            store.executeUpdate();
+            //Image image= new Image(fileInputStream);
+            Image image= new Image(file.toURI().toString(), 100, 150, true, true);
+            ImageView imageView = null;
+            imageView.setImage(image);
+            imageView.setFitHeight(100);
+            imageView.setFitWidth(150);
+            imageView.setPreserveRatio(true);
+        }
+        catch (IOException | SQLException e){
+            System.out.println(e.getMessage());
+        }
+
+    }
+
+    //private void loadingFile() {
+
+    //}
+
+
 
     public boolean confirmButtonClick() throws SQLException, IOException {
 
         ResultSet resultSet = null;
         Statement statement = null;
-
-
+        PreparedStatement p= null;
+        ResultSet r= null;
         String productN = productName.getText();
         String genreName= type;
         String descriptionOfProduct = description.getText();
         String priceOfProduct = price.getText();
         String query;
         String userName= user;
+        Integer ProductID= 0;
 
 
         try {
@@ -110,8 +157,38 @@ public class ProductController implements Initializable {
         }
 
         // putting the product information into the database.
-        query = "insert into Product values ('" + productN + "', '" + genreName + "', '" + descriptionOfProduct + "', '" + priceOfProduct +  "', '" + userName + "');";
-        statement.executeUpdate(query);
+
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg"));
+
+        File file = fileChooser.showOpenDialog(open.getScene().getWindow());
+
+        FileInputStream fileInputStream= new FileInputStream(file);
+        if(file== null){
+            System.out.println("no file chocse");
+        }
+
+        //Image image= new Image(fileInputStream);
+        Image image= new Image(file.toURI().toString(), 100, 150, true, true);
+        ImageView imageView = null;
+        imageView.setImage(image);
+        imageView.setFitHeight(100);
+        imageView.setFitWidth(150);
+        imageView.setPreserveRatio(true);
+
+        p= database.prepareStatement("INSERT INTO Product (productN, genreName, descriptionOfProduct, priceOfProduct, userName, image) VALUES (?,?,?,?,?,?)");
+        p.setString(1, productN);
+        p.setString(2,genreName);
+        p.setString(3, descriptionOfProduct);
+        p.setString(4,priceOfProduct);
+        p.setString(5,userName);
+        p.setBinaryStream(6,fileInputStream, file.length());
+        p.executeUpdate();
+
+        //preparedStatement = (PreparedStatement) database.prepareStatement(query);
+        //preparedStatement.executeUpdate(query);
+        //statement.executeUpdate(query);
 
         return false;
     }

@@ -52,7 +52,7 @@
             <ComboBox fx:id="sortCombo" disable="true" layoutX="41.0" layoutY="424.0" prefHeight="31.0" prefWidth="250.0" promptText="Sort by" styleClass="OptionBoxes" stylesheets="@../stylesheets/HomeStyle.css" />
             <TextField fx:id="searchField" layoutX="41.0" layoutY="327.0" prefHeight="25.0" prefWidth="250.0" styleClass="SearchField" stylesheets="@../stylesheets/HomeStyle.css" />
 
-            <Button fx:id="createProduct" layoutX="37.0" layoutY="523.0" mnemonicParsing="false" onMouseClicked="#createProductClick" prefHeight="40.0" prefWidth="108.0" text="Create" />
+            <Button fx:id="createProduct" layoutX="37.0" layoutY="523.0" mnemonicParsing="false" onMouseClicked="#createProductClick" prefHeight="40.0" prefWidth="108.0" styleClass="CreateButton" stylesheets="@../stylesheets/HomeStyle.css" text="Create" />
             <Label layoutX="1162.0" layoutY="43.0" prefHeight="21.0" prefWidth="108.0" styleClass="ProfileLabel" stylesheets="@../stylesheets/HomeStyle.css" text="User Profile" />
             <Button fx:id="tempProfileButton" layoutX="1157.0" layoutY="43.0" mnemonicParsing="false" onMouseClicked="#userProfileOptionClicked" prefHeight="25.0" prefWidth="118.0" styleClass="ProfileComboBox" stylesheets="@../stylesheets/HomeStyle.css" />
             <Button fx:id="wishlistButton" layoutX="41.0" layoutY="473.0" mnemonicParsing="false" onMouseClicked="#wishlistOptionClicked" styleClass="WishlistButton" stylesheets="@../stylesheets/HomeStyle.css" text="Wishlist" />
@@ -68,7 +68,7 @@
                   <String fx:value="table-row-cell" />
                </styleClass>
             </TableView>
-            <Button fx:id="view" layoutX="37.0" layoutY="650.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="108.0" text="View Product" />
+            <Button fx:id="view" layoutX="37.0" layoutY="650.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="108.0" onMouseClicked="#viewClick" styleClass="ViewButton" stylesheets="@../stylesheets/HomeStyle.css" text="View Product" />
 
          </children>
       </AnchorPane>

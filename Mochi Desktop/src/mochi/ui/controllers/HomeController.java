@@ -7,6 +7,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import mochi.User;
 import mochi.db.DBConnection;
 import mochi.ui.ForgotUI;
 import mochi.ui.ProductUI;
@@ -17,6 +18,7 @@ import mochi.ui.*;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
@@ -50,10 +52,11 @@ public class HomeController implements Initializable
     public TableColumn<ProductInformation, String> cuser;
     public TableColumn<ProductInformation, String> cprice;
     public TableColumn<ProductInformation, String> cgenre;
+    //public TableColumn<ProductInformation, Button> viewing;
     public Button view;
 
     public String p;
-    HomeController product;
+
 
     ObservableList<ProductInformation> lst= FXCollections.observableArrayList();
 
@@ -84,6 +87,7 @@ public class HomeController implements Initializable
         cgenre.setCellValueFactory(new PropertyValueFactory<>("genre"));
         cprice.setCellValueFactory(new PropertyValueFactory<>("price"));
         cuser.setCellValueFactory(new PropertyValueFactory<>("user"));
+        //viewing.setCellValueFactory(view);
         table.setItems(lst);
         //if(table.getSelectionModel().getSelectedItem().getName()!=null){
         //    product=cname.setText(product.getName());
@@ -172,10 +176,34 @@ public class HomeController implements Initializable
     public boolean createProductClick() throws IOException{
         return setProductScene();
     }
-    /*
-    private boolean setProductPage() throws IOException {
 
-       Stage primaryStage = (Stage) view.getScene().getWindow();
+    private boolean setProductPage() throws IOException {
+        String name= "1";
+
+        name=table.getSelectionModel().getSelectedItem().getName();
+        Product object =new Product();
+        object.setPname(name);
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+
+        try {
+            statement = database.prepareStatement("SELECT genreName, descriptionOfProduct, priceOfProduct FROM Product WHERE productN = ?");
+            statement.setString(1, name);
+            resultSet = statement.executeQuery();
+            if (resultSet.next()) {
+                object.setPgenre(resultSet.getString("genreName"));
+                object.setPdescription(resultSet.getString("descriptionOfProduct"));
+                object.setPprice(resultSet.getString("priceOfProduct"));
+            }
+            else {
+                return false;
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        Stage primaryStage = (Stage) view.getScene().getWindow();
         ProductPageUI productpageUI = new ProductPageUI();
 
         if (productpageUI != null) {
@@ -183,14 +211,16 @@ public class HomeController implements Initializable
             return true;
         }
 
-       return false;
+
+
+        return false;
     }
 
     public boolean viewClick() throws IOException{
         return setProductPage();
     }
 
-/*
+
 
     /*
     public boolean tempProfileLabelClicked() throws IOException {

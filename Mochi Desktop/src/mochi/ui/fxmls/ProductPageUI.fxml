@@ -3,15 +3,16 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.SplitPane?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<?import javafx.scene.paint.RadialGradient?>
-<?import javafx.scene.paint.Stop?>
 <SplitPane maxHeight="800.0" maxWidth="1300.0" minHeight="800.0" minWidth="1300.0" prefHeight="800.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mochi.ui.controllers.ProductPageController">
     <items>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="399.0" prefWidth="549.0">
@@ -21,33 +22,71 @@
                         <Image url="@../images/Background.png" />
                     </image>
                 </ImageView>
-                <Pane layoutX="497.0" layoutY="131.0" prefHeight="418.0" prefWidth="584.0">
-                    <children>
-                        <TextField fx:id="price" layoutX="237.0" layoutY="137.0" prefHeight="27.0" prefWidth="225.0" />
-                        <TextField fx:id="description" layoutX="237.0" layoutY="191.0" prefHeight="130.0" prefWidth="225.0" />
-                        <Label layoutX="143.0" layoutY="83.0" prefHeight="40.0" prefWidth="122.0" text="Genre">
-                            <font>
-                                <Font size="17.0" />
-                            </font>
-                        </Label>
-                        <Label layoutX="143.0" layoutY="130.0" prefHeight="40.0" prefWidth="122.0" text="Price">
-                            <font>
-                                <Font size="17.0" />
-                            </font>
-                        </Label>
-                        <Label layoutX="143.0" layoutY="177.0" prefHeight="40.0" prefWidth="122.0" text="Description">
-                            <font>
-                                <Font size="17.0" />
-                            </font>
-                        </Label>
-                        <TextField fx:id="genre" layoutX="237.0" layoutY="90.0" prefHeight="27.0" prefWidth="225.0" />
-                        <Button layoutX="292.0" layoutY="364.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="84.0" text="Reviews" />
-                    </children>
-                </Pane>
-                <Button layoutX="-6.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="152.0" text="HomePage" />
+                <Button fx:id="returnHome" mnemonicParsing="false" onMouseClicked="#returnHomeClick" prefHeight="49.0" prefWidth="101.0" text="HomePage" />
                 <ImageView fitHeight="309.0" fitWidth="339.0" layoutX="106.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true" />
-                <Button layoutX="1153.0" layoutY="152.0" mnemonicParsing="false" text="Add to WishList" />
-                <TextField fx:id="prname" layoutX="643.0" layoutY="38.0" prefHeight="87.0" prefWidth="293.0" />
+                <Button layoutX="1048.0" layoutY="320.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="122.0" text="Add to WishList" textAlignment="CENTER">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                    <effect>
+                        <Lighting>
+                            <bumpInput>
+                                <Shadow />
+                            </bumpInput>
+
+                        </Lighting>
+                    </effect></Button>
+                <Label fx:id="prname" layoutX="611.0" layoutY="38.0" prefHeight="87.0" prefWidth="293.0" styleClass="Name_Label" stylesheets="@../stylesheets/ProductPageStyle.css" />
+                <Rectangle arcHeight="5.0" arcWidth="5.0" height="384.0" layoutX="518.0" layoutY="152.0" stroke="BLACK" strokeType="INSIDE" width="464.0">
+                    <fill>
+                        <LinearGradient endX="1.0" endY="1.0" startX="0.86810551558753">
+                            <stops>
+                                <Stop color="#727b8238" />
+                                <Stop color="WHITE" offset="1.0" />
+                            </stops>
+                        </LinearGradient>
+                    </fill>
+                </Rectangle>
+                <Label layoutX="543.0" layoutY="219.0" prefHeight="40.0" prefWidth="122.0" text="Genre">
+                    <font>
+                        <Font size="17.0" />
+                    </font>
+                </Label>
+                <Label fx:id="genre" layoutX="679.0" layoutY="294.0" prefHeight="27.0" prefWidth="225.0">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Label>
+                <Label layoutX="543.0" layoutY="288.0" prefHeight="40.0" prefWidth="122.0" text="Price">
+                    <font>
+                        <Font size="17.0" />
+                    </font>
+                </Label>
+                <Label fx:id="price" layoutX="679.0" layoutY="225.0" prefHeight="27.0" prefWidth="225.0">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Label>
+                <Label layoutX="543.0" layoutY="356.0" prefHeight="40.0" prefWidth="122.0" text="Description">
+                    <font>
+                        <Font size="17.0" />
+                    </font>
+                </Label>
+                <Label fx:id="description" layoutX="665.0" layoutY="359.0" prefHeight="34.0" prefWidth="225.0">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Label>
+                <Button alignment="CENTER" cache="true" contentDisplay="BOTTOM" layoutX="716.0" layoutY="474.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="84.0" text="Reviews" textFill="#393030">
+                    <effect>
+                        <Lighting>
+                            <bumpInput>
+                                <Shadow />
+                            </bumpInput>
+
+                        </Lighting>
+                    </effect>
+                </Button>
             </children></AnchorPane>
     </items>
 </SplitPane>

@@ -3,6 +3,7 @@ package mochi.ui;
 import javafx.scene.control.Button;
 
 public class ProductInformation {
+
     String name, user, genre, price;
     Button productinfo;
 
