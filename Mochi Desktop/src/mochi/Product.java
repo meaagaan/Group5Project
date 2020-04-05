@@ -10,7 +10,7 @@ public class Product {
     public static String getPname(){
         return pname;
     }
-    public void setPname(String pname){
+    public  void setPname(String pname){
         this.pname= pname;
     }
     public static String getPgenre(){

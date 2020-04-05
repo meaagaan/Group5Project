@@ -58,6 +58,8 @@
                 <Label fx:id="ProductError" layoutX="480.0" layoutY="450.0" prefHeight="17.0" prefWidth="372.0" styleClass="Product_Error" stylesheets="@../stylesheets/ProductStyle.css" />
                 <Label fx:id="confirmError" layoutX="480.0" layoutY="450.0" prefHeight="17.0" prefWidth="372.0" styleClass="Empty_Error" stylesheets="@../stylesheets/ProductStyle.css" />
                 <Label fx:id="confirmation" layoutX="480.0" layoutY="600.0" prefHeight="17.0" prefWidth="372.0" styleClass="Confirmation" stylesheets="@../stylesheets/ProductStyle.css" />
+                <Button fx:id="open" layoutX="987.0" layoutY="448.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="108.0" onMouseClicked="#fileUpload" text="Open" />
+                <ImageView fx:id="imageView" fitHeight="230.0" fitWidth="225.0" layoutX="929.0" layoutY="181.0" pickOnBounds="true" preserveRatio="true" />
             </children></AnchorPane>
     </items>
 </SplitPane>
