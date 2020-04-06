@@ -7,6 +7,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import mochi.ProductPageAssist;
 import mochi.User;
 import mochi.db.DBConnection;
 import mochi.ui.ForgotUI;
@@ -83,10 +84,12 @@ public class HomeController implements Initializable
 
             e.printStackTrace();
         }
+
         cname.setCellValueFactory(new PropertyValueFactory<>("name"));
         cgenre.setCellValueFactory(new PropertyValueFactory<>("genre"));
         cprice.setCellValueFactory(new PropertyValueFactory<>("price"));
         cuser.setCellValueFactory(new PropertyValueFactory<>("user"));
+
         //viewing.setCellValueFactory(view);
         table.setItems(lst);
         //if(table.getSelectionModel().getSelectedItem().getName()!=null){
@@ -180,7 +183,7 @@ public class HomeController implements Initializable
         String name= "1";
 
         name=table.getSelectionModel().getSelectedItem().getName();
-        Product object = new Product();
+        ProductPageAssist object = new ProductPageAssist();
         object.setPname(name);
         PreparedStatement statement = null;
         ResultSet resultSet = null;

@@ -47,9 +47,9 @@
             <TableView fx:id="table" layoutX="253.0" layoutY="253.0" prefHeight="547.0" prefWidth="1047.0">
                <columns>
                   <TableColumn fx:id="cname" prefWidth="315.0" text="Product Name" />
-                  <TableColumn fx:id="cgenre" minWidth="175.0" prefWidth="150.0" text="Genre" />
-                  <TableColumn fx:id="cprice" prefWidth="175.0" text="Price" />
-                  <TableColumn fx:id="cuser" minWidth="3.0" prefWidth="308.0" text="Seller" />
+                  <TableColumn fx:id="cgenre" minWidth="175.0" prefWidth="218.0" text="Genre" />
+                  <TableColumn fx:id="cprice" prefWidth="189.0" text="Price" />
+                  <TableColumn fx:id="cuser" minWidth="3.0" prefWidth="325.0" text="Seller" />
                </columns>
                <styleClass>
                   <String fx:value="Tableview" />
@@ -63,7 +63,7 @@
                </image>
             </ImageView>
             <Label fx:id="profileLabel" layoutX="1067.0" layoutY="140.0" onMouseClicked="#profileLabelClicked" styleClass="Title_Label" stylesheets="@../stylesheets/LibraryStyle.css" text="PlaceHolder" />
-            <Button fx:id="viewButton" layoutX="1067.0" layoutY="194.0" mnemonicParsing="false" onMouseClicked="#deleteButtonClicked" styleClass="Button_BG" stylesheets="@../stylesheets/LibraryStyle.css" text="View" />
+            <Button fx:id="viewButton" layoutX="1067.0" layoutY="194.0" mnemonicParsing="false" styleClass="Button_BG" stylesheets="@../stylesheets/LibraryStyle.css" text="View" />
          </children>
       </AnchorPane>
    </children>

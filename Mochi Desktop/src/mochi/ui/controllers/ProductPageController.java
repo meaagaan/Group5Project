@@ -7,6 +7,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import mochi.Product;
+import mochi.ProductPageAssist;
 import mochi.User;
 import mochi.ui.HomeUI;
 import mochi.ui.LibraryUI;
@@ -43,19 +44,19 @@ public class ProductPageController implements Initializable {
 
         prname.setFocusTraversable(false);
         prname.setMouseTransparent(true);
-        prname.setText(Product.getPname());
+        prname.setText(ProductPageAssist.getPname());
 
         genre.setFocusTraversable(false);
         genre.setMouseTransparent(true);
-        genre.setText(Product.getPgenre());
+        genre.setText(ProductPageAssist.getPgenre());
 
         price.setFocusTraversable(false);
         price.setMouseTransparent(true);
-        price.setText(Product.getPprice());
+        price.setText(ProductPageAssist.getPprice());
 
         description.setFocusTraversable(false);
         description.setMouseTransparent(true);
-        description.setText(Product.getPdescription());
+        description.setText(ProductPageAssist.getPdescription());
 
     }
     public boolean setHomeScene() throws IOException {

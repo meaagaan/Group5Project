@@ -1,20 +1,26 @@
 package mochi.ui.controllers;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import mochi.Product;
 import mochi.User;
 import mochi.db.DBConnection;
 import mochi.ui.HomeUI;
+import mochi.ui.ProductInformation;
 import mochi.ui.ProfileUI;
 import mochi.ui.WishlistUI;
 
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class LibraryController implements Initializable {
@@ -22,7 +28,13 @@ public class LibraryController implements Initializable {
 	public Label storeLabel;
 	public Label titleLabel;
 	public Label profileLabel;
-	public ListView libraryList;
+	public TableView<ProductInformation> table;
+
+	public TableColumn<ProductInformation, String> cname;
+	public TableColumn<ProductInformation, String> cuser;
+	public TableColumn<ProductInformation, String> cprice;
+	public TableColumn<ProductInformation, String> cgenre;
+
 	private Connection database;
 
 	@Override
@@ -36,9 +48,20 @@ public class LibraryController implements Initializable {
 	}
 
 	private boolean libraryListFill() {
-		if (!(User.getLibraryList() == null) && !(User.getLibraryList().isEmpty())) {
-			for (Product p : User.getLibraryList())
-				libraryList.getItems().add(p);
+		ObservableList<ProductInformation> list = FXCollections.observableArrayList();
+		ArrayList<Product> productList = User.getLibraryList();
+
+		if (!(productList == null) && !(productList.isEmpty())) {
+			for (Product p : productList) {
+				list.add(new ProductInformation(p.getPname(), p.getPgenre(), p.getPprice(), p.getPusername()));
+			}
+
+			cname.setCellValueFactory(new PropertyValueFactory<>("name"));
+			cgenre.setCellValueFactory(new PropertyValueFactory<>("genre"));
+			cprice.setCellValueFactory(new PropertyValueFactory<>("price"));
+			cuser.setCellValueFactory(new PropertyValueFactory<>("user"));
+
+			table.setItems(list);
 			return true;
 		}
 		else {

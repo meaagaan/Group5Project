@@ -3,32 +3,49 @@ package mochi;
 import javafx.scene.control.Button;
 
 public class Product {
-    public  static String pname = null;
-    public static String pgenre = null;
-    public  static String pprice = null;
-    public  static String pdescription = null;
-    public static String getPname(){
+    public String pname = null;
+    public String pgenre = null;
+    public String pprice = null;
+    public String pusername = null;
+    public String pdescription = null;
+
+    public String getPname(){
         return pname;
     }
-    public  void setPname(String pname){
-        this.pname= pname;
+
+    public void setPname(String pname){
+        this.pname = pname;
     }
-    public static String getPgenre(){
+
+    public String getPgenre(){
         return pgenre;
     }
+
     public void setPgenre(String pgenre){
-        this.pgenre= pgenre;
+        this.pgenre = pgenre;
     }
-    public static String getPprice(){
+
+    public String getPprice(){
         return pprice;
     }
+
     public void setPprice(String pprice){
-        this.pprice= pprice;
+        this.pprice = pprice;
     }
-    public static String getPdescription(){
+
+    public String getPusername() {
+        return this.pusername;
+    }
+
+    public void setPusername(String pusername) {
+        this.pusername = pusername;
+    }
+
+    public String getPdescription(){
         return pdescription;
     }
+
     public void setPdescription(String pdescription){
-        this.pdescription= pdescription;
+        this.pdescription = pdescription;
     }
 }
