@@ -8,6 +8,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import mochi.Product;
+import mochi.ProductPageAssist;
 import mochi.User;
 import mochi.WishlistDatabase;
 import mochi.db.DBConnection;
@@ -15,14 +16,15 @@ import mochi.ui.HomeUI;
 import mochi.ui.LibraryUI;
 import mochi.ui.ProductInformation;
 import mochi.ui.ProfileUI;
+import mochi.ui.ProductPageUI;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
+
 import java.sql.SQLException;
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class WishlistController implements Initializable {
 	public Pane pane;
@@ -136,5 +138,28 @@ public class WishlistController implements Initializable {
 
 	public boolean profileLabelClicked() throws IOException {
 		return setProfileScene();
+	}
+
+	private boolean setProductPage() throws IOException {
+		ProductInformation selectedProduct = table.getSelectionModel().getSelectedItem();
+		ProductPageAssist product = new ProductPageAssist();
+
+		product.setPname(selectedProduct.getName());
+		product.setPgenre(selectedProduct.getGenre());
+		product.setPdescription(selectedProduct.getProductinfo());
+		product.setPprice(selectedProduct.getPrice());
+
+		Stage primaryStage = (Stage) pane.getScene().getWindow();
+		ProductPageUI productpageUI = new ProductPageUI();
+
+		if (productpageUI != null) {
+			primaryStage.setScene(productpageUI.getProductPageScene());
+			return true;
+		}
+		return false;
+	}
+
+	public boolean viewButtonClicked() throws IOException {
+		return setProductPage();
 	}
 }

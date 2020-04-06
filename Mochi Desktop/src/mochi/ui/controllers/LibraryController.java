@@ -10,12 +10,10 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import mochi.Product;
+import mochi.ProductPageAssist;
 import mochi.User;
 import mochi.db.DBConnection;
-import mochi.ui.HomeUI;
-import mochi.ui.ProductInformation;
-import mochi.ui.ProfileUI;
-import mochi.ui.WishlistUI;
+import mochi.ui.*;
 
 import java.io.IOException;
 import java.net.URL;
@@ -111,5 +109,28 @@ public class LibraryController implements Initializable {
 
 	public boolean profileLabelClicked() throws IOException {
 		return setProfileScene();
+	}
+
+	private boolean setProductPage() throws IOException {
+		ProductInformation selectedProduct = table.getSelectionModel().getSelectedItem();
+		ProductPageAssist product = new ProductPageAssist();
+
+		product.setPname(selectedProduct.getName());
+		product.setPgenre(selectedProduct.getGenre());
+		product.setPdescription(selectedProduct.getProductinfo());
+		product.setPprice(selectedProduct.getPrice());
+
+		Stage primaryStage = (Stage) pane.getScene().getWindow();
+		ProductPageUI productpageUI = new ProductPageUI();
+
+		if (productpageUI != null) {
+			primaryStage.setScene(productpageUI.getProductPageScene());
+			return true;
+		}
+		return false;
+	}
+
+	public boolean viewButtonClicked() throws IOException {
+		return setProductPage();
 	}
 }

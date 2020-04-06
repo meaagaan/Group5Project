@@ -69,7 +69,7 @@
             </ImageView>
             <Label fx:id="profileLabel" layoutX="1067.0" layoutY="140.0" onMouseClicked="#profileLabelClicked" styleClass="Title_Label" stylesheets="@../stylesheets/WishlistStyle.css" text="PlaceHolder" />
             <Button fx:id="deleteButton" layoutX="1180.0" layoutY="194.0" mnemonicParsing="false" onMouseClicked="#deleteButtonClicked" styleClass="Button_BG" stylesheets="@../stylesheets/WishlistStyle.css" text="Delete" />
-            <Button fx:id="viewButton" layoutX="1067.0" layoutY="194.0" mnemonicParsing="false" styleClass="Button_BG" stylesheets="@../stylesheets/WishlistStyle.css" text="View" />
+            <Button fx:id="viewButton" layoutX="1067.0" layoutY="194.0" mnemonicParsing="false" onMouseClicked="#viewButtonClicked" styleClass="Button_BG" stylesheets="@../stylesheets/WishlistStyle.css" text="View" />
          </children>
       </AnchorPane>
    </children>
