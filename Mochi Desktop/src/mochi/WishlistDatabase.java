@@ -24,7 +24,7 @@ public class WishlistDatabase {
         statement.setString(1, username);
         resultSet = statement.executeQuery();
 
-        ArrayList<String> wishlist = new ArrayList<String>();
+        ArrayList<Product> productList = new ArrayList<Product>();
 
         System.out.println(resultSet);
 
@@ -44,13 +44,42 @@ public class WishlistDatabase {
                     stringBuilder.append((char)character);
                 }
                 else {
-                    wishlist.add(stringBuilder.toString());
+                    findProduct(stringBuilder.toString(), productList);
                     stringBuilder = new StringBuilder();
                 }
             }
-            return (true && User.setWishlist(wishlist));
+            return (true && User.setWishlist(productList));
         }
         return false;
+    }
+
+    private boolean findProduct(String productNumber, ArrayList<Product> productList) {
+        PreparedStatement statement;
+        ResultSet resultSet;
+        Product product;
+
+        try {
+            statement = connection.prepareStatement("SELECT productN, genreName, descriptionOfProduct, priceOfProduct, userName FROM Product WHERE productID = ?");
+            statement.setString(1, productNumber);
+            resultSet = statement.executeQuery();
+
+            while (resultSet.next()) {
+                product = new Product();
+
+                product.setPid(productNumber);
+                product.setPname(resultSet.getString("productN"));
+                product.setPgenre(resultSet.getString("genreName"));
+                product.setPdescription(resultSet.getString("descriptionOfProduct"));
+                product.setPprice(resultSet.getString("priceOfProduct"));
+                product.setPusername(resultSet.getString("userName"));
+
+                productList.add(product);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+        return true;
     }
 
     public boolean writeFile(String username) throws SQLException, FileNotFoundException {
@@ -70,15 +99,15 @@ public class WishlistDatabase {
         return false;
     }
 
-    public boolean writeText(ArrayList<String> wishlist) {
+    public boolean writeText(ArrayList<Product> wishlist) {
         try {
             FileWriter myWriter = new FileWriter("wishlist.txt");
             if (wishlist == null) {
                 return false;
             }
             else {
-                for (String s : wishlist) {
-                    myWriter.write(s);
+                for (Product s : wishlist) {
+                    myWriter.write(s.getPid());
                     myWriter.write('*');
                 }
                 myWriter.close();
