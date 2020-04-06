@@ -64,6 +64,7 @@ public class LibraryDatabase {
 			while (resultSet.next()) {
 				product = new Product();
 
+				product.setPid(productNumber);
 				product.setPname(resultSet.getString("productN"));
 				product.setPgenre(resultSet.getString("genreName"));
 				product.setPdescription(resultSet.getString("descriptionOfProduct"));
@@ -76,11 +77,7 @@ public class LibraryDatabase {
 			e.printStackTrace();
 			return false;
 		}
-		if (!productList.isEmpty()) {
-			User.setLibraryList(productList);
-			return true;
-		}
-		return false;
+		return true;
 	}
 
 	public boolean writeFile(String username) throws SQLException, FileNotFoundException {

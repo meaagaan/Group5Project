@@ -52,9 +52,8 @@ public class LibraryController implements Initializable {
 		ArrayList<Product> productList = User.getLibraryList();
 
 		if (!(productList == null) && !(productList.isEmpty())) {
-			for (Product p : productList) {
-				list.add(new ProductInformation(p.getPname(), p.getPgenre(), p.getPprice(), p.getPusername()));
-			}
+			for (Product p : productList)
+				list.add(new ProductInformation(p.getPid(), p.getPname(), p.getPgenre(), p.getPdescription(), p.getPprice(), p.getPusername()));
 
 			cname.setCellValueFactory(new PropertyValueFactory<>("name"));
 			cgenre.setCellValueFactory(new PropertyValueFactory<>("genre"));

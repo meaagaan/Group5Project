@@ -77,8 +77,9 @@ public class HomeController implements Initializable
             ResultSet s= database.createStatement().executeQuery("SELECT * FROM `mochi-desktop`.Product;");
             while(s.next()){
 
-                lst.add(new ProductInformation(s.getString("productN"), s.getString("genreName"),  s.getString("priceOfProduct"), s.getString("userName")));
-
+                lst.add(new ProductInformation(s.getString("ProductID"), s.getString("productN"),
+                        s.getString("genreName"), s.getString("descriptionOfProduct"),
+                        s.getString("priceOfProduct"), s.getString("userName")));
             }
         } catch (SQLException e) {
 

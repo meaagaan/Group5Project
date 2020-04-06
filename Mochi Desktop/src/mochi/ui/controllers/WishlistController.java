@@ -1,16 +1,19 @@
 package mochi.ui.controllers;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import mochi.Product;
 import mochi.User;
 import mochi.WishlistDatabase;
 import mochi.db.DBConnection;
 import mochi.ui.HomeUI;
 import mochi.ui.LibraryUI;
+import mochi.ui.ProductInformation;
 import mochi.ui.ProfileUI;
 
 import java.io.FileNotFoundException;
@@ -26,8 +29,14 @@ public class WishlistController implements Initializable {
 	public Label storeLabel;
 	public Label titleLabel;
 	public Label profileLabel;
-	public ListView wishList;
 	public Button viewButton;
+	public TableView<ProductInformation> table;
+
+	public TableColumn<ProductInformation, String> cname;
+	public TableColumn<ProductInformation, String> cuser;
+	public TableColumn<ProductInformation, String> cprice;
+	public TableColumn<ProductInformation, String> cgenre;
+
 	private Connection database;
 	private WishlistDatabase wishlistDatabase;
 
@@ -45,16 +54,17 @@ public class WishlistController implements Initializable {
 
 	public boolean deleteButtonClicked() throws FileNotFoundException, SQLException {
 		int index = -1;
-		index = wishList.getSelectionModel().getSelectedIndex();
+		index = table.getSelectionModel().getSelectedIndex();
 		if (index >= 0) {
-			wishList.getItems().remove(index);
+			table.getItems().remove(index);
 
-			List<Object> list = Arrays.asList(wishList.getItems().toArray());
-			List<String> stringList = list.stream()
-					.map(object -> Objects.toString(object, null))
-					.collect(Collectors.toList());
+			ObservableList<ProductInformation> list = table.getItems();
+			ArrayList<Product> productList = new ArrayList<Product>();
 
-			User.setWishlist((ArrayList) stringList);
+			for (ProductInformation p : list)
+				productList.add(new Product(p.getId(), p.getName(), p.getGenre(), p.getProductinfo(), p.getPrice(), p.getUser()));
+
+			User.setWishlist(productList);
 			this.wishlistDatabase.writeText(User.getWishlist());
 			this.wishlistDatabase.writeFile(User.getUsername());
 			return true;
@@ -63,9 +73,19 @@ public class WishlistController implements Initializable {
 	}
 
 	private boolean wishListFill() {
-		if (!(User.getWishlist() == null) && !(User.getWishlist().isEmpty())) {
-			for (String s : User.getWishlist())
-				wishList.getItems().add(s);
+		ObservableList<ProductInformation> list = FXCollections.observableArrayList();
+		ArrayList<Product> productList = User.getWishlist();
+
+		if (!(productList == null) && !(productList.isEmpty())) {
+			for (Product p : productList)
+				list.add(new ProductInformation(p.getPid(), p.getPname(), p.getPgenre(), p.getPdescription(), p.getPprice(), p.getPusername()));
+
+			cname.setCellValueFactory(new PropertyValueFactory<>("name"));
+			cgenre.setCellValueFactory(new PropertyValueFactory<>("genre"));
+			cprice.setCellValueFactory(new PropertyValueFactory<>("price"));
+			cuser.setCellValueFactory(new PropertyValueFactory<>("user"));
+
+			table.setItems(list);
 			return true;
 		}
 		else {
