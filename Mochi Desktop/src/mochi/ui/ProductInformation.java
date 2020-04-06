@@ -4,46 +4,64 @@ import javafx.scene.control.Button;
 
 public class ProductInformation {
 
-    String name, user, genre, price;
-    Button productinfo;
+    String id, name, user, genre, productinfo, price;
 
-    public ProductInformation(String name, String genre, String price, String user) {
+    public ProductInformation(String id, String name, String genre, String productinfo, String price, String user) {
+        this.id = id;
         this.name = name;
         this.user= user;
-        this.genre=genre;
-        this.price=price;
+        this.genre = genre;
+        this.productinfo = productinfo;
+        this.price = price;
 
+    }
+
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName(){
         return name;
     }
+
     public void setName(String name){
-        this.name= name;
+        this.name = name;
     }
+
     public String getUser(){
         return user;
     }
+
     public void setUser(String user){
-        this.user= user;
+        this.user = user;
     }
-    public void setProductinfo(Button productinfo){
-        this.productinfo= productinfo;
+
+    public void setProductinfo(String productinfo){
+        this.productinfo = productinfo;
     }
-    public Button getProductinfo(){
+
+    public String getProductinfo(){
         return productinfo;
     }
+
     public String getGenre(){
         return genre;
     }
+
     public void setGenre(String genre){
-        this.genre= genre;
+        this.genre = genre;
     }
+
     public String getPrice(){
         return price;
     }
+
     public void setPrice(String price){
-        this.price= price;
+        this.price = price;
     }
 
 }

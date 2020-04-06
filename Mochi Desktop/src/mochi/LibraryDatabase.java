@@ -22,7 +22,7 @@ public class LibraryDatabase {
 		statement.setString(1, username);
 		resultSet = statement.executeQuery();
 
-		ArrayList<String> product = new ArrayList<String>();
+		ArrayList<Product> productList = new ArrayList<Product>();
 
 		System.out.println(resultSet);
 
@@ -42,13 +42,42 @@ public class LibraryDatabase {
 					stringBuilder.append((char)character);
 				}
 				else {
-					product.add(stringBuilder.toString());
+					findProduct(stringBuilder.toString(), productList);
 					stringBuilder = new StringBuilder();
 				}
 			}
-			return (true && User.setLibraryList(product));
+			return (true && User.setLibraryList(productList));
 		}
 		return false;
+	}
+
+	private boolean findProduct(String productNumber, ArrayList<Product> productList) {
+		PreparedStatement statement;
+		ResultSet resultSet;
+		Product product;
+
+		try {
+			statement = connection.prepareStatement("SELECT productN, genreName, descriptionOfProduct, priceOfProduct, userName FROM Product WHERE productID = ?");
+			statement.setString(1, productNumber);
+			resultSet = statement.executeQuery();
+
+			while (resultSet.next()) {
+				product = new Product();
+
+				product.setPid(productNumber);
+				product.setPname(resultSet.getString("productN"));
+				product.setPgenre(resultSet.getString("genreName"));
+				product.setPdescription(resultSet.getString("descriptionOfProduct"));
+				product.setPprice(resultSet.getString("priceOfProduct"));
+				product.setPusername(resultSet.getString("userName"));
+
+				productList.add(product);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+		}
+		return true;
 	}
 
 	public boolean writeFile(String username) throws SQLException, FileNotFoundException {

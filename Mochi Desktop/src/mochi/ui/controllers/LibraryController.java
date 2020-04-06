@@ -1,19 +1,24 @@
 package mochi.ui.controllers;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import mochi.Product;
+import mochi.ProductPageAssist;
 import mochi.User;
 import mochi.db.DBConnection;
-import mochi.ui.HomeUI;
-import mochi.ui.ProfileUI;
-import mochi.ui.WishlistUI;
+import mochi.ui.*;
 
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class LibraryController implements Initializable {
@@ -21,7 +26,13 @@ public class LibraryController implements Initializable {
 	public Label storeLabel;
 	public Label titleLabel;
 	public Label profileLabel;
-	public ListView libraryList;
+	public TableView<ProductInformation> table;
+
+	public TableColumn<ProductInformation, String> cname;
+	public TableColumn<ProductInformation, String> cuser;
+	public TableColumn<ProductInformation, String> cprice;
+	public TableColumn<ProductInformation, String> cgenre;
+
 	private Connection database;
 
 	@Override
@@ -35,9 +46,19 @@ public class LibraryController implements Initializable {
 	}
 
 	private boolean libraryListFill() {
-		if (!(User.getLibraryList() == null) && !(User.getLibraryList().isEmpty())) {
-			for (String s : User.getLibraryList())
-				libraryList.getItems().add(s);
+		ObservableList<ProductInformation> list = FXCollections.observableArrayList();
+		ArrayList<Product> productList = User.getLibraryList();
+
+		if (!(productList == null) && !(productList.isEmpty())) {
+			for (Product p : productList)
+				list.add(new ProductInformation(p.getPid(), p.getPname(), p.getPgenre(), p.getPdescription(), p.getPprice(), p.getPusername()));
+
+			cname.setCellValueFactory(new PropertyValueFactory<>("name"));
+			cgenre.setCellValueFactory(new PropertyValueFactory<>("genre"));
+			cprice.setCellValueFactory(new PropertyValueFactory<>("price"));
+			cuser.setCellValueFactory(new PropertyValueFactory<>("user"));
+
+			table.setItems(list);
 			return true;
 		}
 		else {
@@ -88,5 +109,28 @@ public class LibraryController implements Initializable {
 
 	public boolean profileLabelClicked() throws IOException {
 		return setProfileScene();
+	}
+
+	private boolean setProductPage() throws IOException {
+		ProductInformation selectedProduct = table.getSelectionModel().getSelectedItem();
+		ProductPageAssist product = new ProductPageAssist();
+
+		product.setPname(selectedProduct.getName());
+		product.setPgenre(selectedProduct.getGenre());
+		product.setPdescription(selectedProduct.getProductinfo());
+		product.setPprice(selectedProduct.getPrice());
+
+		Stage primaryStage = (Stage) pane.getScene().getWindow();
+		ProductPageUI productpageUI = new ProductPageUI();
+
+		if (productpageUI != null) {
+			primaryStage.setScene(productpageUI.getProductPageScene());
+			return true;
+		}
+		return false;
+	}
+
+	public boolean viewButtonClicked() throws IOException {
+		return setProductPage();
 	}
 }
