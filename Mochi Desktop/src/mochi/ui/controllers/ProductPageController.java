@@ -4,23 +4,19 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import mochi.Product;
 import mochi.ProductPageAssist;
 import mochi.User;
-import mochi.ui.HomeUI;
-import mochi.ui.LibraryUI;
-import mochi.ui.ProductInformation;
+import mochi.ui.*;
 import mochi.db.DBConnection;
-import mochi.ui.WishlistUI;
 
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ResourceBundle;
 
 public class ProductPageController implements Initializable {
@@ -34,13 +30,43 @@ public class ProductPageController implements Initializable {
     public Button returnHome;
     public Button wishlist;
     public Button library;
+    public Label storeid;
+    public Label wishlistid;
+    public Label libraryid;
     public Pane pane;
+    public ImageView imageView;
+    public String productN;
+    public Integer pd;
+    public Button checkoutButton;
 
     private Connection database;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         this.database = DBConnection.getDatabase();
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+
+        pd= ProductPageAssist.getPid();
+        //System.out.println(pd);
+
+        try {
+            statement = database.prepareStatement("SELECT image FROM `mochi-desktop`.Product WHERE productN = ?");
+            statement.setInt(1, 7);
+            resultSet = statement.executeQuery();
+            if (resultSet.next()) {
+                Blob blob= resultSet.getBlob("image");
+                InputStream binaryStream= blob.getBinaryStream();
+
+                Image image= new Image(binaryStream);
+                imageView.setImage(image);
+                System.out.println("yest");
+            }
+
+
+        } catch (SQLException e ) {
+            e.printStackTrace();
+        }
 
         prname.setFocusTraversable(false);
         prname.setMouseTransparent(true);
@@ -48,19 +74,21 @@ public class ProductPageController implements Initializable {
 
         genre.setFocusTraversable(false);
         genre.setMouseTransparent(true);
-        genre.setText(ProductPageAssist.getPgenre());
+        genre.setText(ProductPageAssist.getPprice());
 
         price.setFocusTraversable(false);
         price.setMouseTransparent(true);
-        price.setText(ProductPageAssist.getPprice());
+        price.setText(ProductPageAssist.getPgenre());
 
         description.setFocusTraversable(false);
         description.setMouseTransparent(true);
         description.setText(ProductPageAssist.getPdescription());
 
+        //imageView.setImage(ProductPageAssist.getImage());
+
     }
     public boolean setHomeScene() throws IOException {
-        Stage primaryStage = (Stage) returnHome.getScene().getWindow();
+        Stage primaryStage = (Stage) storeid.getScene().getWindow();
         HomeUI homeUI = new HomeUI();
 
         if (homeUI != null) {
@@ -75,7 +103,7 @@ public class ProductPageController implements Initializable {
     }
 
     public boolean setWishListScene() throws IOException {
-        Stage primaryStage = (Stage) wishlist.getScene().getWindow();
+        Stage primaryStage = (Stage) wishlistid.getScene().getWindow();
         WishlistUI wishlistUI = new WishlistUI();
 
         if (wishlistUI != null) {
@@ -90,7 +118,7 @@ public class ProductPageController implements Initializable {
     }
 
     public boolean setLibraryScene() throws IOException {
-        Stage primaryStage = (Stage) library.getScene().getWindow();
+        Stage primaryStage = (Stage) libraryid.getScene().getWindow();
         LibraryUI libraryUI = new LibraryUI();
 
         if (libraryUI != null) {
@@ -103,5 +131,20 @@ public class ProductPageController implements Initializable {
         return setLibraryScene();
 
     }
+    public boolean setCheckOutScene() throws IOException {
+        Stage primaryStage = (Stage) checkoutButton.getScene().getWindow();
+        CheckoutUI checkoutUI = new CheckoutUI();
+
+        if (checkoutUI != null) {
+            primaryStage.setScene(checkoutUI.getCheckoutScene());
+            return true;
+        }
+        return false;
+    }
+    public boolean CheckOutClick() throws IOException{
+        return setCheckOutScene();
+
+    }
+
 
 }

@@ -190,13 +190,16 @@ public class HomeController implements Initializable
         ResultSet resultSet = null;
 
         try {
-            statement = database.prepareStatement("SELECT genreName, descriptionOfProduct, priceOfProduct FROM Product WHERE productN = ?");
+            //statement = database.prepareStatement("SELECT ProductID, genreName, descriptionOfProduct, priceOfProduct FROM Product WHERE productN = ?");
+            statement = database.prepareStatement("SELECT ProductID, genreName, descriptionOfProduct, priceOfProduct FROM Product WHERE productN = ?");
             statement.setString(1, name);
             resultSet = statement.executeQuery();
             if (resultSet.next()) {
+                object.setPid(resultSet.getInt("ProductID"));
                 object.setPgenre(resultSet.getString("genreName"));
                 object.setPdescription(resultSet.getString("descriptionOfProduct"));
                 object.setPprice(resultSet.getString("priceOfProduct"));
+
             }
             else {
                 return false;
