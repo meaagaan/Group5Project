@@ -1,14 +1,28 @@
 package mochi;
 
+import javafx.scene.image.Image;
+
+
 public class ProductPageAssist {
+	public static Integer pid= null;
 	public static String pname = null;
 	public static String pgenre = null;
 	public static String pprice = null;
 	public static String pdescription = null;
 
+	public static Integer getPid(){
+		return pid;
+	}
+
+
+	public void setPid(Integer pid){
+		this.pid = pid;
+	}
+
 	public static String getPname(){
 		return pname;
 	}
+
 
 	public void setPname(String pname){
 		this.pname = pname;
@@ -37,4 +51,6 @@ public class ProductPageAssist {
 	public void setPdescription(String pdescription){
 		this.pdescription = pdescription;
 	}
+
+
 }

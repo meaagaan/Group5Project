@@ -44,6 +44,8 @@ public class ProductController implements Initializable {
 
     public Button loading;
     public Button open;
+    public ImageView imageView;
+
 
 
     ObservableList <String>choice = FXCollections.observableArrayList("educational", "business","personal");
@@ -82,19 +84,14 @@ public class ProductController implements Initializable {
         File file = fileChooser.showOpenDialog(open.getScene().getWindow());
         try{
             FileInputStream fileInputStream= new FileInputStream(file);
-            if(file== null){
-                System.out.println("no file chocse");
-            }
+
             store=database.prepareStatement("INSERT INTO Product (image) VALUES (?)");
-            store.setBinaryStream(1,fileInputStream, file.length());
+            store.setBinaryStream(1,fileInputStream, fileInputStream.available());
             store.executeUpdate();
-            //Image image= new Image(fileInputStream);
-            Image image= new Image(file.toURI().toString(), 100, 150, true, true);
-            ImageView imageView = null;
+            Image image= new Image(fileInputStream);
+
             imageView.setImage(image);
-            imageView.setFitHeight(100);
-            imageView.setFitWidth(150);
-            imageView.setPreserveRatio(true);
+
         }
         catch (IOException | SQLException e){
             System.out.println(e.getMessage());
@@ -157,7 +154,7 @@ public class ProductController implements Initializable {
         }
 
         // putting the product information into the database.
-
+/*
         FileChooser fileChooser = new FileChooser();
         fileChooser.getExtensionFilters().addAll(
                 new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg"));
@@ -176,14 +173,14 @@ public class ProductController implements Initializable {
         imageView.setFitHeight(100);
         imageView.setFitWidth(150);
         imageView.setPreserveRatio(true);
-
-        p= database.prepareStatement("INSERT INTO Product (productN, genreName, descriptionOfProduct, priceOfProduct, userName, image) VALUES (?,?,?,?,?,?)");
+        */
+        p= database.prepareStatement("INSERT INTO Product (productN, genreName, descriptionOfProduct, priceOfProduct, userName) VALUES (?,?,?,?,?)");
         p.setString(1, productN);
         p.setString(2,genreName);
         p.setString(3, descriptionOfProduct);
         p.setString(4,priceOfProduct);
         p.setString(5,userName);
-        p.setBinaryStream(6,fileInputStream, file.length());
+        // p.setBinaryStream(6,fileInputStream, file.length());
         p.executeUpdate();
 
         //preparedStatement = (PreparedStatement) database.prepareStatement(query);
