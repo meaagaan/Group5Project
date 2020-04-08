@@ -12,9 +12,7 @@ import javafx.stage.Stage;
 import mochi.User;
 import mochi.db.DBConnection;
 import mochi.ui.HomeUI;
-import mochi.ui.LibraryUI;
 import mochi.ui.ProductUI;
-import mochi.ui.WishlistUI;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -43,10 +41,6 @@ public class ProductController implements Initializable {
     public Label ProductError;
     public Label confirmError;
     public Label confirmation;
-
-    public Label storeid;
-    public Label wishlistid;
-    public Label libraryid;
 
     public Button loading;
     public Button open;
@@ -195,8 +189,8 @@ public class ProductController implements Initializable {
 
         return false;
     }
-    public boolean setHomeScene() throws IOException {
-        Stage primaryStage = (Stage) storeid.getScene().getWindow();
+    public boolean setHomeScene() throws IOException{
+        Stage primaryStage = (Stage) returnHome.getScene().getWindow();
         HomeUI homeUI = new HomeUI();
 
         if (homeUI != null) {
@@ -207,36 +201,6 @@ public class ProductController implements Initializable {
     }
     public boolean returnHomeClick() throws IOException{
         return setHomeScene();
-
-    }
-
-    public boolean setWishListScene() throws IOException {
-        Stage primaryStage = (Stage) wishlistid.getScene().getWindow();
-        WishlistUI wishlistUI = new WishlistUI();
-
-        if (wishlistUI != null) {
-            primaryStage.setScene(wishlistUI.getWishlistScene());
-            return true;
-        }
-        return false;
-    }
-    public boolean wishlistClick() throws IOException{
-        return setWishListScene();
-
-    }
-
-    public boolean setLibraryScene() throws IOException {
-        Stage primaryStage = (Stage) libraryid.getScene().getWindow();
-        LibraryUI libraryUI = new LibraryUI();
-
-        if (libraryUI != null) {
-            primaryStage.setScene(libraryUI.getLibraryScene());
-            return true;
-        }
-        return false;
-    }
-    public boolean LibraryClick() throws IOException{
-        return setLibraryScene();
 
     }
 }
