@@ -5,11 +5,10 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
 <SplitPane maxHeight="800.0" maxWidth="1300.0" minHeight="800.0" minWidth="1300.0" prefHeight="800.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mochi.ui.controllers.ProductController">
@@ -21,62 +20,46 @@
                         <Image url="@../images/Background.png" />
                     </image>
                 </ImageView>
+                <Pane layoutX="357.0" layoutY="120.0" prefHeight="418.0" prefWidth="584.0">
+                    <children>
+                        <TextField fx:id="productName" layoutX="217.0" layoutY="83.0" prefHeight="27.0" prefWidth="258.0" />
+                        <Label fx:id="productLabel" layoutX="44.0" layoutY="73.0" prefHeight="40.0" prefWidth="122.0" styleClass="Product_Field" text="Product Name">
+                            <font>
+                                <Font size="17.0" />
+                            </font>
+                        </Label>
+                        <ChoiceBox fx:id="options" layoutX="217.0" layoutY="124.0" prefHeight="27.0" prefWidth="258.0" />
+                        <TextField fx:id="price" layoutX="217.0" layoutY="164.0" prefHeight="27.0" prefWidth="258.0" />
+                        <TextField fx:id="description" layoutX="217.0" layoutY="202.0" prefHeight="130.0" prefWidth="258.0" />
+                        <Label fx:id="genreLabel" layoutX="44.0" layoutY="110.0" prefHeight="40.0" prefWidth="122.0" text="Genre">
+                            <font>
+                                <Font size="17.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="priceLabel" layoutX="44.0" layoutY="158.0" prefHeight="40.0" prefWidth="122.0" text="Price">
+                            <font>
+                                <Font size="17.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="descriptionLabel" layoutX="44.0" layoutY="198.0" prefHeight="40.0" prefWidth="122.0" text="Description">
+                            <font>
+                                <Font size="17.0" />
+                            </font>
+                        </Label>
+                        <Button fx:id="confirmButton" layoutX="292.0" layoutY="356.0" mnemonicParsing="false" onMouseClicked="#confirmButtonClick" prefHeight="40.0" prefWidth="108.0" text="Create" />
+                        <Label fx:id= "registration" layoutX="159.0" layoutY="14.0" prefHeight="34.0" prefWidth="218.0" text="Product Registration">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </Pane>
+                <Button fx:id="returnHome" layoutX="-6.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="152.0" onMouseClicked="#returnHomeClick" text="HomePage" />
                 <Label fx:id="ProductError" layoutX="480.0" layoutY="450.0" prefHeight="17.0" prefWidth="372.0" styleClass="Product_Error" stylesheets="@../stylesheets/ProductStyle.css" />
                 <Label fx:id="confirmError" layoutX="480.0" layoutY="450.0" prefHeight="17.0" prefWidth="372.0" styleClass="Empty_Error" stylesheets="@../stylesheets/ProductStyle.css" />
                 <Label fx:id="confirmation" layoutX="480.0" layoutY="600.0" prefHeight="17.0" prefWidth="372.0" styleClass="Confirmation" stylesheets="@../stylesheets/ProductStyle.css" />
-                <Button fx:id="open" layoutX="987.0" layoutY="448.0" mnemonicParsing="false" onMouseClicked="#fileUpload" prefHeight="40.0" prefWidth="108.0" text="Open" />
-                <ImageView fx:id="imageView" fitHeight="244.0" fitWidth="298.0" layoutX="929.0" layoutY="181.0" pickOnBounds="true" preserveRatio="true" />
-                <Rectangle arcHeight="5.0" arcWidth="5.0" height="798.0" stroke="BLACK" strokeType="INSIDE" width="247.0" />
-                <Label fx:id="storeid" onMouseClicked="#returnHomeClick" layoutX="82.0" layoutY="181.0" styleClass="SideBar_Label" stylesheets="@../stylesheets/ProductStyle.css"  text="Store">
-                    <font>
-                        <Font size="22.0" />
-                    </font>
-                </Label>
-                <Label fx:id="wishlistid" onMouseClicked="#wishlistClick" layoutX="80.0" layoutY="250.0" styleClass="SideBar_Label" stylesheets="@../stylesheets/ProductStyle.css" text="Wishlist">
-                    <font>
-                        <Font size="22.0" />
-                    </font>
-                </Label>
-                <Label fx:id="libraryid" onMouseClicked="#LibraryClick" layoutX="80.0" layoutY="316.0" styleClass="SideBar_Label" stylesheets="@../stylesheets/ProductStyle.css" text="Library">
-                    <font>
-                        <Font size="22.0" />
-                    </font>
-                </Label>
-                <Label fx:id="registration" layoutX="551.0" layoutY="105.0" prefHeight="54.0" prefWidth="270.0" text="Product Registration">
-                    <font>
-                        <Font size="31.0" />
-                    </font>
-                </Label>
-                <Rectangle arcHeight="5.0" arcWidth="5.0" height="367.0" layoutX="450.0" layoutY="168.0" stroke="BLACK" strokeType="INSIDE" width="455.0">
-                    <effect>
-                        <DropShadow />
-                    </effect>
-                </Rectangle>
-                <TextField fx:id="productName" layoutX="591.0" layoutY="208.0" prefHeight="27.0" prefWidth="258.0" />
-                <ChoiceBox fx:id="options" layoutX="591.0" layoutY="265.0" prefHeight="27.0" prefWidth="258.0" />
-                <TextField fx:id="price" layoutX="591.0" layoutY="316.0" prefHeight="27.0" prefWidth="258.0" />
-                <TextField fx:id="description" layoutX="591.0" layoutY="364.0" prefHeight="130.0" prefWidth="258.0" />
-                <Label fx:id="genreLabel" layoutX="500.0" layoutY="259.0" prefHeight="40.0" prefWidth="122.0" text="Genre" textFill="WHITE">
-                    <font>
-                        <Font size="17.0" />
-                    </font>
-                </Label>
-                <Button fx:id="confirmButton" layoutX="632.0" layoutY="552.0" mnemonicParsing="false" onMouseClicked="#confirmButtonClick" prefHeight="40.0" prefWidth="108.0" text="Create" />
-                <Label fx:id="priceLabel" layoutX="500.0" layoutY="310.0" prefHeight="40.0" prefWidth="55.0" text="Price" textFill="WHITE">
-                    <font>
-                        <Font size="17.0" />
-                    </font>
-                </Label>
-                <Label fx:id="descriptionLabel" layoutX="494.0" layoutY="358.0" prefHeight="40.0" prefWidth="122.0" text="Description" textFill="WHITE">
-                    <font>
-                        <Font size="17.0" />
-                    </font>
-                </Label>
-                <Label fx:id="productLabel" layoutX="469.0" layoutY="201.0" prefHeight="40.0" prefWidth="122.0" styleClass="Product_Field" text="Product Name" textFill="WHITE">
-                    <font>
-                        <Font size="17.0" />
-                    </font>
-                </Label>
+                <Button fx:id="open" layoutX="987.0" layoutY="448.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="108.0" onMouseClicked="#fileUpload" text="Open" />
+                <ImageView fx:id="imageView" fitHeight="230.0" fitWidth="225.0" layoutX="929.0" layoutY="181.0" pickOnBounds="true" preserveRatio="true" />
             </children></AnchorPane>
     </items>
 </SplitPane>

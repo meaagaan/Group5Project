@@ -11,6 +11,8 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
@@ -24,37 +26,43 @@
                     </image>
                 </ImageView>
                 <ImageView fx:id="imageView" fitHeight="293.0" fitWidth="288.0" layoutX="268.0" layoutY="412.0" pickOnBounds="true" preserveRatio="true" />
-                <Label fx:id="prname" layoutX="519.0" layoutY="42.0" prefHeight="92.0" prefWidth="464.0" styleClass="Name_Label" stylesheets="@../stylesheets/ProductPageStyle.css">
-                    <font>
-                        <Font size="21.0" />
-                    </font></Label>
-                <Rectangle arcHeight="5.0" arcWidth="5.0" height="384.0" layoutX="518.0" layoutY="152.0" stroke="BLACK" strokeType="INSIDE" width="464.0" />
-                <Label layoutX="543.0" layoutY="219.0" prefHeight="40.0" prefWidth="122.0" text="Genre" textFill="WHITE">
+                <Label fx:id="prname" layoutX="519.0" layoutY="42.0" prefHeight="92.0" prefWidth="464.0" styleClass="Name_Label" stylesheets="@../stylesheets/ProductPageStyle.css" />
+                <Rectangle arcHeight="5.0" arcWidth="5.0" height="384.0" layoutX="518.0" layoutY="152.0" stroke="BLACK" strokeType="INSIDE" width="464.0">
+                    <fill>
+                        <LinearGradient endX="1.0" endY="1.0" startX="0.86810551558753">
+                            <stops>
+                                <Stop color="#727b8238" />
+                                <Stop color="WHITE" offset="1.0" />
+                            </stops>
+                        </LinearGradient>
+                    </fill>
+                </Rectangle>
+                <Label layoutX="543.0" layoutY="219.0" prefHeight="40.0" prefWidth="122.0" text="Genre">
                     <font>
                         <Font size="17.0" />
                     </font>
                 </Label>
-                <Label fx:id="genre" layoutX="679.0" layoutY="294.0" prefHeight="27.0" prefWidth="225.0" textFill="WHITE">
+                <Label fx:id="genre" layoutX="679.0" layoutY="294.0" prefHeight="27.0" prefWidth="225.0">
                     <font>
                         <Font size="16.0" />
                     </font>
                 </Label>
-                <Label layoutX="543.0" layoutY="288.0" prefHeight="40.0" prefWidth="122.0" text="Price" textFill="WHITE">
+                <Label layoutX="543.0" layoutY="288.0" prefHeight="40.0" prefWidth="122.0" text="Price">
                     <font>
                         <Font size="17.0" />
                     </font>
                 </Label>
-                <Label fx:id="price" layoutX="679.0" layoutY="225.0" prefHeight="27.0" prefWidth="225.0" textFill="WHITE">
+                <Label fx:id="price" layoutX="679.0" layoutY="225.0" prefHeight="27.0" prefWidth="225.0">
                     <font>
                         <Font size="16.0" />
                     </font>
                 </Label>
-                <Label layoutX="543.0" layoutY="356.0" prefHeight="40.0" prefWidth="122.0" text="Description" textFill="WHITE">
+                <Label layoutX="543.0" layoutY="356.0" prefHeight="40.0" prefWidth="122.0" text="Description">
                     <font>
                         <Font size="17.0" />
                     </font>
                 </Label>
-                <Label fx:id="description" layoutX="679.0" layoutY="359.0" prefHeight="34.0" prefWidth="225.0" textFill="WHITE">
+                <Label fx:id="description" layoutX="679.0" layoutY="359.0" prefHeight="34.0" prefWidth="225.0">
                     <font>
                         <Font size="16.0" />
                     </font>
@@ -102,7 +110,7 @@
                         </Label>
                     </children>
                 </GridPane>
-                <Button fx:id="checkoutButton" layoutX="781.0" layoutY="476.0" mnemonicParsing="false" onMouseClicked="#CheckOutClick" prefHeight="34.0" prefWidth="94.0" text="CheckOut" />
+                <Button fx:id="checkoutButton" onMouseClicked="#CheckOutClick" layoutX="781.0" layoutY="476.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="94.0" text="CheckOut" />
             </children></AnchorPane>
     </items>
 </SplitPane>
