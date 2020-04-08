@@ -8,12 +8,14 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import mochi.ProductPageAssist;
 import mochi.ReviewUserDetail;
 import mochi.db.DBConnection;
 import mochi.ui.LibraryUI;
 import mochi.ui.LoginUI;
 import mochi.ui.ProductUI;
 import mochi.ui.ProfileUI;
+import mochi.User;
 
 
 import java.io.IOException;
@@ -26,7 +28,6 @@ import java.util.ResourceBundle;
 
 public class ReviewController implements Initializable {
     public Pane pane;
-    public Label averageRatingLabel;
     public Label programLabel;
     public Label errorLabel;
     public Label successLabel;
@@ -72,6 +73,11 @@ public class ReviewController implements Initializable {
         } );
 
         try {
+            String pName = ProductPageAssist.getPname();
+            Integer pid = ProductPageAssist.getPid();
+
+            programLabel.setText(pName);
+
             data = FXCollections.observableArrayList();
             ResultSet resultSet = null;
             Statement statement = null;
@@ -79,7 +85,7 @@ public class ReviewController implements Initializable {
             statement = (Statement) database.createStatement();
             resultSet = statement.executeQuery("SELECT * FROM `mochi-desktop`.Review;");
 
-            while (resultSet.next()) {
+            while (resultSet.next() && resultSet.getString(1).equals(pid)) {
                 data.add(new ReviewUserDetail(resultSet.getString(3), resultSet.getString(4),
                         resultSet.getString(5)));
             }
@@ -168,13 +174,13 @@ public class ReviewController implements Initializable {
             successLabel.getStyleClass().add("Warning_Label_Success");
         }
 
-        int ProductID = 1;
-        String ProductName = "Hello World";
-        String User = "test User";
+        int ProductID = ProductPageAssist.getPid();
+        String ProductName = ProductPageAssist.getPname();
+        String username = User.getUsername();
         statement = (Statement) database.createStatement();
 
         // putting the information into the database.
-        query = "insert into Review values ('" + ProductID + "', '" + ProductName + "', '" + Rating + "', '" + User + "', '" + Review + "');";
+        query = "insert into Review values ('" + ProductID + "', '" + ProductName + "', '" + Rating + "', '" + username + "', '" + Review + "');";
         statement.executeUpdate(query);
         return true;
     }
