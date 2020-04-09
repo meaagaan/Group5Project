@@ -41,17 +41,17 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                     <children>
-                        <Label fx:id="storeid" onMouseClicked="#returnHomeClick" styleClass="SideBar_Label" stylesheets="@../stylesheets/ProductPageStyle.css" text="Store" GridPane.columnIndex="1" GridPane.rowIndex="1">>
+                        <Label fx:id="storeid" onMouseClicked="#returnHomeClick" styleClass="SideBar_Label" stylesheets="@../stylesheets/CheckOutSyle.css" text="Store" GridPane.columnIndex="1" GridPane.rowIndex="1">>
                             <font>
                                 <Font size="18.0" />
                             </font>
                         </Label>
-                        <Label fx:id="libraryid" onMouseClicked="#LibraryClick" styleClass="SideBar_Label" stylesheets="@../stylesheets/ProductPageStyle.css" text="Library" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                        <Label fx:id="libraryid" onMouseClicked="#LibraryClick" styleClass="SideBar_Label" stylesheets="@../stylesheets/CheckOutSyle.css" text="Library" GridPane.columnIndex="1" GridPane.rowIndex="2">
                             <font>
                                 <Font size="18.0" />
                             </font>
                         </Label>
-                        <Label fx:id="wishlistid" onMouseClicked="#wishlistClick" styleClass="SideBar_Label" stylesheets="@../stylesheets/ProductPageStyle.css" text="Wishlist" GridPane.columnIndex="1" GridPane.rowIndex="3">>
+                        <Label fx:id="wishlistid" onMouseClicked="#wishlistClick" styleClass="SideBar_Label" stylesheets="@../stylesheets/CheckOutSyle.css" text="Wishlist" GridPane.columnIndex="1" GridPane.rowIndex="3">>
                             <font>
                                 <Font size="18.0" />
                             </font>
