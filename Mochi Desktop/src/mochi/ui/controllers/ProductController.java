@@ -12,7 +12,9 @@ import javafx.stage.Stage;
 import mochi.User;
 import mochi.db.DBConnection;
 import mochi.ui.HomeUI;
+import mochi.ui.LibraryUI;
 import mochi.ui.ProductUI;
+import mochi.ui.WishlistUI;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -46,7 +48,9 @@ public class ProductController implements Initializable {
     public Button open;
     public ImageView imageView;
 
-
+    public Label storeid;
+    public Label wishlistid;
+    public Label libraryid;
 
     ObservableList <String>choice = FXCollections.observableArrayList("educational", "business","personal");
     public ChoiceBox options;
@@ -189,8 +193,9 @@ public class ProductController implements Initializable {
 
         return false;
     }
-    public boolean setHomeScene() throws IOException{
-        Stage primaryStage = (Stage) returnHome.getScene().getWindow();
+
+    public boolean setHomeScene() throws IOException {
+        Stage primaryStage = (Stage) storeid.getScene().getWindow();
         HomeUI homeUI = new HomeUI();
 
         if (homeUI != null) {
@@ -203,4 +208,35 @@ public class ProductController implements Initializable {
         return setHomeScene();
 
     }
+
+    public boolean setWishListScene() throws IOException {
+        Stage primaryStage = (Stage) wishlistid.getScene().getWindow();
+        WishlistUI wishlistUI = new WishlistUI();
+
+        if (wishlistUI != null) {
+            primaryStage.setScene(wishlistUI.getWishlistScene());
+            return true;
+        }
+        return false;
+    }
+    public boolean wishlistClick() throws IOException{
+        return setWishListScene();
+
+    }
+
+    public boolean setLibraryScene() throws IOException {
+        Stage primaryStage = (Stage) libraryid.getScene().getWindow();
+        LibraryUI libraryUI = new LibraryUI();
+
+        if (libraryUI != null) {
+            primaryStage.setScene(libraryUI.getLibraryScene());
+            return true;
+        }
+        return false;
+    }
+    public boolean LibraryClick() throws IOException{
+        return setLibraryScene();
+
+    }
+
 }

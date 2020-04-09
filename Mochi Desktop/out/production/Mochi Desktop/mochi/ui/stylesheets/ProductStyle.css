@@ -38,3 +38,9 @@
 	-fx-text-fill: green;
 	-fx-alignment: center;
 }
+.SideBar_Label {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: gray;
+    -fx-alignment: center;
+}
