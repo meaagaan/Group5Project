@@ -66,11 +66,13 @@
                   <RowConstraints fillHeight="false" maxHeight="30.0" minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="NEVER" />
                   <RowConstraints fillHeight="false" maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="NEVER" />
                   <RowConstraints fillHeight="false" maxHeight="30.0" minHeight="7.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints fillHeight="false" maxHeight="30.0" minHeight="7.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
                   <Label fx:id="storeLabel" onMouseClicked="#storeLabelClicked" styleClass="SideBar_Label" stylesheets="@../stylesheets/ProfileStyle.css" text="Store" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                   <Label fx:id="libraryLabel" onMouseClicked="#libraryLabelClicked" styleClass="SideBar_Label" stylesheets="@../stylesheets/ProfileStyle.css" text="Library" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                   <Label fx:id="wishlistLabel" onMouseClicked="#wishlistLabelClicked" styleClass="SideBar_Label" stylesheets="@../stylesheets/ProfileStyle.css" text="Wishlist" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Label fx:id="merchantLabel" layoutX="77.0" layoutY="314.0" onMouseClicked="#merchantLabelClicked" styleClass="SideBar_Label" stylesheets="@../stylesheets/ProfileStyle.css" text="Merchant" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                </children>
             </GridPane>
          </children>

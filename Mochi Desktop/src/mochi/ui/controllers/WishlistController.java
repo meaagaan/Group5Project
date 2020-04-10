@@ -12,11 +12,7 @@ import mochi.ProductPageAssist;
 import mochi.User;
 import mochi.WishlistDatabase;
 import mochi.db.DBConnection;
-import mochi.ui.HomeUI;
-import mochi.ui.LibraryUI;
-import mochi.ui.ProductInformation;
-import mochi.ui.ProfileUI;
-import mochi.ui.ProductPageUI;
+import mochi.ui.*;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -161,5 +157,20 @@ public class WishlistController implements Initializable {
 
 	public boolean viewButtonClicked() throws IOException {
 		return setProductPage();
+	}
+
+	private boolean setMerchantScene() throws IOException {
+		Stage primaryStage = (Stage) pane.getScene().getWindow();
+		MerchantUI merchantUI = new MerchantUI();
+
+		if (merchantUI != null) {
+			primaryStage.setScene(merchantUI.getMerchantScene());
+			return true;
+		}
+		return false;
+	}
+
+	public boolean merchantLabelClicked() throws IOException {
+		return setMerchantScene();
 	}
 }
