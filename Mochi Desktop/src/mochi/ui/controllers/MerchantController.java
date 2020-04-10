@@ -44,7 +44,7 @@ public class MerchantController implements Initializable {
 	public void initialize(URL url, ResourceBundle resourceBundle) {
 		this.database = DBConnection.getDatabase();
 		if (!(User.getFirstname() == null )) {
-			Username = User.getFirstname();
+			Username = User.getUsername();
 		}
 
 		try {
