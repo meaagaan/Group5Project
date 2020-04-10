@@ -20,17 +20,17 @@
    <children>
       <AnchorPane layoutX="1.0" layoutY="2.0" prefHeight="783.0" prefWidth="1306.0">
          <children>
-            <ImageView fitHeight="633.0" fitWidth="705.0" layoutX="601.0" layoutY="65.0" pickOnBounds="true" scaleX="-1.0">
+            <ImageView fitHeight="633.0" fitWidth="701.0" layoutX="598.0" layoutY="65.0" pickOnBounds="true" scaleX="-1.0">
                <image>
                   <Image url="@../images/Background.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="633.0" fitWidth="654.0" layoutY="57.0" pickOnBounds="true">
+            <ImageView fitHeight="633.0" fitWidth="656.0" layoutX="-2.0" layoutY="57.0" pickOnBounds="true">
                <image>
                   <Image url="@../images/Background.png" />
                </image>
             </ImageView>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="115.0" stroke="BLACK" strokeType="INSIDE" width="1306.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="117.0" layoutX="-1.0" layoutY="-2.0" stroke="BLACK" strokeType="INSIDE" width="1300.0" />
             <ImageView fitHeight="58.0" fitWidth="61.0" layoutX="1101.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/default-Profile.png" />
@@ -46,8 +46,8 @@
                   </RadialGradient>
                </textFill>
             </Label>
-            <Line endX="1057.0" endY="-73.0" layoutX="247.0" layoutY="190.0" startX="-247.0" startY="-73.0" stroke="#7b7f6d" strokeWidth="10.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="536.0" layoutY="240.0" stroke="BLACK" strokeType="INSIDE" width="331.0" />
+            <Line endX="1048.0" endY="-73.0" layoutX="247.0" layoutY="190.0" startX="-247.0" startY="-73.0" stroke="#7b7f6d" strokeWidth="10.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="558.0" layoutX="-1.0" layoutY="240.0" stroke="BLACK" strokeType="INSIDE" width="332.0" />
             <ComboBox fx:id="filterCombo" layoutX="41.0" layoutY="376.0" prefHeight="31.0" prefWidth="250.0" promptText="Filter" styleClass="OptionBoxes" stylesheets="@../stylesheets/HomeStyle.css" />
             <ComboBox fx:id="sortCombo" disable="true" layoutX="41.0" layoutY="424.0" prefHeight="31.0" prefWidth="250.0" promptText="Sort by" styleClass="OptionBoxes" stylesheets="@../stylesheets/HomeStyle.css" />
             <TextField fx:id="searchField" layoutX="41.0" layoutY="327.0" prefHeight="25.0" prefWidth="250.0" styleClass="SearchField" stylesheets="@../stylesheets/HomeStyle.css" />
@@ -56,7 +56,7 @@
             <Label layoutX="1162.0" layoutY="43.0" prefHeight="21.0" prefWidth="108.0" styleClass="ProfileLabel" stylesheets="@../stylesheets/HomeStyle.css" text="User Profile" />
             <Button fx:id="tempProfileButton" layoutX="1157.0" layoutY="43.0" mnemonicParsing="false" onMouseClicked="#userProfileOptionClicked" prefHeight="25.0" prefWidth="118.0" styleClass="ProfileComboBox" stylesheets="@../stylesheets/HomeStyle.css" />
             <Button fx:id="wishlistButton" layoutX="41.0" layoutY="473.0" mnemonicParsing="false" onMouseClicked="#wishlistOptionClicked" styleClass="WishlistButton" stylesheets="@../stylesheets/HomeStyle.css" text="Wishlist" />
-            <TableView fx:id="table" layoutX="330.0" layoutY="240.0" prefHeight="536.0" prefWidth="977.0" stylesheets="@../stylesheets/HomeStyle.css">
+            <TableView fx:id="table" layoutX="330.0" layoutY="240.0" prefHeight="558.0" prefWidth="970.0" stylesheets="@../stylesheets/HomeStyle.css">
                <columns>
                   <TableColumn fx:id="cname" prefWidth="315.0" text="Product Name" />
                   <TableColumn fx:id="cgenre" minWidth="175.0" prefWidth="150.0" text="Genre" />
@@ -68,7 +68,7 @@
                   <String fx:value="table-row-cell" />
                </styleClass>
             </TableView>
-            <Button fx:id="view" layoutX="37.0" layoutY="650.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="108.0" onMouseClicked="#viewClick" styleClass="ViewButton" stylesheets="@../stylesheets/HomeStyle.css" text="View Product" />
+            <Button fx:id="view" layoutX="37.0" layoutY="650.0" mnemonicParsing="false" onMouseClicked="#viewClick" prefHeight="40.0" prefWidth="108.0" styleClass="ViewButton" stylesheets="@../stylesheets/HomeStyle.css" text="View Product" />
 
          </children>
       </AnchorPane>

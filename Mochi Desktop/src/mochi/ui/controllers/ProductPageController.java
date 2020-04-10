@@ -11,32 +11,26 @@ import javafx.stage.Stage;
 import mochi.Product;
 import mochi.ProductPageAssist;
 import mochi.User;
+import mochi.WishlistDatabase;
 import mochi.ui.*;
 import mochi.db.DBConnection;
 
 import java.io.*;
 import java.net.URL;
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class ProductPageController implements Initializable {
     public Label prname;
-    public Label genreName;
-    public Label priceName;
-    public Label descriptionName;
     public Label genre;
     public Label price;
     public Label description;
-    public Button returnHome;
-    public Button wishlist;
-    public Button library;
     public Label storeid;
     public Label wishlistid;
     public Label libraryid;
-    public Pane pane;
     public ImageView imageView;
-    public String productN;
-    public Integer pd;
+    public String pd;
     public Button checkoutButton;
 
     private Connection database;
@@ -47,8 +41,7 @@ public class ProductPageController implements Initializable {
         PreparedStatement statement = null;
         ResultSet resultSet = null;
 
-        pd= ProductPageAssist.getPid();
-        //System.out.println(pd);
+        pd = Integer.toString(ProductPageAssist.getPid());
 
         try {
             statement = database.prepareStatement("SELECT image FROM `mochi-desktop`.Product WHERE productN = ?");
@@ -146,5 +139,21 @@ public class ProductPageController implements Initializable {
 
     }
 
-
+    public boolean addWishlist() throws FileNotFoundException, SQLException {
+        if (Integer.valueOf(pd) != -1) {
+            WishlistDatabase wishlistDatabase = new WishlistDatabase(database);
+            ArrayList<Product> userWishlist = User.getWishlist();
+            if (userWishlist != null) {
+                wishlistDatabase.findProduct(pd, userWishlist);
+            } else {
+                userWishlist = new ArrayList<Product>();
+                wishlistDatabase.findProduct(pd, userWishlist);
+                User.setWishlist(userWishlist);
+            }
+            wishlistDatabase.writeText(userWishlist);
+            wishlistDatabase.writeFile(User.getUsername());
+            return true;
+        }
+        return false;
+    }
 }
