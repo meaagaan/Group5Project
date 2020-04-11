@@ -188,7 +188,7 @@ public class HomeController implements Initializable
         pid= Integer.parseInt(id.trim());
 
         object.setPid(pid);
-        System.out.println(pid);
+
         PreparedStatement statement = null;
         ResultSet resultSet = null;
 

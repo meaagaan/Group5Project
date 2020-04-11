@@ -97,17 +97,20 @@
                     <font>
                         <Font size="17.0" />
                     </font></Label>
-                <TextField layoutX="490.0" layoutY="337.0" prefHeight="27.0" prefWidth="283.0" />
-                <TextField layoutX="490.0" layoutY="387.0" prefHeight="27.0" prefWidth="283.0" />
-                <TextField layoutX="614.0" layoutY="482.0" prefHeight="27.0" prefWidth="147.0" />
-                <TextField layoutX="614.0" layoutY="529.0" prefHeight="27.0" prefWidth="70.0" />
-                <TextField layoutX="607.0" layoutY="431.0" />
+                <TextField fx:id="pemail" layoutX="490.0" layoutY="337.0" prefHeight="27.0" prefWidth="283.0" />
+                <TextField fx:id="cardnumber" layoutX="490.0" layoutY="387.0" prefHeight="27.0" prefWidth="283.0" />
+                <TextField fx:id="type" layoutX="614.0" layoutY="482.0" prefHeight="27.0" prefWidth="147.0" />
+                <TextField fx:id="expiration" layoutX="614.0" layoutY="529.0" prefHeight="27.0" prefWidth="70.0" />
+                <TextField fx:id="cvc" layoutX="607.0" layoutY="431.0" />
                 <Label layoutX="496.0" layoutY="433.0" prefHeight="22.0" prefWidth="94.0" text="Card Type: " textFill="#fcfafa">
                     <font>
                         <Font size="17.0" />
                     </font>
                 </Label>
-                <Label fx:id="sucess" layoutX="933.0" layoutY="687.0" prefHeight="45.0" prefWidth="224.0" />
+                <Label fx:id="sucess" layoutX="875.0" layoutY="690.0" prefHeight="46.0" prefWidth="400.0">
+                    <font>
+                        <Font size="22.0" />
+                    </font></Label>
                 <Rectangle arcHeight="5.0" arcWidth="5.0" height="120.0" layoutX="-4.0" layoutY="-2.0" stroke="BLACK" strokeType="INSIDE" width="1306.0" />
                 <Label layoutX="488.0" layoutY="16.0" styleClass="Mochi_Label" stylesheets="@../stylesheets/CheckOutSyle.css" text="Mochi">
                 </Label>
@@ -116,26 +119,26 @@
                         <Font size="27.0" />
                     </font>
                 </Label>
-                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#010b14" height="219.0" layoutX="921.0" layoutY="348.0" stroke="BLACK" strokeType="INSIDE" width="275.0">
+                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#010b14" height="219.0" layoutX="878.0" layoutY="348.0" stroke="BLACK" strokeType="INSIDE" width="382.0">
                     <effect>
                         <DropShadow />
                     </effect></Rectangle>
-                <Label layoutX="939.0" layoutY="392.0" prefHeight="45.0" prefWidth="69.0" text="Name:" textFill="#fffdfd">
+                <Label layoutX="905.0" layoutY="393.0" prefHeight="45.0" prefWidth="69.0" text="Name:" textFill="#fffdfd">
                     <font>
                         <Font size="22.0" />
                     </font>
                 </Label>
-                <Label layoutX="950.0" layoutY="475.0" prefHeight="19.0" prefWidth="47.0" text="Price:" textFill="#fffefe">
+                <Label layoutX="951.0" layoutY="467.0" prefHeight="19.0" prefWidth="47.0" text="Price:" textFill="#fffefe">
                     <font>
                         <Font size="15.0" />
                     </font>
                 </Label>
-                <Label fx:id="productname" layoutX="1014.0" layoutY="400.0" prefHeight="60.0" prefWidth="173.0" textFill="#f5f0f0">
+                <Label fx:id="productname" layoutX="978.0" layoutY="400.0" prefHeight="34.0" prefWidth="260.0" textFill="#f5f0f0">
                     <font>
                         <Font size="17.0" />
                     </font>
                 </Label>
-                <Label fx:id="price" layoutX="1015.0" layoutY="476.0" prefHeight="17.0" prefWidth="60.0" textFill="#fcfafa" />
+                <Label fx:id="price" layoutX="1015.0" layoutY="468.0" prefHeight="17.0" prefWidth="60.0" textFill="#fcfafa" />
             </children></AnchorPane>
     </items>
 </SplitPane>

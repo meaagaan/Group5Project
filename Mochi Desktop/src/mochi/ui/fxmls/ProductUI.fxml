@@ -55,23 +55,31 @@
                         </Label>
                     </children>
                 </Pane>
-                <Label fx:id="ProductError" layoutX="480.0" layoutY="450.0" prefHeight="17.0" prefWidth="372.0" styleClass="Product_Error" stylesheets="@../stylesheets/ProductStyle.css" />
-                <Label fx:id="confirmError" layoutX="480.0" layoutY="450.0" prefHeight="17.0" prefWidth="372.0" styleClass="Empty_Error" stylesheets="@../stylesheets/ProductStyle.css" />
-                <Label fx:id="confirmation" layoutX="480.0" layoutY="600.0" prefHeight="17.0" prefWidth="372.0" styleClass="Confirmation" stylesheets="@../stylesheets/ProductStyle.css" />
-                <Button fx:id="open" layoutX="1041.0" layoutY="447.0" mnemonicParsing="false" onMouseClicked="#fileUpload" prefHeight="40.0" prefWidth="108.0" text="Open" />
+                <Label fx:id="ProductError" layoutX="569.0" layoutY="599.0" prefHeight="20.0" prefWidth="206.0" styleClass="Product_Error" stylesheets="@../stylesheets/ProductStyle.css">
+                    <font>
+                        <Font size="16.0" />
+                    </font></Label>
+                <Label fx:id="confirmError" layoutX="569.0" layoutY="625.0" prefHeight="20.0" prefWidth="206.0" styleClass="Empty_Error" stylesheets="@../stylesheets/ProductStyle.css">
+                    <font>
+                        <Font size="16.0" />
+                    </font></Label>
+                <Label fx:id="confirmation" layoutX="570.0" layoutY="663.0" prefHeight="28.0" prefWidth="206.0" styleClass="Confirmation" stylesheets="@../stylesheets/ProductStyle.css">
+                    <font>
+                        <Font size="22.0" />
+                    </font></Label>
                 <ImageView fx:id="imageView" fitHeight="230.0" fitWidth="225.0" layoutX="994.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true" />
                 <Rectangle arcHeight="5.0" arcWidth="5.0" height="798.0" stroke="BLACK" strokeType="INSIDE" width="185.0" />
-                <Label fx:id="storeid" onMouseClicked="#returnHomeClick" styleClass="SideBar_Label" stylesheets="@../stylesheets/ProductStyle.css" layoutX="54.0" layoutY="191.0" text="Store" >
+                <Label fx:id="storeid" layoutX="54.0" layoutY="191.0" onMouseClicked="#returnHomeClick" styleClass="SideBar_Label" stylesheets="@../stylesheets/ProductStyle.css" text="Store">
                     <font>
                         <Font size="27.0" />
                     </font>
                 </Label>
-                <Label fx:id="wishlistid" onMouseClicked="#wishlistClick" styleClass="SideBar_Label" stylesheets="@../stylesheets/ProductStyle.css" layoutX="40.0" layoutY="313.0" text="Wishlist" >
+                <Label fx:id="wishlistid" layoutX="40.0" layoutY="313.0" onMouseClicked="#wishlistClick" styleClass="SideBar_Label" stylesheets="@../stylesheets/ProductStyle.css" text="Wishlist">
                     <font>
                         <Font size="27.0" />
                     </font>
                 </Label>
-                <Label fx:id="libraryid" onMouseClicked="#LibraryClick" styleClass="SideBar_Label" stylesheets="@../stylesheets/ProductStyle.css" layoutX="46.0" layoutY="434.0" text="Library" >
+                <Label fx:id="libraryid" layoutX="46.0" layoutY="434.0" onMouseClicked="#LibraryClick" styleClass="SideBar_Label" stylesheets="@../stylesheets/ProductStyle.css" text="Library">
                     <font>
                         <Font size="27.0" />
                     </font>
