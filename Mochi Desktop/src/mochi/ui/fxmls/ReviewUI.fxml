@@ -54,6 +54,7 @@
                   <Font size="30.0" />
                </font>
             </Label>
+            <Button fx:id="backButton" layoutX="41.0" layoutY="35.0" minWidth="102.0" mnemonicParsing="false" onMouseClicked="#BackButtonClick" prefHeight="45.0" prefWidth="102.0" text="Back" />
          </children>
       </AnchorPane>
    </children>
