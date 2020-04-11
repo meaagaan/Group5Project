@@ -127,7 +127,7 @@ public class RegistrationController implements Initializable {
         passwordError.setText("");
 
         // putting the information into the database.
-        query = "insert into User values ('" + username + "', '" + firstName + "', '" + lastName + "', '" + email + "', '" + "null" +"');";
+        query = "insert into User values ('" + username + "', '" + firstName + "', '" + lastName + "', '" + email + "', '" + "null" + "', '" + "null" + "');";
         statement.executeUpdate(query);
         query = "insert into Login values ('" + username + "', '" + password + "', " + "0);";
         statement.executeUpdate(query);
