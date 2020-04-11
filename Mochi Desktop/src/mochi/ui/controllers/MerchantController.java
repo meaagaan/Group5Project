@@ -18,10 +18,7 @@ import mochi.ui.*;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ResourceBundle;
 
 public class MerchantController implements Initializable {
@@ -49,14 +46,17 @@ public class MerchantController implements Initializable {
 
 		try {
 			data = FXCollections.observableArrayList();
-			ResultSet resultSet = null;
-			Statement statement = null;
 
-			statement = (Statement) database.createStatement();
-			resultSet = statement.executeQuery("SELECT * FROM `mochi-desktop`.Product;");
+			PreparedStatement statement;
+			ResultSet resultSet;
 
-			while (resultSet.next() && resultSet.getString(6).equals(Username)) {
-				data.add(new MerchantProductDetail(resultSet.getString(2), resultSet.getString(5)));
+			statement = database.prepareStatement("SELECT * FROM `mochi-desktop`.Product;");
+			resultSet = statement.executeQuery();
+
+			while (resultSet.next()) {
+				if (resultSet.getString(6).equals(Username)) {
+					data.add(new MerchantProductDetail(resultSet.getString(2), resultSet.getString(5)));
+				}
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
