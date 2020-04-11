@@ -11,10 +11,7 @@ import javafx.stage.Stage;
 import mochi.ProductPageAssist;
 import mochi.ReviewUserDetail;
 import mochi.db.DBConnection;
-import mochi.ui.LibraryUI;
-import mochi.ui.LoginUI;
-import mochi.ui.ProductUI;
-import mochi.ui.ProfileUI;
+import mochi.ui.*;
 import mochi.User;
 
 
@@ -35,6 +32,7 @@ public class ReviewController implements Initializable {
     public ChoiceBox<String> userProfileChoiceBox;
     public ChoiceBox<String> starChoiceBox;
     public Button submitReviewButton;
+    public Button backButton;
     public TableView<ReviewUserDetail> reviewTableView;
     public TableColumn<ReviewUserDetail, String> ratingTableColumn;
     public TableColumn<ReviewUserDetail, String> userTableColumn;
@@ -124,6 +122,21 @@ public class ReviewController implements Initializable {
             return true;
         }
         return false;
+    }
+
+    private boolean setProductScene() throws IOException {
+        Stage primaryStage = (Stage) pane.getScene().getWindow();
+        ProductPageUI productPageUI = new ProductPageUI();
+
+        if (productPageUI != null) {
+            primaryStage.setScene(productPageUI.getProductPageScene());
+            return true;
+        }
+        return false;
+    }
+
+    public boolean BackButtonClick() throws IOException {
+        return setProductScene();
     }
 
     // Submits the starReview and whats in the text area
