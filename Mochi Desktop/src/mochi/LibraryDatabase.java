@@ -51,7 +51,7 @@ public class LibraryDatabase {
 		return false;
 	}
 
-	private boolean findProduct(String productNumber, ArrayList<Product> productList) {
+	public boolean findProduct(String productNumber, ArrayList<Product> productList) {
 		PreparedStatement statement;
 		ResultSet resultSet;
 		Product product;
@@ -95,5 +95,26 @@ public class LibraryDatabase {
 			return true;
 		}
 		return false;
+	}
+
+	public boolean writeText(ArrayList<Product> product) {
+		try {
+			FileWriter myWriter = new FileWriter("product.txt");
+			if (product == null) {
+				return false;
+			}
+			else {
+				for (Product s : product) {
+					myWriter.write(s.getPid());
+					myWriter.write('*');
+				}
+				myWriter.close();
+				return true;
+			}
+		} catch (IOException e) {
+			System.out.println("An error occurred.");
+			e.printStackTrace();
+			return false;
+		}
 	}
 }

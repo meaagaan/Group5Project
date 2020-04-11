@@ -3,18 +3,22 @@ package mochi.ui.controllers;
 import javafx.fxml.Initializable;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import mochi.ProductPageAssist;
+import mochi.*;
 
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import mochi.User;
+import mochi.db.DBConnection;
 import mochi.ui.HomeUI;
 import mochi.ui.LibraryUI;
 import mochi.ui.WishlistUI;
@@ -34,27 +38,27 @@ public class CheckOutController implements Initializable {
     public Label libraryid;
     public Label user;
     public Label price;
-
-
     public Button checkout;
 
-
-
+    private Connection database;
+    private String productID = "-1";
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        this.database = DBConnection.getDatabase();
         productname.setFocusTraversable(false);
         productname.setMouseTransparent(true);
         productname.setText(ProductPageAssist.getPname());
         price.setFocusTraversable(false);
         price.setMouseTransparent(true);
         price.setText(ProductPageAssist.getPprice());
-
+        productID = Integer.toString(ProductPageAssist.getPid());
     }
 
-    public boolean CheckoutClick(){
+    public boolean CheckoutClick() throws FileNotFoundException, SQLException {
         sucess.setText("Product Purchased");
-        return false;
+
+        return addLibrary();
 
     }
     public boolean setHomeScene() throws IOException {
@@ -100,5 +104,23 @@ public class CheckOutController implements Initializable {
     public boolean LibraryClick() throws IOException{
         return setLibraryScene();
 
+    }
+
+    public boolean addLibrary() throws FileNotFoundException, SQLException {
+        if (Integer.valueOf(productID) != -1) {
+            LibraryDatabase libraryDatabase = new LibraryDatabase(database);
+            ArrayList<Product> userLibrary = User.getLibraryList();
+            if (userLibrary != null) {
+                libraryDatabase.findProduct(productID, userLibrary);
+            } else {
+                userLibrary = new ArrayList<Product>();
+                libraryDatabase.findProduct(productID, userLibrary);
+                User.setLibraryList(userLibrary);
+            }
+            libraryDatabase.writeText(userLibrary);
+            libraryDatabase.writeFile(User.getUsername());
+            return true;
+        }
+        return false;
     }
 }
