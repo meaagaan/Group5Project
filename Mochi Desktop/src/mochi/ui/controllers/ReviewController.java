@@ -85,9 +85,11 @@ public class ReviewController implements Initializable {
             statement = (Statement) database.createStatement();
             resultSet = statement.executeQuery("SELECT * FROM `mochi-desktop`.Review;");
 
-            while (resultSet.next() && resultSet.getString(1).equals(pid)) {
-                data.add(new ReviewUserDetail(resultSet.getString(3), resultSet.getString(4),
-                        resultSet.getString(5)));
+            while (resultSet.next()) {
+                if (resultSet.getString(1).equals(pid)) {
+                    data.add(new ReviewUserDetail(resultSet.getString(3), resultSet.getString(4),
+                            resultSet.getString(5)));
+                }
             }
         } catch (SQLException e) {
             e.printStackTrace();

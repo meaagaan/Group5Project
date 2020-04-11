@@ -53,7 +53,7 @@ public class WishlistDatabase {
         return false;
     }
 
-    private boolean findProduct(String productNumber, ArrayList<Product> productList) {
+    public boolean findProduct(String productNumber, ArrayList<Product> productList) {
         PreparedStatement statement;
         ResultSet resultSet;
         Product product;

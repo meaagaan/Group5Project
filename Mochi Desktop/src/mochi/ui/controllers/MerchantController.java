@@ -18,124 +18,115 @@ import mochi.ui.*;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ResourceBundle;
 
 public class MerchantController implements Initializable {
-    public Pane pane;
-    public Label storeLabel;
-    public Label libraryLabel;
-    public Label wishlistLabel;
-    public Label userProfileLabel;
-    public Label MerchantLabel;
-    public Label merchantPageLabel;
-    public TableView<MerchantProductDetail> productTableView;
-    public TableColumn<MerchantProductDetail, String> productNameTableColumn;
-    public TableColumn<MerchantProductDetail, String> priceTableColumn;
-    public ObservableList<MerchantProductDetail> data;
+	public Pane pane;
+	public Label storeLabel;
+	public Label libraryLabel;
+	public Label wishlistLabel;
+	public Label userProfileLabel;
+	public Label MerchantLabel;
+	public Label merchantPageLabel;
+	public TableView<MerchantProductDetail> productTableView;
+	public TableColumn<MerchantProductDetail, String> productNameTableColumn;
+	public TableColumn<MerchantProductDetail, String> priceTableColumn;
+	public ObservableList<MerchantProductDetail> data;
 
-    private Connection database;
-    private String Username;
+	private Connection database;
+	private String Username;
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        this.database = DBConnection.getDatabase();
-        if (!(User.getFirstname() == null )) {
-            Username = User.getFirstname();
-        }
+	@Override
+	public void initialize(URL url, ResourceBundle resourceBundle) {
+		this.database = DBConnection.getDatabase();
+		if (!(User.getFirstname() == null )) {
+			Username = User.getUsername();
+		}
 
-        try {
-            data = FXCollections.observableArrayList();
-            ResultSet resultSet = null;
-            Statement statement = null;
+		try {
+			data = FXCollections.observableArrayList();
 
-            statement = (Statement) database.createStatement();
-            resultSet = statement.executeQuery("SELECT * FROM `mochi-desktop`.Product;");
+			PreparedStatement statement;
+			ResultSet resultSet;
 
-            while (resultSet.next() && resultSet.getString(6).equals(Username)) {
-                data.add(new MerchantProductDetail(resultSet.getString(2), resultSet.getString(5)));
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+			statement = database.prepareStatement("SELECT * FROM `mochi-desktop`.Product;");
+			resultSet = statement.executeQuery();
 
-        // Set cell value factory to tableview.
-        productNameTableColumn.setCellValueFactory(new PropertyValueFactory<>("productName"));
-        priceTableColumn.setCellValueFactory(new PropertyValueFactory<>("productPrice"));
+			while (resultSet.next()) {
+				if (resultSet.getString(6).equals(Username)) {
+					data.add(new MerchantProductDetail(resultSet.getString(2), resultSet.getString(5)));
+				}
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 
-        productTableView.setItems(null);
-        productTableView.setItems(data);
-    }
+		// Set cell value factory to tableview.
+		productNameTableColumn.setCellValueFactory(new PropertyValueFactory<>("productName"));
+		priceTableColumn.setCellValueFactory(new PropertyValueFactory<>("productPrice"));
 
-    private boolean setHomeScene() throws IOException {
-        Stage primaryStage = (Stage) pane.getScene().getWindow();
-        HomeUI homeUI = new HomeUI();
+		productTableView.setItems(null);
+		productTableView.setItems(data);
+	}
 
-        if (homeUI != null) {
-            primaryStage.setScene(homeUI.getHomeScene());
-            return true;
-        }
-        return false;
-    }
+	private boolean setHomeScene() throws IOException {
+		Stage primaryStage = (Stage) pane.getScene().getWindow();
+		HomeUI homeUI = new HomeUI();
 
-    public boolean storeLabelClicked() throws IOException {
-        return setHomeScene();
-    }
+		if (homeUI != null) {
+			primaryStage.setScene(homeUI.getHomeScene());
+			return true;
+		}
+		return false;
+	}
 
-    private boolean setLibraryScene() throws IOException {
-        Stage primaryStage = (Stage) pane.getScene().getWindow();
-        LibraryUI libraryUI = new LibraryUI();
+	public boolean storeLabelClicked() throws IOException {
+		return setHomeScene();
+	}
 
-        if (libraryUI != null) {
-            primaryStage.setScene(libraryUI.getLibraryScene());
-            return true;
-        }
-        return false;
-    }
+	private boolean setLibraryScene() throws IOException {
+		Stage primaryStage = (Stage) pane.getScene().getWindow();
+		LibraryUI libraryUI = new LibraryUI();
 
-    public boolean LibraryLabelClicked() throws IOException {
-        return setLibraryScene();
-    }
+		if (libraryUI != null) {
+			primaryStage.setScene(libraryUI.getLibraryScene());
+			return true;
+		}
+		return false;
+	}
 
-    private boolean setWishlistScene() throws IOException {
-        Stage primaryStage = (Stage) pane.getScene().getWindow();
-        WishlistUI wishlistUI = new WishlistUI();
+	public boolean LibraryLabelClicked() throws IOException {
+		return setLibraryScene();
+	}
 
-        if (wishlistUI != null) {
-            primaryStage.setScene(wishlistUI.getWishlistScene());
-            return true;
-        }
-        return false;
-    }
+	private boolean setWishlistScene() throws IOException {
+		Stage primaryStage = (Stage) pane.getScene().getWindow();
+		WishlistUI wishlistUI = new WishlistUI();
 
-    public boolean WishlistLabelClicked() throws IOException {
-        return setWishlistScene();
-    }
+		if (wishlistUI != null) {
+			primaryStage.setScene(wishlistUI.getWishlistScene());
+			return true;
+		}
+		return false;
+	}
 
-    private boolean setProfileScene() throws IOException {
-        Stage primaryStage = (Stage) pane.getScene().getWindow();
-        ProfileUI profileUI = new ProfileUI();
+	public boolean WishlistLabelClicked() throws IOException {
+		return setWishlistScene();
+	}
 
-        if (profileUI != null) {
-            primaryStage.setScene(profileUI.getProfileScene());
-            return true;
-        }
-        return false;
-    }
+	private boolean setProfileScene() throws IOException {
+		Stage primaryStage = (Stage) pane.getScene().getWindow();
+		ProfileUI profileUI = new ProfileUI();
 
-    public boolean userProfileLabelClicked() throws IOException {
-        return setProfileScene();
-    }
+		if (profileUI != null) {
+			primaryStage.setScene(profileUI.getProfileScene());
+			return true;
+		}
+		return false;
+	}
 
-
-
-
-
-
-
-
-
+	public boolean userProfileLabelClicked() throws IOException {
+		return setProfileScene();
+	}
 }

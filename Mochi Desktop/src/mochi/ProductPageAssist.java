@@ -14,7 +14,6 @@ public class ProductPageAssist {
 		return pid;
 	}
 
-
 	public void setPid(Integer pid){
 		this.pid = pid;
 	}
@@ -22,7 +21,6 @@ public class ProductPageAssist {
 	public static String getPname(){
 		return pname;
 	}
-
 
 	public void setPname(String pname){
 		this.pname = pname;

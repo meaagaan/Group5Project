@@ -133,4 +133,19 @@ public class LibraryController implements Initializable {
 	public boolean viewButtonClicked() throws IOException {
 		return setProductPage();
 	}
+
+	private boolean setMerchantScene() throws IOException {
+		Stage primaryStage = (Stage) pane.getScene().getWindow();
+		MerchantUI merchantUI = new MerchantUI();
+
+		if (merchantUI != null) {
+			primaryStage.setScene(merchantUI.getMerchantScene());
+			return true;
+		}
+		return false;
+	}
+
+	public boolean merchantLabelClicked() throws IOException {
+		return setMerchantScene();
+	}
 }
