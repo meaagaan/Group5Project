@@ -181,21 +181,24 @@ public class HomeController implements Initializable
     }
 
     private boolean setProductPage() throws IOException {
-        String name= "1";
-
-        name=table.getSelectionModel().getSelectedItem().getName();
+        String id= "1";
+        Integer pid;
+        id=table.getSelectionModel().getSelectedItem().getId();
         ProductPageAssist object = new ProductPageAssist();
-        object.setPname(name);
+        pid= Integer.parseInt(id.trim());
+
+        object.setPid(pid);
+        System.out.println(pid);
         PreparedStatement statement = null;
         ResultSet resultSet = null;
 
         try {
             //statement = database.prepareStatement("SELECT ProductID, genreName, descriptionOfProduct, priceOfProduct FROM Product WHERE productN = ?");
-            statement = database.prepareStatement("SELECT ProductID, genreName, descriptionOfProduct, priceOfProduct FROM Product WHERE productN = ?");
-            statement.setString(1, name);
+            statement = database.prepareStatement("SELECT productN, genreName, descriptionOfProduct, priceOfProduct FROM Product WHERE ProductID = ?");
+            statement.setString(1, id);
             resultSet = statement.executeQuery();
             if (resultSet.next()) {
-                object.setPid(resultSet.getInt("ProductID"));
+                object.setPname(resultSet.getString("productN"));
                 object.setPgenre(resultSet.getString("genreName"));
                 object.setPdescription(resultSet.getString("descriptionOfProduct"));
                 object.setPprice(resultSet.getString("priceOfProduct"));

@@ -56,7 +56,7 @@
                         <Font size="16.0" />
                     </font>
                 </Label>
-                <Button alignment="CENTER" cache="true" contentDisplay="BOTTOM" layoutX="543.0" layoutY="469.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="84.0" styleClass="Button_BG" stylesheets="@../stylesheets/LibraryStyle.css" text="Reviews" textFill="#383030">
+                <Button fx:id="Review" onMouseClicked="#ReviewClick"  layoutX="543.0" layoutY="469.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="84.0" styleClass="Button_BG" stylesheets="@../stylesheets/LibraryStyle.css" text="Reviews" >
                     <effect>
                         <Lighting>
                             <bumpInput>
@@ -66,26 +66,26 @@
                         </Lighting>
                     </effect>
                 </Button>
-            <GridPane hgap="20.0" prefHeight="800.0" prefWidth="253.0" styleClass="Side_Bar" stylesheets="@../stylesheets/LibraryStyle.css" vgap="20.0">
-               <columnConstraints>
-                  <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" maxWidth="122.0" minWidth="10.0" prefWidth="57.0" />
-                  <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" maxWidth="198.0" minWidth="10.0" prefWidth="196.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints fillHeight="false" maxHeight="186.0" minHeight="186.0" prefHeight="186.0" vgrow="NEVER" />
-                  <RowConstraints fillHeight="false" maxHeight="30.0" minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="NEVER" />
-                  <RowConstraints fillHeight="false" maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="NEVER" />
-                  <RowConstraints fillHeight="false" maxHeight="30.0" minHeight="7.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints fillHeight="false" maxHeight="30.0" minHeight="7.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Label fx:id="storeid" onMouseClicked="#returnHomeClick" styleClass="SideBar_Label" stylesheets="@../stylesheets/LibraryStyle.css" text="Store" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <Label fx:id="libraryid" onMouseClicked="#LibraryClick" styleClass="SideBar_Label" stylesheets="@../stylesheets/LibraryStyle.css" text="Library" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <Label fx:id="wishlistid" onMouseClicked="#wishlistClick" styleClass="SideBar_Label" stylesheets="@../stylesheets/LibraryStyle.css" text="Wishlist" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-               </children>
-            </GridPane>
+                <GridPane hgap="20.0" prefHeight="800.0" prefWidth="253.0" styleClass="Side_Bar" stylesheets="@../stylesheets/LibraryStyle.css" vgap="20.0">
+                    <columnConstraints>
+                        <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" maxWidth="122.0" minWidth="10.0" prefWidth="57.0" />
+                        <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" maxWidth="198.0" minWidth="10.0" prefWidth="196.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints fillHeight="false" maxHeight="186.0" minHeight="186.0" prefHeight="186.0" vgrow="NEVER" />
+                        <RowConstraints fillHeight="false" maxHeight="30.0" minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="NEVER" />
+                        <RowConstraints fillHeight="false" maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="NEVER" />
+                        <RowConstraints fillHeight="false" maxHeight="30.0" minHeight="7.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints fillHeight="false" maxHeight="30.0" minHeight="7.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <Label fx:id="storeid" onMouseClicked="#returnHomeClick" styleClass="SideBar_Label" stylesheets="@../stylesheets/LibraryStyle.css" text="Store" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="libraryid" onMouseClicked="#LibraryClick" styleClass="SideBar_Label" stylesheets="@../stylesheets/LibraryStyle.css" text="Library" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label fx:id="wishlistid" onMouseClicked="#wishlistClick" styleClass="SideBar_Label" stylesheets="@../stylesheets/LibraryStyle.css" text="Wishlist" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                    </children>
+                </GridPane>
                 <Button fx:id="checkoutButton" layoutX="701.0" layoutY="469.0" mnemonicParsing="false" onMouseClicked="#CheckOutClick" prefHeight="34.0" prefWidth="94.0" styleClass="Button_BG" stylesheets="@../stylesheets/LibraryStyle.css" text="CheckOut" />
-            <Button fx:id="addWishlist" onMouseClicked="#addWishlist" layoutX="854.0" layoutY="469.0" mnemonicParsing="false" prefWidth="106.0" styleClass="Button_BG" stylesheets="@../stylesheets/LibraryStyle.css" text="Add Wishlist" />
+                <Button fx:id="addWishlist" onMouseClicked="#addWishlist" layoutX="854.0" layoutY="469.0" mnemonicParsing="false" prefWidth="106.0" styleClass="Button_BG" stylesheets="@../stylesheets/LibraryStyle.css" text="Add Wishlist" />
             </children></AnchorPane>
     </items>
 </SplitPane>
