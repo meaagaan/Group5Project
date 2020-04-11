@@ -32,6 +32,7 @@ public class ProductPageController implements Initializable {
     public ImageView imageView;
     public String pd;
     public Button checkoutButton;
+    public Button Review;
 
     private Connection database;
 
@@ -41,7 +42,6 @@ public class ProductPageController implements Initializable {
         PreparedStatement statement = null;
         ResultSet resultSet = null;
 
-        pd = Integer.toString(ProductPageAssist.getPid());
 
         try {
             statement = database.prepareStatement("SELECT image FROM `mochi-desktop`.Product WHERE productN = ?");
@@ -155,5 +155,20 @@ public class ProductPageController implements Initializable {
             return true;
         }
         return false;
+    }
+
+    public boolean setReviewScene() throws IOException {
+        Stage primaryStage = (Stage) Review.getScene().getWindow();
+        ReviewUI reviewUI = new ReviewUI();
+
+        if (reviewUI != null) {
+            primaryStage.setScene(reviewUI.getReviewScene());
+            return true;
+        }
+        return false;
+    }
+    public boolean ReviewClick() throws IOException{
+        return setReviewScene();
+
     }
 }
