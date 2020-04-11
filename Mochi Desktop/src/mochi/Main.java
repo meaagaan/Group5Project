@@ -5,9 +5,6 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import mochi.db.DBConnection;
 import mochi.ui.LoginUI;
-import mochi.ui.ReviewUI;
-
-import java.sql.Connection;
 
 public class Main extends Application {
 	@Override
