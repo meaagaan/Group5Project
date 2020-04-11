@@ -65,16 +65,6 @@ public class ProductController implements Initializable {
         this.database = DBConnection.getDatabase();
 
         options.setItems(choice);
-
-        if(options.getSelectionModel().getSelectedItem()=="educational"){
-            type="educational";
-        }
-        else if(options.getSelectionModel().getSelectedItem()=="business"){
-            type="business";
-        }
-        else{
-            type="personal";
-        }
         user= User.getUsername();
 
 
@@ -103,10 +93,6 @@ public class ProductController implements Initializable {
 
     }
 
-    //private void loadingFile() {
-
-    //}
-
 
 
     public boolean confirmButtonClick() throws SQLException, IOException {
@@ -122,6 +108,18 @@ public class ProductController implements Initializable {
         String query;
         String userName= user;
         Integer ProductID= 0;
+
+
+
+        if(options.getSelectionModel().getSelectedItem()=="educational"){
+            genreName="educational";
+        }
+        else if(options.getSelectionModel().getSelectedItem()=="business"){
+            genreName="business";
+        }
+        else if(options.getSelectionModel().getSelectedItem()=="personal"){
+            genreName="personal";
+        }
 
 
         try {
@@ -147,7 +145,7 @@ public class ProductController implements Initializable {
                 }
                 else{
                     confirmation.getStyleClass().add("Confirmation");
-                    confirmation.setText("Your product has been created");
+                    confirmation.setText("Product Created");
                 }
 
             }
@@ -158,26 +156,7 @@ public class ProductController implements Initializable {
         }
 
         // putting the product information into the database.
-/*
-        FileChooser fileChooser = new FileChooser();
-        fileChooser.getExtensionFilters().addAll(
-                new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg"));
 
-        File file = fileChooser.showOpenDialog(open.getScene().getWindow());
-
-        FileInputStream fileInputStream= new FileInputStream(file);
-        if(file== null){
-            System.out.println("no file chocse");
-        }
-
-        //Image image= new Image(fileInputStream);
-        Image image= new Image(file.toURI().toString(), 100, 150, true, true);
-        ImageView imageView = null;
-        imageView.setImage(image);
-        imageView.setFitHeight(100);
-        imageView.setFitWidth(150);
-        imageView.setPreserveRatio(true);
-        */
         p= database.prepareStatement("INSERT INTO Product (productN, genreName, descriptionOfProduct, priceOfProduct, userName) VALUES (?,?,?,?,?)");
         p.setString(1, productN);
         p.setString(2,genreName);

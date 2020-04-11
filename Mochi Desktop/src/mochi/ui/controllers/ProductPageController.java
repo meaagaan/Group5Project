@@ -29,7 +29,7 @@ public class ProductPageController implements Initializable {
     public Label storeid;
     public Label wishlistid;
     public Label libraryid;
-    public ImageView imageView;
+    public Label addingwishlist;
     public String pd;
     public Button checkoutButton;
     public Button Review;
@@ -39,27 +39,6 @@ public class ProductPageController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         this.database = DBConnection.getDatabase();
-        PreparedStatement statement = null;
-        ResultSet resultSet = null;
-
-
-        try {
-            statement = database.prepareStatement("SELECT image FROM `mochi-desktop`.Product WHERE productN = ?");
-            statement.setInt(1, 7);
-            resultSet = statement.executeQuery();
-            if (resultSet.next()) {
-                Blob blob= resultSet.getBlob("image");
-                InputStream binaryStream= blob.getBinaryStream();
-
-                Image image= new Image(binaryStream);
-                imageView.setImage(image);
-                System.out.println("yest");
-            }
-
-
-        } catch (SQLException e ) {
-            e.printStackTrace();
-        }
 
         prname.setFocusTraversable(false);
         prname.setMouseTransparent(true);
@@ -76,6 +55,7 @@ public class ProductPageController implements Initializable {
         description.setFocusTraversable(false);
         description.setMouseTransparent(true);
         description.setText(ProductPageAssist.getPdescription());
+        pd = Integer.toString(ProductPageAssist.getPid());
 
         //imageView.setImage(ProductPageAssist.getImage());
 
@@ -140,6 +120,7 @@ public class ProductPageController implements Initializable {
     }
 
     public boolean addWishlist() throws FileNotFoundException, SQLException {
+
         if (Integer.valueOf(pd) != -1) {
             WishlistDatabase wishlistDatabase = new WishlistDatabase(database);
             ArrayList<Product> userWishlist = User.getWishlist();
@@ -152,6 +133,7 @@ public class ProductPageController implements Initializable {
             }
             wishlistDatabase.writeText(userWishlist);
             wishlistDatabase.writeFile(User.getUsername());
+            addingwishlist.setText("Added to Wishlist");
             return true;
         }
         return false;

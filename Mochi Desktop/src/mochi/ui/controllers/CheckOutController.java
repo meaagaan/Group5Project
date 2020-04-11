@@ -32,6 +32,7 @@ public class CheckOutController implements Initializable {
     public TextField cvc;
     public TextField expiration;
     public TextField pemail;
+    public TextField type;
     public Label sucess;
     public Label storeid;
     public Label wishlistid;
@@ -39,6 +40,7 @@ public class CheckOutController implements Initializable {
     public Label user;
     public Label price;
     public Button checkout;
+    public Label info;
 
     private Connection database;
     private String productID = "-1";
@@ -53,12 +55,14 @@ public class CheckOutController implements Initializable {
         price.setMouseTransparent(true);
         price.setText(ProductPageAssist.getPprice());
         productID = Integer.toString(ProductPageAssist.getPid());
+
     }
 
     public boolean CheckoutClick() throws FileNotFoundException, SQLException {
-        sucess.setText("Product Purchased");
 
+        sucess.setText("Product purchased and added to Library");
         return addLibrary();
+
 
     }
     public boolean setHomeScene() throws IOException {
